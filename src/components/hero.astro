@@ -1,0 +1,80 @@
+---
+interface Props {
+  image: string
+  title: string
+  subtitle?: string
+  primaryHref?: string
+  primaryText?: string
+  secondaryHref?: string
+  secondaryText?: string
+}
+
+const {
+  image,
+  title,
+  subtitle,
+  primaryHref,
+  primaryText,
+  secondaryHref,
+  secondaryText,
+} = Astro.props
+
+const BASE_URL = import.meta.env.BASE_URL
+
+// Normaliza cualquier ruta de imagen para que funcione en GitHub Pages (subcarpeta) y dominio propio.
+const normalize = (src: string) =>
+  /^(?:https?:)?\/\/|^data:/i.test(src) ? src : `${BASE_URL}${src.replace(/^\//, '')}`
+
+const imageUrl = normalize(image)
+---
+
+<section
+  class="relative min-h-[90vh] flex items-center justify-center text-center text-white bg-cover bg-center bg-no-repeat"
+  style={`background-image:url('${imageUrl}')`}
+>
+  <!-- Overlay para legibilidad -->
+  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent"></div>
+
+  <!-- Contenido -->
+  <div class="relative z-10 max-w-3xl px-6 py-16 md:py-24">
+    <h1
+      class="font-extrabold leading-tight mb-6 drop-shadow-lg
+             text-[clamp(28px,8vw,42px)] md:text-6xl"
+    >
+      {title}
+    </h1>
+
+    {subtitle && (
+      <p
+        class="mb-8 drop-shadow-md
+               text-[clamp(14px,4.2vw,18px)] md:text-2xl"
+      >
+        {subtitle}
+      </p>
+    )}
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      {primaryHref && primaryText && (
+        <a
+          href={primaryHref}
+          class="w-full sm:w-auto text-center
+                 bg-red-600 hover:bg-red-700 text-white font-bold
+                 py-3 px-6 rounded-lg shadow-lg transition"
+        >
+          {primaryText}
+        </a>
+      )}
+
+      {secondaryHref && secondaryText && (
+        <a
+          href={secondaryHref}
+          class="w-full sm:w-auto text-center
+                 bg-white hover:bg-gray-100 text-red-600 font-bold
+                 py-3 px-6 rounded-lg shadow-lg transition"
+        >
+          {secondaryText}
+        </a>
+      )}
+    </div>
+  </div>
+</section>
