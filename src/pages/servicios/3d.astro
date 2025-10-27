@@ -1,0 +1,122 @@
+---
+import Layout from '../../layouts/Layout.astro'
+
+const base = '/assets/services/3d'
+
+// Todas tus fotos
+const images = [
+  'img-1.png','img-2.png','img-3.png','img-4.png','img-5.png',
+  'img-6.png','img-7.png','img-8.png','img-9.png','img-10.png',
+  'img-11.png','img-12.png','img-13.png','img-14.png','img-15.png',
+]
+
+// Bullets por defecto
+const defaultBullets = [
+  'Material: PVC / Acrílico / Metal',
+  'Acabado: pintura automotriz o vinil',
+  'Iluminación: LED frontal o retroiluminado',
+  'Uso: interiores y fachadas',
+  'Garantía: 1 año',
+]
+
+// Subconjunto de imágenes destacadas para las tarjetas (elige las que quieras)
+const featuredIdx = [0, 2, 4, 6, 8, 10] // puedes cambiar índices
+const featured = featuredIdx.map((i) => ({
+  src: `${base}/${images[i]}`,
+  alt: `Letrero 3D proyecto ${i + 1} en Arequipa`,
+  title: `LETRERO 3D PROYECTO ${i + 1}`,
+  bullets: defaultBullets,
+  wa: encodeURIComponent(`Quiero cotizar letrero 3D proyecto ${i + 1}`),
+}))
+---
+
+<Layout
+  title="Letreros 3D en Arequipa | Victor Anuncios"
+  description="Fabricamos e instalamos letreros 3D: acrílico, PVC y metálicos. Diseño, corte preciso e instalación con garantía en Arequipa."
+  keywords="letreros 3D Arequipa, letras corpóreas, acrílico 3D, PVC 3D, letras metálicas"
+  canonical="https://victoranuncios.com/servicios/3d"
+>
+  <main class="container mx-auto px-4 pt-10 pb-16">
+    <h1 class="text-4xl md:text-5xl font-extrabold text-center mb-6">
+      Letreros 3D
+    </h1>
+
+    <div class="flex flex-wrap items-center justify-center gap-3 mb-10">
+      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm">✅ Corte preciso</span>
+      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm">✍️ Diseño + instalación</span>
+      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm">🛡️ Garantía 1 año</span>
+    </div>
+
+    <!-- CATÁLOGO: SOLO FOTOS -->
+    <section aria-labelledby="catalogo3d" class="mt-2">
+      <h2 id="catalogo3d" class="text-2xl md:text-3xl font-bold text-center mb-8">Catálogo</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
+        {images.map((file, i) => (
+          <figure class="relative aspect-square overflow-hidden rounded-xl bg-gray-100">
+            <img
+              src={`${base}/${file}`}
+              alt={`Letrero 3D modelo ${i + 1} - Victor Anuncios Arequipa`}
+              loading={i < 4 ? 'eager' : 'lazy'}
+              decoding="async"
+              class="w-full h-full object-cover transition-transform duration-200 hover:scale-105"
+            />
+          </figure>
+        ))}
+      </div>
+    </section>
+
+    <!-- TARJETAS CON DESCRIPCIÓN (DESTACADOS) -->
+    <section aria-labelledby="proyectos3d" class="mt-14">
+      <h2 id="proyectos3d" class="text-2xl md:text-3xl font-bold text-center mb-8">Proyectos destacados</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {
+          featured.map((t) => (
+            <article class="text-center bg-white rounded-2xl shadow-md p-4 md:p-6">
+              <div class="relative w-full h-56 mb-4">
+                <img
+                  src={t.src}
+                  alt={t.alt}
+                  loading="lazy"
+                  decoding="async"
+                  class="absolute inset-0 w-full h-full object-cover rounded-xl shadow-sm"
+                />
+              </div>
+
+              <h3 class="text-xl font-extrabold text-black mb-2">{t.title}</h3>
+
+              <ul class="text-left text-gray-700 space-y-1 mb-5">
+                {t.bullets.map((b) => <li>• {b}</li>)}
+              </ul>
+
+              <a
+                href={`https://wa.me/51946182531?text=${t.wa}`}
+                target="_blank"
+                class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold px-6 py-2 rounded-lg"
+                rel="noopener"
+              >
+                Cotizar por WhatsApp
+              </a>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="mt-12">
+      <div class="rounded-2xl bg-blue-600 text-white p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
+        <p class="text-lg md:text-xl font-semibold text-center md:text-left">
+          ¿Quieres un letrero 3D como estos? Diseño + fabricación + instalación.
+        </p>
+        <a
+          href="https://wa.me/51946182531?text=Quiero%20un%20letrero%203D"
+          class="px-5 py-3 bg-green-500 rounded-lg font-bold whitespace-nowrap hover:bg-green-600"
+          rel="noopener"
+        >
+          Pedir por WhatsApp
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>

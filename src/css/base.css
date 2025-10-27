@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-primary { color: rgb(255, 0, 0); }
+  .bg-primary   { background-color: rgb(255, 0, 0); }
+}
+/* Evita desbordes horizontales y cortes del carrusel */
+html, body { overflow-x: hidden; }
+.splide, .splide__track { overflow: hidden; }
+
+/* Evita espacios “inline” de imágenes */
+img { display: block; max-width: 100%; height: auto; }
+/* ejemplo */
+.social-bar { position: fixed; right: 16px; inset-block: 40%; }
+/* evita translateX positivo que la saque del viewport */
+
+html, body {
+  margin: 0;
+  padding: 0;
+}

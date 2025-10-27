@@ -1,0 +1,70 @@
+---
+interface Props {
+  title1: string
+  title2: string
+  image: string
+  variant: 'red' | 'blue'
+  top1?: string
+  top2?: string
+  link?: string
+  size?: 'md' | 'sm'
+}
+
+const { title1, title2, image, variant, top1, top2, link, size = 'md' } = Astro.props
+
+// Paletas / estilos por variante
+const variants: any = {
+  red:  { container: 'bg-primary' },
+
+  // Azul más suave + degradado tipo retail
+  blue: { 
+    container: 'bg-gradient-to-br from-[#2D5BFF] to-[#6A8BFF]' 
+    // Si prefieres aún más sobrio: from-[#2851E3] to-[#1E3ED1]
+  },
+}
+
+const isSm = size === 'sm'
+---
+
+
+<div
+  class={`relative ${isSm ? 'h-[360px]' : 'h-[580px]'}
+          rounded-none flex justify-center items-start
+          ${variants[variant].container}
+          p-6 border border-white/70 shadow-[0_10px_30px_rgba(0,0,0,0.12)]
+          transition-all duration-200 hover:-translate-y-[2px] hover:shadow-[0_16px_40px_rgba(0,0,0,0.18)]`}
+  data-aos="flip-left"
+>
+
+  <!-- TOP LABEL -->
+  <div class="absolute top-4 left-0 right-0 uppercase text-center">
+    {top1 && <span class={`${isSm ? 'text-base' : 'text-3xl'} text-white font-bold`}>{top1}</span>}
+    {top2 && (
+      <span class={`${isSm ? 'text-base' : 'text-3xl'} text-transparent font-bold`} style="-webkit-text-stroke: 1px #fff;">
+        {top2}
+      </span>
+    )}
+  </div>
+
+  <!-- IMAGEN -->
+  <div class={`h-full ${isSm ? 'pt-10' : 'pt-20'} w-full flex justify-center`}>
+    <img
+      src={image}
+      class={`${isSm ? 'h-[96px]' : 'h-[280px]'} object-contain drop-shadow`}
+      loading="lazy"
+      decoding="async"
+      alt={`${title1} ${title2}`}
+    />
+  </div>
+
+  <!-- TITULOS -->
+  <div
+    class={`absolute uppercase text-center font-extrabold bottom-8
+            ${isSm ? 'text-[1rem] leading-[1.25rem]' : 'text-[2rem] leading-[2.5rem]'}
+            lg:${isSm ? 'text-[1rem] leading-[1.25rem]' : 'text-[2rem] leading-[2rem]'}
+            2xl:${isSm ? 'text-[1.25rem] leading-[1.4rem]' : 'text-[3rem] leading-[2.8rem]'}`}
+  >
+    <span class="text-white tracking-wider">{title1}</span><br />
+    <span class="text-transparent tracking-widest" style="-webkit-text-stroke: 1px #fff;">{title2}</span>
+  </div>
+</div>

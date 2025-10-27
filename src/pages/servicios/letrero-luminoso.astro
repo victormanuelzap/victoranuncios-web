@@ -1,0 +1,155 @@
+---
+import Layout from '../../layouts/Layout.astro'
+
+// Imágenes existentes (las reutilizamos en los cuadros)
+const images = ['img-1.png', 'img-2.png', 'img-3.png', 'img-4.png', 'img-5.png','img-6.png','img-7.png','img-8.png','img-9.png','img-10.png']
+const base = '/assets/services/letrero-luminoso'
+
+// Tomamos las 3 primeras para los 3 tipos
+const img1 = `${base}/${images[0] || 'img-1.png'}`
+const img2 = `${base}/${images[1] || 'img-2.png'}`
+const img3 = `${base}/${images[2] || 'img-3.png'}`
+
+// === Tipos de letreros (usando las imágenes anteriores) ===
+const tipos = [
+  {
+    slug: 'rectangular',
+    titulo: 'LETRERO LUMINOSO RECTANGULAR 💡',
+    img: img1,
+    alt: 'Letrero luminoso rectangular en Arequipa',
+    bullets: [
+      'Estructura: Tubo galvanizado 3/4”',
+      'Frontal: Lona backlight impresa full color',
+      'Iluminación: Tiras LED / tubos LED',
+      'Instalación: Incluida',
+      'Garantía: 1 año',
+    ],
+    waText: 'Quiero%20un%20letrero%20luminoso%20rectangular',
+  },
+  {
+    slug: 'redondo',
+    titulo: 'LETRERO LUMINOSO REDONDO ⚡',
+    img: img2,
+    alt: 'Letrero luminoso redondo en Arequipa',
+    bullets: [
+      'Material: Acrílico + metal',
+      'Doble cara opcional',
+      'Iluminación: LED interno',
+      'Diseño personalizado a tu logo',
+      'Garantía: 1 año',
+    ],
+    waText: 'Quiero%20un%20letrero%20luminoso%20redondo',
+  },
+  {
+    slug: 'doble-faz',
+    titulo: 'LETRERO LUMINOSO DOBLE FAZ 🔄',
+    img: img3,
+    alt: 'Letrero luminoso doble faz en Arequipa',
+    bullets: [
+      'Para fachadas y esquinas',
+      'Visibilidad por ambos lados',
+      'Estructura reforzada',
+      'Incluye soporte y anclajes',
+      'Garantía: 1 año',
+    ],
+    waText: 'Quiero%20un%20letrero%20luminoso%20doble%20faz',
+  },
+]
+---
+
+<Layout
+  title="Letrero luminoso en Arequipa | Victor Anuncios"
+  description="Fabricamos e instalamos letreros luminosos en Arequipa: diseño profesional, garantía y entrega rápida."
+  keywords="letrero luminoso Arequipa, caja de luz Arequipa, letreros LED"
+  canonical="https://victoranuncios.com/servicios/letrero-luminoso"
+>
+  <main class="container mx-auto px-4 pt-10 pb-16">
+    <h1 class="text-4xl md:text-5xl font-extrabold text-center mb-6">
+      Letrero luminoso
+    </h1>
+
+    <!-- Badges -->
+    <div class="flex flex-wrap items-center justify-center gap-3 mb-10">
+      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm">✅ Garantía 1 año</span>
+      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm">✍️ Diseño + instalación</span>
+      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm">⚡ Entrega rápida</span>
+    </div>
+
+    <!-- CATÁLOGO: SOLO FOTOS -->
+    <section aria-labelledby="catalogo-luminosos" class="mt-2">
+      <h2 id="catalogo-luminosos" class="text-2xl md:text-3xl font-bold text-center mb-8">Catálogo</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
+        {images.map((file, i) => (
+          <figure class="relative aspect-square overflow-hidden rounded-xl bg-gray-100">
+            <img
+              src={`${base}/${file}`}
+              alt={`Caja de luz / letrero luminoso modelo ${i + 1} - Victor Anuncios Arequipa`}
+              loading={i < 4 ? 'eager' : 'lazy'}
+              decoding="async"
+              class="w-full h-full object-cover transition-transform duration-200 hover:scale-105"
+            />
+          </figure>
+        ))}
+      </div>
+    </section>
+
+    <!-- TIPOS DE LETREROS (CON DESCRIPCIÓN) -->
+    <section class="mt-14">
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">
+        Tipos de letreros luminosos
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {
+          tipos.map((t) => (
+            <article class="text-center bg-white rounded-2xl shadow-md p-4 md:p-6">
+              <!-- Imagen con contenedor para mantener altura -->
+              <div class="relative w-full h-56 mb-4">
+                <img
+                  src={t.img}
+                  alt={t.alt}
+                  loading="lazy"
+                  decoding="async"
+                  class="absolute inset-0 w-full h-full object-cover rounded-xl shadow-sm"
+                />
+              </div>
+
+              <h3 class="text-xl font-extrabold text-black leading-tight mb-2">
+                {t.titulo}
+              </h3>
+
+              <ul class="text-left text-gray-700 space-y-1 mb-5">
+                {t.bullets.map((b) => <li>• {b}</li>)}
+              </ul>
+
+              <a
+                href={`https://wa.me/51946182531?text=${t.waText}`}
+                target="_blank"
+                rel="noopener"
+                class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold px-6 py-2 rounded-lg"
+              >
+                Pedir por WhatsApp
+              </a>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="mt-12">
+      <div class="rounded-2xl bg-blue-600 text-white p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
+        <p class="text-lg md:text-xl font-semibold text-center md:text-left">
+          ¿Quieres un letrero como estos? Diseño + fabricación + instalación.
+        </p>
+        <a
+          href="https://wa.me/51946182531?text=Quiero%20un%20letrero%20luminoso"
+          class="px-5 py-3 bg-green-500 rounded-lg font-bold whitespace-nowrap hover:bg-green-600"
+          rel="noopener"
+        >
+          Pedir por WhatsApp
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>

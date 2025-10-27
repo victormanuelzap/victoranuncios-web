@@ -1,0 +1,256 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Card from '../components/Card.astro'
+---
+
+<Layout title='Letreros luminosos, letras 3D, gigantografías y vinilos en Arequipa.'>
+
+<!-- DESKTOP -->
+<section class="splide hidden lg:block" aria-labelledby="carousel-heading">
+   
+
+  <div class="splide__slider">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide flex justify-center items-center">
+           <a href="/servicios/3d" class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
+            <img
+              src="/assets/banners/hero.webp"
+              alt="banner"
+              class="w-full h-[350px] object-cover"
+            />
+          </a>
+        </li>
+        <li class="splide__slide flex justify-center items-center">
+          <a href="/tarjetas" class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
+            <img
+              src="/assets/banners/hero2.webp"
+              alt="banner"
+              class="w-full h-[350px] object-cover"
+            />
+          </a>
+        </li>
+
+        <li class="splide__slide flex justify-center items-center">
+          <a href="/volantes" class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
+            <img
+              src="/assets/banners/hero3.webp"
+              alt="banner"
+              class="w-full h-[350px] object-cover"
+            />
+          </a>
+        </li>
+
+
+  <li class="splide__slide flex justify-center items-center">
+          <a href="/servicios/letrero-luminoso" class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
+            <img
+              src="/assets/banners/hero4.webp"
+              alt="banner"
+              class="w-full h-[350px] object-cover"
+            />
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</section>
+<div class="h-6 lg:h-8 bg-white"></div>
+
+<!-- MÓVIL -->
+<section class="splide splide2 block lg:hidden" aria-labelledby="carousel-heading">
+  <div class="splide__slider">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide flex justify-center items-center">
+          <a href="/servicios/3d" class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
+            <img
+              src="/assets/banners/heromovil.webp"
+              alt="banner"
+              class="w-full h-auto object-contain"
+            />
+          </a>
+        </li>
+
+        <li class="splide__slide flex justify-center items-center">
+          <a href="/tarjetas" class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
+            <img
+              src="/assets/banners/heromovil2.webp"
+              alt="banner"
+              class="w-full h-auto object-contain"
+            />
+          </a>
+        </li>
+
+        <li class="splide__slide flex justify-center items-center">
+         <a href="/volantes" class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
+            <img
+              src="/assets/banners/heromovil3.webp"
+              alt="banner"
+              class="w-full h-auto object-contain"
+            />
+          </a>
+        </li>
+           <li class="splide__slide flex justify-center items-center">
+          <a href="/servicios/letrero-luminoso" class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
+            <img
+              src="/assets/banners/heromovil4.webp"
+              alt="banner"
+              class="w-full h-auto object-contain"
+            />
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<div class="bg-white border-t border-b border-gray-200 py-3 md:py-4">
+  <div class="flex justify-center items-center space-x-2">
+    <span class="text-blue-700 font-bold text-lg md:text-xl">#</span>
+    <span class="text-neutral-800 font-semibold text-lg md:text-xl">Mira nuestros</span>
+    <span class="text-neutral-500 text-sm md:text-base font-normal tracking-wide">
+      últimos
+    </span>
+    <span class="text-blue-700 font-bold text-lg md:text-xl">Trabajos</span>
+  </div>
+</div>
+
+<section class="bg-[#F6F7FB] py-10">
+  <div
+    class="mx-auto w-full
+           max-w-[1200px] md:max-w-[1280px] xl:max-w-[1400px] 2xl:max-w-[1600px]
+           px-4 md:px-6 lg:px-10 xl:px-16">
+
+     <!-- FILA 1: mobile 1 col, md+ 2 col -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 mb-8">
+      <!-- Letreros luminosos -->
+      <a href="/servicios/letrero-luminoso" class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
+        <div class="relative aspect-[16/10] overflow-hidden rounded-2xl shadow-md">
+          <img
+            src="/assets/botones/letreros-luminosos.webp"
+            alt="Letreros luminosos"
+            decoding="async"
+            fetchpriority="high"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      </a>
+
+      <!-- Letreros 3D -->
+      <a href="/servicios/3d" class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
+        <div class="relative aspect-[16/10] overflow-hidden rounded-2xl shadow-md">
+          <img
+            src="/assets/botones/letreros-3d.webp"
+            alt="Letreros 3D"
+            decoding="async"
+            fetchpriority="high"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      </a>
+    </div>
+
+    <!-- FILAS SIGUIENTES: TODOS LOS DEMÁS -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
+      <a href="/tarjetas" class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
+
+        <div class="relative overflow-hidden rounded-2xl shadow-md">
+    <img
+      src="/assets/botones/tarjetas.webp"
+      alt="Tarjetas personales"
+      loading="lazy"
+      class="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+    />
+  </div>
+      </a>
+
+      <a href="/volantes" class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
+       <div class="relative overflow-hidden rounded-2xl shadow-md">
+          <img src="/assets/botones/volantes.webp" alt="Volantes publicitarios"
+              loading="lazy"
+      class="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+    />
+        </div>
+      </a>
+
+      <a href="/formateria" class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
+         <div class="relative overflow-hidden rounded-2xl shadow-md">
+          <img src="/assets/botones/proformas.webp" alt="Proformas y notas de pedido"
+               loading="lazy"
+      class="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+    />
+        </div>
+      </a>
+
+      <a href="/almanaques" class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
+        <div class="relative overflow-hidden rounded-2xl shadow-md">
+          <img src="/assets/botones/calendarios.webp" alt="Calendarios y almanaques"
+               loading="lazy"
+      class="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+    />
+        </div>
+      </a>
+
+      
+    </div>
+  </div>
+</section>
+
+
+<!-- Debajo de los botones -->
+<div class="mt-8">
+  <a href="/servicios/instalacion" class="block group">
+    <div class="relative overflow-hidden rounded-2xl shadow-lg">
+      <!-- usa tu ruta real -->
+      <img
+        src="/assets/banners/instalacion-altura.webp"
+        alt="Instalación de letreros en altura - Victor Anuncios"
+        loading="lazy"
+        class="w-full h-auto transition-transform duration-300 group-hover:scale-[1.01]"
+      />
+      <!-- Si NO quieres este badge, borra el span de abajo -->
+      <span class="absolute bottom-3 left-3 px-4 py-2 rounded-xl text-white font-extrabold bg-red-600/90 shadow">
+        VER MAS
+      </span>
+    </div>
+  </a>
+</div>
+
+   
+    
+
+
+
+</div>
+</div>
+</div>
+
+
+
+<script
+  src='https://cdn.jsdelivr.net/npm/@splidejs/splide@3.1.4/dist/js/splide.min.js'
+  is:raw></script>
+
+
+    <script
+        src='https://cdn.jsdelivr.net/npm/@splidejs/splide@3.1.4/dist/js/splide.min.js'
+        is:raw></script>
+    <script is:raw>
+        const slide1 = new Splide('.splide', {
+            type: 'loop',
+            autoplay: true,
+            rewind: true,
+        })
+        const slide2 = new Splide('.splide2', {
+            type: 'loop',
+            autoplay: true,
+            rewind: true,
+        })
+
+        slide1.mount()
+        slide2.mount()
+    </script>
+</Layout>

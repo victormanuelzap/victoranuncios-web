@@ -1,0 +1,220 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+const number = '51946182531'
+const products = [
+    {
+        title: 'Publitarios',
+        title_2: 'Volantes 1/4',
+        image: '/assets/images/volantes-1.png',
+        whatsapp: `https://wa.me/${number}?text=Hola, quiero pedir un volante 1/4`,
+        features: [
+            {
+                name: 'Material',
+                value: 'Papel Couche de115gr',
+            },
+            {
+                name: 'Medidas',
+                value: '16.4 x 10.5 cm.',
+            },
+            {
+                name: 'Impresión',
+                value: 'Full color T/R',
+            },
+            {
+                name: 'Cantidad',
+                value: '1000 Unidades',
+            },
+        ],
+    },
+    {
+        title: 'Publitarios',
+        title_2: 'Volantes 1/2',
+        image: '/assets/images/volantes-2.png',
+        whatsapp: `https://wa.me/${number}?text=Hola, quiero pedir un volante 1/2`,
+        features: [
+            {
+                name: 'Material',
+                value: 'Papel Couche de115gr',
+            },
+            {
+                name: 'Medidas',
+                value: '21.0 x 14.6 cm.',
+            },
+            {
+                name: 'Impresión',
+                value: 'Full color T/R',
+            },
+            {
+                name: 'Cantidad',
+                value: '1000 Unidades',
+            },
+        ],
+    },
+    {
+        title: 'Publitarios',
+        title_2: 'Volantes largo',
+        image: '/assets/images/volantes-3.png',
+        whatsapp: `https://wa.me/${number}?text=Hola, quiero pedir un volante largo`,
+        features: [
+            {
+                name: 'Material',
+                value: 'Papel Couche de115gr',
+            },
+            {
+                name: 'Medidas',
+                value: '21.0 x 9.6 cm.',
+            },
+            {
+                name: 'Impresión',
+                value: 'Full color T/R',
+            },
+            {
+                name: 'Cantidad',
+                value: '1000 Unidades',
+            },
+        ],
+    },
+    {
+        title: 'Publitarios',
+        title_2: 'Volantes 1/8',
+        image: '/assets/images/volantes-4.png',
+        whatsapp: `https://wa.me/${number}?text=Hola, quiero pedir un volante 1/8`,
+        features: [
+            {
+                name: 'Material',
+                value: 'Papel Couche de115gr',
+            },
+            {
+                name: 'Medidas',
+                value: '10.7 x 7.5 cm.',
+            },
+            {
+                name: 'Impresión',
+                value: 'Full color T/R',
+            },
+            {
+                name: 'Cantidad',
+                value: '1000 Unidades',
+            },
+        ],
+    },
+    {
+        title: 'Publitarios',
+        title_2: 'Volantes A4',
+        image: '/assets/images/volantes-5.png',
+        whatsapp: `https://wa.me/${number}?text=Hola, quiero pedir un volante A4`,
+        features: [
+            {
+                name: 'Material',
+                value: 'Papel Couche de115gr',
+            },
+            {
+                name: 'Medidas',
+                value: '21.0 x 29.7 cm.',
+            },
+            {
+                name: 'Impresión',
+                value: 'Full color T/R',
+            },
+            {
+                name: 'Cantidad',
+                value: '1000 Unidades',
+            },
+        ],
+    },
+    {
+        title: 'Publitarios',
+        title_2: 'Volantes Oficio',
+        image: '/assets/images/volantes-6.png',
+        whatsapp: `https://wa.me/${number}?text=Hola, quiero pedir un volante oficio`,
+        features: [
+            {
+                name: 'Material',
+                value: 'Papel Couche de115gr',
+            },
+            {
+                name: 'Medidas',
+                value: '21.0 x 33.0 cm.',
+            },
+            {
+                name: 'Impresión',
+                value: 'Full color T/R',
+            },
+            {
+                name: 'Cantidad',
+                value: '1000 Unidades',
+            },
+        ],
+    },
+]
+---
+
+<Layout title='Volantes publicitarios (Arequipa) - Worlkontrol System'>
+    <section class='relative'>
+        <img
+            src='/assets/images/volantes-publicitarios.jpg'
+            class='h-80 w-full object-cover'
+        />
+        <div
+            class='absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center'
+        >
+            <h1
+                class='text-white text-4xl md:text-6xl font-bold uppercase text-center'
+            >
+                VOLANTES PUBLICITARIOS
+            </h1>
+        </div>
+    </section>
+
+    <div class='max-w-7xl mx-auto'>
+        <div class='grid gap-10 md:grid-cols-3'>
+            {
+                products.map((product) => (
+                    <div>
+                        <div class='relative'>
+                            <img
+                                src={product.image}
+                                alt='Producto'
+                                class='rounded-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500'
+                            />
+                            <div class='leading-6 text-2xl absolute bottom-5 w-full text-center'>
+                                {product.title && (
+                                    <h2 class='font-semibold uppercase'>
+                                        {product.title}
+                                    </h2>
+                                )}
+                                <h2 class='font-bold uppercase text-red-500'>
+                                    {product.title_2}
+                                </h2>
+                            </div>
+                        </div>
+
+                        <div>
+                            <table>
+                                {product.features.map((feature) => (
+                                    <tr>
+                                        <td class='text-red-500'>
+                                            {feature.name}:&nbsp;
+                                        </td>
+                                        <td>{feature.value}</td>
+                                    </tr>
+                                ))}
+                            </table>
+                        </div>
+
+                        <div class='my-5'>
+                            <a
+                                href={product.whatsapp}
+                                class='bg-green-600 text-white py-2 px-4 rounded-xl w-full flex gap-2 justify-center items-center'
+                            >
+                                <i class='bx bxl-whatsapp text-2xl' />
+                                Pedir por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</Layout>
