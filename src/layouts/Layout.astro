@@ -115,10 +115,22 @@ const base = import.meta.env.BASE_URL
       </a>
     </div>
 
-    <!-- ✅ Script JS con ruta corregida -->
-    <script src={`${base}js/splide-init.js`} defer></script>
+ 
+<!-- Librería Splide (v4) -->
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" is:inline></script>
+
+<!-- Init sin error de TS -->
+
+
+
+<!-- Inicialización robusta SIN error TS -->
+
+
+
+
   </body>
 </html>
+
 
 <style is:global>
   html {
@@ -128,6 +140,49 @@ const base = import.meta.env.BASE_URL
     width: 100%;
     object-fit: cover;
     aspect-ratio: 16 / 9;
+    transition: all 0.3s ease-in-out;
+  }
+</style>
+<style is:global>
+  html, body {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .splide__slide img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+  }
+
+  /* Espaciado entre secciones */
+  section {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Corrige espacio blanco entre header y slider */
+  .hidden.md\:block.sticky {
+    margin-bottom: 0;
+  }
+
+  /* Logo controlado */
+  header img, .logo img {
+    max-height: 70px;
+    height: auto;
+  }
+
+  /* Galería */
+  .gallery img {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 16/9;
     transition: all 0.3s ease-in-out;
   }
 </style>
