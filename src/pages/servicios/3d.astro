@@ -1,7 +1,9 @@
 ---
 import Layout from '../../layouts/Layout.astro'
 
-const base = '/assets/services/3d'
+const BASE = import.meta.env.BASE_URL
+const base = `${BASE}assets/services/3d`   // antes: '/assets/services/3d'
+
 
 // Todas tus fotos
 const images = [
