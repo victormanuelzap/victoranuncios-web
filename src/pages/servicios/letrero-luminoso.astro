@@ -1,15 +1,35 @@
 ---
 import Layout from '../../layouts/Layout.astro'
 
-// Imágenes existentes (las reutilizamos en los cuadros)
-const images = ['img-1.png', 'img-2.png', 'img-3.png', 'img-4.png', 'img-5.png','img-6.png','img-7.png','img-8.png','img-9.png','img-10.png']
-const base = '/assets/services/letrero-luminoso'
+// Usar la base correcta para local y GitHub Pages
+const BASE = import.meta.env.BASE_URL
+
+// En local (npm run dev) BASE es "/" → usamos /assets/...
+// En GitHub Pages BASE es "/victoranuncios-web/" → forzamos esa ruta
+const base =
+  BASE === '/'
+    ? '/assets/services/letrero-luminoso'
+    : '/victoranuncios-web/assets/services/letrero-luminoso'
+
+
+// Imágenes del catálogo
+const images = [
+  'img-1.png',
+  'img-2.png',
+  'img-3.png',
+  'img-4.png',
+  'img-5.png',
+  'img-6.png',
+  'img-7.png',
+  'img-8.png',
+  'img-9.png',
+  'img-10.png',
+]
 
 // Tomamos las 3 primeras para los 3 tipos
 const img1 = `${base}/${images[0] || 'img-1.png'}`
 const img2 = `${base}/${images[1] || 'img-2.png'}`
 const img3 = `${base}/${images[2] || 'img-3.png'}`
-
 // === Tipos de letreros (usando las imágenes anteriores) ===
 const tipos = [
   {
