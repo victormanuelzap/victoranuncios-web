@@ -1,12 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro'
-
+const base = import.meta.env.BASE_URL
 const number = '51946182531'
 const products = [
     {
+
+
+    
         title: 'Tarjeta personal',
         title_2: 'Brillante',
-        image: '/assets/images/tarjetas-1.png',
+
+          image: `${base}assets/images/tarjetas-1.png`,
+
         whatsapp: `https://wa.me/${number}?text=Hola, quiero una tarjeta personal brillante`,
         features: [
             {
@@ -35,7 +40,8 @@ const products = [
     {
         title: 'Tarjeta personal',
         title_2: 'Mate',
-        image: '/assets/images/tarjetas-3.png',
+         image: `${base}assets/images/tarjetas-3.png`,
+
         whatsapp: `https://wa.me/${number}?text=Hola, quiero una tarjeta personal mate`,
         features: [
             {
@@ -64,7 +70,9 @@ const products = [
     {
         title: 'Tarjeta personal',
         title_2: 'Troquelado',
-        image: '/assets/images/tarjetas-2.png',
+         image: `${base}assets/images/tarjetas-2.png`,
+
+        
         whatsapp: `https://wa.me/${number}?text=Hola, quiero una tarjeta personal troquelada`,
         features: [
             {
@@ -93,7 +101,9 @@ const products = [
     {
         title: 'Tarjeta personal',
         title_2: 'Sectorizado',
-        image: '/assets/images/tarjetas-4.png',
+         image: `${base}assets/images/tarjetas-4.png`,
+
+      
         whatsapp: `https://wa.me/${number}?text=Hola, quiero una tarjeta personal sectorizada`,
         features: [
             {
@@ -125,7 +135,9 @@ const products = [
     {
         title: 'Tarjeta personal',
         title_2: 'Repujado',
-        image: '/assets/images/tarjetas-5.png',
+         image: `${base}assets/images/tarjetas-5.png`,
+
+       
         whatsapp: `https://wa.me/${number}?text=Hola, quiero una tarjeta personal repujada`,
         features: [
             {
@@ -157,7 +169,9 @@ const products = [
     {
         title: 'Tarjeta personal',
         title_2: 'Hot Stamping',
-        image: '/assets/images/tarjetas-6.png',
+         image: `${base}assets/images/tarjetas-6.png`,
+
+     
         whatsapp: `https://wa.me/${number}?text=Hola, quiero una tarjeta personal hot stamping`,
         features: [
             {
@@ -192,9 +206,10 @@ const products = [
 <Layout title='Tarjetas personales (Arequipa) - victor anuncios'>
     <section class='relative'>
         <img
-            src='/assets/images/tarjetas-personales.jpg'
-            class='h-80 w-full object-cover'
-        />
+  src={`${base}assets/images/tarjetas-personales.jpg`}
+  class='h-80 w-full object-cover'
+/>
+
         <div
             class='absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center'
         >

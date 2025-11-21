@@ -1,12 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro'
-
+const base = import.meta.env.BASE_URL
 const number = '51946182531'
 const products = [
     {
         title: 'Aut. por SUNAT',
         title_2: 'Boleta de venta',
-        image: '/assets/images/formateria-1.png',
+        image: `${base}assets/images/formateria-1.png`,
+       
         whatsapp: `https://wa.me/${number}?text=Hola, quiero pedir una Boleta de venta`,
         features: [
             {
@@ -34,7 +35,8 @@ const products = [
     {
         title: 'Aut. por SUNAT',
         title_2: 'Facturas',
-        image: '/assets/images/formateria-2.png',
+        image: `${base}assets/images/formateria-2.png`,
+        
         whatsapp: `https://wa.me/${number}?text=Hola, quiero pedir una Factura`,
         features: [
             {
@@ -62,7 +64,8 @@ const products = [
     {
         title: 'Aut. por SUNAT',
         title_2: 'Guias remision',
-        image: '/assets/images/formateria-3.png',
+        image: `${base}assets/images/formateria-3.png`,
+        
         whatsapp: `https://wa.me/${number}?text=Hola, quiero pedir una Guia de remision`,
         features: [
             {
@@ -90,7 +93,8 @@ const products = [
     {
         title: 'Aut. por SUNAT',
         title_2: 'Nota de venta',
-        image: '/assets/images/formateria-4.png',
+        image: `${base}assets/images/formateria-4.png`,
+  
         whatsapp: `https://wa.me/${number}?text=Hola, quiero pedir una Nota de venta`,
         features: [
             {
@@ -118,7 +122,8 @@ const products = [
     {
         title: 'Aut. por SUNAT',
         title_2: 'Proforma',
-        image: '/assets/images/formateria-5.png',
+        image: `${base}assets/images/formateria-5.png`,
+ 
         whatsapp: `https://wa.me/${number}?text=Hola, quiero pedir una Proforma`,
         features: [
             {
@@ -146,7 +151,8 @@ const products = [
     {
         title: 'Aut. por SUNAT',
         title_2: 'Transportista',
-        image: '/assets/images/formateria-6.png',
+        image: `${base}assets/images/formateria-6.png`,
+        
         whatsapp: `https://wa.me/${number}?text=Hola, quiero pedir una Transportista`,
         features: [
             {
@@ -176,10 +182,12 @@ const products = [
 
 <Layout title='Formateria (Arequipa) - victor anuncios'>
     <section class='relative'>
-        <img
-            src='/assets/images/brochure-page.jpg'
-            class='h-80 w-full object-cover'
-        />
+     
+      <img
+  src={`${base}assets/images/brochure-page.jpg`}
+  class='h-80 w-full object-cover'
+/>
+
         <div
             class='absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center'
         >
