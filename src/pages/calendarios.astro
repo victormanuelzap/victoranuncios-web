@@ -1,0 +1,147 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+const base = import.meta.env.BASE_URL
+const number = '51946182531'
+
+const products = [
+    {
+        title: 'Calendario de pared',
+        title_2: 'FoldCote C-12',
+        image: `${base}assets/images/calendario-1.jpg`,
+        whatsapp: `https://wa.me/${number}?text=Hola, quiero información sobre calendarios de pared FoldCote C-12`,
+        features: [
+            { name: 'Material', value: 'FoldCote C-12' },
+            {
+                name: 'Medidas',
+                value: '50 x 70 cm / 50 x 35 cm / 25 x 35 cm',
+            },
+            { name: 'Impresión', value: 'Full color T/R' },
+            {
+                name: 'Acabado',
+                value: 'Plastificado Brillante o Mate',
+            },
+            {
+                name: 'Extras',
+                value: 'Perforado GRATIS + Tira',
+            },
+        ],
+    },
+
+    {
+        title: 'Calendario de pared',
+        title_2: 'FoldCote C-14',
+        image: `${base}assets/images/calendario-2.jpg`,
+        whatsapp: `https://wa.me/${number}?text=Hola, quiero información sobre calendarios de pared FoldCote C-14`,
+        features: [
+            { name: 'Material', value: 'FoldCote C-14' },
+            {
+                name: 'Medidas',
+                value: '50 x 70 cm / 50 x 35 cm / 25 x 35 cm',
+            },
+            { name: 'Impresión', value: 'Full color T/R' },
+            {
+                name: 'Acabado',
+                value: 'Plastificado Brillante o Mate',
+            },
+            {
+                name: 'Extras',
+                value: 'Perforado GRATIS + Tira',
+            },
+        ],
+    },
+
+    {
+        title: 'Calendario de pared',
+        title_2: 'FoldCote C-16',
+        image: `${base}assets/images/calendario-3.jpg`,
+        whatsapp: `https://wa.me/${number}?text=Hola, quiero información sobre calendarios de pared FoldCote C-16`,
+        features: [
+            { name: 'Material', value: 'FoldCote C-16' },
+            {
+                name: 'Medidas',
+                value: '50 x 70 cm / 50 x 35 cm / 25 x 35 cm',
+            },
+            { name: 'Impresión', value: 'Full color T/R' },
+            {
+                name: 'Acabado',
+                value: 'Plastificado Brillante o Mate',
+            },
+            {
+                name: 'Extras',
+                value: 'Perforado GRATIS + Tira',
+            },
+        ],
+    },
+]
+---
+
+<Layout title='Calendarios de pared (Arequipa) - victor anuncios'>
+    <section class='relative'>
+        <img
+            src={`${base}assets/images/calendarios-pared.jpg`}
+            class='h-80 w-full object-cover'
+        />
+
+        <div
+            class='absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center'
+        >
+            <h1
+                class='text-white text-4xl md:text-6xl font-bold uppercase text-center'
+            >
+                CALENDARIOS DE PARED
+            </h1>
+        </div>
+    </section>
+
+    <div class='max-w-7xl mx-auto'>
+        <div class='grid gap-10 md:grid-cols-3'>
+            {
+                products.map((product) => (
+                    <div>
+                        <div class='relative'>
+                            <img
+                                src={product.image}
+                                alt='Calendario de pared'
+                                class='rounded-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500'
+                            />
+                            <div class='leading-6 text-2xl absolute bottom-5 w-full text-center'>
+                                {product.title && (
+                                    <h2 class='font-semibold uppercase'>
+                                        {product.title}
+                                    </h2>
+                                )}
+                                <h2 class='font-bold uppercase text-red-500'>
+                                    {product.title_2}
+                                </h2>
+                            </div>
+                        </div>
+
+                        <div>
+                            <table>
+                                {product.features.map((feature) => (
+                                    <tr>
+                                        <td class='text-red-500'>
+                                            {feature.name}:&nbsp;
+                                        </td>
+                                        <td>{feature.value}</td>
+                                    </tr>
+                                ))}
+                            </table>
+                        </div>
+
+                        <div class='my-5'>
+                            <a
+                                href={product.whatsapp}
+                                class='bg-green-600 text-white py-2 px-4 rounded-xl w-full flex gap-2 justify-center items-center'
+                            >
+                                <i class='bx bxl-whatsapp text-2xl' />
+                                Pedir por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</Layout>
