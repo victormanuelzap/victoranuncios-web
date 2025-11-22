@@ -77,6 +77,35 @@ const base = import.meta.env.BASE_URL
           </div>
         </div>
 
+<!-- HEADER MOBILE -->
+<div class="md:hidden sticky top-0 z-50 bg-white border-b border-gray-200">
+  <div class="flex items-center justify-between px-4 h-16">
+    <!-- Logo + texto -->
+    <a href={`${base}`} class="flex items-center gap-2">
+      <img
+        src={`${base}logo.png`}
+        alt="VICTOR ANUNCIOS logo"
+        class="h-9 w-auto"
+      />
+      <span class="font-semibold text-sm">VICTOR ANUNCIOS</span>
+    </a>
+
+    <!-- Botón menú (tres líneas) -->
+    <button
+      type="button"
+      class="flex flex-col justify-between h-5"
+      aria-label="Abrir menú"
+    >
+      <span class="w-6 h-[2px] bg-gray-800 rounded"></span>
+      <span class="w-6 h-[2px] bg-gray-800 rounded"></span>
+      <span class="w-6 h-[2px] bg-gray-800 rounded"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
         <!-- DERECHA -->
         <nav class="col-span-4 flex items-center justify-end text-[17px] font-semibold text-neutral-900 divide-x divide-gray-300">
           <a href={`${base}`} class="px-4 hover:text-primary transition-colors">Inicio</a>
