@@ -26,7 +26,19 @@ const base = import.meta.env.BASE_URL
     <title>{title}</title>
 
     <!-- Favicon y Open Graph -->
-    <link rel='icon' type='image/png' href={`${base}logo.png?v=7`} />
+<!-- Favicon para todos los navegadores -->
+<link rel="icon" type="image/x-icon" href={`${base}favicon.ico?v=1`} />
+
+<!-- Favicon PNG (moderno) -->
+<link rel="icon" type="image/png" sizes="48x48" href={`${base}favicon.png?v=1`} />
+
+<!-- Para iPhone / iPad -->
+<link rel="apple-touch-icon" sizes="180x180" href={`${base}favicon.png?v=1`} />
+
+<!-- Para Android -->
+<link rel="icon" sizes="192x192" href={`${base}favicon.png?v=1`} />
+
+
     <meta property='og:title' content={title} />
     <meta property='og:description' content='Letreros luminosos en Arequipa — diseño, fabricación e instalación.' />
     <meta property='og:type' content='website' />
