@@ -31,14 +31,15 @@
 
   <!-- LETREROS LUMINOSOS -->
   <url>
-    <loc>https://www.victoranuncios.com/servicios/letreros-luminosos/</loc>
+    <loc>https://www.victoranuncios.com/servicios/letrero-luminoso/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- LETREROS 3D -->
   <url>
-    <loc>https://www.victoranuncios.com/servicios/letreros-3d/</loc>
+<loc>https://www.victoranuncios.com/servicios/3d/</loc>
+
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -66,28 +67,28 @@
 
   <!-- TARJETAS PERSONALES -->
   <url>
-    <loc>https://www.victoranuncios.com/servicios/tarjetas/</loc>
+   <loc>https://www.victoranuncios.com/tarjetas/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- BANNERS -->
   <url>
-    <loc>https://www.victoranuncios.com/servicios/banners/</loc>
+    <loc>https://www.victoranuncios.com/volantes/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- CALENDARIOS -->
   <url>
-    <loc>https://www.victoranuncios.com/servicios/calendarios/</loc>
+    <loc>https://www.victoranuncios.com/calendarios/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- TOLDOS ENROLLABLES -->
   <url>
-    <loc>https://www.victoranuncios.com/servicios/toldos/</loc>
+    <loc>https://www.victoranuncios.com/formateria/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
