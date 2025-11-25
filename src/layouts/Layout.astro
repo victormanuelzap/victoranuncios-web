@@ -62,6 +62,7 @@ const base = import.meta.env.BASE_URL
     <script async src='https://www.googletagmanager.com/gtag/js?id=AW-17054169407'></script>
     <script is:raw>
       window.dataLayer = window.dataLayer || [];
+
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'AW-17054169407');
@@ -106,10 +107,14 @@ const base = import.meta.env.BASE_URL
     <!-- HEADER MÓVIL -->
     <div class="md:hidden sticky top-0 z-50 bg-white border-b border-gray-200">
       <div class="flex items-center justify-between px-4 h-16">
-        <!-- LOGO -->
-        <a href={`${base}`} class="flex items-center gap-2">
-          <img src={`${base}logo.png`} class="h-10 w-auto" alt="Victor Anuncios" />
-        </a>
+
+
+           <!-- LOGO + TEXTO -->
+    <a href={`${base}`} class="flex items-center gap-2">
+      <img src={`${base}logo.png`} class="h-10 w-auto" alt="Victor Anuncios" />
+      <span class="text-lg font-bold text-neutral-900">VICTOR ANUNCIOS</span>
+    </a>
+
 
         <!-- BOTÓN MENÚ -->
         <button
