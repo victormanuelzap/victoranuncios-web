@@ -72,6 +72,7 @@ const base = import.meta.env.BASE_URL
   <body class="overflow-x-hidden">
     <!-- HEADER ESCRITORIO -->
     <div class="hidden md:block sticky top-0 z-50 bg-white border-b border-gray-200">
+
       <div class="container mx-auto h-24 flex items-center justify-between">
 
         <!-- IZQUIERDA -->
@@ -86,6 +87,12 @@ const base = import.meta.env.BASE_URL
             Iluminamos tu marca en Arequipa ⚡
           </div>
           <div class="mt-1 flex flex-wrap justify-center gap-2 text-xs text-neutral-600">
+
+<span class="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-purple-100 border">
+  💳 Pagos: Yape • Plin • Interbank
+</span>
+
+
             <span class="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-gray-100 border">✅ Garantía 1 año</span>
             <span class="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-gray-100 border">🛠️ Diseño + instalación</span>
             <span class="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-gray-100 border">🚚 Entrega rápida</span>
@@ -108,12 +115,20 @@ const base = import.meta.env.BASE_URL
     <div class="md:hidden sticky top-0 z-50 bg-white border-b border-gray-200">
       <div class="flex items-center justify-between px-4 h-16">
 
+<!-- LOGO + TEXTO + MEDIOS DE PAGO -->
+<a href={`${base}`} class="flex items-center gap-2 min-w-0">
+  <img src={`${base}logo.png`} class="h-10 w-auto flex-shrink-0" alt="Victor Anuncios" />
+  
+  <div class="flex flex-col leading-tight min-w-0">
+    <span class="text-base font-bold text-neutral-900 truncate">
+      VICTOR ANUNCIOS
+    </span>
+    <span class="text-[11px] mt-0.5 font-semibold text-neutral-700 truncate">
+      Pagar con Yape • Plin • Interbank
+    </span>
+  </div>
+</a>
 
-           <!-- LOGO + TEXTO -->
-    <a href={`${base}`} class="flex items-center gap-2">
-      <img src={`${base}logo.png`} class="h-10 w-auto" alt="Victor Anuncios" />
-      <span class="text-lg font-bold text-neutral-900">VICTOR ANUNCIOS</span>
-    </a>
 
 
         <!-- BOTÓN MENÚ -->
@@ -164,6 +179,11 @@ const base = import.meta.env.BASE_URL
         <img src={`${base}logo.png`} class='w-20 mx-auto' alt='logo' />
         <h2 class='text-white font-bold text-2xl mt-3'>Victor Anuncios</h2>
         <p class='text-gray-200 mt-2'>Tarjetas de presentación, Letreros 3D, Cortes Laser, Gigantografías, Volantes, Imantados y Afiches.</p>
+
+<p class="text-gray-100 mt-3 text-sm font-semibold">
+  Pagos disponibles: Yape • Plin • Transferencia Interbank
+</p>
+
       </div>
     </footer>
 
