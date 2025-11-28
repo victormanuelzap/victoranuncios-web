@@ -219,15 +219,32 @@ const base = import.meta.env.BASE_URL
 
       
 
-    
-    <!-- SOCIAL BAR -->
-    <div class="hidden md:block fixed top-1/2 -translate-y-1/2 right-1 z-40">
-      <div class="bg-primary text-white py-3 px-3 rounded-3xl shadow-lg flex flex-col items-center gap-3">
-        <a href="https://www.instagram.com/victoranuncioss/" target="_blank" class="hover:scale-110 transition"><i class="bx bxl-instagram text-2xl"></i></a>
-        <a href="https://www.facebook.com/VictorAnuncioss" target="_blank" class="hover:scale-110 transition"><i class="bx bxl-facebook text-2xl"></i></a>
-        <a href="https://www.tiktok.com/@victor.anuncios" target="_blank" class="hover:scale-110 transition"><i class="bx bxl-tiktok text-2xl"></i></a>
-      </div>
-    </div>
+  <!-- SOCIAL BAR ESCRITORIO (FIJA) -->
+<div class="hidden md:flex flex-col gap-3 fixed top-1/2 -translate-y-1/2 right-2 z-40">
+  <a href="https://www.instagram.com/victoranuncioss/" target="_blank" class="bg-red-500 text-white p-3 rounded-full shadow-lg">
+    <i class="bx bxl-instagram text-2xl"></i>
+  </a>
+  <a href="https://www.facebook.com/VictorAnuncioss" target="_blank" class="bg-blue-600 text-white p-3 rounded-full shadow-lg">
+    <i class="bx bxl-facebook text-2xl"></i>
+  </a>
+  <a href="https://www.tiktok.com/@victor.anuncios" target="_blank" class="bg-black text-white p-3 rounded-full shadow-lg">
+    <i class="bx bxl-tiktok text-2xl"></i>
+  </a>
+</div>
+
+<!-- SOCIAL BAR MÓVIL (FIJA) -->
+<div class="flex md:hidden gap-6 justify-center items-center fixed bottom-3 left-0 right-0 z-40">
+  <a href="https://www.instagram.com/victoranuncioss/" target="_blank">
+    <i class="bx bxl-instagram text-4xl text-red-500"></i>
+  </a>
+  <a href="https://www.facebook.com/VictorAnuncioss" target="_blank">
+    <i class="bx bxl-facebook text-4xl text-blue-600"></i>
+  </a>
+  <a href="https://www.tiktok.com/@victor.anuncios" target="_blank">
+    <i class="bx bxl-tiktok text-4xl text-black"></i>
+  </a>
+</div>
+
 
     <slot />
 
