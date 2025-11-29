@@ -1,1 +1,285 @@
---- import Layout from '../layouts/Layout.astro' import Card from '../components/Card.astro' // Base para que funcione igual en local y en GitHub Pages const BASE_URL = import.meta.env.BASE_URL; --- <Layout title='Letreros luminosos, letras 3D, gigantografías y vinilos en Arequipa.'> <!-- DESKTOP --> <section class="splide hidden lg:block" aria-labelledby="carousel-heading"> <div class="splide__slider"> <div class="splide__track"> <ul class="splide__list"> <li class="splide__slide flex justify-center items-center"> <a href={${BASE_URL}servicios/3d} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl"> <img src={${BASE_URL}assets/banners/hero.webp} alt="banner" class="w-full h-[350px] object-cover" /> </a> </li> <li class="splide__slide flex justify-center items-center"> <a href={${BASE_URL}tarjetas} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl"> <img src={${BASE_URL}assets/banners/hero2.webp} alt="banner" class="w-full h-[350px] object-cover" /> </a> </li> <li class="splide__slide flex justify-center items-center"> <a href={${BASE_URL}volantes} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl"> <img src={${BASE_URL}assets/banners/hero3.webp} alt="banner" class="w-full h-[350px] object-cover" /> </a> </li> <li class="splide__slide flex justify-center items-center"> <a href={${BASE_URL}servicios/letrero-luminoso} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl"> <img src={${BASE_URL}assets/banners/hero4.webp} alt="banner" class="w-full h-[350px] object-cover" /> </a> </li> </ul> </div> </div> </section> <div class="h-6 lg:h-8 bg-white"></div> <!-- MÓVIL --> <section class="splide splide2 block lg:hidden" aria-labelledby="carousel-heading"> <div class="splide__slider"> <div class="splide__track"> <ul class="splide__list"> <li class="splide__slide flex justify-center items-center"> <a href={${BASE_URL}servicios/3d} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl"> <img src={${BASE_URL}assets/banners/heromovil.webp} alt="banner" class="w-full h-auto object-contain" /> </a> </li> <li class="splide__slide flex justify-center items-center"> <a href={${BASE_URL}tarjetas} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl"> <img src={${BASE_URL}assets/banners/heromovil2.webp} alt="banner" class="w-full h-auto object-contain" /> </a> </li> <li class="splide__slide flex justify-center items-center"> <a href={${BASE_URL}volantes} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl"> <img src={${BASE_URL}assets/banners/heromovil3.webp} alt="banner" class="w-full h-auto object-contain" /> </a> </li> <li class="splide__slide flex justify-center items-center"> <a href={${BASE_URL}servicios/letrero-luminoso} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl"> <img src={${BASE_URL}assets/banners/heromovil4.webp} alt="banner" class="w-full h-auto object-contain" /> </a> </li> </ul> </div> </div> </section> <div class="bg-white border-t border-b border-gray-200 py-3 md:py-4"> <div class="flex justify-center items-center space-x-2"> <span class="text-blue-700 font-bold text-lg md:text-xl">#</span> <span class="text-neutral-800 font-semibold text-lg md:text-xl">Mira nuestros</span> <span class="text-neutral-500 text-sm md:text-base font-normal tracking-wide"> últimos </span> <span class="text-blue-700 font-bold text-lg md:text-xl">Trabajos</span> </div> </div> <!-- BOTONES PRINCIPALES --> <section class="bg-[#F6F7FB] py-10"> <div class="mx-auto w-full max-w-[1200px] md:max-w-[1280px] xl:max-w-[1400px] 2xl:max-w-[1600px] px-4 md:px-6 lg:px-10 xl:px-16"> <!-- FILA 1: mobile 1 col, md+ 2 col --> <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 mb-8"> <!-- Letreros luminosos --> <a href={${BASE_URL}servicios/letrero-luminoso} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl"> <div class="relative aspect-[16/10] overflow-hidden rounded-2xl shadow-md"> <img src={${BASE_URL}assets/botones/letreros-luminosos.webp} alt="Letreros luminosos" decoding="async" fetchpriority="high" class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" /> </div> </a> <!-- Letreros 3D --> <a href={${BASE_URL}servicios/3d} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl"> <div class="relative aspect-[16/10] overflow-hidden rounded-2xl shadow-md"> <img src={${BASE_URL}assets/botones/letreros-3d.webp} alt="Letreros 3D" decoding="async" fetchpriority="high" class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" /> </div> </a> </div> <!-- FILAS SIGUIENTES: TODOS LOS DEMÁS --> <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10"> <a href={${BASE_URL}tarjetas} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl"> <div class="relative overflow-hidden rounded-2xl shadow-md"> <img src={${BASE_URL}assets/botones/tarjetas.webp} alt="Tarjetas personales" loading="lazy" class="w-full h-auto transition-transform duration-300 group-hover:scale-105" /> </div> </a> <a href={${BASE_URL}volantes} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl"> <div class="relative overflow-hidden rounded-2xl shadow-md"> <img src={${BASE_URL}assets/botones/volantes.webp} alt="Volantes publicitarios" loading="lazy" class="w-full h-auto transition-transform duration-300 group-hover:scale-105" /> </div> </a> <a href={${BASE_URL}formateria} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl"> <div class="relative overflow-hidden rounded-2xl shadow-md"> <img src={${BASE_URL}assets/botones/proformas.webp} alt="Proformas y notas de pedido" loading="lazy" class="w-full h-auto transition-transform duration-300 group-hover:scale-105" /> </div> </a> <a href={${BASE_URL}calendarios} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl"> <div class="relative overflow-hidden rounded-2xl shadow-md"> <img src={${BASE_URL}assets/botones/calendarios.webp} alt="Calendarios y almanaques" loading="lazy" class="w-full h-auto transition-transform duration-300 group-hover:scale-105" /> </div> </a> </div> </div> </section> <!-- SECCIÓN DE TEXTO SEO --> <section class="bg-white py-10"> <div class="mx-auto w-full max-w-[1200px] md:max-w-[1280px] xl:max-w-[1400px] 2xl:max-w-[1600px] px-4 md:px-6 lg:px-10 xl:px-16"> <h1 class="text-2xl md:text-3xl font-extrabold text-neutral-900 mb-4"> Letreros luminosos, letras 3D, gigantografías y vinilos en Arequipa </h1> <p class="text-neutral-700 mb-3"> En Victor Anuncios diseñamos, fabricamos e instalamos <strong>letreros luminosos, letras 3D, gigantografías y vinilos en Arequipa</strong>. Acompañamos a negocios grandes y pequeños desde el diseño hasta la instalación, para que tu fachada se vea profesional y atraiga más clientes. </p> <p class="text-neutral-700 mb-3"> Trabajamos con <strong>cajas de luz LED</strong>, estructuras metálicas, acrílico, PVC y vinilos de alta calidad. Nuestro taller se encarga de todo el proceso: medición, diseño, impresión, soldadura, armado e instalación final, con <strong>garantía y entrega rápida en Arequipa</strong>. </p> <p class="text-neutral-700 mb-4"> Algunos de nuestros servicios principales: </p> <ul class="list-disc pl-5 text-neutral-700 grid md:grid-cols-2 gap-x-8 gap-y-2"> <li>Letreros luminosos LED para fachadas y cajas de luz.</li> <li>Letras 3D en acrílico, PVC, MDF y metal.</li> <li>Gigantografías para exteriores e interiores.</li> <li>Vinilos adhesivos para vitrinas, vehículos y paredes.</li> <li>Tarjetas personales, volantes y material impreso.</li> <li>Instalaciones en altura y mantenimiento de letreros.</li> </ul> <p class="text-neutral-700 mt-4"> Si necesitas <strong>publicidad exterior en Arequipa</strong>, podemos ayudarte con un diseño a medida para tu negocio. Contáctanos por WhatsApp y cotiza tu letrero luminoso o letras 3D hoy mismo. </p> </div> </section> <!-- Debajo de los botones --> <div class="mt-8"> <a href={${BASE_URL}servicios/instalacion} class="block group"> <div class="relative overflow-hidden rounded-2xl shadow-lg"> <img src={${BASE_URL}assets/banners/instalacion-altura.webp} alt="Instalación de letreros en altura - Victor Anuncios" loading="lazy" class="w-full h-auto transition-transform duration-300 group-hover:scale-[1.01]" /> <span class="absolute bottom-3 left-3 px-4 py-2 rounded-xl text-white font-extrabold bg-red-600/90 shadow"> VER MAS </span> </div> </a> </div> <!-- Scripts: solo uno, desde CDN, con defer --> <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.1.4/dist/js/splide.min.js" defer ></script> <script is:raw> document.addEventListener('DOMContentLoaded', () => { const slide1 = new Splide('.splide', { type: 'loop', autoplay: true, rewind: true }); const slide2 = new Splide('.splide2', { type: 'loop', autoplay: true, rewind: true }); slide1.mount(); slide2.mount(); }); </script> </Layout> veelo
+---
+import Layout from '../layouts/Layout.astro'
+import Card from '../components/Card.astro'
+
+// Base para que funcione igual en local y en GitHub Pages
+const BASE_URL = import.meta.env.BASE_URL;
+---
+
+<Layout title='Letreros luminosos, letras 3D, gigantografías y vinilos en Arequipa.'>
+
+  <!-- DESKTOP -->
+  <section class="splide hidden lg:block" aria-labelledby="carousel-heading">
+    <div class="splide__slider">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide flex justify-center items-center">
+            <a href={`${BASE_URL}servicios/3d`} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
+              <img
+                src={`${BASE_URL}assets/banners/hero.webp`}
+                alt="banner"
+                class="w-full h-[350px] object-cover"
+              />
+            </a>
+          </li>
+
+          <li class="splide__slide flex justify-center items-center">
+            <a href={`${BASE_URL}tarjetas`} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
+              <img
+                src={`${BASE_URL}assets/banners/hero2.webp`}
+                alt="banner"
+                class="w-full h-[350px] object-cover"
+              />
+            </a>
+          </li>
+
+          <li class="splide__slide flex justify-center items-center">
+            <a href={`${BASE_URL}volantes`} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
+              <img
+                src={`${BASE_URL}assets/banners/hero3.webp`}
+                alt="banner"
+                class="w-full h-[350px] object-cover"
+              />
+            </a>
+          </li>
+
+          <li class="splide__slide flex justify-center items-center">
+            <a href={`${BASE_URL}servicios/letrero-luminoso`} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
+              <img
+                src={`${BASE_URL}assets/banners/hero4.webp`}
+                alt="banner"
+                class="w-full h-[350px] object-cover"
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="h-6 lg:h-8 bg-white"></div>
+
+  <!-- MÓVIL -->
+  <section class="splide splide2 block lg:hidden" aria-labelledby="carousel-heading">
+    <div class="splide__slider">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide flex justify-center items-center">
+            <a href={`${BASE_URL}servicios/3d`} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
+              <img
+                src={`${BASE_URL}assets/banners/heromovil.webp`}
+                alt="banner"
+                class="w-full h-auto object-contain"
+              />
+            </a>
+          </li>
+
+          <li class="splide__slide flex justify-center items-center">
+            <a href={`${BASE_URL}tarjetas`} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
+              <img
+                src={`${BASE_URL}assets/banners/heromovil2.webp`}
+                alt="banner"
+                class="w-full h-auto object-contain"
+              />
+            </a>
+          </li>
+
+          <li class="splide__slide flex justify-center items-center">
+            <a href={`${BASE_URL}volantes`} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
+              <img
+                src={`${BASE_URL}assets/banners/heromovil3.webp`}
+                alt="banner"
+                class="w-full h-auto object-contain"
+              />
+            </a>
+          </li>
+
+          <li class="splide__slide flex justify-center items-center">
+            <a href={`${BASE_URL}servicios/letrero-luminoso`} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
+              <img
+                src={`${BASE_URL}assets/banners/heromovil4.webp`}
+                alt="banner"
+                class="w-full h-auto object-contain"
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="bg-white border-t border-b border-gray-200 py-3 md:py-4">
+    <div class="flex justify-center items-center space-x-2">
+      <span class="text-blue-700 font-bold text-lg md:text-xl">#</span>
+      <span class="text-neutral-800 font-semibold text-lg md:text-xl">Mira nuestros</span>
+      <span class="text-neutral-500 text-sm md:text-base font-normal tracking-wide">
+        últimos
+      </span>
+      <span class="text-blue-700 font-bold text-lg md:text-xl">Trabajos</span>
+    </div>
+  </div>
+
+  <!-- BOTONES PRINCIPALES -->
+  <section class="bg-[#F6F7FB] py-10">
+    <div
+      class="mx-auto w-full
+             max-w-[1200px] md:max-w-[1280px] xl:max-w-[1400px] 2xl:max-w-[1600px]
+             px-4 md:px-6 lg:px-10 xl:px-16">
+
+      <!-- FILA 1: mobile 1 col, md+ 2 col -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 mb-8">
+        <!-- Letreros luminosos -->
+        <a href={`${BASE_URL}servicios/letrero-luminoso`} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
+          <div class="relative aspect-[16/10] overflow-hidden rounded-2xl shadow-md">
+            <img
+              src={`${BASE_URL}assets/botones/letreros-luminosos.webp`}
+              alt="Letreros luminosos"
+              decoding="async"
+              fetchpriority="high"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+        </a>
+
+        <!-- Letreros 3D -->
+        <a href={`${BASE_URL}servicios/3d`} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
+          <div class="relative aspect-[16/10] overflow-hidden rounded-2xl shadow-md">
+            <img
+              src={`${BASE_URL}assets/botones/letreros-3d.webp`}
+              alt="Letreros 3D"
+              decoding="async"
+              fetchpriority="high"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+        </a>
+      </div>
+
+      <!-- FILAS SIGUIENTES: TODOS LOS DEMÁS -->
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
+        <a href={`${BASE_URL}tarjetas`} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
+          <div class="relative overflow-hidden rounded-2xl shadow-md">
+            <img
+              src={`${BASE_URL}assets/botones/tarjetas.webp`}
+              alt="Tarjetas personales"
+              loading="lazy"
+              class="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+        </a>
+
+        <a href={`${BASE_URL}volantes`} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
+          <div class="relative overflow-hidden rounded-2xl shadow-md">
+            <img
+              src={`${BASE_URL}assets/botones/volantes.webp`}
+              alt="Volantes publicitarios"
+              loading="lazy"
+              class="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+        </a>
+
+        <a href={`${BASE_URL}formateria`} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
+          <div class="relative overflow-hidden rounded-2xl shadow-md">
+            <img
+              src={`${BASE_URL}assets/botones/proformas.webp`}
+              alt="Proformas y notas de pedido"
+              loading="lazy"
+              class="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+        </a>
+
+        <a href={`${BASE_URL}calendarios`} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
+          <div class="relative overflow-hidden rounded-2xl shadow-md">
+            <img
+              src={`${BASE_URL}assets/botones/calendarios.webp`}
+              alt="Calendarios y almanaques"
+              loading="lazy"
+              class="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN DE TEXTO SEO -->
+  <section class="bg-white py-10">
+    <div
+      class="mx-auto w-full
+             max-w-[1200px] md:max-w-[1280px] xl:max-w-[1400px] 2xl:max-w-[1600px]
+             px-4 md:px-6 lg:px-10 xl:px-16">
+
+      <h1 class="text-2xl md:text-3xl font-extrabold text-neutral-900 mb-4">
+        Letreros luminosos, letras 3D, gigantografías y vinilos en Arequipa
+      </h1>
+
+      <p class="text-neutral-700 mb-3">
+        En Victor Anuncios diseñamos, fabricamos e instalamos
+        <strong>letreros luminosos, letras 3D, gigantografías y vinilos en Arequipa</strong>.
+        Acompañamos a negocios grandes y pequeños desde el diseño hasta la instalación,
+        para que tu fachada se vea profesional y atraiga más clientes.
+      </p>
+
+      <p class="text-neutral-700 mb-3">
+        Trabajamos con <strong>cajas de luz LED</strong>, estructuras metálicas, acrílico,
+        PVC y vinilos de alta calidad. Nuestro taller se encarga de todo el proceso:
+        medición, diseño, impresión, soldadura, armado e instalación final, con
+        <strong>garantía y entrega rápida en Arequipa</strong>.
+      </p>
+
+      <p class="text-neutral-700 mb-4">
+        Algunos de nuestros servicios principales:
+      </p>
+
+      <ul class="list-disc pl-5 text-neutral-700 grid md:grid-cols-2 gap-x-8 gap-y-2">
+        <li>Letreros luminosos LED para fachadas y cajas de luz.</li>
+        <li>Letras 3D en acrílico, PVC, MDF y metal.</li>
+        <li>Gigantografías para exteriores e interiores.</li>
+        <li>Vinilos adhesivos para vitrinas, vehículos y paredes.</li>
+        <li>Tarjetas personales, volantes y material impreso.</li>
+        <li>Instalaciones en altura y mantenimiento de letreros.</li>
+      </ul>
+
+      <p class="text-neutral-700 mt-4">
+        Si necesitas <strong>publicidad exterior en Arequipa</strong>, podemos ayudarte con
+        un diseño a medida para tu negocio. Contáctanos por WhatsApp y cotiza tu letrero
+        luminoso o letras 3D hoy mismo.
+      </p>
+    </div>
+  </section>
+
+  <!-- Debajo de los botones -->
+  <div class="mt-8">
+    <a href={`${BASE_URL}servicios/instalacion`} class="block group">
+      <div class="relative overflow-hidden rounded-2xl shadow-lg">
+        <img
+          src={`${BASE_URL}assets/banners/instalacion-altura.webp`}
+          alt="Instalación de letreros en altura - Victor Anuncios"
+          loading="lazy"
+          class="w-full h-auto transition-transform duration-300 group-hover:scale-[1.01]"
+        />
+        <span class="absolute bottom-3 left-3 px-4 py-2 rounded-xl text-white font-extrabold bg-red-600/90 shadow">
+          VER MAS
+        </span>
+      </div>
+    </a>
+  </div>
+
+  <!-- Scripts: solo uno, desde CDN, con defer -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.1.4/dist/js/splide.min.js"
+    defer
+  ></script>
+
+  <script is:raw>
+    document.addEventListener('DOMContentLoaded', () => {
+      const slide1 = new Splide('.splide', { type: 'loop', autoplay: true, rewind: true });
+      const slide2 = new Splide('.splide2', { type: 'loop', autoplay: true, rewind: true });
+      slide1.mount();
+      slide2.mount();
+    });
+  </script>
+
+</Layout>
