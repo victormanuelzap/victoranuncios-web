@@ -1,1 +1,240 @@
 
+---
+import Layout from '../../layouts/Layout.astro'
+
+const BASE = import.meta.env.BASE_URL
+const base = `${BASE}assets/services/gigantografias`
+
+const number = '51946182531'
+const whatsappText = 'Hola, quiero una gigantografía para mi negocio en Arequipa.'
+const whatsappUrl = `https://wa.me/${number}?text=${encodeURIComponent(whatsappText)}`
+
+const images = [
+  'img-1.webp',
+  'img-2.webp',
+  'img-3.webp',
+  'img-4.webp',
+]
+
+const sizes = [
+  '1.00 x 1.50 m',
+  '1.20 x 2.00 m',
+  '2.00 x 3.00 m',
+  '3.00 x 4.00 m',
+  'Medidas personalizadas',
+]
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Gigantografías en Arequipa',
+  description:
+    'Servicio de diseño e impresión de gigantografías, lonas y banners publicitarios en Arequipa, con entrega rápida.',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Victor Anuncios',
+    telephone: '+51 946182531',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Av. Ramón Castilla 1004',
+      addressLocality: 'Arequipa',
+      addressCountry: 'PE',
+    },
+  },
+  serviceType: 'Impresión de gigantografías y lonas publicitarias',
+  areaServed: {
+    '@type': 'City',
+    name: 'Arequipa',
+  },
+  url: 'https://victoranuncios.com/servicios/gigantografias/',
+}
+---
+
+<Layout
+  title="Gigantografías en Arequipa | Victor Anuncios"
+  description="Gigantografías y lonas publicitarias en alta calidad en Arequipa. Diseño, impresión y entrega rápida para fachadas, eventos y promociones."
+  keywords="gigantografias Arequipa, lonas publicitarias Arequipa, impresion gran formato Arequipa, banners publicitarios"
+  canonical="/servicios/gigantografias/"
+>
+  <main class="bg-slate-950 text-slate-50">
+
+    <!-- HERO -->
+    <section class="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-12 lg:flex-row lg:items-center lg:py-16">
+      <div class="flex-1 space-y-6">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-amber-400">
+          Gigantografías en Arequipa
+        </p>
+
+        <h1 class="text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">
+          Gigantografías y lonas publicitarias
+          <span class="block text-amber-400">para que tu negocio se vea desde lejos.</span>
+        </h1>
+
+        <p class="max-w-xl text-sm sm:text-base text-slate-200">
+          Diseñamos e imprimimos gigantografías en alta resolución para fachadas, eventos y promociones.
+          Lonas listas para instalar, con colores intensos y gran durabilidad.
+        </p>
+
+        <ul class="grid gap-2 text-sm sm:grid-cols-2 text-slate-200">
+          <li class="flex gap-2 items-start"><span class="h-2 w-2 mt-1 bg-amber-400 rounded-full"></span>Diseño gráfico incluido</li>
+          <li class="flex gap-2 items-start"><span class="h-2 w-2 mt-1 bg-amber-400 rounded-full"></span>Lona banner, translúcida y vinil adhesivo</li>
+          <li class="flex gap-2 items-start"><span class="h-2 w-2 mt-1 bg-amber-400 rounded-full"></span>Refuerzos y ojalillos metálicos</li>
+          <li class="flex gap-2 items-start"><span class="h-2 w-2 mt-1 bg-amber-400 rounded-full"></span>Entrega rápida en Arequipa</li>
+        </ul>
+
+        <div class="flex flex-wrap gap-3">
+          <a href={whatsappUrl} class="px-6 py-3 rounded-full bg-amber-400 text-slate-950 font-semibold shadow-lg hover:bg-amber-300 transition">
+            Cotizar mi gigantografía por WhatsApp
+          </a>
+
+          <a href="#galeria" class="px-6 py-3 rounded-full border border-slate-600 text-slate-100 hover:bg-slate-900 transition">
+            Ver trabajos realizados
+          </a>
+        </div>
+      </div>
+
+      <div class="flex-1">
+        <div class="overflow-hidden rounded-3xl border border-slate-800 bg-slate-900">
+          <img src={`${base}/${images[0]}`} alt="Gigantografía instalada" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <p class="text-xs mt-3 text-slate-400">Trabajos reales realizados en Arequipa.</p>
+      </div>
+    </section>
+
+    <!-- TIPOS -->
+    <section class="border-y border-slate-800 bg-slate-900/40">
+      <div class="max-w-6xl mx-auto px-4 py-12">
+        <h2 class="text-2xl font-bold text-slate-50 sm:text-3xl">Tipos de gigantografías y materiales</h2>
+        <p class="mt-2 max-w-2xl text-sm text-slate-300">
+          Te asesoro según el lugar donde se instalará la gigantografía: interior, exterior, cajas de luz o rejas.
+        </p>
+
+        <div class="grid mt-6 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+
+          <article class="p-4 rounded-2xl border border-slate-800 bg-slate-950/70 text-sm">
+            <h3 class="font-semibold text-amber-300">Lona banner 13 oz</h3>
+            <p class="text-slate-300">Ideal para promociones, rejas y paredes.</p>
+          </article>
+
+          <article class="p-4 rounded-2xl border border-slate-800 bg-slate-950/70 text-sm">
+            <h3 class="font-semibold text-amber-300">Lona translúcida</h3>
+            <p class="text-slate-300">Perfecta para cajas de luz.</p>
+          </article>
+
+          <article class="p-4 rounded-2xl border border-slate-800 bg-slate-950/70 text-sm">
+            <h3 class="font-semibold text-amber-300">Vinil adhesivo</h3>
+            <p class="text-slate-300">Para vitrinas, paredes y paneles.</p>
+          </article>
+
+          <article class="p-4 rounded-2xl border border-slate-800 bg-slate-950/70 text-sm">
+            <h3 class="font-semibold text-amber-300">Microperforado / Mesh</h3>
+            <p class="text-slate-300">Para exteriores con fuerte viento.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- MEDIDAS -->
+    <section class="max-w-6xl mx-auto px-4 py-12">
+      <div class="grid gap-8 lg:grid-cols-[1.3fr,1fr]">
+
+        <div>
+          <h2 class="text-2xl font-bold text-slate-50 sm:text-3xl">Medidas más solicitadas</h2>
+          <p class="mt-2 text-sm text-slate-300 max-w-xl">
+            Trabajo con cualquier medida. Estas son las más comunes.
+          </p>
+
+          <ul class="grid gap-2 mt-4 text-sm text-slate-200 sm:grid-cols-2">
+            {sizes.map((s) => (
+              <li class="flex gap-2 items-start" key={s}>
+                <span class="h-2 w-2 mt-1 bg-amber-400 rounded-full"></span>
+                {s}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="rounded-3xl border border-slate-800 bg-slate-900/70 p-4 text-sm">
+          <h3 class="font-semibold text-amber-300 mb-2">¿Cómo trabajamos?</h3>
+          <ol class="space-y-2 text-slate-300">
+            <li>1. Envíame fotos de tu local y el texto.</li>
+            <li>2. Te propongo diseño y medidas.</li>
+            <li>3. Ajustamos hasta que estés conforme.</li>
+            <li>4. Imprimo en alta resolución.</li>
+            <li>5. Entrega lista para instalar o instalación opcional.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section id="galeria" class="border-y border-slate-800 bg-slate-900/40">
+      <div class="max-w-6xl mx-auto px-4 py-12">
+        <h2 class="text-2xl font-bold text-slate-50 sm:text-3xl">Trabajos realizados</h2>
+
+        <div class="grid mt-6 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {images.map((img) => (
+            <figure class="overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/70" key={img}>
+              <img src={`${base}/${img}`} class="w-full h-44 object-cover sm:h-52" alt="Gigantografia" loading="lazy" />
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="max-w-6xl mx-auto px-4 py-12">
+      <div class="grid gap-8 lg:grid-cols-[1.2fr,1fr]">
+        
+        <div>
+          <h2 class="text-2xl font-bold text-slate-50 sm:text-3xl">Preguntas frecuentes</h2>
+
+          <div class="space-y-3 mt-4 text-sm">
+
+            <details class="p-3 rounded-2xl border border-slate-800 bg-slate-950/70">
+              <summary class="font-semibold text-amber-300 cursor-pointer">¿Cuánto cuesta una gigantografía?</summary>
+              <p class="mt-2 text-slate-200">Depende del tamaño, material e instalación. Desde S/ 25.</p>
+            </details>
+
+            <details class="p-3 rounded-2xl border border-slate-800 bg-slate-950/70">
+              <summary class="font-semibold text-amber-300 cursor-pointer">¿Incluye diseño?</summary>
+              <p class="mt-2 text-slate-200">Sí, incluye diseño básico con tu marca y fotos.</p>
+            </details>
+
+            <details class="p-3 rounded-2xl border border-slate-800 bg-slate-950/70">
+              <summary class="font-semibold text-amber-300 cursor-pointer">¿Tiempo de entrega?</summary>
+              <p class="mt-2 text-slate-200">Entre 3 y 24 horas después de aprobar el diseño.</p>
+            </details>
+
+            <details class="p-3 rounded-2xl border border-slate-800 bg-slate-950/70">
+              <summary class="font-semibold text-amber-300 cursor-pointer">¿Instalan en local?</summary>
+              <p class="mt-2 text-slate-200">Sí, instalación disponible en Arequipa.</p>
+            </details>
+
+          </div>
+        </div>
+
+        <aside class="rounded-3xl border border-amber-500/60 bg-slate-950/80 p-6 text-sm">
+          <h2 class="text-lg font-semibold text-amber-300">Cotiza tu gigantografía</h2>
+          <p class="mt-2 text-slate-200">Envíame una foto de tu fachada y te doy precio exacto.</p>
+
+          <ul class="mt-4 space-y-1 text-slate-200">
+            <li><b>WhatsApp:</b> 946 182 531</li>
+            <li><b>Dirección:</b> Av. Ramón Castilla 1004, Arequipa</li>
+          </ul>
+
+          <a href={whatsappUrl} class="mt-5 block w-full text-center rounded-full bg-amber-400 px-5 py-3 text-sm font-semibold text-slate-950 hover:bg-amber-300 transition">
+            Hablar por WhatsApp
+          </a>
+        </aside>
+
+      </div>
+    </section>
+
+    <script type="application/ld+json">
+      {JSON.stringify(schema)}
+    </script>
+
+  </main>
+</Layout>
