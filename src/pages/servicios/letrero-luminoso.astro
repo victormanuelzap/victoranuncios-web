@@ -11,8 +11,7 @@ const base =
     ? '/assets/services/letrero-luminoso'
     : '/victoranuncios-web/assets/services/letrero-luminoso'
 
-
-// Imágenes del catálogo
+// Imágenes del catálogo (NO tocaremos esto, solo muestra fotos)
 const images = [
   'img-1.png',
   'img-2.png',
@@ -26,17 +25,13 @@ const images = [
   'img-10.png',
 ]
 
-// Tomamos las 3 primeras para los 3 tipos
-const img1 = `${base}/${images[0] || 'img-1.png'}`
-const img2 = `${base}/${images[1] || 'img-2.png'}`
-const img3 = `${base}/${images[2] || 'img-3.png'}`
-// === Tipos de letreros (usando las imágenes anteriores) ===
+// === Tarjetas con descripción (reemplazamos las fotos por tus nuevos proyectos) ===
 const tipos = [
   {
     slug: 'rectangular',
     titulo: 'LETRERO LUMINOSO RECTANGULAR 💡',
-    img: img1,
-    alt: 'Letrero luminoso rectangular en Arequipa',
+    img: `${base}/chifa-perla-oriental.png`,   // Nueva foto: Chifa
+    alt: 'Letrero luminoso rectangular Chifa La Perla Oriental en Arequipa',
     bullets: [
       'Estructura: Tubo galvanizado 3/4”',
       'Frontal: Lona backlight impresa full color',
@@ -49,8 +44,8 @@ const tipos = [
   {
     slug: 'redondo',
     titulo: 'LETRERO LUMINOSO REDONDO ⚡',
-    img: img2,
-    alt: 'Letrero luminoso redondo en Arequipa',
+    img: `${base}/polleria-los-gomez.png`,    // Nueva foto: Pollería Los Gómez
+    alt: 'Letrero luminoso para pollería Los Gómez en Arequipa',
     bullets: [
       'Material: Acrílico + metal',
       'Doble cara opcional',
@@ -63,8 +58,8 @@ const tipos = [
   {
     slug: 'doble-faz',
     titulo: 'LETRERO LUMINOSO DOBLE FAZ 🔄',
-    img: img3,
-    alt: 'Letrero luminoso doble faz en Arequipa',
+    img: `${base}/caja-azul.png`,             // Nueva foto: cajón azul
+    alt: 'Letrero luminoso doble faz caja azul en Arequipa',
     bullets: [
       'Para fachadas y esquinas',
       'Visibilidad por ambos lados',
@@ -83,40 +78,25 @@ const tipos = [
   keywords="letreros luminosos Arequipa, cajas de luz Arequipa, letreros LED Arequipa, publicidad exterior Arequipa"
   canonical="https://victoranuncios.com/servicios/letrero-luminoso"
 >
-
-
-
-
-
-
-
-
-
-<!-- HERO DE LETRERO LUMINOSO -->
-<section class="relative">
-  <img
-    src={`${base}/hero-luminoso.jpg`} 
-    alt="Letrero luminoso Victor Anuncios"
-    class="h-80 md:h-[420px] w-full object-cover"
-    loading="eager"
-  />
- <!-- CAPA OSCURA -->
-  <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
-    <h1 class="text-white text-4xl md:text-6xl font-bold uppercase text-center">
-      LETRERO LUMINOSO
-    </h1>
-  </div>
-<!-- DEGRADADO HACIA BLANCO -->
-<div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-b from-transparent to-white"></div>
-
-  
-</section>
+  <!-- HERO DE LETRERO LUMINOSO -->
+  <section class="relative">
+    <img
+      src={`${base}/hero-luminoso.jpg`}
+      alt="Letrero luminoso Victor Anuncios"
+      class="h-80 md:h-[420px] w-full object-cover"
+      loading="eager"
+    />
+    <!-- CAPA OSCURA -->
+    <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
+      <h1 class="text-white text-4xl md:text-6xl font-bold uppercase text-center">
+        LETRERO LUMINOSO
+      </h1>
+    </div>
+    <!-- DEGRADADO HACIA BLANCO -->
+    <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-b from-transparent to-white"></div>
+  </section>
 
   <main class="container mx-auto px-4 pt-10 pb-16">
-    
-
-
-
     <!-- Badges -->
     <div class="flex flex-wrap items-center justify-center gap-3 mb-10">
       <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm">✅ Garantía 1 año</span>
@@ -124,16 +104,12 @@ const tipos = [
       <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm">⚡ Entrega rápida</span>
     </div>
 
-
-   
-
-
     <!-- CATÁLOGO: SOLO FOTOS -->
     <section aria-labelledby="catalogo-luminosos" class="mt-2">
-      <h2 id="catalogo-luminosos" class="text-2xl md:text-3xl font-bold text-center mb-8">Catálogo</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
-
-
+      <h2 id="catalogo-luminosos" class="text-2xl md:text-3xl font-bold text-center mb-8">
+        Catálogo
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
         {images.map((file, i) => (
           <figure class="relative aspect-square overflow-hidden rounded-xl bg-gray-100">
             <img
@@ -155,39 +131,37 @@ const tipos = [
       </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {
-          tipos.map((t) => (
-            <article class="text-center bg-white rounded-2xl shadow-md p-4 md:p-6">
-              <!-- Imagen con contenedor para mantener altura -->
-              <div class="relative w-full h-56 mb-4">
-                <img
-                  src={t.img}
-                  alt={t.alt}
-                  loading="lazy"
-                  decoding="async"
-                  class="absolute inset-0 w-full h-full object-cover rounded-xl shadow-sm"
-                />
-              </div>
+        {tipos.map((t) => (
+          <article class="text-center bg-white rounded-2xl shadow-md p-4 md:p-6">
+            <!-- Imagen con contenedor para mantener altura -->
+            <div class="relative w-full h-56 mb-4">
+              <img
+                src={t.img}
+                alt={t.alt}
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 w-full h-full object-cover rounded-xl shadow-sm"
+              />
+            </div>
 
-              <h3 class="text-xl font-extrabold text-black leading-tight mb-2">
-                {t.titulo}
-              </h3>
+            <h3 class="text-xl font-extrabold text-black leading-tight mb-2">
+              {t.titulo}
+            </h3>
 
-              <ul class="text-left text-gray-700 space-y-1 mb-5">
-                {t.bullets.map((b) => <li>• {b}</li>)}
-              </ul>
+            <ul class="text-left text-gray-700 space-y-1 mb-5">
+              {t.bullets.map((b) => <li>• {b}</li>)}
+            </ul>
 
-              <a
-                href={`https://wa.me/51946182531?text=${t.waText}`}
-                target="_blank"
-                rel="noopener"
-                class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold px-6 py-2 rounded-lg"
-              >
-                Pedir por WhatsApp
-              </a>
-            </article>
-          ))
-        }
+            <a
+              href={`https://wa.me/51946182531?text=${t.waText}`}
+              target="_blank"
+              rel="noopener"
+              class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold px-6 py-2 rounded-lg"
+            >
+              Pedir por WhatsApp
+            </a>
+          </article>
+        ))}
       </div>
     </section>
 
@@ -206,7 +180,8 @@ const tipos = [
         </a>
       </div>
     </section>
- <!-- TEXTO SEO PARA LETRERO LUMINOSO -->
+
+    <!-- TEXTO SEO PARA LETRERO LUMINOSO -->
     <section class="max-w-4xl mx-auto mb-10 text-gray-800 space-y-4">
       <h2 class="text-2xl md:text-3xl font-bold text-center md:text-left">
         Letreros luminosos para tu negocio en Arequipa
