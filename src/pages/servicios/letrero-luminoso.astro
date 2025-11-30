@@ -4,14 +4,12 @@ import Layout from '../../layouts/Layout.astro'
 // Usar la base correcta para local y GitHub Pages
 const BASE = import.meta.env.BASE_URL
 
-// En local (npm run dev) BASE es "/" → usamos /assets/...
-// En GitHub Pages BASE es "/victoranuncios-web/" → forzamos esa ruta
 const base =
   BASE === '/'
     ? '/assets/services/letrero-luminoso'
     : '/victoranuncios-web/assets/services/letrero-luminoso'
 
-// Imágenes del catálogo (NO tocaremos esto, solo muestra fotos)
+// Imágenes del catálogo
 const images = [
   'img-1.png',
   'img-2.png',
@@ -25,9 +23,10 @@ const images = [
   'img-10.png',
 ]
 
+// Tarjetas con descripción (3 proyectos reales)
 const tipos = [
   {
-    slug: 'rectangular',
+    slug: 'chifa-perla',
     titulo: 'CHIFA LA PERLA ORIENTAL 🔆',
     img: `${base}/chifa-perla-oriental.png`,
     alt: 'Letrero luminoso Chifa La Perla Oriental en Arequipa',
@@ -39,10 +38,11 @@ const tipos = [
       'Instalación completa en fachada y columna',
       'Garantía: 1 año',
     ],
-    waText: 'Hola%20quiero%20cotizar%20un%20letrero%20como%20el%20de%20Chifa%20La%20Perla%20Oriental',
+    waText:
+      'Hola%20quiero%20cotizar%20un%20letrero%20luminoso%20como%20el%20de%20Chifa%20La%20Perla%20Oriental',
   },
   {
-    slug: 'polleria',
+    slug: 'polleria-gomez',
     titulo: 'POLLERÍA LOS GÓMEZ 🍗',
     img: `${base}/polleria-los-gomez.png`,
     alt: 'Letrero luminoso Pollería Los Gómez en Arequipa',
@@ -54,7 +54,8 @@ const tipos = [
       'Instalación a medida en fachada',
       'Garantía: 1 año',
     ],
-    waText: 'Hola%20quiero%20cotizar%20un%20letrero%20como%20el%20de%20Polleria%20Los%20Gomez',
+    waText:
+      'Hola%20quiero%20cotizar%20un%20letrero%20luminoso%20como%20el%20de%20Polleria%20Los%20Gomez',
   },
   {
     slug: 'doble-faz',
@@ -69,10 +70,11 @@ const tipos = [
       'Ideal para esquinas y exteriores',
       'Garantía: 1 año',
     ],
-    waText: 'Hola%20quiero%20cotizar%20un%20letrero%20doble%20faz%20como%20el%20azul',
+    waText:
+      'Hola%20quiero%20cotizar%20un%20letrero%20luminoso%20doble%20faz%20como%20el%20azul',
   },
 ]
-
+---
 
 <Layout
   title="Letreros luminosos en Arequipa – Fabricación e instalación | Victor Anuncios"
@@ -101,9 +103,15 @@ const tipos = [
   <main class="container mx-auto px-4 pt-10 pb-16">
     <!-- Badges -->
     <div class="flex flex-wrap items-center justify-center gap-3 mb-10">
-      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm">✅ Garantía 1 año</span>
-      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm">✍️ Diseño + instalación</span>
-      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm">⚡ Entrega rápida</span>
+      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm">
+        ✅ Garantía 1 año
+      </span>
+      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm">
+        ✍️ Diseño + instalación
+      </span>
+      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm">
+        ⚡ Entrega rápida
+      </span>
     </div>
 
     <!-- CATÁLOGO: SOLO FOTOS -->
@@ -135,7 +143,6 @@ const tipos = [
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {tipos.map((t) => (
           <article class="text-center bg-white rounded-2xl shadow-md p-4 md:p-6">
-            <!-- Imagen con contenedor para mantener altura -->
             <div class="relative w-full h-56 mb-4">
               <img
                 src={t.img}
@@ -151,7 +158,9 @@ const tipos = [
             </h3>
 
             <ul class="text-left text-gray-700 space-y-1 mb-5">
-              {t.bullets.map((b) => <li>• {b}</li>)}
+              {t.bullets.map((b) => (
+                <li>• {b}</li>
+              ))}
             </ul>
 
             <a
@@ -191,14 +200,14 @@ const tipos = [
 
       <p>
         En <strong>Victor Anuncios</strong> fabricamos <strong>letreros luminosos y cajas de luz en Arequipa</strong> ideales para
-        bodegas, farmacias, restaurantes, pollerías, ferreterías y todo tipo de negocios que necesitan
-        ser visibles de día y de noche. Diseñamos cada letrero a medida según tu logo, colores y fachada.
+        bodegas, farmacias, restaurantes, pollerías, ferreterías y todo tipo de negocios que necesitan ser visibles de día
+        y de noche. Diseñamos cada letrero a medida según tu logo, colores y fachada.
       </p>
 
       <p>
         Trabajamos con <strong>estructuras de fierro reforzado</strong> y <strong>iluminación LED</strong> para lograr un letrero
-        luminoso que consuma poca energía y que se vea profesional por muchos años. También te asesoramos
-        en el tamaño y ubicación para que tu negocio se vea desde lejos y destaque frente a la competencia.
+        luminoso que consuma poca energía y que se vea profesional por muchos años. También te asesoramos en el tamaño y
+        ubicación para que tu negocio se vea desde lejos y destaque frente a la competencia.
       </p>
 
       <h3 class="text-xl md:text-2xl font-semibold mt-4">
@@ -206,11 +215,21 @@ const tipos = [
       </h3>
 
       <ul class="list-disc list-inside space-y-1">
-        <li><strong>Diseño personalizado</strong> según tu rubro y tu marca.</li>
-        <li><strong>Estructuras seguras</strong>, con soportes y anclajes para fachadas y esquinas.</li>
-        <li><strong>Iluminación LED</strong> de bajo consumo y alta luminosidad.</li>
-        <li><strong>Fabricación e instalación en Arequipa</strong>, sin intermediarios.</li>
-        <li><strong>Garantía de 1 año</strong> en la estructura e iluminación.</li>
+        <li>
+          <strong>Diseño personalizado</strong> según tu rubro y tu marca.
+        </li>
+        <li>
+          <strong>Estructuras seguras</strong>, con soportes y anclajes para fachadas y esquinas.
+        </li>
+        <li>
+          <strong>Iluminación LED</strong> de bajo consumo y alta luminosidad.
+        </li>
+        <li>
+          <strong>Fabricación e instalación en Arequipa</strong>, sin intermediarios.
+        </li>
+        <li>
+          <strong>Garantía de 1 año</strong> en la estructura e iluminación.
+        </li>
       </ul>
 
       <h3 class="text-xl md:text-2xl font-semibold mt-4">
@@ -224,8 +243,8 @@ const tipos = [
       </p>
 
       <p class="font-semibold">
-        Envíanos una foto de tu fachada y las medidas aproximadas y te ayudamos a elegir el mejor tipo de
-        letrero luminoso para tu negocio en Arequipa.
+        Envíanos una foto de tu fachada y las medidas aproximadas y te ayudamos a elegir el mejor tipo de letrero luminoso
+        para tu negocio en Arequipa.
       </p>
     </section>
   </main>
