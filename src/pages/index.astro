@@ -204,27 +204,32 @@ const BASE_URL = import.meta.env.BASE_URL;
     </div>
 
   <!-- Debajo de los botones -->
- <div class="relative overflow-hidden rounded-2xl shadow-lg">
-  <picture>
-    <!-- Versión para MÓVIL -->
-    <source
-      media="(max-width: 640px)"
-      srcset={`${BASE_URL}assets/banners/banner-instalacion-letreros-movil.webp`}
-    />
+ <div class="mt-8 px-4 lg:px-0"> 
+  <a href={`${BASE_URL}servicios/instalacion`} class="block group">
+    <div class="relative overflow-hidden shadow-lg rounded-none lg:rounded-2xl">
+      <picture>
+        <!-- Imagen MÓVIL (con márgenes laterales y bordes rectos) -->
+        <source
+          media="(max-width: 640px)"
+          srcset={`${BASE_URL}assets/banners/banner-instalacion-letreros-movil.webp`}
+        />
 
-    <!-- Versión para ESCRITORIO (SIN RECORTE, COMO ANTES) -->
-    <img
-      src={`${BASE_URL}assets/banners/instalacion-altura.webp`}
-      alt="Instalación de letreros en altura - Victor Anuncios"
-      loading="lazy"
-      class="w-full h-auto transition-transform duration-300 group-hover:scale-[1.01]"
-    />
-  </picture>
+        <!-- Imagen ESCRITORIO (como estaba, sin recorte) -->
+        <img
+          src={`${BASE_URL}assets/banners/instalacion-altura.webp`}
+          alt="Instalación de letreros en altura - Victor Anuncios"
+          loading="lazy"
+          class="w-full h-auto transition-transform duration-300 group-hover:scale-[1.01]"
+        />
+      </picture>
 
-  <span class="absolute bottom-3 left-3 px-4 py-2 rounded-xl text-white font-extrabold bg-red-600/90 shadow">
-    VER MAS
-  </span>
+      <span class="absolute bottom-3 left-3 px-4 py-2 rounded-xl text-white font-extrabold bg-red-600/90 shadow">
+        VER MAS
+      </span>
+    </div>
+  </a>
 </div>
+
 
   </section>
 
