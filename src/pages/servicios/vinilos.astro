@@ -98,9 +98,10 @@ const vinylTypes = [
         </ul>
 
         <div class="flex flex-wrap gap-3">
+          <!-- BOTÓN HERO AZUL -->
           <a
             href={`https://wa.me/${number}?text=Hola,%20quiero%20cotizar%20vinilos%20para%20mi%20negocio%20en%20Arequipa`}
-            class="inline-flex items-center justify-center rounded-md bg-green-600 px-5 py-2.5 text-white font-semibold hover:bg-green-700 transition"
+            class="inline-flex items-center justify-center rounded-md bg-blue-600 px-5 py-2.5 text-white font-semibold hover:bg-blue-500 transition"
           >
             Cotizar por WhatsApp
           </a>
@@ -136,6 +137,7 @@ const vinylTypes = [
         impresos y laminados. Cada trabajo se adapta al rubro y al espacio del cliente.
       </p>
 
+    <!-- TARJETAS -->
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {vinylTypes.map((item) => (
           <article class="border border-gray-200 rounded-2xl overflow-hidden flex flex-col bg-white">
@@ -161,9 +163,10 @@ const vinylTypes = [
                 ))}
               </ul>
 
+              <!-- BOTÓN TARJETA AZUL -->
               <a
                 href={`https://wa.me/${number}?text=${encodeURIComponent(item.whatsappText)}`}
-                class="mt-auto inline-flex items-center justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white hover:bg-green-700 transition"
+                class="mt-auto inline-flex items-center justify-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white hover:bg-blue-500 transition"
               >
                 Cotizar un trabajo similar
               </a>
@@ -231,9 +234,10 @@ const vinylTypes = [
         Envíame fotos de tu pared, vehículo o mostrador por WhatsApp y te ayudo a elegir el mejor
         tipo de vinilo para tu caso.
       </p>
+      <!-- BOTÓN FINAL AZUL -->
       <a
         href={`https://wa.me/${number}?text=Hola,%20quiero%20cotizar%20un%20vinilo%20similar%20a%20los%20de%20tu%20página`}
-        class="inline-flex items-center justify-center rounded-md bg-green-600 px-6 py-3 text-white font-semibold hover:bg-green-700 transition"
+        class="inline-flex items-center justify-center rounded-md bg-blue-600 px-6 py-3 text-white font-semibold hover:bg-blue-500 transition"
       >
         Cotizar ahora por WhatsApp
       </a>
