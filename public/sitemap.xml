@@ -8,9 +8,6 @@
     <priority>1.0</priority>
   </url>
 
-  
-
-  
   <!-- INSTALACIONES -->
   <url>
     <loc>https://www.victoranuncios.com/servicios/instalacion/</loc>
@@ -27,23 +24,33 @@
 
   <!-- LETREROS 3D -->
   <url>
-<loc>https://www.victoranuncios.com/servicios/3d/</loc>
-
+    <loc>https://www.victoranuncios.com/servicios/3d/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  
- 
+  <!-- GIGANTOGRAFÍAS -->
+  <url>
+    <loc>https://www.victoranuncios.com/servicios/gigantografias/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- VINILOS -->
+  <url>
+    <loc>https://www.victoranuncios.com/servicios/vinilos/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
   <!-- TARJETAS PERSONALES -->
   <url>
-   <loc>https://www.victoranuncios.com/tarjetas/</loc>
+    <loc>https://www.victoranuncios.com/tarjetas/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- BANNERS -->
+  <!-- VOLANTES -->
   <url>
     <loc>https://www.victoranuncios.com/volantes/</loc>
     <changefreq>weekly</changefreq>
@@ -57,14 +64,11 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- TOLDOS ENROLLABLES -->
+  <!-- TOLDOS / FORMATERIA -->
   <url>
     <loc>https://www.victoranuncios.com/formateria/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- CONTACTO -->
-
 
 </urlset>
