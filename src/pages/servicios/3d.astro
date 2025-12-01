@@ -16,11 +16,11 @@ const images = [
   'senorial.png',
   'soluciones.png',
   'bull12.png',
-  'polleria-torre.png', // sigue en catálogo
-  'panesur.png',        // nuevo proyecto
+  'polleria-torre.png',
+  'panesur.png',
 ]
 
-// PROYECTOS DESTACADOS (incluye PANESUR en lugar de pollería)
+// PROYECTOS DESTACADOS
 const featured = [
   {
     src: `${base}/identa.png`,
@@ -99,9 +99,9 @@ const featured = [
     bullets: [
       'Material: letras corpóreas en PVC 3D',
       'Acabado: pintura automotriz blanca con detalles en vinil naranja',
-      'Iluminación: apoyo con luz decorativa RGB (no integrada en las letras)',
-      'Uso: interiores, fondos de recepción y muros de marca',
-      'Detalle: letras 3D instaladas sobre panel de listones de madera',
+      'Iluminación: apoyo con luz decorativa RGB',
+      'Uso: interiores y muros de recepción',
+      'Detalle: letras 3D instaladas sobre panel de madera',
       'Garantía: 1 año',
     ],
     wa: encodeURIComponent('Quiero cotizar un letrero 3D similar al proyecto PANESUR'),
@@ -115,6 +115,7 @@ const featured = [
   keywords="letreros 3D Arequipa, letras corpóreas, acrílico 3D, PVC 3D, letras metálicas"
   canonical="https://victoranuncios.com/servicios/3d"
 >
+
   <!-- HERO -->
   <section class="relative">
     <img
@@ -131,6 +132,8 @@ const featured = [
   </section>
 
   <main class="container mx-auto px-4 pt-10 pb-16">
+
+    <!-- Badges -->
     <div class="flex flex-wrap items-center justify-center gap-3 mb-10">
       <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm">✅ Corte preciso</span>
       <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm">✍️ Diseño + instalación</span>
@@ -150,7 +153,6 @@ const featured = [
               src={`${base}/${file}`}
               alt={`Letrero 3D modelo ${i + 1} - Victor Anuncios Arequipa`}
               loading={i < 4 ? 'eager' : 'lazy'}
-              decoding="async"
               class="w-full h-full object-cover transition-transform duration-200 hover:scale-105"
             />
           </figure>
@@ -172,7 +174,6 @@ const featured = [
                 src={t.src}
                 alt={t.alt}
                 loading="lazy"
-                decoding="async"
                 class="absolute inset-0 w-full h-full object-cover rounded-xl shadow-sm"
               />
             </div>
@@ -185,7 +186,7 @@ const featured = [
               {t.bullets.map((b) => <li>• {b}</li>)}
             </ul>
 
-            {/* BOTÓN AZUL POR PROYECTO */}
+            <!-- BOTÓN AZUL CORPORATIVO -->
             <a
               href={`https://wa.me/51946182531?text=${t.wa}`}
               target="_blank"
@@ -205,15 +206,16 @@ const featured = [
         <p class="text-lg md:text-xl font-semibold text-center md:text-left">
           ¿Quieres un letrero 3D como estos? Diseño + fabricación + instalación.
         </p>
-        {/* BOTÓN CTA BLANCO PARA CONTRASTE */}
+
+        <!-- BOTÓN BLANCO (correcto para fondo azul) -->
         <a
           href="https://wa.me/51946182531?text=Quiero%20un%20letrero%203D"
-          class="px-5 py-3 bg-white text-blue-700 rounded-lg font-bold whitespace-nowrap hover:bg-gray-100 transition"
-          rel="noopener"
+          class="px-5 py-3 bg-white text-blue-700 rounded-lg font-bold hover:bg-gray-100 transition"
         >
           Pedir por WhatsApp
         </a>
       </div>
     </section>
+
   </main>
 </Layout>
