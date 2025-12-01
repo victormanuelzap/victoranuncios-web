@@ -330,8 +330,10 @@ const schema = {
       </div>
     </section>
 
-    <script type="application/ld+json">
-      {JSON.stringify(schema)}
-    </script>
+    <!-- JSON-LD corregido -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(schema, null, 2)}
+    />
   </main>
 </Layout>
