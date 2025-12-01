@@ -236,67 +236,91 @@ const BASE_URL = import.meta.env.BASE_URL;
 
  
 
-<section class="w-full py-14 bg-white">
-  <div class="max-w-[1200px] mx-auto px-6">
+<section class="max-w-5xl mx-auto lg:grid lg:grid-cols-2 lg:gap-12 items-start py-10 lg:py-16">
+  <!-- TITULAR + INTRO -->
+  <div class="space-y-6">
+    <div class="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-blue-700">
+      <span class="h-1.5 w-1.5 rounded-full bg-blue-500"></span>
+      Publicidad exterior profesional en Arequipa
+    </div>
 
-    <h1 class="text-3xl md:text-4xl font-extrabold text-[#0B1A2D] mb-4">
+    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-slate-900">
       Letreros luminosos, letras 3D, gigantografías y vinilos en Arequipa
     </h1>
 
-    <div class="h-1 w-24 bg-[#0B1A2D] rounded mb-8"></div>
-
-    <p class="text-[17px] leading-relaxed text-[#444] mb-4">
-      En Victor Anuncios diseñamos, fabricamos e instalamos 
-      <strong class="font-semibold text-[#0B1A2D]">letreros luminosos, letras 3D, gigantografías y vinilos</strong>
-      para que tu fachada luzca profesional y atraiga más clientes.
+    <p class="text-base sm:text-lg leading-relaxed text-slate-600">
+      En <span class="font-semibold text-slate-900">Victor Anuncios</span> diseñamos, fabricamos e instalamos
+      <span class="font-semibold">letreros luminosos, letras 3D, gigantografías y vinilos</span> para que tu
+      fachada luzca profesional, moderna y atraiga más clientes.
     </p>
 
-    <p class="text-[17px] leading-relaxed text-[#444] mb-4">
-      Trabajamos con <strong class="font-semibold text-[#0B1A2D]">cajas de luz LED</strong>, estructuras metálicas, 
-      acrílico, PVC y vinilos de alta calidad. Todo con garantía y entrega rápida en Arequipa.
+    <p class="text-base leading-relaxed text-slate-600">
+      Trabajamos con <span class="font-semibold">cajas de luz LED</span>, estructuras metálicas, acrílico, PVC y vinilos
+      de alta calidad, cuidando los detalles desde el diseño hasta la instalación final en tu negocio.
     </p>
+  </div>
 
-    <div class="grid md:grid-cols-2 gap-8 mt-6">
+  <!-- LISTAS + CTA -->
+  <div class="mt-10 lg:mt-0 space-y-8">
+    <div class="grid sm:grid-cols-2 gap-6">
+      <div class="space-y-3">
+        <h2 class="text-sm font-semibold tracking-wide text-blue-600 uppercase">
+          ¿Qué podemos hacer por tu marca?
+        </h2>
+        <ul class="space-y-2 text-sm sm:text-base text-slate-700">
+          <li class="flex gap-2">
+            <span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>
+            <span>Letreros luminosos LED para fachadas y marquesinas.</span>
+          </li>
+          <li class="flex gap-2">
+            <span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>
+            <span>Gigantografías para interiores, exteriores y eventos.</span>
+          </li>
+          <li class="flex gap-2">
+            <span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>
+            <span>Tarjetas personales, volantes y material impreso.</span>
+          </li>
+        </ul>
+      </div>
 
-      <ul class="space-y-2">
-        <li class="flex items-start gap-2">
-          <span class="text-[#1F3A93] text-xl">•</span>
-          <span class="text-[#444] text-[16px]">Letreros luminosos LED para fachadas.</span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-[#1F3A93] text-xl">•</span>
-          <span class="text-[#444] text-[16px]">Gigantografías para interiores y exteriores.</span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-[#1F3A93] text-xl">•</span>
-          <span class="text-[#444] text-[16px]">Tarjetas personales, volantes y material impreso.</span>
-        </li>
-      </ul>
-
-      <ul class="space-y-2">
-        <li class="flex items-start gap-2">
-          <span class="text-[#1F3A93] text-xl">•</span>
-          <span class="text-[#444] text-[16px]">Letras 3D en acrílico, PVC, MDF o metal.</span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-[#1F3A93] text-xl">•</span>
-          <span class="text-[#444] text-[16px]">Vinilos adhesivos para vitrinas y vehículos.</span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-[#1F3A93] text-xl">•</span>
-          <span class="text-[#444] text-[16px]">Instalaciones en altura y mantenimiento de letreros.</span>
-        </li>
-      </ul>
-
+      <div class="space-y-3">
+        <h2 class="text-sm font-semibold tracking-wide text-blue-600 uppercase">
+          Materiales y aplicaciones
+        </h2>
+        <ul class="space-y-2 text-sm sm:text-base text-slate-700">
+          <li class="flex gap-2">
+            <span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>
+            <span>Letras 3D en acrílico, PVC, MDF o metal.</span>
+          </li>
+          <li class="flex gap-2">
+            <span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>
+            <span>Vinilos adhesivos para vitrinas, vehículos y muros.</span>
+          </li>
+          <li class="flex gap-2">
+            <span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>
+            <span>Instalaciones en altura y mantenimiento de letreros.</span>
+          </li>
+        </ul>
+      </div>
     </div>
 
-    <p class="mt-6 text-[17px] leading-relaxed text-[#444]">
-      Si necesitas <strong class="font-semibold text-[#0B1A2D]">publicidad exterior en Arequipa</strong>,
-      contáctanos por WhatsApp y te ayudamos con un diseño a medida.
-    </p>
-
+    <!-- CTA DESTACADO -->
+    <div class="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-5 shadow-sm flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <p class="text-sm sm:text-base text-slate-700">
+        Si necesitas <span class="font-semibold">publicidad exterior en Arequipa</span>,
+        envíame fotos de tu local por WhatsApp y te propongo un diseño a medida
+        para que tu negocio se vea profesional y destaque desde la calle.
+      </p>
+      <a
+        href="https://wa.me/51946182531"
+        class="inline-flex items-center justify-center rounded-full bg-green-500 px-5 py-2 text-sm font-semibold text-white shadow hover:bg-green-600 transition"
+      >
+        Escríbeme por WhatsApp
+      </a>
+    </div>
   </div>
 </section>
+
 
 
 
