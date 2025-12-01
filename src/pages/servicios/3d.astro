@@ -115,7 +115,6 @@ const featured = [
   keywords="letreros 3D Arequipa, letras corpóreas, acrílico 3D, PVC 3D, letras metálicas"
   canonical="https://victoranuncios.com/servicios/3d"
 >
-
   <!-- HERO -->
   <section class="relative">
     <img
@@ -186,11 +185,12 @@ const featured = [
               {t.bullets.map((b) => <li>• {b}</li>)}
             </ul>
 
+            {/* BOTÓN AZUL POR PROYECTO */}
             <a
               href={`https://wa.me/51946182531?text=${t.wa}`}
               target="_blank"
-              class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold px-6 py-2 rounded-lg"
               rel="noopener"
+              class="inline-block bg-blue-600 hover:bg-blue-500 text-white font-bold px-6 py-2 rounded-lg transition"
             >
               Cotizar por WhatsApp
             </a>
@@ -205,9 +205,15 @@ const featured = [
         <p class="text-lg md:text-xl font-semibold text-center md:text-left">
           ¿Quieres un letrero 3D como estos? Diseño + fabricación + instalación.
         </p>
+        {/* BOTÓN CTA BLANCO PARA CONTRASTE */}
         <a
           href="https://wa.me/51946182531?text=Quiero%20un%20letrero%203D"
-          class="px-5 py-3 bg-green-500 rounded-lg font-bold whitespace-nowrap hover:bg-green-600"
+          class="px-5 py-3 bg-white text-blue-700 rounded-lg font-bold whitespace-nowrap hover:bg-gray-100 transition"
           rel="noopener"
         >
-          Pedir por What
+          Pedir por WhatsApp
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>
