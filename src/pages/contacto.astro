@@ -3,16 +3,42 @@ import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title="Victor Anuncios - Contacto">
-  <section class="bg-gray-50 font-sans py-10">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="pb-5 text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8">
-        Contáctanos
-      </h1>
+  <section class="bg-slate-50 font-sans py-10 md:py-14">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+      {/* Encabezado */}
+      <div class="text-center mb-10">
+        <p class="inline-flex items-center gap-2 text-xs md:text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 mb-2">
+          <span class="w-8 h-px bg-blue-600" aria-hidden="true"></span>
+          Contáctanos
+          <span class="w-8 h-px bg-blue-600" aria-hidden="true"></span>
+        </p>
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
+          Letreros luminosos en Arequipa, listos para instalar
+        </h1>
+        <p class="max-w-2xl mx-auto text-sm md:text-base text-slate-600">
+          Cuéntanos qué necesitas y te ayudamos con medidas, materiales y una
+          cotización clara para tu negocio.
+        </p>
+      </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <!-- Mapa -->
-        <div class="rounded-2xl overflow-hidden shadow-md bg-white">
-          <div class="h-80 md:h-[420px]">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-start">
+        {/* Mapa */}
+        <div class="rounded-3xl overflow-hidden shadow-lg bg-white border border-slate-100">
+          <div class="px-5 pt-5 pb-3 border-b border-slate-100 flex items-center justify-between">
+            <div>
+              <p class="text-xs font-semibold tracking-[0.18em] text-slate-500 uppercase">
+                Nuestra ubicación
+              </p>
+              <p class="text-sm md:text-base font-semibold text-slate-900">
+                Av. Ramón Castilla 1004, Cayma · Arequipa
+              </p>
+            </div>
+            <span class="inline-flex items-center justify-center rounded-full bg-blue-50 text-blue-600 text-xs font-semibold px-3 py-1">
+              Ver en el mapa
+            </span>
+          </div>
+
+          <div class="h-72 md:h-[420px]">
             <iframe
               src="https://www.google.com/maps?q=Av.+Ram%C3%B3n+Castilla+1004,+Cayma,+Arequipa,+Per%C3%BA&output=embed"
               width="100%"
@@ -25,115 +51,180 @@ import Layout from '../layouts/Layout.astro'
               class="w-full h-full"
             ></iframe>
           </div>
-          <div class="p-4 border-t bg-white">
+
+          <div class="px-5 py-4 bg-slate-50/70 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             <a
               href="https://www.google.com/maps?q=Av.+Ram%C3%B3n+Castilla+1004,+Cayma,+Arequipa,+Per%C3%BA"
               target="_blank"
               rel="noopener"
-              class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium"
+              class="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700"
             >
-              Abrir en Google Maps
-              <span aria-hidden>↗</span>
+              <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white shadow-sm">
+                📍
+              </span>
+              <span>Abrir en Google Maps</span>
+              <span aria-hidden class="text-xs">↗</span>
             </a>
+
+            <p class="text-xs text-slate-500">
+              Estacionamiento cercano · Fácil acceso por Av. Ramón Castilla
+            </p>
           </div>
         </div>
 
-        <!-- Formulario + tarjeta de contacto -->
-        <div class="space-y-4">
-          <!-- Tarjeta de contacto rápida -->
-          <div class="rounded-2xl bg-white shadow-md p-5">
-            <h2 class="text-xl font-semibold text-gray-800 mb-3">Información de contacto</h2>
-            <ul class="space-y-2 text-gray-700">
-              <li><strong>Dirección:</strong> Av. Ramón Castilla 1004, Cayma, Arequipa</li>
-              <li>
-                <strong>WhatsApp:</strong>
-                <a href="https://wa.me/51946182531?text=Hola%20Victor%20Anuncios,%20quiero%20m%C3%A1s%20informaci%C3%B3n."
-                   class="text-green-600 hover:text-green-700 font-medium">+51 946 182 531</a>
+        {/* Columna derecha: info + formulario */}
+        <div class="space-y-5">
+          {/* Tarjeta de contacto rápida */}
+          <div class="rounded-3xl bg-white shadow-lg border border-slate-100 p-5 md:p-6">
+            <h2 class="text-lg md:text-xl font-semibold text-slate-900 mb-3">
+              Información de contacto
+            </h2>
+            <p class="text-sm text-slate-600 mb-4">
+              Escríbenos por WhatsApp para una respuesta más rápida o llena el
+              formulario y te contactamos en el transcurso del día.
+            </p>
+
+            <ul class="space-y-2.5 text-sm text-slate-700">
+              <li class="flex gap-2">
+                <span class="mt-0.5 text-slate-400">📍</span>
+                <span>
+                  <strong class="font-semibold text-slate-900">Dirección:</strong>{' '}
+                  Av. Ramón Castilla 1004, Cayma, Arequipa
+                </span>
               </li>
-              <li>
-                <strong>Teléfono:</strong>
-                <a href="tel:+51946182531" class="text-blue-600 hover:text-blue-700 font-medium">+51 946 182 531</a>
+              <li class="flex gap-2">
+                <span class="mt-0.5 text-slate-400">💬</span>
+                <span>
+                  <strong class="font-semibold text-slate-900">WhatsApp:</strong>{' '}
+                  <a
+                    href="https://wa.me/51946182531?text=Hola%20Victor%20Anuncios,%20quiero%20más%20información."
+                    class="text-emerald-600 hover:text-emerald-700 font-semibold"
+                  >
+                    +51 946 182 531
+                  </a>
+                </span>
+              </li>
+              <li class="flex gap-2">
+                <span class="mt-0.5 text-slate-400">☎️</span>
+                <span>
+                  <strong class="font-semibold text-slate-900">Teléfono:</strong>{' '}
+                  <a
+                    href="tel:+51946182531"
+                    class="text-blue-600 hover:text-blue-700 font-semibold"
+                  >
+                    +51 946 182 531
+                  </a>
+                </span>
               </li>
             </ul>
           </div>
 
-          <!-- Formulario -->
+          {/* Formulario */}
           <form
-            class="rounded-2xl bg-white shadow-md p-6"
+            class="rounded-3xl bg-white shadow-lg border border-slate-100 p-5 md:p-6"
             action="#"
             method="post"
             aria-label="Formulario de contacto"
           >
-            <!-- Honeypot antispam -->
-            <input type="text" name="company" class="hidden" tabindex="-1" autocomplete="off" />
+            {/* Honeypot antispam */}
+            <input
+              type="text"
+              name="company"
+              class="hidden"
+              tabindex="-1"
+              autocomplete="off"
+            />
 
-            <div class="mb-4">
-              <label for="nombre" class="block text-gray-700 text-sm font-medium mb-1">Nombre</label>
-              <input
-                type="text"
-                id="nombre"
-                name="nombre"
-                required
-                autocomplete="name"
-                class="shadow-sm border rounded-xl w-full py-2.5 px-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300"
-                placeholder="Tu nombre completo"
-              />
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label
+                  for="nombre"
+                  class="block text-xs font-semibold text-slate-700 mb-1 uppercase tracking-[0.16em]"
+                >
+                  Nombre
+                </label>
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  required
+                  autocomplete="name"
+                  class="shadow-sm border border-slate-200 rounded-2xl w-full py-2.5 px-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-300"
+                  placeholder="Tu nombre completo"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="email"
+                  class="block text-xs font-semibold text-slate-700 mb-1 uppercase tracking-[0.16em]"
+                >
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  autocomplete="email"
+                  inputmode="email"
+                  class="shadow-sm border border-slate-200 rounded-2xl w-full py-2.5 px-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-300"
+                  placeholder="tucorreo@ejemplo.com"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="telefono"
+                  class="block text-xs font-semibold text-slate-700 mb-1 uppercase tracking-[0.16em]"
+                >
+                  Teléfono (opcional)
+                </label>
+                <input
+                  type="tel"
+                  id="telefono"
+                  name="telefono"
+                  autocomplete="tel"
+                  inputmode="tel"
+                  class="shadow-sm border border-slate-200 rounded-2xl w-full py-2.5 px-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-300"
+                  placeholder="+51 9xx xxx xxx"
+                />
+              </div>
+
+              <div class="md:col-span-2">
+                <label
+                  for="mensaje"
+                  class="block text-xs font-semibold text-slate-700 mb-1 uppercase tracking-[0.16em]"
+                >
+                  Mensaje
+                </label>
+                <textarea
+                  id="mensaje"
+                  name="mensaje"
+                  rows="4"
+                  required
+                  class="shadow-sm border border-slate-200 rounded-2xl w-full py-2.5 px-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-300"
+                  placeholder="Cuéntanos qué necesitas (medidas, tipo de letrero, ubicación)..."
+                ></textarea>
+              </div>
             </div>
 
-            <div class="mb-4">
-              <label for="email" class="block text-gray-700 text-sm font-medium mb-1">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                autocomplete="email"
-                inputmode="email"
-                class="shadow-sm border rounded-xl w-full py-2.5 px-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300"
-                placeholder="tucorreo@ejemplo.com"
-              />
-            </div>
-
-            <div class="mb-4">
-              <label for="telefono" class="block text-gray-700 text-sm font-medium mb-1">Teléfono (opcional)</label>
-              <input
-                type="tel"
-                id="telefono"
-                name="telefono"
-                autocomplete="tel"
-                inputmode="tel"
-                class="shadow-sm border rounded-xl w-full py-2.5 px-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300"
-                placeholder="+51 9xx xxx xxx"
-              />
-            </div>
-
-            <div class="mb-5">
-              <label for="mensaje" class="block text-gray-700 text-sm font-medium mb-1">Mensaje</label>
-              <textarea
-                id="mensaje"
-                name="mensaje"
-                rows="5"
-                required
-                class="shadow-sm border rounded-xl w-full py-2.5 px-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300"
-                placeholder="Cuéntanos qué necesitas (medidas, tipo de letrero, ubicación)..."
-              ></textarea>
-            </div>
-
-            <div class="flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
+            <div class="mt-5 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
               <button
                 type="submit"
-                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-5 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-300"
+                class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold py-2.5 px-6 rounded-2xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-300"
               >
-                Enviar
+                Enviar mensaje
               </button>
 
               <a
-                class="inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-2.5 px-5 rounded-xl"
+                class="inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold py-2.5 px-6 rounded-2xl shadow-sm"
                 href="https://wa.me/51946182531?text=Hola%20Victor%20Anuncios,%20quiero%20cotizar%20un%20trabajo."
                 target="_blank"
                 rel="noopener"
               >
-                Escribir por WhatsApp
+                <span class="text-lg" aria-hidden>🟢</span>
+                <span>Escribir por WhatsApp</span>
               </a>
             </div>
           </form>
