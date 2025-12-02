@@ -58,12 +58,28 @@ const base = import.meta.env.BASE_URL
 <link rel='canonical' href={canonical || Astro.url.href} />
 
 
-    <!-- Fuentes y librerías -->
-    <link rel='preconnect' href='https://fonts.googleapis.com' />
-    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
-    <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap' rel='stylesheet' />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
-    <link href='https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css' rel='stylesheet' />
+<!-- Fuentes y librerías (optimizadas) -->
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+<!-- Boxicons (no bloquea el renderizado) -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+  media="print"
+  onload="this.media='all'"
+/>
+
+<!-- Splide (no bloquea el renderizado) -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+  media="print"
+  onload="this.media='all'"
+/>
 
     <!-- ✅ Estilos principales (ajustado para GitHub Pages) -->
    
