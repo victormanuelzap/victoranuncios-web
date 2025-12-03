@@ -5,66 +5,68 @@ import Layout from '../../layouts/Layout.astro'
 const BASE = import.meta.env.BASE_URL
 const base = `${BASE}assets/services/toldos`
 
-// SEO
-const title = 'Toldos Enrollables en Arequipa | Victor Anuncios'
+// SEO orientado a NEGOCIOS
+const title = 'Toldos Enrollables para Negocios en Arequipa | Victor Anuncios'
 const description =
-  'Fabricación e instalación de toldos enrollables en Arequipa. Protección solar, lonas resistentes, estructura metálica reforzada, instalación rápida y garantía.'
+  'Fabricación e instalación de toldos enrollables para negocios en Arequipa. Ideales para tiendas, restaurantes y locales comerciales. Estructura metálica, lonas resistentes y servicio profesional con garantía.'
 const keywords =
-  'toldos enrollables Arequipa, toldos para negocios, toldos para tiendas, toldos para casas, toldo enrollable precio, Victor Anuncios'
+  'toldos para negocios Arequipa, toldos enrollables comerciales, toldos para tiendas Arequipa, toldos para restaurantes Arequipa, toldo enrollable para local comercial, fabricación de toldos Arequipa, instalación de toldos comerciales'
 const canonical = 'https://victoranuncios.com/servicios/toldos-enrollables'
 
 // WhatsApp
 const number = '51946182531'
-const whatsappText = 'Hola, quiero un toldo enrollable para mi negocio en Arequipa.'
-const whatsappUrl = `https://wa.me/${number}?text=${encodeURIComponent(whatsappText)}`
+const whatsappText =
+  'Hola, quiero un toldo enrollable para mi negocio en Arequipa.'
+const whatsappUrl = `https://wa.me/${number}?text=${encodeURIComponent(
+  whatsappText
+)}`
 
-// Galería de imágenes (asegúrate de tener estos archivos en public/assets/services/toldos)
+// Galería de imágenes (coloca estos archivos en public/assets/services/toldos)
 const images = ['toldo-1.webp', 'toldo-2.webp', 'toldo-3.webp']
 
-// JSON-LD para SEO avanzado
+// JSON-LD para Google (negocios)
 const schema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Toldos Enrollables para Negocios en Arequipa",
-  "description": "Fabricación e instalación de toldos enrollables comerciales en Arequipa. Diseñados para tiendas, restaurantes, boticas y todo tipo de locales comerciales.",
-  "serviceType": "Toldos comerciales",
-  "areaServed": "Arequipa",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "Victor Anuncios",
-    "image": "https://victoranuncios.com/logo.png",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Av. Ramón Castilla 1004",
-      "addressLocality": "Arequipa",
-      "addressRegion": "Arequipa",
-      "addressCountry": "PE"
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Toldos Enrollables para Negocios en Arequipa',
+  description:
+    'Fabricación e instalación de toldos enrollables comerciales en Arequipa. Diseñados para tiendas, restaurantes, boticas y todo tipo de locales comerciales.',
+  serviceType: 'Toldos comerciales',
+  areaServed: 'Arequipa',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Victor Anuncios',
+    image: 'https://victoranuncios.com/logo.png',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Av. Ramón Castilla 1004',
+      addressLocality: 'Arequipa',
+      addressRegion: 'Arequipa',
+      addressCountry: 'PE',
     },
-    "telephone": "+51 946182531",
-    "url": "https://victoranuncios.com"
+    telephone: '+51 946182531',
+    url: 'https://victoranuncios.com',
   },
-  "url": "https://victoranuncios.com/servicios/toldos-enrollables"
+  url: 'https://victoranuncios.com/servicios/toldos-enrollables',
 }
-<Layout
-  title={title}
-  description={description}
-  keywords={keywords}
-  canonical={canonical}
->
+---
+
+<Layout title={title} description={description} keywords={keywords} canonical={canonical}>
   <section class="py-12 bg-gray-50">
     <div class="container mx-auto px-4">
       <!-- H1 SEO -->
       <h1 class="text-3xl md:text-4xl font-bold mb-6 text-center text-gray-800">
-        Toldos Enrollables en Arequipa
+        Toldos Enrollables para Negocios en Arequipa
       </h1>
 
       <!-- Párrafo principal SEO -->
       <p class="text-base md:text-lg text-gray-700 max-w-3xl mx-auto text-center mb-10">
         En <strong>Victor Anuncios</strong> fabricamos e instalamos
-        <strong> toldos enrollables en Arequipa</strong> para negocios, tiendas, casas y terrazas.
-        Utilizamos <strong>estructura metálica reforzada</strong>, lonas resistentes al sol y la lluvia,
-        y sistemas de enrollado seguros y duraderos. Entregamos un acabado profesional,
-        instalación rápida y garantía real en cada proyecto.
+        <strong> toldos enrollables para negocios en Arequipa</strong>, ideales para tiendas,
+        restaurantes, farmacias, minimarkets, bazares y todo tipo de locales comerciales.
+        Utilizamos <strong>estructura metálica reforzada</strong>, lonas resistentes al sol y
+        sistemas de enrollado duraderos. Mejoramos la fachada de tu negocio y protegemos a tus
+        clientes y productos.
       </p>
 
       <!-- Botón principal de acción -->
@@ -73,7 +75,7 @@ const schema = {
           href={whatsappUrl}
           class="inline-flex items-center justify-center px-6 py-3 rounded-2xl text-white font-semibold bg-green-500 hover:bg-green-600 transition"
         >
-          Cotizar toldo enrollable por WhatsApp
+          Cotizar toldo para mi negocio
         </a>
       </div>
 
@@ -83,7 +85,7 @@ const schema = {
           <figure class="bg-white rounded-2xl shadow-md overflow-hidden">
             <img
               src={`${base}/${img}`}
-              alt="Toldo enrollable instalado en Arequipa por Victor Anuncios"
+              alt="Toldo enrollable comercial instalado en Arequipa por Victor Anuncios"
               class="w-full h-56 object-cover"
               loading="lazy"
             />
@@ -91,33 +93,30 @@ const schema = {
         ))}
       </div>
 
-      <!-- Bloque de características -->
+      <!-- Beneficios para negocios -->
       <div class="max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-md mb-10">
         <h2 class="text-2xl font-bold mb-4 text-gray-800">
-          ¿Por qué elegir nuestros toldos enrollables?
+          Beneficios del toldo enrollable para tu negocio
         </h2>
         <ul class="space-y-3 text-gray-700">
-          <li>
-            • Materiales durables diseñados para el clima de
-            <strong> Arequipa</strong>.
-          </li>
-          <li>• Estructuras soldadas y reforzadas para mayor estabilidad.</li>
-          <li>• Lonas de alta resistencia UV, impermeables y fáciles de limpiar.</li>
-          <li>• Enrollado suave y seguro, con opción manual o motorizada.</li>
-          <li>• Ideales para fachadas comerciales, ventanas y terrazas.</li>
-          <li>• Medidas totalmente personalizadas según tu fachada.</li>
+          <li>• Aumenta la visibilidad y presencia de tu tienda en la calle.</li>
+          <li>• Protege vitrinas, productos y clientes del sol intenso de Arequipa.</li>
+          <li>• Mejora la imagen profesional de tu local comercial.</li>
+          <li>• Ideal para restaurantes, boticas, minimarkets, bazares y comercios en general.</li>
+          <li>• Fabricación a medida según el ancho y altura de tu fachada.</li>
+          <li>• Instalación profesional y servicio con garantía.</li>
         </ul>
       </div>
 
-      <!-- Bloque final con refuerzo comercial -->
+      <!-- Cierre comercial -->
       <div class="max-w-3xl mx-auto text-center">
         <h2 class="text-xl md:text-2xl font-semibold mb-3 text-gray-800">
-          Protege tu negocio del sol y mejora la fachada
+          Haz que tu negocio se vea mejor y trabaje más cómodo
         </h2>
         <p class="text-gray-700 mb-6">
-          Un <strong>toldo enrollable bien fabricado</strong> no solo protege del sol, también mejora la
-          presencia de tu negocio y hace más cómoda la atención a tus clientes. Trabajamos con
-          medición, fabricación e instalación completa para que no tengas que preocuparte por nada.
+          Un <strong>toldo enrollable comercial</strong> bien instalado protege, decora y hace más
+          agradable la atención a tus clientes. Nosotros nos encargamos de la medición,
+          fabricación e instalación completa para que tú solo te enfoques en tu negocio.
         </p>
         <a
           href={whatsappUrl}
