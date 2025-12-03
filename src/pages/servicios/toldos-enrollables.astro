@@ -1,68 +1,137 @@
-
 ---
 import Layout from '../../layouts/Layout.astro'
 
+// BASE para las imágenes
 const BASE = import.meta.env.BASE_URL
 const base = `${BASE}assets/services/toldos`
 
+// SEO
+const title = 'Toldos Enrollables en Arequipa | Victor Anuncios'
+const description =
+  'Fabricación e instalación de toldos enrollables en Arequipa. Protección solar, lonas resistentes, estructura metálica reforzada, instalación rápida y garantía.'
+const keywords =
+  'toldos enrollables Arequipa, toldos para negocios, toldos para tiendas, toldos para casas, toldo enrollable precio, Victor Anuncios'
+const canonical = 'https://victoranuncios.com/servicios/toldos-enrollables'
+
+// WhatsApp
 const number = '51946182531'
 const whatsappText = 'Hola, quiero un toldo enrollable para mi negocio en Arequipa.'
 const whatsappUrl = `https://wa.me/${number}?text=${encodeURIComponent(whatsappText)}`
 
-const images = [
-  'toldo-1.webp',
-  'toldo-2.webp',
-  'toldo-3.webp',
-]
+// Galería de imágenes (asegúrate de tener estos archivos en public/assets/services/toldos)
+const images = ['toldo-1.webp', 'toldo-2.webp', 'toldo-3.webp']
+
+// JSON-LD para SEO avanzado
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Toldos Enrollables en Arequipa',
+  description:
+    'Servicio profesional de fabricación e instalación de toldos enrollables en Arequipa. Estructura metálica, lonas resistentes y acabados de alta calidad.',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Victor Anuncios',
+    image: 'https://victoranuncios.com/logo.png',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Av. Ramón Castilla 1004',
+      addressLocality: 'Arequipa',
+      addressRegion: 'Arequipa',
+      postalCode: '04000',
+      addressCountry: 'PE',
+    },
+    telephone: '+51 946182531',
+  },
+  areaServed: 'Arequipa',
+  serviceType: 'Toldos Enrollables',
+  url: 'https://victoranuncios.com/servicios/toldos-enrollables',
+}
 ---
 
 <Layout
-  title="Toldos Enrollables en Arequipa | Victor Anuncios"
-  description="Fabricación e instalación de toldos enrollables en Arequipa. Protección solar, estructura de calidad, lonas resistentes, instalación rápida y garantía."
-  keywords="toldos enrollables Arequipa, toldos para negocios Arequipa, toldo enrollable, Victor Anuncios"
-  canonical="https://victoranuncios.com/servicios/toldos-enrollables"
-/>
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonical={canonical}
+>
+  <section class="py-12 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <!-- H1 SEO -->
+      <h1 class="text-3xl md:text-4xl font-bold mb-6 text-center text-gray-800">
+        Toldos Enrollables en Arequipa
+      </h1>
 
-<section class="py-12 bg-gray-50">
-  <div class="container mx-auto px-4">
-    <h1 class="text-4xl font-bold mb-6 text-center text-gray-800">
-      Toldos Enrollables en Arequipa
-    </h1>
-    <p class="text-lg text-gray-700 max-w-3xl mx-auto text-center mb-10">
-      Fabricamos e instalamos <strong>toldos enrollables</strong> para negocios y hogares en Arequipa.
-      Usamos estructuras metálicas resistentes, lonas de alta duración y sistemas de enrollado confiables.
-      Protección solar, estética moderna y acabado profesional garantizado.
-    </p>
+      <!-- Párrafo principal SEO -->
+      <p class="text-base md:text-lg text-gray-700 max-w-3xl mx-auto text-center mb-10">
+        En <strong>Victor Anuncios</strong> fabricamos e instalamos
+        <strong> toldos enrollables en Arequipa</strong> para negocios, tiendas, casas y terrazas.
+        Utilizamos <strong>estructura metálica reforzada</strong>, lonas resistentes al sol y la lluvia,
+        y sistemas de enrollado seguros y duraderos. Entregamos un acabado profesional,
+        instalación rápida y garantía real en cada proyecto.
+      </p>
 
-    <!-- Catálogo de imágenes -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-      {images.map(img => (
-        <img
-          src={`${base}/${img}`}
-          alt="Toldo enrollable Arequipa"
-          class="rounded-xl shadow-md hover:shadow-lg transition"
-          loading="lazy"
-        />
-      ))}
+      <!-- Botón principal de acción -->
+      <div class="flex justify-center mb-10">
+        <a
+          href={whatsappUrl}
+          class="inline-flex items-center justify-center px-6 py-3 rounded-2xl text-white font-semibold bg-green-500 hover:bg-green-600 transition"
+        >
+          Cotizar toldo enrollable por WhatsApp
+        </a>
+      </div>
+
+      <!-- Galería de imágenes -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        {images.map((img) => (
+          <figure class="bg-white rounded-2xl shadow-md overflow-hidden">
+            <img
+              src={`${base}/${img}`}
+              alt="Toldo enrollable instalado en Arequipa por Victor Anuncios"
+              class="w-full h-56 object-cover"
+              loading="lazy"
+            />
+          </figure>
+        ))}
+      </div>
+
+      <!-- Bloque de características -->
+      <div class="max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-md mb-10">
+        <h2 class="text-2xl font-bold mb-4 text-gray-800">
+          ¿Por qué elegir nuestros toldos enrollables?
+        </h2>
+        <ul class="space-y-3 text-gray-700">
+          <li>
+            • Materiales durables diseñados para el clima de
+            <strong> Arequipa</strong>.
+          </li>
+          <li>• Estructuras soldadas y reforzadas para mayor estabilidad.</li>
+          <li>• Lonas de alta resistencia UV, impermeables y fáciles de limpiar.</li>
+          <li>• Enrollado suave y seguro, con opción manual o motorizada.</li>
+          <li>• Ideales para fachadas comerciales, ventanas y terrazas.</li>
+          <li>• Medidas totalmente personalizadas según tu fachada.</li>
+        </ul>
+      </div>
+
+      <!-- Bloque final con refuerzo comercial -->
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-xl md:text-2xl font-semibold mb-3 text-gray-800">
+          Protege tu negocio del sol y mejora la fachada
+        </h2>
+        <p class="text-gray-700 mb-6">
+          Un <strong>toldo enrollable bien fabricado</strong> no solo protege del sol, también mejora la
+          presencia de tu negocio y hace más cómoda la atención a tus clientes. Trabajamos con
+          medición, fabricación e instalación completa para que no tengas que preocuparte por nada.
+        </p>
+        <a
+          href={whatsappUrl}
+          class="inline-flex items-center justify-center px-6 py-3 rounded-2xl text-white font-semibold bg-green-500 hover:bg-green-600 transition"
+        >
+          Agendar una visita técnica
+        </a>
+      </div>
     </div>
+  </section>
 
-    <!-- Sección de beneficios -->
-    <div class="max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-md">
-      <h2 class="text-2xl font-bold mb-4 text-gray-800">Características del servicio</h2>
-      <ul class="space-y-3 text-gray-700">
-        <li>• Estructura metálica soldada y reforzada</li>
-        <li>• Lona resistente a sol y lluvia</li>
-        <li>• Sistema de enrollado suave y duradero</li>
-        <li>• Se instala en fachadas, negocios, terrazas y ventanas</li>
-        <li>• Trabajo rápido, limpio y garantizado</li>
-      </ul>
-
-      <a
-        href={whatsappUrl}
-        class="mt-6 block text-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-xl"
-      >
-        Cotizar por WhatsApp
-      </a>
-    </div>
-  </div>
-</section>
+  <!-- JSON-LD para Google -->
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+</Layout>
