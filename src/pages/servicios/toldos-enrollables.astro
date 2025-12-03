@@ -1,1 +1,68 @@
 
+---
+import Layout from '../../layouts/Layout.astro'
+
+const BASE = import.meta.env.BASE_URL
+const base = `${BASE}assets/services/toldos`
+
+const number = '51946182531'
+const whatsappText = 'Hola, quiero un toldo enrollable para mi negocio en Arequipa.'
+const whatsappUrl = `https://wa.me/${number}?text=${encodeURIComponent(whatsappText)}`
+
+const images = [
+  'toldo-1.webp',
+  'toldo-2.webp',
+  'toldo-3.webp',
+]
+---
+
+<Layout
+  title="Toldos Enrollables en Arequipa | Victor Anuncios"
+  description="Fabricación e instalación de toldos enrollables en Arequipa. Protección solar, estructura de calidad, lonas resistentes, instalación rápida y garantía."
+  keywords="toldos enrollables Arequipa, toldos para negocios Arequipa, toldo enrollable, Victor Anuncios"
+  canonical="https://victoranuncios.com/servicios/toldos-enrollables"
+/>
+
+<section class="py-12 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h1 class="text-4xl font-bold mb-6 text-center text-gray-800">
+      Toldos Enrollables en Arequipa
+    </h1>
+    <p class="text-lg text-gray-700 max-w-3xl mx-auto text-center mb-10">
+      Fabricamos e instalamos <strong>toldos enrollables</strong> para negocios y hogares en Arequipa.
+      Usamos estructuras metálicas resistentes, lonas de alta duración y sistemas de enrollado confiables.
+      Protección solar, estética moderna y acabado profesional garantizado.
+    </p>
+
+    <!-- Catálogo de imágenes -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      {images.map(img => (
+        <img
+          src={`${base}/${img}`}
+          alt="Toldo enrollable Arequipa"
+          class="rounded-xl shadow-md hover:shadow-lg transition"
+          loading="lazy"
+        />
+      ))}
+    </div>
+
+    <!-- Sección de beneficios -->
+    <div class="max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-md">
+      <h2 class="text-2xl font-bold mb-4 text-gray-800">Características del servicio</h2>
+      <ul class="space-y-3 text-gray-700">
+        <li>• Estructura metálica soldada y reforzada</li>
+        <li>• Lona resistente a sol y lluvia</li>
+        <li>• Sistema de enrollado suave y duradero</li>
+        <li>• Se instala en fachadas, negocios, terrazas y ventanas</li>
+        <li>• Trabajo rápido, limpio y garantizado</li>
+      </ul>
+
+      <a
+        href={whatsappUrl}
+        class="mt-6 block text-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-xl"
+      >
+        Cotizar por WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
