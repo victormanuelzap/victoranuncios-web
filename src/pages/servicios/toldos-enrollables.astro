@@ -23,31 +23,28 @@ const images = ['toldo-1.webp', 'toldo-2.webp', 'toldo-3.webp']
 
 // JSON-LD para SEO avanzado
 const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'Toldos Enrollables en Arequipa',
-  description:
-    'Servicio profesional de fabricación e instalación de toldos enrollables en Arequipa. Estructura metálica, lonas resistentes y acabados de alta calidad.',
-  provider: {
-    '@type': 'LocalBusiness',
-    name: 'Victor Anuncios',
-    image: 'https://victoranuncios.com/logo.png',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Av. Ramón Castilla 1004',
-      addressLocality: 'Arequipa',
-      addressRegion: 'Arequipa',
-      postalCode: '04000',
-      addressCountry: 'PE',
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Toldos Enrollables para Negocios en Arequipa",
+  "description": "Fabricación e instalación de toldos enrollables comerciales en Arequipa. Diseñados para tiendas, restaurantes, boticas y todo tipo de locales comerciales.",
+  "serviceType": "Toldos comerciales",
+  "areaServed": "Arequipa",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Victor Anuncios",
+    "image": "https://victoranuncios.com/logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Ramón Castilla 1004",
+      "addressLocality": "Arequipa",
+      "addressRegion": "Arequipa",
+      "addressCountry": "PE"
     },
-    telephone: '+51 946182531',
+    "telephone": "+51 946182531",
+    "url": "https://victoranuncios.com"
   },
-  areaServed: 'Arequipa',
-  serviceType: 'Toldos Enrollables',
-  url: 'https://victoranuncios.com/servicios/toldos-enrollables',
+  "url": "https://victoranuncios.com/servicios/toldos-enrollables"
 }
----
-
 <Layout
   title={title}
   description={description}
