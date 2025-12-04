@@ -1,1 +1,134 @@
 
+---
+const whatsapp = "https://wa.me/51946182531";
+---
+
+<div class="fixed bottom-4 right-4 z-50 font-sans">
+  <!-- Botón burbuja -->
+  <button
+    id="va-chat-toggle"
+    class="rounded-full shadow-lg px-4 py-3 bg-blue-600 text-white text-sm font-semibold flex items-center gap-2 hover:bg-blue-700 transition"
+  >
+    💬 ¿Te ayudo?
+  </button>
+
+  <!-- Ventana de chat -->
+  <div
+    id="va-chat-window"
+    class="hidden mt-3 w-80 max-w-[90vw] rounded-xl shadow-xl bg-white border border-gray-200 overflow-hidden"
+  >
+    <div class="bg-blue-600 text-white px-4 py-3 flex items-center justify-between">
+      <div>
+        <p class="font-semibold text-sm">VictorBot</p>
+        <p class="text-xs text-blue-100">Asistente de Victor Anuncios</p>
+      </div>
+      <button id="va-chat-close" class="text-white text-xl leading-none">×</button>
+    </div>
+
+    <div
+      id="va-chat-messages"
+      class="h-64 overflow-y-auto px-3 py-2 text-sm bg-gray-50 space-y-2"
+    >
+      <div class="flex">
+        <div class="bg-white border border-gray-200 rounded-lg px-3 py-2 max-w-[85%]">
+          <p>Hola, soy <strong>VictorBot</strong>. ¿Qué tipo de letrero o publicidad necesitas?</p>
+          <p class="mt-1 text-xs text-gray-500">
+            Ejemplo: “Letrero luminoso 2x1 para mi bodega en Zamácola”.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <form id="va-chat-form" class="border-t border-gray-200 flex flex-col gap-1 p-2 bg-white">
+      <textarea
+        id="va-chat-input"
+        class="w-full resize-none border border-gray-300 rounded-lg px-2 py-1 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
+        rows="2"
+        placeholder="Escribe tu consulta..."
+      ></textarea>
+      <div class="flex items-center justify-between gap-2">
+        <button
+          type="submit"
+          class="flex-1 bg-blue-600 text-white text-sm font-semibold rounded-lg py-1.5 disabled:opacity-60"
+        >
+          Enviar
+        </button>
+        <a
+          href={whatsapp}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-xs text-green-600 underline"
+        >
+          Ir a WhatsApp
+        </a>
+      </div>
+      <p id="va-chat-error" class="text-xs text-red-500 hidden">
+        Hubo un problema al responder. Intenta de nuevo.
+      </p>
+    </form>
+  </div>
+</div>
+
+<script type="module">
+  const toggle = document.getElementById("va-chat-toggle");
+  const win = document.getElementById("va-chat-window");
+  const closeBtn = document.getElementById("va-chat-close");
+  const form = document.getElementById("va-chat-form");
+  const input = document.getElementById("va-chat-input");
+  const messages = document.getElementById("va-chat-messages");
+  const errorEl = document.getElementById("va-chat-error");
+
+  function appendMessage(text, from = "user") {
+    const wrapper = document.createElement("div");
+    wrapper.className = from === "user" ? "flex justify-end" : "flex";
+
+    const bubble = document.createElement("div");
+    bubble.className =
+      from === "user"
+        ? "bg-blue-600 text-white rounded-lg px-3 py-2 max-w-[85%] text-sm"
+        : "bg-white border border-gray-200 rounded-lg px-3 py-2 max-w-[85%] text-sm";
+    bubble.textContent = text;
+
+    wrapper.appendChild(bubble);
+    messages.appendChild(wrapper);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  toggle?.addEventListener("click", () => {
+    win?.classList.toggle("hidden");
+  });
+
+  closeBtn?.addEventListener("click", () => {
+    win?.classList.add("hidden");
+  });
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const text = input.value.trim();
+    if (!text) return;
+    errorEl.classList.add("hidden");
+
+    appendMessage(text, "user");
+    input.value = "";
+    input.disabled = true;
+
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: text }),
+      });
+
+      if (!res.ok) throw new Error("Error en la respuesta");
+
+      const data = await res.json();
+      appendMessage(data.reply || "No pude responder en este momento.");
+    } catch (err) {
+      console.error(err);
+      errorEl.classList.remove("hidden");
+    } finally {
+      input.disabled = false;
+      input.focus();
+    }
+  });
+</script>
