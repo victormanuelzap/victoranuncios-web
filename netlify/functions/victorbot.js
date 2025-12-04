@@ -1,6 +1,9 @@
 // netlify/functions/victorbot.js
 
-export async function handler(event, context) {
+const OPENAI_URL = "https://api.openai.com/v1/chat/completions";
+
+exports.handler = async (event, context) => {
+  // Solo aceptamos POST
   if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,
@@ -9,6 +12,7 @@ export async function handler(event, context) {
   }
 
   try {
+    // Parsear el cuerpo
     const body = JSON.parse(event.body || "{}");
     const message = body.message?.trim();
 
@@ -16,20 +20,28 @@ export async function handler(event, context) {
       return {
         statusCode: 400,
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ error: "Mensaje vacío." }),
+        body: JSON.stringify({
+          reply: "Escríbeme tu consulta para poder ayudarte 🙂.",
+        }),
       };
     }
 
+    // API KEY
     const apiKey = process.env.OPENAI_API_KEY;
     if (!apiKey) {
+      console.error("NO HAY OPENAI_API_KEY configurada en Netlify.");
       return {
         statusCode: 500,
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ error: "Falta OPENAI_API_KEY en Netlify." }),
+        body: JSON.stringify({
+          reply:
+            "Ahora mismo no tengo conexión con el motor de IA. Intenta más tarde.",
+        }),
       };
     }
 
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    // Llamada a OpenAI
+    const response = await fetch(OPENAI_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -41,16 +53,36 @@ export async function handler(event, context) {
           {
             role: "system",
             content:
-              "Eres VictorBot, asistente del negocio de publicidad 'Victor Anuncios' en Arequipa.",
+              "Eres VictorBot, asistente del negocio de publicidad 'Victor Anuncios' en Arequipa. " +
+              "Respondes de forma clara, amable y directa. Ayudas a cotizar letreros luminosos, letras 3D, gigantografías, vinilos, tarjetas y servicios de Victor Anuncios.",
           },
           { role: "user", content: message },
         ],
       }),
     });
 
-    const data = await response.json();
+    // Si OpenAI devuelve error, lo registramos
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error("Error OpenAI:", response.status, errorText);
 
-    const reply = data?.choices?.[0]?.message?.content || "No pude responder.";
+      return {
+        statusCode: 500,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          reply:
+            "Tuve un problema al generar la respuesta. Intenta de nuevo en un momento.",
+        }),
+      };
+    }
+
+    // Parsear la respuesta correcta
+    const data = await response.json();
+    console.log("Respuesta OpenAI:", JSON.stringify(data));
+
+    const reply =
+      data?.choices?.[0]?.message?.content?.trim() ||
+      "No pude responder ahora mismo, pero puedes intentarlo de nuevo.";
 
     return {
       statusCode: 200,
@@ -62,8 +94,10 @@ export async function handler(event, context) {
     return {
       statusCode: 500,
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ error: "Error en el servidor." }),
+      body: JSON.stringify({
+        reply:
+          "Ha ocurrido un error inesperado en el servidor. Intenta nuevamente.",
+      }),
     };
   }
-}
-
+};
