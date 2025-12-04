@@ -9,8 +9,6 @@ interface Props {
 const { title, description, keywords, canonical } = Astro.props
 import '../css/base.css'
 
-
-
 // 🔹 BASE URL AUTOMÁTICA (para que funcione en GitHub Pages y local)
 const base = import.meta.env.BASE_URL
 ---
@@ -20,90 +18,79 @@ const base = import.meta.env.BASE_URL
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1' />
-    <meta name='description' content={description || "Letreros luminosos en Arequipa: diseño, fabricación e instalación por Victor Anuncios. Calidad, garantía y entrega rápida."} />
-    <meta name='keywords' content={keywords || "letrero luminoso Arequipa, letreros LED Arequipa, cajas de luz Arequipa, publicidad exterior Arequipa, Victor Anuncios"} />
+    <meta
+      name='description'
+      content={description || "Letreros luminosos en Arequipa: diseño, fabricación e instalación por Victor Anuncios. Calidad, garantía y entrega rápida."}
+    />
+    <meta
+      name='keywords'
+      content={keywords || "letrero luminoso Arequipa, letreros LED Arequipa, cajas de luz Arequipa, publicidad exterior Arequipa, Victor Anuncios"}
+    />
     <meta name='author' content='Victor Anuncios' />
     <meta name='generator' content={Astro.generator} />
 
     <title>{title}</title>
-<link rel="manifest" href="/manifest.webmanifest" />
-<meta name="theme-color" content="#0044cc" />
+
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#0044cc" />
 
     <!-- Favicon y Open Graph -->
-<!-- Favicon para todos los navegadores -->
-<link rel="icon" type="image/x-icon" href={`${base}favicon.ico?v=1`} />
-
-<!-- Favicon PNG (moderno) -->
-<link rel="icon" type="image/png" sizes="48x48" href={`${base}favicon.png?v=1`} />
-
-<!-- Para iPhone / iPad -->
-<link rel="apple-touch-icon" sizes="180x180" href={`${base}favicon.png?v=1`} />
-
-<!-- Para Android -->
-<link rel="icon" sizes="192x192" href={`${base}favicon.png?v=1`} />
-
+    <link rel="icon" type="image/x-icon" href={`${base}favicon.ico?v=1`} />
+    <link rel="icon" type="image/png" sizes="48x48" href={`${base}favicon.png?v=1`} />
+    <link rel="apple-touch-icon" sizes="180x180" href={`${base}favicon.png?v=1`} />
+    <link rel="icon" sizes="192x192" href={`${base}favicon.png?v=1`} />
 
     <meta property='og:title' content={title} />
-  
-<meta
-  property='og:description'
-  content={description || 'Letreros luminosos en Arequipa — diseño, fabricación e instalación.'}
-/>
-
+    <meta
+      property='og:description'
+      content={description || 'Letreros luminosos en Arequipa — diseño, fabricación e instalación.'}
+    />
     <meta property='og:type' content='website' />
     <meta property='og:locale' content='es_PE' />
     <meta property='og:image' content={`${base}og-cover.jpg`} />
 
     <!-- Canonical -->
+    <link rel='canonical' href={canonical || Astro.url.href} />
 
+    <!-- Google Fonts (optimizado, no bloquea el renderizado) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
 
-<link rel='canonical' href={canonical || Astro.url.href} />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
 
-<!-- Google Fonts (optimizado, no bloquea el renderizado) -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      />
+    </noscript>
 
-<link
-  rel="preload"
-  href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
-  as="style"
-  onload="this.onload=null;this.rel='stylesheet'"
-/>
+    <!-- Boxicons -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      media="print"
+      onload="this.media='all'"
+    />
 
-<noscript>
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
-  />
-</noscript>
-
-
-
-<!-- Boxicons (no bloquea el renderizado) -->
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-  media="print"
-  onload="this.media='all'"
-/>
-
-<!-- Splide (no bloquea el renderizado) -->
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
-  media="print"
-  onload="this.media='all'"
-/>
-
-    <!-- ✅ Estilos principales (ajustado para GitHub Pages) -->
-   
+    <!-- Splide -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+      media="print"
+      onload="this.media='all'"
+    />
 
     <!-- Google tag (gtag.js) -->
     <script async src='https://www.googletagmanager.com/gtag/js?id=AW-17054169407'></script>
     <script is:raw>
       window.dataLayer = window.dataLayer || [];
-
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'AW-17054169407');
@@ -113,18 +100,16 @@ const base = import.meta.env.BASE_URL
   <body class="overflow-x-hidden">
     <!-- HEADER ESCRITORIO -->
     <div class="hidden md:block sticky top-0 z-50 bg-white border-b border-gray-200">
-
       <div class="container mx-auto h-24 flex items-center justify-between">
-
         <!-- IZQUIERDA -->
-       <a href={`${base}`} class="flex items-center gap-2">
-  <img
-    src={`${base}logo.png`}
-    class="w-14"
-    alt="Logo de Victor Anuncios, diseño y publicidad en Arequipa"
-  />
-  <span class="hidden lg:block font-bold">VICTOR ANUNCIOS</span>
-</a>
+        <a href={`${base}`} class="flex items-center gap-2">
+          <img
+            src={`${base}logo.png`}
+            class="w-14"
+            alt="Logo de Victor Anuncios, diseño y publicidad en Arequipa"
+          />
+          <span class="hidden lg:block font-bold">VICTOR ANUNCIOS</span>
+        </a>
 
         <!-- CENTRO -->
         <div class="flex flex-col items-center text-center">
@@ -132,96 +117,56 @@ const base = import.meta.env.BASE_URL
             Iluminamos tu marca en Arequipa ⚡
           </div>
           <div class="mt-1 flex flex-wrap justify-center gap-2 text-xs text-neutral-600">
-
-<span class="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-purple-100 border">
-  💳 Pagos: Yape • Plin • Interbank
-</span>
-
-
+            <span class="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-purple-100 border">
+              💳 Pagos: Yape • Plin • Interbank
+            </span>
             <span class="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-gray-100 border">✅ Garantía 1 año</span>
             <span class="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-gray-100 border">🛠️ Diseño + instalación</span>
             <span class="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-gray-100 border">🚚 Entrega rápida</span>
           </div>
         </div>
 
-        <!-- DERECHA (MENÚ ESCRITORIO) -->
-<nav class="relative flex items-center gap-6 text-[17px] font-semibold text-neutral-900">
+        <!-- MENÚ ESCRITORIO -->
+        <nav class="relative flex items-center gap-6 text-[17px] font-semibold text-neutral-900">
+          <a href={`${base}`} class="hover:text-primary">Inicio</a>
 
-  <a href={`${base}`} class="hover:text-primary">Inicio</a>
+          <!-- DROPDOWN SERVICIOS -->
+          <div class="group relative">
+            <button class="hover:text-primary flex items-center gap-1">
+              Servicios
+              <i class='bx bx-chevron-down text-xl'></i>
+            </button>
 
-  <!-- DROPDOWN SERVICIOS -->
-  <div class="group relative">
-    <button class="hover:text-primary flex items-center gap-1">
-      Servicios
-      <i class='bx bx-chevron-down text-xl'></i>
-    </button>
+            <div class="absolute left-0 mt-2 hidden group-hover:block bg-white shadow-lg border rounded-lg py-2 w-56 z-50">
+              <a href={`${base}servicios/letrero-luminoso/`} class="block px-4 py-2 hover:bg-gray-100">Letreros luminosos</a>
+              <a href={`${base}servicios/3d/`} class="block px-4 py-2 hover:bg-gray-100">Letras 3D</a>
+              <a href={`${base}servicios/gigantografias/`} class="block px-4 py-2 hover:bg-gray-100">Gigantografías</a>
+              <a href={`${base}servicios/vinilos/`} class="block px-4 py-2 hover:bg-gray-100">Vinilos</a>
+              <a href={`${base}servicios/toldos-enrollables/`} class="block px-4 py-2 hover:bg-gray-100">Toldos enrollables</a>
+              <a href={`${base}tarjetas/`} class="block px-4 py-2 hover:bg-gray-100">Tarjetas personales</a>
+              <a href={`${base}volantes/`} class="block px-4 py-2 hover:bg-gray-100">Volantes</a>
+              <a href={`${base}formateria/`} class="block px-4 py-2 hover:bg-gray-100">Formatería</a>
+              <a href={`${base}calendarios/`} class="block px-4 py-2 hover:bg-gray-100">Calendarios</a>
+            </div>
+          </div>
 
-    <!-- CONTENIDO DEL DROPDOWN -->
-    <div class="absolute left-0 mt-2 hidden group-hover:block bg-white shadow-lg border rounded-lg py-2 w-56 z-50">
-
-      <a href={`${base}servicios/letrero-luminoso/`}
-         class="block px-4 py-2 hover:bg-gray-100">Letreros luminosos</a>
-
-      <a href={`${base}servicios/3d/`}
-         class="block px-4 py-2 hover:bg-gray-100">Letras 3D</a>
-
-      <a href={`${base}servicios/gigantografias/`}
-         class="block px-4 py-2 hover:bg-gray-100">Gigantografías</a>
-
-      <a href={`${base}servicios/vinilos/`}
-         class="block px-4 py-2 hover:bg-gray-100">Vinilos</a>
-
-      <!-- ✅ NUEVO: Toldos enrollables -->
-      <a href={`${base}servicios/toldos-enrollables/`}
-         class="block px-4 py-2 hover:bg-gray-100">Toldos enrollables</a>
-
-      <a href={`${base}tarjetas/`}
-         class="block px-4 py-2 hover:bg-gray-100">Tarjetas personales</a>
-
-      <a href={`${base}volantes/`}
-         class="block px-4 py-2 hover:bg-gray-100">Volantes</a>
-
-      <a href={`${base}formateria/`}
-         class="block px-4 py-2 hover:bg-gray-100">Formatería</a>
-
-      <a href={`${base}calendarios/`}
-         class="block px-4 py-2 hover:bg-gray-100">Calendarios</a>
-
-    </div>
-  </div>
-
-  <a href={`${base}contacto/`} class="hover:text-primary">Contacto</a>
-</nav>
-
-
+          <a href={`${base}contacto/`} class="hover:text-primary">Contacto</a>
+        </nav>
       </div>
     </div>
-
 
     <!-- HEADER MÓVIL -->
     <div class="md:hidden sticky top-0 z-50 bg-white border-b border-gray-200">
       <div class="flex items-center justify-between px-4 h-16">
-
-<!-- LOGO + TEXTO + MEDIOS DE PAGO -->
-<a href={`${base}`} class="flex items-center gap-2 min-w-0">
-  <img src={`${base}logo.png`} class="h-10 w-auto flex-shrink-0" alt="Victor Anuncios" />
-
-  <div class="flex flex-col leading-tight min-w-0">
-    <span class="text-base font-bold text-neutral-900 truncate">
-      VICTOR ANUNCIOS
-    </span>
-
-    <div class="flex items-center gap-1 mt-1">
-      <span class="text-[11px] font-semibold text-neutral-700">
-   
-      </span>
-     
-    </div>
-  </div>
-</a>
-
-
-
+        <a href={`${base}`} class="flex items-center gap-2 min-w-0">
+          <img src={`${base}logo.png`} class="h-10 w-auto flex-shrink-0" alt="Victor Anuncios" />
+          <div class="flex flex-col leading-tight min-w-0">
+            <span class="text-base font-bold text-neutral-900 truncate">VICTOR ANUNCIOS</span>
+            <div class="flex items-center gap-1 mt-1">
+              <span class="text-[11px] font-semibold text-neutral-700"></span>
+            </div>
+          </div>
+        </a>
 
         <!-- BOTÓN MENÚ -->
         <button
@@ -236,190 +181,271 @@ const base = import.meta.env.BASE_URL
         </button>
       </div>
 
-      <!-- MENÚ DESPLEGABLE MÓVIL -->
-      <div
-        id="mobile-menu"
-        class="hidden bg-white border-t border-gray-200 shadow-sm"
-      >
-<nav class="flex flex-col px-4 py-3 gap-3 text-base font-semibold text-neutral-900">
-  <a href={`${base}`} class="py-1">Inicio</a>
-  <a href={`${base}servicios/letrero-luminoso/`} class="py-1">Letreros luminosos</a>
-  <a href={`${base}servicios/3d/`} class="py-1">Letras 3D</a>
-  <a href={`${base}servicios/gigantografias/`} class="py-1">Gigantografías</a>
-  <a href={`${base}servicios/vinilos/`} class="py-1">Vinilos</a>
-  <!-- ✅ NUEVO: Toldos enrollables -->
-  <a href={`${base}servicios/toldos-enrollables/`} class="py-1">Toldos enrollables</a>
-  <a href={`${base}tarjetas/`} class="py-1">Tarjetas</a>
-  <a href={`${base}volantes/`} class="py-1">Volantes</a>
-  <a href={`${base}formateria/`} class="py-1">Formatería</a>
-  <a href={`${base}calendarios/`} class="py-1">Calendarios</a>
-  <a href={`${base}contacto/`} class="py-1">Contacto</a>
-</nav>
-
+      <div id="mobile-menu" class="hidden bg-white border-t border-gray-200 shadow-sm">
+        <nav class="flex flex-col px-4 py-3 gap-3 text-base font-semibold text-neutral-900">
+          <a href={`${base}`} class="py-1">Inicio</a>
+          <a href={`${base}servicios/letrero-luminoso/`} class="py-1">Letreros luminosos</a>
+          <a href={`${base}servicios/3d/`} class="py-1">Letras 3D</a>
+          <a href={`${base}servicios/gigantografias/`} class="py-1">Gigantografías</a>
+          <a href={`${base}servicios/vinilos/`} class="py-1">Vinilos</a>
+          <a href={`${base}servicios/toldos-enrollables/`} class="py-1">Toldos enrollables</a>
+          <a href={`${base}tarjetas/`} class="py-1">Tarjetas</a>
+          <a href={`${base}volantes/`} class="py-1">Volantes</a>
+          <a href={`${base}formateria/`} class="py-1">Formatería</a>
+          <a href={`${base}calendarios/`} class="py-1">Calendarios</a>
+          <a href={`${base}contacto/`} class="py-1">Contacto</a>
+        </nav>
       </div>
     </div>
 
-
-      
-
-
-
-
-
+    <!-- CONTENIDO DE CADA PÁGINA -->
     <slot />
 
+    <!-- FOOTER -->
+    <footer class="bg-[#0B1A2D] py-14 mt-20 md:mt-28">
+      <div class="max-w-4xl mx-auto text-center px-6">
+        <img
+          src={`${base}logo.png`}
+          class="w-24 mx-auto mb-4"
+          alt="Victor Anuncios logo"
+        />
 
-<footer class="bg-[#0B1A2D] py-14 mt-20 md:mt-28">
-  <div class="max-w-4xl mx-auto text-center px-6">
+        <h2 class="text-white font-bold text-3xl mb-2">Victor Anuncios</h2>
 
-    <!-- LOGO CENTRADO -->
-    <img 
-      src={`${base}logo.png`} 
-      class="w-24 mx-auto mb-4" 
-      alt="Victor Anuncios logo"
-    />
+        <p class="text-gray-300 text-base leading-relaxed mb-8">
+          Tarjetas de presentación, Letreros 3D, Cortes Laser, Gigantografías,
+          Volantes, Imantados y Afiches.
+        </p>
 
-    <h2 class="text-white font-bold text-3xl mb-2">
-      Victor Anuncios
-    </h2>
+        <h3 class="text-gray-100 text-sm font-semibold mb-3">Pagos disponibles:</h3>
 
-    <p class="text-gray-300 text-base leading-relaxed mb-8">
-      Tarjetas de presentación, Letreros 3D, Cortes Laser, Gigantografías, 
-      Volantes, Imantados y Afiches.
-    </p>
+        <div class="flex items-center justify-center gap-6 mb-10">
+          <img src={`${base}yape.png`} class="h-10 w-auto" alt="Yape" />
+          <img src={`${base}plin.png`} class="h-10 w-auto" alt="Plin" />
+          <img src={`${base}interbank.webp`} class="h-10 w-auto" alt="Interbank" />
+        </div>
 
-    <!-- Pagos -->
-    <h3 class="text-gray-100 text-sm font-semibold mb-3">
-      Pagos disponibles:
-    </h3>
+        <div class="flex justify-center gap-10" aria-label="Redes sociales de Victor Anuncios">
+          <a
+            href="https://www.instagram.com/victoranuncioss/"
+            target="_blank"
+            class="text-white text-3xl"
+            aria-label="Instagram de Victor Anuncios"
+          >
+            <i class="bx bxl-instagram" aria-hidden="true"></i>
+          </a>
 
-    <div class="flex items-center justify-center gap-6 mb-10">
-      <img src={`${base}yape.png`} class="h-10 w-auto" alt="Yape" />
-      <img src={`${base}plin.png`} class="h-10 w-auto" alt="Plin" />
-      <img src={`${base}interbank.webp`} class="h-10 w-auto" alt="Interbank" />
-    </div>
+          <a
+            href="https://www.facebook.com/VictorAnunciosarequipa"
+            target="_blank"
+            class="text-white text-3xl"
+            aria-label="Facebook de Victor Anuncios"
+          >
+            <i class="bx bxl-facebook" aria-hidden="true"></i>
+          </a>
 
-<!-- Redes sociales -->
-<div class="flex justify-center gap-10" aria-label="Redes sociales de Victor Anuncios">
+          <a
+            href="https://www.tiktok.com/@victor.anuncios"
+            target="_blank"
+            class="text-white text-3xl"
+            aria-label="TikTok de Victor Anuncios"
+          >
+            <i class="bx bxl-tiktok" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
 
-  <a
-    href="https://www.instagram.com/victoranuncioss/"
-    target="_blank"
-    class="text-white text-3xl"
-    aria-label="Instagram de Victor Anuncios"
-  >
-    <i class="bx bxl-instagram" aria-hidden="true"></i>
-  </a>
+    <!-- Librería Splide -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" is:inline></script>
 
-  <a
-    href="https://www.facebook.com/VictorAnunciosarequipa"
-    target="_blank"
-    class="text-white text-3xl"
-    aria-label="Facebook de Victor Anuncios"
-  >
-    <i class="bx bxl-facebook" aria-hidden="true"></i>
-  </a>
+    <!-- Toggle menú móvil -->
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', () => {
+        const btn = document.querySelector('[data-menu-toggle]');
+        const menu = document.querySelector('#mobile-menu');
 
-  <a
-    href="https://www.tiktok.com/@victor.anuncios"
-    target="_blank"
-    class="text-white text-3xl"
-    aria-label="TikTok de Victor Anuncios"
-  >
-    <i class="bx bxl-tiktok" aria-hidden="true"></i>
-  </a>
+        if (!btn || !menu) return;
 
-</div>
+        btn.addEventListener('click', () => {
+          menu.classList.toggle('hidden');
+        });
+      });
+    </script>
 
+    <!-- WhatsApp flotante -->
+    <div class="fixed bottom-6 right-6 z-50">
+      <div
+        id="wa-open"
+        class="bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center cursor-pointer shadow-xl hover:scale-105 transition"
+      >
+        <i class='bx bxl-whatsapp text-4xl'></i>
+      </div>
 
-</footer>
+      <div
+        id="wa-chat"
+        class="hidden bg-white w-72 p-4 rounded-xl shadow-2xl border mt-3"
+      >
+        <div class="flex items-center gap-3">
+          <img src={`${base}logo.png`} class="w-12 h-12 rounded-full border" alt="Victor Anuncios" />
+          <div>
+            <h3 class="font-bold text-neutral-900 text-lg">Victor Anuncios</h3>
+            <p class="text-green-600 text-sm">En línea ahora</p>
+          </div>
+        </div>
 
+        <div class="mt-3 bg-gray-100 p-3 rounded-lg text-sm">
+          👋 Hola! ¿Necesitas un letrero luminoso, letras 3D o algún diseño?
+        </div>
 
- 
- 
-<!-- Librería Splide (v4) -->
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" is:inline></script>
-<!-- Toggle menú móvil -->
-<script is:inline>
-  document.addEventListener('DOMContentLoaded', () => {
-    const btn = document.querySelector('[data-menu-toggle]');
-    const menu = document.querySelector('#mobile-menu');
-
-    if (!btn || !menu) return;
-
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-    });
-  });
-</script>
-
-
-<!-- Init sin error de TS -->
-
-
-
-<!-- Inicialización robusta SIN error TS -->
-
-<!-- WhatsApp Chat Abierto -->
-<div class="fixed bottom-6 right-6 z-50">
-  
-  <!-- BURBUJA DE CHAT -->
-  <div id="wa-open"
-       class="bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center cursor-pointer shadow-xl hover:scale-105 transition">
-    <i class='bx bxl-whatsapp text-4xl'></i>
-  </div>
-
-  <!-- VENTANA DE CHAT -->
-  <div id="wa-chat"
-       class="hidden bg-white w-72 p-4 rounded-xl shadow-2xl border mt-3">
-
-    <div class="flex items-center gap-3">
-      <img src={`${base}logo.png`} class="w-12 h-12 rounded-full border" alt="Victor Anuncios" />
-      <div>
-        <h3 class="font-bold text-neutral-900 text-lg">Victor Anuncios</h3>
-        <p class="text-green-600 text-sm">En línea ahora</p>
+        <a
+          href="https://wa.me/51946182531?text=Hola%20Victor,%20quiero%20una%20cotización"
+          target="_blank"
+          class="block bg-green-500 text-white text-center mt-4 py-2 rounded-lg hover:bg-green-600 transition"
+        >
+          Chatear en WhatsApp
+        </a>
       </div>
     </div>
 
-    <div class="mt-3 bg-gray-100 p-3 rounded-lg text-sm">
-      👋 Hola! ¿Necesitas un letrero luminoso, letras 3D o algún diseño?
+    <script is:inline>
+      const btn = document.getElementById('wa-open');
+      const chat = document.getElementById('wa-chat');
+
+      if (btn && chat) {
+        btn.addEventListener('click', () => {
+          chat.classList.toggle('hidden');
+        });
+      }
+    </script>
+
+    <!-- Service Worker (solo una vez) -->
+    <script is:inline>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("/sw.js")
+          .then((reg) => console.log("Service Worker registrado", reg.scope))
+          .catch((err) => console.log("Error registrando SW:", err));
+      });
+    }
+    </script>
+
+    <!-- ✅ VictorBot: burbuja de chat con OpenAI -->
+    <div class="fixed bottom-24 right-6 z-40">
+      <button
+        id="victorbot-toggle"
+        class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-xl hover:bg-blue-700 transition"
+        aria-label="Abrir chat VictorBot"
+      >
+        <i class="bx bx-message-detail text-2xl"></i>
+      </button>
+
+      <div
+        id="victorbot-window"
+        class="hidden mt-3 w-80 bg-white rounded-2xl shadow-2xl border flex flex-col overflow-hidden"
+      >
+        <div class="bg-blue-600 text-white px-4 py-3 flex items-center justify-between">
+          <div>
+            <h3 class="font-bold text-sm">VictorBot</h3>
+            <p class="text-xs text-blue-100">Asistente de Victor Anuncios</p>
+          </div>
+          <button
+            type="button"
+            id="victorbot-close"
+            class="text-white text-xl leading-none"
+            aria-label="Cerrar chat"
+          >
+            ×
+          </button>
+        </div>
+
+        <div
+          id="victorbot-messages"
+          class="px-3 py-3 h-64 overflow-y-auto flex flex-col gap-2 text-sm bg-gray-50"
+        >
+          <div class="self-start bg-gray-200 text-gray-900 px-3 py-2 rounded-xl max-w-[80%]">
+            👋 Hola, soy VictorBot. ¿En qué puedo ayudarte con letreros, gigantografías o publicidad?
+          </div>
+        </div>
+
+        <form id="victorbot-form" class="border-t border-gray-200 flex">
+          <input
+            id="victorbot-input"
+            type="text"
+            class="flex-1 px-3 py-2 text-sm outline-none"
+            placeholder="Escribe tu pregunta..."
+          />
+          <button
+            type="submit"
+            class="px-4 text-sm font-semibold text-blue-600"
+          >
+            Enviar
+          </button>
+        </form>
+      </div>
     </div>
 
-    <a href="https://wa.me/51946182531?text=Hola%20Victor,%20quiero%20una%20cotización"
-       target="_blank"
-       class="block bg-green-500 text-white text-center mt-4 py-2 rounded-lg hover:bg-green-600 transition">
-      Chatear en WhatsApp
-    </a>
-  </div>
+    <script is:inline>
+      (function () {
+        const toggle = document.getElementById('victorbot-toggle');
+        const closeBtn = document.getElementById('victorbot-close');
+        const windowEl = document.getElementById('victorbot-window');
+        const form = document.getElementById('victorbot-form');
+        const input = document.getElementById('victorbot-input');
+        const messagesEl = document.getElementById('victorbot-messages');
 
-</div>
+        if (!toggle || !windowEl || !form || !input || !messagesEl) return;
 
-<!-- SCRIPT -->
-<script is:inline>
-  const btn = document.getElementById('wa-open');
-  const chat = document.getElementById('wa-chat');
+        const toggleWindow = () => {
+          windowEl.classList.toggle('hidden');
+        };
 
-  btn.addEventListener('click', () => {
-    chat.classList.toggle('hidden');
-  });
-</script>
+        toggle.addEventListener('click', toggleWindow);
+        if (closeBtn) closeBtn.addEventListener('click', toggleWindow);
 
-<script is:inline>
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker
-      .register("/sw.js")
-      .then((reg) => console.log("Service Worker registrado", reg.scope))
-      .catch((err) => console.log("Error registrando SW:", err));
-  });
-}
-</script>
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const text = input.value.trim();
+          if (!text) return;
 
+          appendMessage('user', text);
+          input.value = '';
 
+          const loading = appendMessage('bot', 'Escribiendo...');
 
+          try {
+            const res = await fetch('/.netlify/functions/victorbot', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ message: text }),
+            });
+
+            const data = await res.json();
+            loading.textContent = data.reply || 'No pude responder ahora.';
+          } catch (err) {
+            console.error('ERROR VictorBot:', err);
+            loading.textContent = 'Tuve un problema. Intenta más tarde.';
+          }
+
+          messagesEl.scrollTop = messagesEl.scrollHeight;
+        });
+
+        function appendMessage(type, text) {
+          const div = document.createElement('div');
+          div.className =
+            type === 'user'
+              ? 'self-end bg-green-500 text-white px-3 py-2 rounded-xl max-w-[80%]'
+              : 'self-start bg-gray-200 text-gray-900 px-3 py-2 rounded-xl max-w-[80%]';
+          div.textContent = text;
+          messagesEl.appendChild(div);
+          messagesEl.scrollTop = messagesEl.scrollHeight;
+          return div;
+        }
+      })();
+    </script>
   </body>
 </html>
-
 
 <style is:global>
   html {
@@ -432,6 +458,7 @@ if ("serviceWorker" in navigator) {
     transition: all 0.3s ease-in-out;
   }
 </style>
+
 <style is:global>
   html, body {
     overflow-x: hidden;
@@ -450,24 +477,20 @@ if ("serviceWorker" in navigator) {
     object-fit: cover;
   }
 
-  /* Espaciado entre secciones */
   section {
     margin: 0;
     padding: 0;
   }
 
-  /* Corrige espacio blanco entre header y slider */
   .hidden.md\:block.sticky {
     margin-bottom: 0;
   }
 
-  /* Logo controlado */
   header img, .logo img {
     max-height: 70px;
     height: auto;
   }
 
-  /* Galería */
   .gallery img {
     width: 100%;
     object-fit: cover;
