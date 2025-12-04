@@ -6,12 +6,14 @@ const BASE = import.meta.env.BASE_URL
 const base = `${BASE}assets/services/toldos`
 
 // SEO orientado a NEGOCIOS
-const title = 'Toldos Enrollables para Negocios en Arequipa | Victor Anuncios'
+const title =
+  'Toldos Enrollables para Negocios en Arequipa | Victor Anuncios'
 const description =
   'Fabricación e instalación de toldos enrollables para negocios en Arequipa. Ideales para tiendas, restaurantes y locales comerciales. Estructura metálica, lonas resistentes y servicio profesional con garantía.'
 const keywords =
   'toldos para negocios Arequipa, toldos enrollables comerciales, toldos para tiendas Arequipa, toldos para restaurantes Arequipa, toldo enrollable para local comercial, fabricación de toldos Arequipa, instalación de toldos comerciales'
-const canonical = 'https://victoranuncios.com/servicios/toldos-enrollables'
+const canonical =
+  'https://victoranuncios.com/servicios/toldos-enrollables'
 
 // WhatsApp
 const number = '51946182531'
@@ -51,22 +53,32 @@ const schema = {
 }
 ---
 
-<Layout title={title} description={description} keywords={keywords} canonical={canonical}>
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonical={canonical}
+>
   <section class="py-12 bg-gray-50">
     <div class="container mx-auto px-4">
       <!-- H1 SEO -->
-      <h1 class="text-3xl md:text-4xl font-bold mb-6 text-center text-gray-800">
+      <h1
+        class="text-3xl md:text-4xl font-bold mb-6 text-center text-gray-800"
+      >
         Toldos Enrollables para Negocios en Arequipa
       </h1>
 
       <!-- Párrafo principal SEO -->
-      <p class="text-base md:text-lg text-gray-700 max-w-3xl mx-auto text-center mb-10">
+      <p
+        class="text-base md:text-lg text-gray-700 max-w-3xl mx-auto text-center mb-10"
+      >
         En <strong>Victor Anuncios</strong> fabricamos e instalamos
-        <strong> toldos enrollables para negocios en Arequipa</strong>, ideales para tiendas,
-        restaurantes, farmacias, minimarkets, bazares y todo tipo de locales comerciales.
-        Utilizamos <strong>estructura metálica reforzada</strong>, lonas resistentes al sol y
-        sistemas de enrollado duraderos. Mejoramos la fachada de tu negocio y protegemos a tus
-        clientes y productos.
+        <strong> toldos enrollables para negocios en Arequipa</strong>, ideales
+        para tiendas, restaurantes, farmacias, minimarkets, bazares y todo tipo
+        de locales comerciales. Utilizamos
+        <strong> estructura metálica reforzada</strong>, lonas resistentes al
+        sol y sistemas de enrollado duraderos. Mejoramos la fachada de tu
+        negocio y protegemos a tus clientes y productos.
       </p>
 
       <!-- Botón principal de acción -->
@@ -80,7 +92,9 @@ const schema = {
       </div>
 
       <!-- Galería de imágenes -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
+      >
         {images.map((img) => (
           <figure class="bg-white rounded-2xl shadow-md overflow-hidden">
             <img
@@ -94,16 +108,26 @@ const schema = {
       </div>
 
       <!-- Beneficios para negocios -->
-      <div class="max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-md mb-10">
+      <div
+        class="max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-md mb-10"
+      >
         <h2 class="text-2xl font-bold mb-4 text-gray-800">
           Beneficios del toldo enrollable para tu negocio
         </h2>
         <ul class="space-y-3 text-gray-700">
           <li>• Aumenta la visibilidad y presencia de tu tienda en la calle.</li>
-          <li>• Protege vitrinas, productos y clientes del sol intenso de Arequipa.</li>
+          <li>
+            • Protege vitrinas, productos y clientes del sol intenso de
+            Arequipa.
+          </li>
           <li>• Mejora la imagen profesional de tu local comercial.</li>
-          <li>• Ideal para restaurantes, boticas, minimarkets, bazares y comercios en general.</li>
-          <li>• Fabricación a medida según el ancho y altura de tu fachada.</li>
+          <li>
+            • Ideal para restaurantes, boticas, minimarkets, bazares y
+            comercios en general.
+          </li>
+          <li>
+            • Fabricación a medida según el ancho y altura de tu fachada.
+          </li>
           <li>• Instalación profesional y servicio con garantía.</li>
         </ul>
       </div>
@@ -114,9 +138,10 @@ const schema = {
           Haz que tu negocio se vea mejor y trabaje más cómodo
         </h2>
         <p class="text-gray-700 mb-6">
-          Un <strong>toldo enrollable comercial</strong> bien instalado protege, decora y hace más
-          agradable la atención a tus clientes. Nosotros nos encargamos de la medición,
-          fabricación e instalación completa para que tú solo te enfoques en tu negocio.
+          Un <strong>toldo enrollable comercial</strong> bien instalado
+          protege, decora y hace más agradable la atención a tus clientes.
+          Nosotros nos encargamos de la medición, fabricación e instalación
+          completa para que tú solo te enfoques en tu negocio.
         </p>
         <a
           href={whatsappUrl}
@@ -129,5 +154,8 @@ const schema = {
   </section>
 
   <!-- JSON-LD para Google -->
-  <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(schema)}
+  />
 </Layout>
