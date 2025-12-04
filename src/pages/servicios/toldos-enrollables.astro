@@ -51,6 +51,9 @@ const schema = {
   },
   url: 'https://victoranuncios.com/servicios/toldos-enrollables',
 }
+
+// 👇 convertir el objeto a JSON plano para inyectarlo en el <script>
+const jsonLD = JSON.stringify(schema)
 ---
 
 <Layout
@@ -154,7 +157,5 @@ const schema = {
   </section>
 
   <!-- JSON-LD para Google -->
-  <script type="application/ld+json" is:inline>
-    {JSON.stringify(schema)}
-  </script>
+  <script type="application/ld+json" set:html={jsonLD}></script>
 </Layout>
