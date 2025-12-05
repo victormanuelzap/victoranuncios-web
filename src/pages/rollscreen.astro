@@ -1,53 +1,50 @@
-
 ---
-const base = import.meta.env.BASE_URL;
+import Layout from "../layouts/Layout.astro"
+
+const BASE = import.meta.env.BASE_URL
+const image = `${BASE}assets/rollscreen/roll.png`  // cambia el nombre del archivo
 ---
 
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Página Roll Screen - Victor Anuncios</title>
-  </head>
+<Layout
+  title="Roll Screen en Arequipa | Victor Anuncios"
+  description="Roll Screen publicitario para eventos, ferias y presentaciones. Fácil de transportar y listo para usar."
+  canonical="/rollscreen/"
+>
+  <main class="bg-red-600 text-white">
 
-  <body class="m-0 p-0 overflow-x-hidden scroll-smooth">
+    <!-- HERO TIPO PRODUCTO ROLL SCREEN -->
+    <section class="min-h-screen flex items-center">
+      <div class="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-10 items-center">
 
-    <!-- Sección 1 -->
-    <section id="inicio" class="h-screen flex flex-col items-center justify-center bg-gradient-to-r from-red-600 to-yellow-500 text-white">
-      <h1 class="text-5xl font-bold mb-6">Victor Anuncios</h1>
-      <p class="text-xl mb-8">Diseño, publicidad y letreros luminosos</p>
+        <!-- IMAGEN DEL ROLL SCREEN -->
+        <div class="flex justify-center">
+          <img
+            src={image}
+            alt="Roll Screen Publicitario"
+            class="w-full max-w-md object-contain drop-shadow-xl"
+          />
+        </div>
 
-      <button
-        onclick="document.getElementById('servicios').scrollIntoView({ behavior: 'smooth' })"
-        class="bg-white text-red-600 px-6 py-3 rounded-xl font-semibold text-lg shadow-lg hover:scale-105 transition">
-        Ver Servicios
-      </button>
+        <!-- TEXTO -->
+        <div class="space-y-6">
+          <h1 class="text-5xl font-extrabold">Roll Screen</h1>
+
+          <div class="space-y-3 text-white/90 text-lg">
+            <p><strong>Versátil:</strong> Herramienta publicitaria plegable para interiores y eventos.</p>
+            <p><strong>Fácil de trasladar:</strong> Incluye bolso para transporte.</p>
+            <p><strong>Ideal para negocios:</strong> Presenta tus promociones de manera profesional.</p>
+          </div>
+
+          <a
+            href="https://wa.me/51946182531?text=Hola,%20quiero%20un%20Roll%20Screen."
+            class="inline-block bg-black px-6 py-3 text-sm font-semibold rounded-md border border-white hover:bg-white hover:text-black transition"
+          >
+            COMPRAR
+          </a>
+        </div>
+
+      </div>
     </section>
 
-    <!-- Sección 2 -->
-    <section id="servicios" class="h-screen flex flex-col items-center justify-center bg-white text-black">
-      <h2 class="text-4xl font-bold mb-6">Nuestros Servicios</h2>
-      <p class="text-xl mb-4">Letreros luminosos, gigantografías, viniles, tarjetas y más.</p>
-
-      <button
-        onclick="document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' })"
-        class="bg-red-600 text-white px-6 py-3 rounded-xl font-semibold text-lg shadow-lg hover:scale-105 transition">
-        Ir a Contacto
-      </button>
-    </section>
-
-    <!-- Sección 3 -->
-    <section id="contacto" class="h-screen flex flex-col items-center justify-center bg-blue-600 text-white">
-      <h2 class="text-4xl font-bold mb-6">Contacto</h2>
-      <p class="text-xl mb-4">Comunícate con nosotros para tu próximo trabajo.</p>
-
-      <a
-        href="https://wa.me/51946182531"
-        class="bg-white text-blue-700 px-6 py-3 rounded-xl font-semibold text-lg shadow-lg hover:scale-105 transition">
-        WhatsApp
-      </a>
-    </section>
-
-  </body>
-</html>
+  </main>
+</Layout>
