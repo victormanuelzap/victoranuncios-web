@@ -179,8 +179,16 @@ const products = [
     },
 ]
 ---
+<Layout
+    title='Formularios SUNAT en Arequipa: Boletas, Facturas y Guías | Victor Anuncios'
+    description='Impresión de boletas de venta, facturas, guías de remisión, notas de venta, proformas y formatos para transportistas autorizados por SUNAT en Arequipa. Papel químico autocopiativo, numerado, pegado y forrado. Atención rápida con Victor Anuncios.'
+    keywords='formateria Arequipa, formularios SUNAT Arequipa, boletas de venta SUNAT, facturas SUNAT Arequipa, guías de remisión Arequipa, nota de venta Arequipa, proformas en Arequipa, talonarios autocopiativos, impresión talonarios Arequipa, Victor Anuncios'
+    canonical='https://victoranuncios.com/formateria'
+>
 
-<Layout title='Formateria (Arequipa) - victor anuncios'>
+
+
+
     <section class='relative'>
      
       <img
@@ -194,22 +202,39 @@ const products = [
             <h1
                 class='text-white text-4xl md:text-6xl font-bold uppercase text-center'
             >
-                FORMATERIA
+            FORMULARIOS SUNAT Y TALONARIOS EN AREQUIPA
             </h1>
         </div>
     </section>
 
     <div class='max-w-7xl mx-auto'>
+
+  <div class='py-8 space-y-2'>
+        <p>
+            En <strong>Victor Anuncios</strong> imprimimos 
+            <strong>boletas de venta, facturas, guías de remisión, notas de venta, proformas y formatos para transportistas</strong>
+            autorizados por SUNAT en Arequipa. Utilizamos <strong>papel químico autocopiativo</strong>, 
+            numerado, pegado y forrado, ideal para negocios, empresas y transportistas que necesitan
+            <strong>formateria profesional y formalizada</strong>.
+        </p>
+        <p>
+            Trabajamos con medidas estándar como <strong>1/4 y 1/2 oficio</strong>, con originales y copias
+            según lo que necesite tu negocio. Contáctanos por WhatsApp para cotizar tus talonarios personalizados.
+        </p>
+    </div>
+
+
         <div class='grid gap-10 md:grid-cols-3'>
             {
                 products.map((product) => (
                     <div>
                         <div class='relative'>
-                            <img
-                                src={product.image}
-                                alt='Producto'
-                                class='rounded-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500'
-                            />
+                          <img
+    src={product.image}
+    alt={`Formulario ${product.title_2} autorizado por SUNAT en Arequipa`}
+    class='rounded-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500'
+/>
+
                             <div class='leading-6 text-2xl absolute bottom-5 w-full text-center'>
                                 {product.title && (
                                     <h2 class='font-semibold uppercase'>
