@@ -1,1 +1,53 @@
 
+---
+const base = import.meta.env.BASE_URL;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Página Roll Screen - Victor Anuncios</title>
+  </head>
+
+  <body class="m-0 p-0 overflow-x-hidden scroll-smooth">
+
+    <!-- Sección 1 -->
+    <section id="inicio" class="h-screen flex flex-col items-center justify-center bg-gradient-to-r from-red-600 to-yellow-500 text-white">
+      <h1 class="text-5xl font-bold mb-6">Victor Anuncios</h1>
+      <p class="text-xl mb-8">Diseño, publicidad y letreros luminosos</p>
+
+      <button
+        onclick="document.getElementById('servicios').scrollIntoView({ behavior: 'smooth' })"
+        class="bg-white text-red-600 px-6 py-3 rounded-xl font-semibold text-lg shadow-lg hover:scale-105 transition">
+        Ver Servicios
+      </button>
+    </section>
+
+    <!-- Sección 2 -->
+    <section id="servicios" class="h-screen flex flex-col items-center justify-center bg-white text-black">
+      <h2 class="text-4xl font-bold mb-6">Nuestros Servicios</h2>
+      <p class="text-xl mb-4">Letreros luminosos, gigantografías, viniles, tarjetas y más.</p>
+
+      <button
+        onclick="document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' })"
+        class="bg-red-600 text-white px-6 py-3 rounded-xl font-semibold text-lg shadow-lg hover:scale-105 transition">
+        Ir a Contacto
+      </button>
+    </section>
+
+    <!-- Sección 3 -->
+    <section id="contacto" class="h-screen flex flex-col items-center justify-center bg-blue-600 text-white">
+      <h2 class="text-4xl font-bold mb-6">Contacto</h2>
+      <p class="text-xl mb-4">Comunícate con nosotros para tu próximo trabajo.</p>
+
+      <a
+        href="https://wa.me/51946182531"
+        class="bg-white text-blue-700 px-6 py-3 rounded-xl font-semibold text-lg shadow-lg hover:scale-105 transition">
+        WhatsApp
+      </a>
+    </section>
+
+  </body>
+</html>
