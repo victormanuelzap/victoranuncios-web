@@ -1,1 +1,177 @@
+---
+import Layout from '../layouts/Layout.astro'
+const base = import.meta.env.BASE_URL
+const number = '51946182531'
+
+const products = [
+  {
+    title: 'Horno artesanal',
+    title_2: 'Hogar familiar',
+    image: `${base}assets/images/hornos-1.jpg`,
+    whatsapp: `https://wa.me/${number}?text=Hola, quiero un horno artesanal para mi casa en Arequipa`,
+    features: [
+      { name: 'Uso', value: 'Pan, pizza, carnes y comidas caseras' },
+      { name: 'Material', value: 'Ladrillo refractario y barro' },
+      { name: 'Medidas', value: 'A medida según tu espacio' },
+      { name: 'Instalación', value: 'Incluye base y chimenea básica' },
+      { name: 'Zona de atención', value: 'Arequipa y alrededores' },
+    ],
+  },
+  {
+    title: 'Horno artesanal',
+    title_2: 'Acabado fino',
+    image: `${base}assets/images/hornos-2.jpg`,
+    whatsapp: `https://wa.me/${number}?text=Hola, quiero un horno artesanal con acabado fino`,
+    features: [
+      { name: 'Uso', value: 'Hogar, restaurantes y pollerías pequeñas' },
+      { name: 'Material', value: 'Ladrillo refractario, barro y revestimiento' },
+      { name: 'Acabado', value: 'Estructura pulida y decorativa' },
+      { name: 'Instalación', value: 'Incluye base, puerta y chimenea' },
+      { name: 'Personalización', value: 'Color y diseño exterior a elección' },
+    ],
+  },
+  {
+    title: 'Horno artesanal',
+    title_2: 'De ladrillo visto',
+    image: `${base}assets/images/hornos-3.jpg`,
+    whatsapp: `https://wa.me/${number}?text=Hola, quiero un horno artesanal de ladrillo visto`,
+    features: [
+      { name: 'Estilo', value: 'Ladrillo expuesto tipo rústico' },
+      { name: 'Uso', value: 'Restaurantes, campestres y quintas' },
+      { name: 'Medidas', value: 'Diseño a medida según proyecto' },
+      { name: 'Estructura', value: 'Alta retención de calor' },
+      { name: 'Instalación', value: 'En terraza, patio o área de parrilla' },
+    ],
+  },
+  {
+    title: 'Horno + Parrilla',
+    title_2: 'Módulo completo',
+    image: `${base}assets/images/hornos-4.jpg`,
+    whatsapp: `https://wa.me/${number}?text=Hola, quiero un módulo completo de horno con parrilla`,
+    features: [
+      { name: 'Incluye', value: 'Horno artesanal + parrilla integrada' },
+      { name: 'Uso', value: 'Reuniones familiares y negocios de comida' },
+      { name: 'Material', value: 'Ladrillo refractario, cemento y fierro' },
+      { name: 'Acabado', value: 'Revestimiento rústico o moderno' },
+      { name: 'Proyecto', value: 'Diseño según plano o idea del cliente' },
+    ],
+  },
+  {
+    title: 'Horno para pizzería',
+    title_2: 'Profesional',
+    image: `${base}assets/images/hornos-5.jpg`,
+    whatsapp: `https://wa.me/${number}?text=Hola, quiero un horno artesanal profesional para pizzería`,
+    features: [
+      { name: 'Uso', value: 'Pizzerías, restaurantes y negocios de comida' },
+      { name: 'Temperatura', value: 'Alta temperatura para pizzas y panes' },
+      { name: 'Material', value: 'Ladrillo refractario de alta calidad' },
+      { name: 'Diseño', value: 'Entrada amplia y cámara profunda' },
+      { name: 'Asesoría', value: 'Orientación para el mejor rendimiento' },
+    ],
+  },
+  {
+    title: 'Horno artesanal',
+    title_2: 'Diseño especial',
+    image: `${base}assets/images/hornos-6.jpg`,
+    whatsapp: `https://wa.me/${number}?text=Hola, quiero un horno artesanal con diseño especial o a medida`,
+    features: [
+      { name: 'Proyecto', value: 'Totalmente personalizado' },
+      { name: 'Uso', value: 'Hogar, negocio o proyectos especiales' },
+      { name: 'Material', value: 'Según requerimiento del cliente' },
+      { name: 'Medidas', value: 'Diseño a medida del espacio' },
+      { name: 'Extras', value: 'Techo, base, repisas u otros accesorios' },
+    ],
+  },
+]
+---
+
+<Layout
+  title='Hornos artesanales en Arequipa | Fabricación a medida - Victor Anuncios'
+  description='Fabricación de hornos artesanales en Arequipa para casa y negocio. Hornos de barro y ladrillo, acabados rústicos y profesionales, instalación a medida y asesoría personalizada.'
+  keywords='hornos artesanales Arequipa, hornos de barro Arequipa, construcción de hornos, hornos de ladrillo, hornos para pizzería, hornos para casa, hornos para negocio'
+  canonical='https://victoranuncios.com/hornos-artesanales'
+>
+  {/* HERO */}
+  <section class='relative'>
+    <img
+      src={`${base}assets/images/hornos-artesanales-hero.jpg`}
+      alt='Hornos artesanales en Arequipa - Victor Anuncios'
+      class='h-80 w-full object-cover'
+    />
+
+    <div class='absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center'>
+      <h1 class='text-white text-3xl md:text-5xl font-bold uppercase text-center'>
+        HORNOS ARTESANALES EN AREQUIPA
+      </h1>
+    </div>
+  </section>
+
+  {/* GRID DE PRODUCTOS */}
+  <div class='max-w-7xl mx-auto px-4 py-10'>
+    <div class='grid gap-10 md:grid-cols-3'>
+      {products.map((product) => (
+        <div class='rounded-2xl shadow-lg bg-white overflow-hidden'>
+          <div class='relative'>
+            <img
+              src={product.image}
+              alt={`Horno artesanal ${product.title_2} en Arequipa - Victor Anuncios`}
+              class='rounded-t-2xl w-full group-hover:scale-110 group-hover:rotate-2 transition-all duration-500'
+            />
+            <div class='leading-6 text-xl absolute bottom-4 w-full text-center drop-shadow'>
+              {product.title && (
+                <h2 class='font-semibold uppercase text-white'>
+                  {product.title}
+                </h2>
+              )}
+              <h2 class='font-bold uppercase text-orange-400'>
+                {product.title_2}
+              </h2>
+            </div>
+          </div>
+
+          <div class='px-4 pt-4 pb-2'>
+            <table class='text-sm w-full'>
+              <tbody>
+                {product.features.map((feature) => (
+                  <tr>
+                    <td class='text-orange-500 font-semibold align-top pr-1'>
+                      {feature.name}:&nbsp;
+                    </td>
+                    <td class='text-gray-700'>{feature.value}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div class='px-4 pb-5 mt-2'>
+            <a
+              href={product.whatsapp}
+              class='bg-green-600 hover:bg-green-500 text-white py-2 px-4 rounded-xl w-full flex gap-2 justify-center items-center transition'
+            >
+              <i class='bx bxl-whatsapp text-2xl' />
+              Pedir información por WhatsApp
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  {/* TEXTO SEO INFORMATIVO */}
+  <section class='max-w-5xl mx-auto mt-4 mb-16 px-4'>
+    <h2 class='text-2xl font-bold mb-3'>
+      Fabricación de hornos artesanales en Arequipa para casa y negocio
+    </h2>
+    <p class='mb-3 text-gray-700'>
+      En Victor Anuncios construimos hornos artesanales en Arequipa pensados para hogares, restaurantes, pizzerías y negocios de comida. Trabajamos con ladrillo refractario, barro y materiales de calidad para garantizar una excelente retención de calor, cocción pareja y larga duración.
+    </p>
+    <p class='mb-3 text-gray-700'>
+      Diseñamos cada horno a medida según el espacio disponible y el uso que le darás: familiar, comercial o mixto. Te asesoramos en el tamaño ideal, ubicación, tipo de chimenea y estructura de base para que tu horno funcione de manera segura y eficiente.
+    </p>
+    <p class='text-gray-700'>
+      Si estás en Arequipa y quieres instalar un horno artesanal, contáctanos por WhatsApp. Coordinamos visita, diseño, presupuesto y tiempo de construcción para que puedas disfrutar pronto del auténtico sabor de horno de barro o ladrillo.
+    </p>
+  </section>
+</Layout>
 
