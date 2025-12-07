@@ -187,4 +187,63 @@ const products = [
       Coordinamos medidas, diseño, tiempo de construcción e instalación para que disfrutes pronto del auténtico sabor de horno artesanal.
     </p>
   </section>
+
+
+
+  {/* TEXTO SEO INFORMATIVO */}
+  <section class='max-w-5xl mx-auto mt-4 mb-16 px-4'>
+    <h2 class='text-2xl font-bold mb-3 text-[#A65E2E]'>
+      Hornos artesanales en Arequipa – fabricación a medida
+    </h2>
+    <p class='mb-3 text-gray-700'>
+      En Hornos Artesanales Arequipa fabricamos hornos a medida para tu hogar o negocio...
+    </p>
+    <p class='text-gray-700'>
+      Si buscas un horno artesanal en Arequipa...
+    </p>
+  </section>
+
+  <!-- 🔥 BLOQUE SEO JSON-LD AQUÍ -->
+  <script type="application/ld+json" is:inline>
+    {JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'LocalBusiness',
+      '@id': 'https://www.victoranuncios.com/hornos-artesanales#business',
+      name: 'Hornos Artesanales Arequipa',
+      description:
+        'Hornos artesanales en Arequipa fabricados a medida para casa y negocio. Hornos de ladrillo, barro y base de piedra, construidos con materiales de alta calidad.',
+      url: 'https://www.victoranuncios.com/hornos-artesanales',
+      telephone: '+51 925632333',
+      image: [
+        `${base}assets/images/hornos-1.jpg`,
+        `${base}assets/images/hornos-2.jpg`,
+        `${base}assets/images/hornos-3.jpg`,
+      ],
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Arequipa',
+        addressRegion: 'Arequipa',
+        addressCountry: 'PE',
+      },
+      areaServed: {
+        '@type': 'City',
+        name: 'Arequipa',
+      },
+      serviceType:
+        'Diseño, construcción e instalación de hornos artesanales de ladrillo y barro a medida',
+      makesOffer: products.map((p) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Product',
+          name: `${p.title} ${p.title_2}`,
+          image: p.image,
+          description: `Horno artesanal ${p.title_2.toLowerCase()} fabricado a medida en Arequipa.`,
+        },
+        availability: 'https://schema.org/InStock',
+      })),
+    })}
+  </script>
+
+
+
 </ClientLayout>
