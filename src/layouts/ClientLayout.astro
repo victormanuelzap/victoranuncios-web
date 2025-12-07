@@ -1,34 +1,215 @@
-
 ---
-const { title = "" } = Astro.props;
+interface Props {
+  title: string
+  description?: string
+  keywords?: string
+  canonical?: string
+}
+
+const { title, description, keywords, canonical } = Astro.props
+import '../css/base.css'
+
+const base = import.meta.env.BASE_URL
 ---
 
-<html lang="es">
+<!doctype html>
+<html lang='es'>
   <head>
-    <meta charset="UTF-8" />
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <meta
+      name='description'
+      content={description || "Página alojada en Victor Anuncios – soluciones digitales en Arequipa."}
+    />
+    <meta
+      name='keywords'
+      content={keywords || "victor anuncios, alojamiento web Arequipa, diseño web Arequipa"}
+    />
+    <meta name='author' content='Victor Anuncios' />
+    <meta name='generator' content={Astro.generator} />
+
     <title>{title}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#0044cc" />
+
+    <!-- Favicon y Open Graph -->
+    <link rel="icon" type="image/x-icon" href={`${base}favicon.ico?v=1`} />
+    <link rel="icon" type="image/png" sizes="48x48" href={`${base}favicon.png?v=1`} />
+    <link rel="apple-touch-icon" sizes="180x180" href={`${base}favicon.png?v=1`} />
+    <link rel="icon" sizes="192x192" href={`${base}favicon.png?v=1`} />
+
+    <meta property='og:title' content={title} />
+    <meta
+      property='og:description'
+      content={description || 'Página alojada en Victor Anuncios – Arequipa.'}
+    />
+    <meta property='og:type' content='website' />
+    <meta property='og:locale' content='es_PE' />
+    <meta property='og:image' content={`${base}og-cover.jpg`} />
+
+    <link rel='canonical' href={canonical || Astro.url.href} />
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      />
+    </noscript>
+
+    <!-- Boxicons -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <!-- Splide -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src='https://www.googletagmanager.com/gtag/js?id=AW-17054169407'></script>
+    <script is:raw>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17054169407');
+    </script>
   </head>
 
-  <body class="bg-white text-gray-800">
+  <body class="overflow-x-hidden bg-white text-neutral-900">
+    <!-- HEADER ESCRITORIO SIMPLE -->
+    <header class="hidden md:block sticky top-0 z-40 bg-white border-b border-gray-200">
+      <div class="container mx-auto h-16 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <img
+            src={`${base}logo.png`}
+            class="w-10"
+            alt="Victor Anuncios"
+          />
+          <div class="flex flex-col">
+            <span class="text-sm font-semibold text-neutral-800">
+              Página alojada en Victor Anuncios
+            </span>
+            <span class="text-xs text-neutral-500">
+              Soluciones digitales en Arequipa
+            </span>
+          </div>
+        </div>
 
-    <!-- HEADER SIMPLE -->
-    <header class="py-4 px-6 border-b border-gray-200">
-      <h1 class="text-xl font-semibold text-gray-700">
-        Página alojada en Victor Anuncios
-      </h1>
+        <a
+          href={`${base}`}
+          class="text-xs font-semibold text-blue-600 hover:text-blue-700"
+        >
+          Ir a victoranuncios.com
+        </a>
+      </div>
+    </header>
+
+    <!-- HEADER MÓVIL SIMPLE -->
+    <header class="md:hidden sticky top-0 z-40 bg-white border-b border-gray-200">
+      <div class="flex items-center justify-between px-4 h-14">
+        <div class="flex items-center gap-2">
+          <img src={`${base}logo.png`} class="h-8 w-auto" alt="Victor Anuncios" />
+          <div class="flex flex-col leading-tight">
+            <span class="text-xs font-semibold text-neutral-900">
+              Página alojada en Victor Anuncios
+            </span>
+            <span class="text-[11px] text-neutral-500">
+              Arequipa – Perú
+            </span>
+          </div>
+        </div>
+
+        <a
+          href={`${base}`}
+          class="text-[11px] font-semibold text-blue-600 hover:text-blue-700"
+        >
+          Ver sitio principal
+        </a>
+      </div>
     </header>
 
     <!-- CONTENIDO DE LA PÁGINA -->
-    <main class="px-4 py-8">
+    <main class="min-h-screen">
       <slot />
     </main>
 
     <!-- FOOTER SIMPLE -->
-    <footer class="py-6 border-t border-gray-200 text-center text-sm text-gray-600">
-      <p>Página alojada por Victor Anuncios – Arequipa</p>
-      <p>© {new Date().getFullYear()} Todos los derechos reservados</p>
+    <footer class="border-t border-gray-200 py-8 mt-10">
+      <div class="max-w-4xl mx-auto text-center px-4">
+        <img
+          src={`${base}logo.png`}
+          class="w-16 mx-auto mb-3"
+          alt="Victor Anuncios logo"
+        />
+        <p class="text-sm font-semibold text-neutral-800">
+          Página alojada por Victor Anuncios – Arequipa
+        </p>
+        <p class="text-xs text-neutral-500 mt-1">
+          © {new Date().getFullYear()} Todos los derechos reservados
+        </p>
+      </div>
     </footer>
 
+    <!-- Splide JS (por si alguna página lo usa) -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" is:inline></script>
+
+    <!-- Service Worker (lo dejamos igual) -->
+    <script is:inline>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/sw.js")
+            .then((reg) => console.log("Service Worker registrado", reg.scope))
+            .catch((err) => console.log("Error registrando SW:", err));
+        });
+      }
+    </script>
   </body>
 </html>
+
+<style is:global>
+  html {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  html, body {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .splide__slide img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+  }
+
+  section {
+    margin: 0;
+    padding: 0;
+  }
+</style>
