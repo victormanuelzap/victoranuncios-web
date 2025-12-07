@@ -2,7 +2,7 @@
 import ClientLayout from '../layouts/ClientLayout.astro'
 
 const base = import.meta.env.BASE_URL
-// Número del cliente: 925 632 333  (formato internacional para enlaces)
+// Número del negocio de hornos: 925 632 333  (enlace en formato internacional)
 const number = '51925632333'
 
 // PRODUCTOS
@@ -50,8 +50,8 @@ const products = [
 ---
 
 <ClientLayout
-  title='Hornos artesanales en Arequipa | Fabricación a medida - Victor Anuncios'
-  description='Hornos artesanales en Arequipa – Fabricación a medida para casa y negocio. Construimos hornos artesanales de alta calidad, duraderos y eficientes, con instalación profesional.'
+  title='Hornos artesanales en Arequipa | Fabricación a medida - Hornos Artesanales Arequipa'
+  description='Hornos artesanales en Arequipa – Fabricación a medida para casa y negocio. Hornos de ladrillo, barro y base de piedra, construidos con materiales de alta calidad.'
   keywords='hornos artesanales Arequipa, hornos de barro Arequipa, hornos de ladrillo, construcción de hornos, hornos para casa, hornos para negocio, hornos rústicos'
   canonical='https://victoranuncios.com/hornos-artesanales'
 >
@@ -63,21 +63,41 @@ const products = [
       class='h-80 w-full object-cover'
     />
 
-    <div class='absolute top-0 left-0 w-full h-full bg-black bg-opacity-55 flex justify-center items-center'>
-      <div class='text-center px-4 max-w-3xl mx-auto'>
-        {/* Etiqueta tipo “CREACIÓN” */}
+    <div class='absolute top-0 left-0 w-full h-full bg-black bg-opacity-60 flex justify-center items-center'>
+      <div class='text-center px-4 max-w-4xl mx-auto'>
+
+        {/* LOGO DEL NEGOCIO */}
+        <div class="flex justify-center mb-4">
+          <div class="bg-white/90 rounded-2xl px-4 py-3 flex items-center gap-3 shadow-lg">
+            <img
+              src={`${base}assets/images/hornos-logo.png`}
+              alt="Logo Hornos Artesanales Arequipa"
+              class="w-16 h-16 object-contain"
+            />
+            <div class="text-left">
+              <p class="text-[11px] md:text-xs text-neutral-600 font-semibold uppercase tracking-wide">
+                Hornos Artesanales
+              </p>
+              <p class="text-sm md:text-base font-bold text-neutral-900">
+                HORNOS ARTESANALES AREQUIPA
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* ETIQUETA SUPERIOR */}
         <div class="inline-block mb-3 px-4 py-1 rounded-full bg-[#FF6A1A] text-white text-xs md:text-sm font-semibold tracking-wide">
           CREACIÓN DE HORNOS ARTESANALES
         </div>
 
         <h1 class='text-white text-3xl md:text-5xl font-extrabold uppercase mb-2 drop-shadow-xl'>
-          HORNOS ARTESANALES AREQUIPA
+          HORNOS ARTESANALES EN AREQUIPA
         </h1>
         <p class='text-white text-sm md:text-lg font-medium drop-shadow mb-3'>
-          Fabricación a medida para tu hogar o negocio. Hornos artesanales duraderos y eficientes, listos para pan, pizza y comida tradicional.
+          Fabricación a medida para tu hogar o negocio. Hornos artesanales duraderos y eficientes para pan, pizza y comida tradicional.
         </p>
 
-        {/* Teléfono del negocio */}
+        {/* TELÉFONO PRINCIPAL */}
         <div class='mt-2 flex flex-col items-center gap-2'>
           <a
             href={`tel:+${number}`}
@@ -134,11 +154,11 @@ const products = [
             </table>
           </div>
 
-          {/* Botón WhatsApp */}
+          {/* Botón WhatsApp NARANJA */}
           <div class='px-4 pb-5 mt-2'>
             <a
               href={product.whatsapp}
-              class='bg-green-600 hover:bg-green-500 text-white py-2 px-4 rounded-xl w-full flex gap-2 justify-center items-center transition'
+              class='bg-[#FF6A1A] hover:bg-[#FF7A30] text-white py-2 px-4 rounded-xl w-full flex gap-2 justify-center items-center transition shadow-md'
             >
               <i class='bx bxl-whatsapp text-2xl' />
               Pedir información por WhatsApp
@@ -161,7 +181,8 @@ const products = [
       Te asesoramos en el diseño del horno según el espacio disponible y el uso que necesites: familiar, comercial o mixto. Trabajamos con ladrillo refractario, barro y estructuras reforzadas para lograr una excelente retención de calor y una cocción pareja.
     </p>
     <p class='text-gray-700'>
-      Si buscas un horno artesanal en Arequipa, contáctanos por llamada directa al <strong>925 632 333</strong> o por WhatsApp desde los modelos mostrados. Coordinamos medidas, diseño, tiempo de construcción e instalación para que disfrutes pronto del auténtico sabor de horno artesanal.
+      Si buscas un horno artesanal en Arequipa, contáctanos por llamada directa al <strong>925 632 333</strong> o por WhatsApp desde los modelos mostrados. 
+      Coordinamos medidas, diseño, tiempo de construcción e instalación para que disfrutes pronto del auténtico sabor de horno artesanal.
     </p>
   </section>
 </ClientLayout>
