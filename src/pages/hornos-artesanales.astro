@@ -2,10 +2,9 @@
 import ClientLayout from '../layouts/ClientLayout.astro'
 
 const base = import.meta.env.BASE_URL
-// Número del negocio de hornos: 925 632 333  (enlace en formato internacional)
+// Número del negocio de hornos
 const number = '51925632333'
 
-// PRODUCTOS
 const products = [
   {
     title: 'Horno artesanal',
@@ -64,9 +63,7 @@ const products = [
     />
 
     <div class='absolute top-0 left-0 w-full h-full bg-black bg-opacity-60 flex justify-center items-center'>
-    <div class='text-center px-4 max-w-4xl mx-auto mt-12 md:mt-20'>
-
-
+      <div class='text-center px-4 max-w-4xl mx-auto mt-12 md:mt-20'>
         {/* LOGO DEL NEGOCIO */}
         <div class="flex justify-center mb-4">
           <div class="bg-white/90 rounded-2xl px-4 py-3 flex items-center gap-3 shadow-lg">
@@ -86,7 +83,7 @@ const products = [
           </div>
         </div>
 
-        {/* ETIQUETA SUPERIOR */}
+        {/* ETIQUETA */}
         <div class="inline-block mb-3 px-4 py-1 rounded-full bg-[#FF6A1A] text-white text-xs md:text-sm font-semibold tracking-wide">
           CREACIÓN DE HORNOS ARTESANALES
         </div>
@@ -119,24 +116,26 @@ const products = [
   <div class='max-w-7xl mx-auto px-4 py-10'>
     <div class='grid gap-10 md:grid-cols-3'>
       {products.map((product) => (
-        <div class='rounded-2xl shadow-lg bg-white overflow-hidden flex flex-col'>
-          {/* Imagen y títulos */}
-          <div class='relative'>
+        <div class='rounded-3xl shadow-lg bg-white overflow-hidden flex flex-col hover:-translate-y-1 hover:shadow-xl transition-transform duration-300'>
+          {/* Imagen más cuadrada */}
+          <div>
             <img
               src={product.image}
               alt={`Horno artesanal ${product.title_2} en Arequipa`}
-              class='rounded-t-2xl w-full h-64 object-cover group-hover:scale-105 group-hover:rotate-1 transition-all duration-500'
+              class='w-full h-56 md:h-64 object-cover rounded-t-3xl'
             />
-            <div class='leading-6 text-lg absolute bottom-4 w-full text-center drop-shadow'>
-              {product.title && (
-                <h2 class='font-semibold uppercase text-white tracking-wide'>
-                  {product.title}
-                </h2>
-              )}
-              <h2 class='font-extrabold uppercase text-[#FF6A1A]'>
-                {product.title_2}
+          </div>
+
+          {/* Títulos debajo de la imagen */}
+          <div class='text-center pt-3 pb-2 px-3 border-b border-gray-100'>
+            {product.title && (
+              <h2 class='font-semibold uppercase text-gray-800 tracking-wide text-[15px]'>
+                {product.title}
               </h2>
-            </div>
+            )}
+            <h2 class='font-extrabold uppercase text-[#FF6A1A] text-[17px]'>
+              {product.title_2}
+            </h2>
           </div>
 
           {/* Características */}
@@ -155,7 +154,7 @@ const products = [
             </table>
           </div>
 
-          {/* Botón WhatsApp NARANJA */}
+          {/* Botón WhatsApp naranja */}
           <div class='px-4 pb-5 mt-2'>
             <a
               href={product.whatsapp}
