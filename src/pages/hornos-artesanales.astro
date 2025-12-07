@@ -1,5 +1,6 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import ClientLayout from '../layouts/ClientLayout.astro'
+
 
 const base = import.meta.env.BASE_URL
 const number = '51925632333'
@@ -48,7 +49,7 @@ const products = [
 ]
 ---
 
-<Layout
+<ClientLayout
   title='Hornos artesanales en Arequipa | Fabricación a medida - Victor Anuncios'
   description='Hornos artesanales en Arequipa – Fabricación a medida para casa y negocio. Construimos hornos artesanales de alta calidad, duraderos y eficientes, con instalación profesional.'
   keywords='hornos artesanales Arequipa, hornos de barro Arequipa, hornos de ladrillo, construcción de hornos, hornos para casa, hornos para negocio, hornos rústicos'
@@ -149,4 +150,4 @@ const products = [
       tiempo de construcción e instalación para que disfrutes pronto del auténtico sabor de horno artesanal.
     </p>
   </section>
-</Layout>
+</ClientLayout>
