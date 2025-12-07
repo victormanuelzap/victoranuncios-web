@@ -1,7 +1,6 @@
 ---
 import ClientLayout from '../layouts/ClientLayout.astro'
 
-
 const base = import.meta.env.BASE_URL
 const number = '51925632333'
 
@@ -71,6 +70,20 @@ const products = [
         <p class='text-white text-sm md:text-lg font-medium drop-shadow'>
           Fabricación a medida para tu hogar o negocio. Construimos hornos artesanales de alta calidad.
         </p>
+
+        {/* BLOQUE DE TELÉFONO DEL NEGOCIO */}
+        <div class='mt-4 flex flex-col items-center gap-2'>
+          <a
+            href={`tel:+${number}`}
+            class='inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-semibold py-2 px-4 rounded-xl shadow-lg transition'
+          >
+            <i class='bx bx-phone-call text-2xl' />
+            Llamar: +51 925 632 333
+          </a>
+          <p class='text-xs md:text-sm text-gray-100'>
+            Atención en Arequipa y alrededores. También puedes escribir por WhatsApp en cada modelo.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -146,8 +159,9 @@ const products = [
       para lograr una excelente retención de calor y una cocción pareja.
     </p>
     <p class='text-gray-700'>
-      Si buscas un horno artesanal en Arequipa, contáctanos por WhatsApp. Coordinamos medidas, diseño,
-      tiempo de construcción e instalación para que disfrutes pronto del auténtico sabor de horno artesanal.
+      Si buscas un horno artesanal en Arequipa, contáctanos por WhatsApp o por llamada directa. 
+      Coordinamos medidas, diseño, tiempo de construcción e instalación para que disfrutes pronto 
+      del auténtico sabor de horno artesanal.
     </p>
   </section>
 </ClientLayout>
