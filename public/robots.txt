@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /drafts/
 
+# Evita rastreo de parámetros innecesarios
+Disallow: /*?*
+
+# Indica a Google la ubicación correcta del sitemap
 Sitemap: https://www.victoranuncios.com/sitemap.xml
