@@ -95,52 +95,44 @@ const base = import.meta.env.BASE_URL
   </head>
 
   <body class="overflow-x-hidden bg-white text-neutral-900">
+<header class="hidden md:block sticky top-0 z-40 bg-white border-b border-gray-200">
+  <div class="container mx-auto h-16 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <img src={`${base}logo.png`} class="w-10" alt="Victor Anuncios" />
+      <span class="text-lg font-bold text-neutral-800">
+        Victor Anuncios
+      </span>
+    </div>
 
-    <!-- HEADER ESCRITORIO -->
-    <header class="hidden md:block sticky top-0 z-40 bg-white border-b border-gray-200">
-      <div class="container mx-auto h-16 flex items-center justify-between">
-        <div class="flex items-center gap-3">
-          <img src={`${base}logo.png`} class="w-10" alt="Victor Anuncios" />
-          <div class="flex flex-col">
-            <span class="text-sm font-semibold text-neutral-800">
-              Página alojada en Victor Anuncios
-            </span>
-            <span class="text-xs text-neutral-500">
-              Soluciones digitales en Arequipa
-            </span>
-          </div>
-        </div>
+    <a
+      href={`${base}`}
+      class="text-xs font-semibold text-blue-600 hover:text-blue-700"
+    >
+      Ir al sitio principal
+    </a>
+  </div>
+</header>
 
-        <a href={`${base}`} class="text-xs font-semibold text-blue-600 hover:text-blue-700">
-          Ir a victoranuncios.com
-        </a>
-      </div>
-    </header>
 
     <!-- HEADER MÓVIL OPTIMIZADO -->
     <header class="md:hidden sticky top-0 z-40 bg-white border-b border-gray-200">
-      <div class="flex items-center justify-between px-4 h-16 gap-2"> <!-- CAMBIO: h-16 antes h-14 -->
-        <div class="flex items-center gap-2">
-          <img src={`${base}logo.png`} class="h-9 w-auto" alt="Victor Anuncios" /> <!-- CAMBIO: h-8 → h-9 -->
+  <div class="flex items-center justify-between px-4 h-16 gap-2">
+    <div class="flex items-center gap-2">
+      <img src={`${base}logo.png`} class="h-9 w-auto" alt="Victor Anuncios" />
+      <span class="text-sm font-bold text-neutral-900">
+        Victor Anuncios
+      </span>
+    </div>
 
-          <div class="flex flex-col leading-tight">
-            <span class="text-xs font-semibold text-neutral-900">
-              Página alojada en Victor Anuncios
-            </span>
-            <span class="text-[11px] text-neutral-500">
-              Arequipa – Perú
-            </span>
-          </div>
-        </div>
+    <a
+      href={`${base}`}
+      class="text-[11px] font-semibold text-blue-600 hover:text-blue-700"
+    >
+      Ver sitio principal
+    </a>
+  </div>
+</header>
 
-        <a
-          href={`${base}`}
-          class="text-[11px] font-semibold text-blue-600 hover:text-blue-700"
-        >
-          Ver sitio principal
-        </a>
-      </div>
-    </header>
 
     <!-- CONTENIDO CON ESPACIADO SUPERIOR -->
     <main class="min-h-screen pt-3 md:pt-6"> <!-- CAMBIO IMPORTANTE: agrega espacio entre header y contenido -->
