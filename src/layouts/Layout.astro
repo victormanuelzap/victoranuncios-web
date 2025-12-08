@@ -34,21 +34,20 @@ const base = import.meta.env.BASE_URL
     <link rel="manifest" href="/manifest.webmanifest" />
     <meta name="theme-color" content="#0044cc" />
 
-   <!-- Favicon clásico (archivo .ico con 16×16, 32×32, 48×48) -->
-<link rel="icon" type="image/x-icon" href="${base}favicon.ico?v=2" />
+<!-- Ícono .ICO clásico -->
+<link rel="icon" type="image/x-icon" href={`${base}favicon.ico?v=2`} />
 
-<!-- Favicon principal SVG -->
-<link rel="icon" type="image/svg+xml" href="${base}favicon.svg?v=2" />
+<!-- SVG principal -->
+<link rel="icon" type="image/svg+xml" href={`${base}favicon.svg?v=2`} />
 
-<!-- PNGs de respaldo (escritorio y navegadores que no leen SVG) -->
-<link rel="icon" type="image/png" sizes="16x16" href="${base}favicon-16.png?v=2" />
-<link rel="icon" type="image/png" sizes="32x32" href="${base}favicon-32.png?v=2" />
-<link rel="icon" type="image/png" sizes="48x48" href="${base}favicon.png?v=2" />
-<link rel="icon" type="image/png" sizes="96x96" href="${base}favicon-96.png?v=2" />
+<!-- PNGs de respaldo -->
+<link rel="icon" type="image/png" sizes="16x16" href={`${base}favicon-16.png?v=2`} />
+<link rel="icon" type="image/png" sizes="32x32" href={`${base}favicon-32.png?v=2`} />
+<link rel="icon" type="image/png" sizes="48x48" href={`${base}favicon.png?v=2`} />
+<link rel="icon" type="image/png" sizes="96x96" href={`${base}favicon-96.png?v=2`} />
 
 <!-- Icono para móviles -->
-<link rel="apple-touch-icon" sizes="180x180" href="${base}favicon.png?v=2" />
-
+<link rel="apple-touch-icon" sizes="180x180" href={`${base}favicon.png?v=2`} />
 
     <meta property='og:title' content={title} />
     <meta
