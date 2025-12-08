@@ -36,9 +36,14 @@ const base = import.meta.env.BASE_URL
 
     <!-- Favicon y Open Graph -->
     <link rel="icon" type="image/x-icon" href={`${base}favicon.ico?v=1`} />
-    <link rel="icon" type="image/png" sizes="48x48" href={`${base}favicon.png?v=1`} />
-    <link rel="apple-touch-icon" sizes="180x180" href={`${base}favicon.png?v=1`} />
-    <link rel="icon" sizes="192x192" href={`${base}favicon.png?v=1`} />
+
+ <!-- Favicon principal SVG -->
+<link rel="icon" type="image/svg+xml" href={`${base}favicon.svg?v=1`} />
+<!-- PNG de respaldo -->
+<link rel="icon" type="image/png" sizes="48x48" href={`${base}favicon.png?v=1`} />
+<link rel="apple-touch-icon" sizes="180x180" href={`${base}favicon.png?v=1`} />
+<link rel="icon" sizes="192x192" href={`${base}favicon.png?v=1`} />
+
 
     <meta property='og:title' content={title} />
     <meta
