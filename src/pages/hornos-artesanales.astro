@@ -57,67 +57,74 @@ const products = [
   <main class="pt-4 md:pt-6 pb-10">
 
     <!-- HERO -->
-    <section class="relative px-4 md:px-0 mt-1">
-      <div class="w-full relative min-h-[360px] md:min-h-[400px]">
-        <img
-          src={`${base}assets/images/hornos-artesanales-hero.jpg`}
-          alt="Hornos artesanales en Arequipa - Hornos Artesanales Arequipa"
-          class="h-full w-full object-cover"
-        />
+    <!-- HERO OPTIMIZADO -->
+<section class="relative px-4 md:px-0 mt-1">
+  <div class="w-full relative h-[350px] sm:h-[420px] lg:h-[480px] xl:h-[520px] overflow-hidden">
+    
+    <!-- Imagen de fondo -->
+    <img
+      src={`${base}assets/images/hornos-artesanales-hero.jpg`}
+      alt="Hornos artesanales en Arequipa - Hornos Artesanales Arequipa"
+      class="h-full w-full object-cover"
+    />
 
-        <div class="absolute inset-0 bg-black bg-opacity-60 flex justify-center items-center">
-          <div class="text-center px-2 sm:px-4 max-w-4xl mx-auto">
+    <!-- Capa oscura -->
+    <div class="absolute inset-0 bg-black bg-opacity-60 flex justify-center items-center">
+      <div class="text-center px-2 sm:px-4 max-w-4xl mx-auto">
 
-            <!-- TARJETA LOGO -->
-            <div class="flex justify-center mb-3 sm:mb-4">
-              <div class="bg-white/90 rounded-2xl px-3 sm:px-4 py-2.5 sm:py-3 flex items-center gap-2 sm:gap-3 shadow-lg">
-                <img
-                  src={`${base}assets/images/hornos-logo.png`}
-                  alt="Logo Hornos Artesanales Arequipa"
-                  class="w-12 h-12 sm:w-16 sm:h-16 object-contain"
-                />
-                <div class="text-left leading-tight">
-                  <p class="text-[10px] sm:text-[11px] md:text-xs text-neutral-600 font-semibold uppercase tracking-wide">
-                    Hornos Artesanales
-                  </p>
-                  <p class="text-xs sm:text-sm md:text-base font-bold text-neutral-900">
-                    HORNOS ARTESANALES AREQUIPA
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- CHIPS / TÍTULO / DESCRIPCIÓN -->
-            <div class="inline-block mb-2 sm:mb-3 px-3 sm:px-4 py-1 rounded-full bg-[#FF6A1A] text-white text-[11px] sm:text-xs md:text-sm font-semibold tracking-wide">
-              CREACIÓN DE HORNOS ARTESANALES
-            </div>
-
-            <h1 class="text-white text-2xl sm:text-3xl md:text-5xl font-extrabold uppercase mb-1.5 sm:mb-2 drop-shadow-xl">
-              HORNOS ARTESANALES EN AREQUIPA
-            </h1>
-
-            <p class="text-white text-[12px] sm:text-sm md:text-lg font-medium drop-shadow mb-2.5 sm:mb-3">
-              Fabricación a medida para tu hogar o negocio. Hornos artesanales duraderos y eficientes para pan, pizza y comida tradicional.
-            </p>
-
-            <!-- BOTÓN LLAMADA + TEXTO -->
-            <div class="mt-1.5 sm:mt-2 flex flex-col items-center gap-1.5 sm:gap-2">
-              <a
-                href={`tel:+${number}`}
-                class="inline-flex items-center gap-2 bg-[#FF6A1A] hover:bg-[#FF7A30] text-white font-semibold py-2 px-5 rounded-xl shadow-lg transition"
-              >
-                <i class="bx bx-phone-call text-xl sm:text-2xl"></i>
-                Llamar: 925 632 333
-              </a>
-              <p class="text-[11px] sm:text-xs md:text-sm text-gray-100">
-                Atención en Arequipa y alrededores. También puedes escribir por WhatsApp en cada modelo.
+        <!-- TARJETA LOGO (PEGADA MÁS A LA IZQUIERDA) -->
+        <div class="flex justify-start mb-3 sm:mb-4 w-full">
+          <div class="bg-white/90 rounded-2xl px-3 sm:px-4 py-2.5 sm:py-3 flex items-center gap-2 sm:gap-3 shadow-lg ml-1 sm:ml-4">
+            <img
+              src={`${base}assets/images/hornos-logo.png`}
+              alt="Logo Hornos Artesanales Arequipa"
+              class="w-12 h-12 sm:w-16 sm:h-16 object-contain"
+            />
+            <div class="text-left leading-tight">
+              <p class="text-[10px] sm:text-[11px] md:text-xs text-neutral-600 font-semibold uppercase tracking-wide">
+                Hornos Artesanales
+              </p>
+              <p class="text-xs sm:text-sm md:text-base font-bold text-neutral-900">
+                HORNOS ARTESANALES AREQUIPA
               </p>
             </div>
-
           </div>
         </div>
+
+        <!-- CHIP / ETIQUETA -->
+        <div class="inline-block mb-2 sm:mb-3 px-3 sm:px-4 py-1 rounded-full bg-[#FF6A1A] text-white text-[11px] sm:text-xs md:text-sm font-semibold tracking-wide">
+          CREACIÓN DE HORNOS ARTESANALES
+        </div>
+
+        <!-- TÍTULO PRINCIPAL -->
+        <h1 class="text-white text-2xl sm:text-3xl md:text-5xl font-extrabold uppercase mb-1.5 sm:mb-2 drop-shadow-xl">
+          HORNOS ARTESANALES EN AREQUIPA
+        </h1>
+
+        <!-- DESCRIPCIÓN -->
+        <p class="text-white text-[12px] sm:text-sm md:text-lg font-medium drop-shadow mb-2.5 sm:mb-3">
+          Fabricación a medida para tu hogar o negocio. Hornos artesanales duraderos y eficientes para pan, pizza y comida tradicional.
+        </p>
+
+        <!-- BOTÓN DE LLAMADA -->
+        <div class="mt-1.5 sm:mt-2 flex flex-col items-center gap-1.5 sm:gap-2">
+          <a
+            href={`tel:+${number}`}
+            class="inline-flex items-center gap-2 bg-[#FF6A1A] hover:bg-[#FF7A30] text-white font-semibold py-2 px-5 rounded-xl shadow-lg transition"
+          >
+            <i class="bx bx-phone-call text-xl sm:text-2xl"></i>
+            Llamar: 925 632 333
+          </a>
+          <p class="text-[11px] sm:text-xs md:text-sm text-gray-100">
+            Atención en Arequipa y alrededores. También puedes escribir por WhatsApp en cada modelo.
+          </p>
+        </div>
+
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
 
     <!-- GRID DE PRODUCTOS -->
     <section class="max-w-7xl mx-auto px-4 pt-8 md:pt-10 pb-6 md:pb-10">
