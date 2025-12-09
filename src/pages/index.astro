@@ -286,7 +286,90 @@ const BASE_URL = import.meta.env.BASE_URL;
             />
           </div>
         </a>
-</div>    
+
+<!-- nuevos toldos y hornos -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
+
+  <!-- CARD PREMIUM – TOLDOS ENROLLABLES -->
+  <a href={`${BASE_URL}toldos-enrollables`} 
+     class="bg-white rounded-3xl shadow-[0_10px_25px_rgba(0,0,0,0.08)]
+            flex flex-col items-center px-6 pt-10 pb-8 
+            w-full group transition hover:-translate-y-1 hover:shadow-xl">
+
+    <!-- IMAGEN -->
+    <div class="w-full flex justify-center mb-6">
+      <img
+        src={`${BASE_URL}assets/botones/toldos-enrollables.webp`}
+        alt="Toldos enrollables"
+        class="max-h-48 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+      />
+    </div>
+
+    <!-- TÍTULO -->
+    <h3 class="text-center text-[#0051A8] font-extrabold text-xl leading-tight mb-1">
+      Toldos Enrollables
+    </h3>
+
+    <!-- SUBTÍTULO -->
+    <p class="text-center text-gray-700 text-lg mb-6">
+      Diseño e Instalación
+    </p>
+
+    <!-- BOTÓN -->
+    <span
+      class="inline-flex items-center justify-center
+             bg-red-600 text-white font-extrabold 
+             text-lg py-3 px-10 rounded-full
+             shadow-md hover:bg-red-700 transition">
+      Ver más
+    </span>
+  </a>
+
+</div>
+
+
+<!-- CARD PREMIUM – HORNOS ARTESANALES -->
+<a href={`${BASE_URL}hornos-artesanales`} 
+   class="bg-white rounded-3xl shadow-[0_10px_25px_rgba(0,0,0,0.08)]
+          flex flex-col items-center px-6 pt-10 pb-8 
+          w-full group transition hover:-translate-y-1 hover:shadow-xl">
+
+  <!-- IMAGEN ADAPTABLE -->
+  <div class="w-full flex justify-center mb-6">
+    <img
+      src={`${BASE_URL}assets/botones/hornos-artesanales.webp`}
+      alt="Hornos Artesanales"
+      class="max-h-48 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+    />
+  </div>
+
+  <!-- TÍTULO -->
+  <h3 class="text-center text-[#0051A8] font-extrabold text-xl leading-tight mb-1">
+    Hornos Artesanales
+  </h3>
+
+  <!-- SUBTÍTULO -->
+  <p class="text-center text-gray-700 text-lg mb-6">
+    Fabricación a medida
+  </p>
+
+  <!-- BOTÓN -->
+  <span
+    class="inline-flex items-center justify-center
+           bg-red-600 text-white font-extrabold 
+           text-lg py-3 px-10 rounded-full
+           shadow-md hover:bg-red-700 transition">
+    Ver más
+  </span>
+</a>
+
+
+
+
+
+</div>  
+
+
 
 
   <!-- Debajo de los botones -->
