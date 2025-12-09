@@ -118,7 +118,6 @@ const BASE_URL = import.meta.env.BASE_URL;
       <span class="text-blue-700 font-bold text-lg md:text-xl">Trabajos</span>
     </div>
   </div>
-
   <!-- BOTONES PRINCIPALES -->
   <section class="bg-[#E9EAEE] py-10">
     <div
@@ -154,20 +153,21 @@ const BASE_URL = import.meta.env.BASE_URL;
           </div>
         </a>
       </div>
-<div class="bg-white border-t border-b border-gray-200 py-3 md:py-4">
-    <div class="flex justify-center items-center space-x-2">
-      <span class="text-blue-700 font-bold text-lg md:text-xl">#</span>
-      <span class="text-neutral-800 font-semibold text-lg md:text-xl">Imprime</span>
-      <span class="text-neutral-500 text-sm md:text-base font-normal tracking-wide">
-        más,
-      </span>
-      <span class="text-blue-700 font-bold text-lg md:text-xl">vende más.</span>
-    </div>
-  </div>
-  
+
+      <!-- FRASE # Imprime más, vende más. -->
+      <div class="bg-white border-t border-b border-gray-200 py-3 md:py-4 mb-6">
+        <div class="flex justify-center items-center space-x-2">
+          <span class="text-blue-700 font-bold text-lg md:text-xl">#</span>
+          <span class="text-neutral-800 font-semibold text-lg md:text-xl">Imprime</span>
+          <span class="text-neutral-500 text-sm md:text-base font-normal tracking-wide">
+            más,
+          </span>
+          <span class="text-blue-700 font-bold text-lg md:text-xl">vende más.</span>
+        </div>
+      </div>
 
       <!-- FILAS SIGUIENTES: TODOS LOS DEMÁS -->
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
         <a href={`${BASE_URL}tarjetas`} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
           <div class="relative overflow-hidden rounded-2xl shadow-md">
             <img
@@ -178,9 +178,6 @@ const BASE_URL = import.meta.env.BASE_URL;
             />
           </div>
         </a>
-
-
-
 
         <a href={`${BASE_URL}volantes`} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
           <div class="relative overflow-hidden rounded-2xl shadow-md">
@@ -204,7 +201,7 @@ const BASE_URL = import.meta.env.BASE_URL;
           </div>
         </a>
 
-<a href={`${BASE_URL}calendarios`} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
+        <a href={`${BASE_URL}calendarios`} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
           <div class="relative overflow-hidden rounded-2xl shadow-md">
             <img
               src={`${BASE_URL}assets/botones/calendarios.webp`}
@@ -216,17 +213,19 @@ const BASE_URL = import.meta.env.BASE_URL;
         </a>
       </div>
     </div>
-<div class="bg-white border-t border-b border-gray-200 py-3 md:py-4">
+  </section>
+
+  <!-- FRASE # Que tu marca se vea donde importa. (fuera del section gris) -->
+  <div class="bg-white border-t border-b border-gray-200 py-3 md:py-4">
     <div class="flex justify-center items-center space-x-2">
       <span class="text-blue-700 font-bold text-lg md:text-xl">#</span>
-      <span class="text-neutral-800 font-semibold text-lg md:text-xl">Que tu marca </span>
+      <span class="text-neutral-800 font-semibold text-lg md:text-xl">Que tu marca</span>
       <span class="text-neutral-500 text-sm md:text-base font-normal tracking-wide">
         se vea
       </span>
       <span class="text-blue-700 font-bold text-lg md:text-xl">donde Importa.</span>
     </div>
   </div>
-
 
 
 <!-- BOTONES PRINCIPALES 2 -->
