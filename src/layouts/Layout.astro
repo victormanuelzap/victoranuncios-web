@@ -483,6 +483,27 @@ const base = import.meta.env.BASE_URL
         }
       })();
     </script>
+
+// Tiempo para LOS SERVICIOS
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.querySelector('.group');
+    const dropdown = menuButton.querySelector('div');
+    let timeout;
+
+    menuButton.addEventListener('mouseenter', () => {
+      clearTimeout(timeout);
+      dropdown.classList.remove('hidden');
+    });
+
+    menuButton.addEventListener('mouseleave', () => {
+      timeout = setTimeout(() => {
+        dropdown.classList.add('hidden');
+      }, 180); // Ajusta el tiempo (milisegundos)
+    });
+  });
+</script>
+
   </body>
 </html>
 
