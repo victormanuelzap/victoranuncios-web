@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     new Splide('.splide', {
       type: 'loop',
       autoplay: true,
-      interval: 4000,
+      interval: 3000,//MAS RAPIDO (antes 4000
       pauseOnHover: false,
       arrows: true,
       pagination: true,
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     new Splide('.splide2', {
       type: 'loop',
       autoplay: true,
-      interval: 4000,
+      interval: 3000,//MAS RAPIDO (antes 4000
       pauseOnHover: false,
       arrows: true,
       pagination: true,
