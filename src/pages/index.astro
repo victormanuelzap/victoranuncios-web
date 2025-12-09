@@ -227,6 +227,109 @@ const BASE_URL = import.meta.env.BASE_URL;
     </div>
   </div>
 
+
+
+<!-- BOTONES PRINCIPALES 2 -->
+<section class="bg-[#E9EAEE] py-10">
+  <div
+    class="mx-auto w-full
+           max-w-[1200px] md:max-w-[1280px] xl:max-w-[1400px] 2xl:max-w-[1600px]
+           px-4 md:px-6 lg:px-10 xl:px-16">
+
+    <!-- FILA 1: mobile 1 col, md+ 2 col -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 mb-8">
+
+      <!-- CARD GIGANTOGRAFÍAS -->
+      <a
+        href={`${BASE_URL}servicios/gigantografias/`}
+        class="block w-full group transition hover:-translate-y-1 hover:shadow-xl"
+      >
+        <div class="relative aspect-[16/10] overflow-hidden rounded-2xl shadow-md">
+          <!-- Imagen de fondo -->
+          <img
+            src={`${BASE_URL}assets/botones/gigantografias.webp`}
+            alt="Gigantografías publicitarias"
+            decoding="async"
+            fetchpriority="high"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+
+          <!-- Triángulo rojo inferior izquierdo -->
+          <div class="absolute bottom-0 left-0 w-[60%] h-[60%] bg-red-600 clip-diagonal"></div>
+
+          <!-- Botón VER MAS -->
+          <div class="absolute bottom-6 left-6">
+            <span
+              class="inline-flex items-center justify-center
+                     px-7 py-3 rounded-[2rem]
+                     bg-[#053054] text-white font-extrabold text-xl
+                     shadow-lg"
+            >
+              Ver mas
+            </span>
+          </div>
+
+          <!-- Texto superior derecho -->
+          <div class="absolute top-5 right-5 text-right drop-shadow-md">
+            <p class="text-2xl md:text-3xl font-semibold text-white leading-snug">
+              Gigantografías
+            </p>
+            <p class="text-xl md:text-2xl font-extrabold text-white">
+              Publicitarias
+            </p>
+          </div>
+        </div>
+      </a>
+
+      <!-- CARD VINILOS -->
+      <a
+        href={`${BASE_URL}servicios/vinilos/`}
+        class="block w-full group transition hover:-translate-y-1 hover:shadow-xl"
+      >
+        <div class="relative aspect-[16/10] overflow-hidden rounded-2xl shadow-md">
+          <!-- Imagen de fondo -->
+          <img
+            src={`${BASE_URL}assets/botones/vinilos.webp`}
+            alt="Vinilos adhesivos"
+            decoding="async"
+            fetchpriority="high"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+
+          <!-- Triángulo rojo inferior izquierdo -->
+          <div class="absolute bottom-0 left-0 w-[60%] h-[60%] bg-red-600 clip-diagonal"></div>
+
+          <!-- Botón VER MAS -->
+          <div class="absolute bottom-6 left-6">
+            <span
+              class="inline-flex items-center justify-center
+                     px-7 py-3 rounded-[2rem]
+                     bg-[#053054] text-white font-extrabold text-xl
+                     shadow-lg"
+            >
+              Ver mas
+            </span>
+          </div>
+
+          <!-- Texto superior derecho -->
+          <div class="absolute top-5 right-5 text-right drop-shadow-md">
+            <p class="text-2xl md:text-3xl font-semibold text-white leading-snug">
+              Vinilos adhesivos
+            </p>
+            <p class="text-xl md:text-2xl font-extrabold text-white">
+              Decorativos
+            </p>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+
 <!-- BOTONES PRINCIPALES 2 -->
   <section class="bg-[#E9EAEE] py-10">
     <div
