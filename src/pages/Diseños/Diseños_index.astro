@@ -1,1 +1,138 @@
+---
+import Layout from '../../layouts/Layout.astro'
+
+const BASE_URL = import.meta.env.BASE_URL
+
+const categorias = [
+  {
+    id: 'exterior-interior',
+    nombre: 'Exterior / Interior',
+    descripcion: 'Letreros luminosos, letras 3D, cajas de luz y paneles decorativos.',
+    imagen: `${BASE_URL}assets/galeria/categorias/exterior-interior.webp`,
+    tags: ['Letreros luminosos', 'Letras 3D', 'Cajas de luz'],
+  },
+  {
+    id: 'vinilos-impresos',
+    nombre: 'Vinilos y gráficos',
+    descripcion: 'Vinilos para vitrinas, autos, murales y señalética interior.',
+    imagen: `${BASE_URL}assets/galeria/categorias/vinilos.webp`,
+    tags: ['Vinilos', 'Vehículos', 'Señalética'],
+  },
+  {
+    id: 'impresos',
+    nombre: 'Tarjetas, volantes y más',
+    descripcion: 'Material gráfico para reforzar tu marca en mano del cliente.',
+    imagen: `${BASE_URL}assets/galeria/categorias/impresos.webp`,
+    tags: ['Tarjetas', 'Volantes', 'Proformas', 'Calendarios'],
+  },
+  {
+    id: 'rubros-comerciales',
+    nombre: 'Por rubro de negocio',
+    descripcion: 'Restaurantes, barberías, colegios, estéticas, veterinarias y más.',
+    imagen: `${BASE_URL}assets/galeria/categorias/rubros.webp`,
+    tags: ['Restaurantes', 'Barberías', 'Colegios'],
+  },
+  // Puedes seguir agregando…
+]
+---
+
+<Layout title="Galería de diseños | Victor Anuncios">
+  <main class="bg-[#E9EAEE] py-10">
+    <section class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+      <!-- TÍTULO + INTRO -->
+      <header class="mb-8">
+        <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-blue-700 bg-blue-50 px-4 py-1 rounded-full">
+          <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+          Galería de trabajos reales
+        </p>
+        <h1 class="mt-3 text-3xl md:text-4xl font-extrabold text-slate-900">
+          Explora nuestros diseños por categoría
+        </h1>
+        <p class="mt-3 text-slate-600">
+          Filtra por tipo de producto (letreros, vinilos, tarjetas) o por rubro de negocio
+          como restaurantes, barberías, colegios, estéticas y más.
+        </p>
+      </header>
+
+      <!-- BUSCADOR -->
+      <div class="bg-white rounded-2xl shadow-md p-4 md:p-5 mb-8">
+        <label for="galeria-search" class="block text-sm font-semibold text-slate-700 mb-2">
+          Buscar categoría
+        </label>
+        <div class="flex items-center gap-3">
+          <span class="bx bx-search text-2xl text-slate-400"></span>
+          <input
+            id="galeria-search"
+            type="text"
+            placeholder="Ejemplo: vinilos, restaurantes, barberías..."
+            class="w-full border border-gray-200 rounded-xl px-3 py-2 text-sm outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+          />
+        </div>
+      </div>
+
+      <!-- GRID DE CATEGORÍAS -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {categorias.map((cat) => (
+          <a
+            href={`${BASE_URL}galeria/${cat.id}/`}
+            data-category-name={cat.nombre.toLowerCase() + ' ' + cat.tags.join(' ').toLowerCase()}
+            class="group bg-white rounded-3xl shadow-md overflow-hidden flex flex-col transition hover:-translate-y-1 hover:shadow-xl"
+          >
+            <!-- Imagen + overlay -->
+            <div class="relative h-44 md:h-48 overflow-hidden">
+              <img
+                src={cat.imagen}
+                alt={cat.nombre}
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-80"></div>
+
+              <span
+                class="absolute bottom-3 left-3 inline-flex items-center gap-2 bg-red-600 text-white text-xs font-bold tracking-wide px-3 py-1.5 rounded-full shadow"
+              >
+                Ver diseños
+              </span>
+            </div>
+
+            <!-- Texto -->
+            <div class="p-4 md:p-5 flex flex-col gap-3 flex-1">
+              <h2 class="text-lg md:text-xl font-extrabold text-slate-900">
+                {cat.nombre}
+              </h2>
+              <p class="text-sm text-slate-600 flex-1">
+                {cat.descripcion}
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 mt-1">
+                {cat.tags.map((t) => (
+                  <span class="px-2 py-0.5 rounded-full bg-blue-50 text-[11px] font-semibold text-blue-700">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Script simple para filtrar por texto -->
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', () => {
+        const input = document.querySelector('#galeria-search');
+        const cards = document.querySelectorAll('[data-category-name]');
+        if (!input || !cards.length) return;
+
+        input.addEventListener('input', () => {
+          const value = input.value.toLowerCase().trim();
+          cards.forEach((card) => {
+            const text = card.getAttribute('data-category-name') || '';
+            card.classList.toggle('hidden', value && !text.includes(value));
+          });
+        });
+      });
+    </script>
+  </main>
+</Layout>
 
