@@ -20,6 +20,13 @@ export const categorias = [
     nombre: 'Por rubro',
     descripcion: 'Restaurantes, barberías, colegios y más.',
   },
+  {
+    id: 'colegios',
+    nombre: 'Colegios',
+    descripcion: 'colegios, escuelas, cetpros y más.',
+    imagen: '/Diseños/categorias/rubros.webp',
+    tags: ['Restaurantes', 'Barberías', 'Colegios'],
+  },
 ]
 
 export const disenos = [
