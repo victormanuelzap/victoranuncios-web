@@ -4,21 +4,28 @@
 import '../../css/base.css'
 import { categorias, disenos } from '../../data/disenos'
 
+// 👇 Muy importante: decirle a Astro qué rutas generar
+export function getStaticPaths() {
+  return categorias.map((cat) => ({
+    params: { categoria: cat.slug },
+  }))
+}
+
 const base = import.meta.env.BASE_URL
 const { categoria } = Astro.params
 
 // Buscar información de la categoría
 const categoriaData = categorias.find((cat) => cat.slug === categoria)
 
-// Si la categoría no existe, redirigimos al índice de diseños
+// Si la categoría no existe, lanzamos error (no debería pasar si getStaticPaths está bien)
 if (!categoriaData) {
-  // También podrías hacer: throw Astro.redirect('/disenos/')
   throw new Error(`Categoría "${categoria}" no encontrada`)
 }
 
 // Filtrar diseños de esa categoría
 const disenosFiltrados = disenos.filter((item) => item.categoria === categoria)
 ---
+
 
 <!doctype html>
 <html lang="es">
