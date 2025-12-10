@@ -4,7 +4,7 @@
 import '../../css/base.css'
 import { categorias, disenos } from '../../data/disenos'
 
-// 🔹 1) Definimos qué rutas dinámicas se deben generar
+// 🔹 1) Definimos qué rutas dinámicas se deben generar para /disenos/[categoria]
 export function getStaticPaths() {
   return categorias.map((cat) => ({
     params: { categoria: cat.slug },
@@ -39,7 +39,6 @@ const disenosFiltrados = disenos.filter((item) => item.categoria === categoria)
 
   <body class="bg-slate-100">
     <main class="max-w-6xl mx-auto px-4 py-10">
-
       <a href={`${base}disenos/`} class="text-sm text-sky-600 hover:underline">
         ← Volver a galería de categorías
       </a>
@@ -52,8 +51,7 @@ const disenosFiltrados = disenos.filter((item) => item.categoria === categoria)
         {categoriaData.descripcion}
       </p>
 
-      <!-- 🔍 4) BUSCADOR PARA FILTRAR DISEÑOS EN TIEMPO REAL -->
-      <!-- (El script está al final del archivo) -->
+      <!-- 🔍 4) BUSCADOR PARA FILTRAR DISEÑOS EN ESTA CATEGORÍA -->
       <input
         id="buscador-disenos"
         type="text"
@@ -61,7 +59,7 @@ const disenosFiltrados = disenos.filter((item) => item.categoria === categoria)
         class="w-full mt-6 mb-6 px-4 py-3 border rounded-lg shadow-sm"
       />
 
-      <!-- 🔹 5) GRID DE DISEÑOS -->
+      <!-- 🔹 5) GRID DE DISEÑOS FILTRADOS POR CATEGORÍA -->
       <section id="grid-disenos" class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {disenosFiltrados.length === 0 ? (
           <p class="text-slate-500 col-span-full">
@@ -69,25 +67,27 @@ const disenosFiltrados = disenos.filter((item) => item.categoria === categoria)
           </p>
         ) : (
           disenosFiltrados.map((item) => (
-            <article
-              class="dis-item bg-white shadow-md overflow-hidden rounded-none flex flex-col"
-              data-title={item.titulo.toLowerCase()}   <!-- 🔸6) Campo para permitir el filtrado -->
-            >
-              <div class="aspect-[4/3] overflow-hidden rounded-none">
-                <img
-                  src={`${base}${item.imagen}`}
-                  alt={item.titulo}
-                  loading="lazy"
-                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-
-              <div class="p-4 flex-1 flex flex-col">
-                <h2 class="font-semibold text-slate-900">
-                  {item.titulo}
-                </h2>
-              </div>
-            </article>
+            <>
+              {/* 🔸6) Cada tarjeta tiene data-title para que el buscador la pueda filtrar */}
+              <article
+                class="dis-item bg-white shadow-md overflow-hidden rounded-none flex flex-col"
+                data-title={item.titulo.toLowerCase()}
+              >
+                <div class="aspect-[4/3] overflow-hidden rounded-none">
+                  <img
+                    src={`${base}${item.imagen}`}
+                    alt={item.titulo}
+                    loading="lazy"
+                    class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div class="p-4 flex-1 flex flex-col">
+                  <h2 class="font-semibold text-slate-900">
+                    {item.titulo}
+                  </h2>
+                </div>
+              </article>
+            </>
           ))
         )}
       </section>
@@ -99,19 +99,21 @@ const disenosFiltrados = disenos.filter((item) => item.categoria === categoria)
       const buscador = document.getElementById("buscador-disenos");
       const items = document.querySelectorAll(".dis-item");
 
-      buscador.addEventListener("input", () => {
-        const q = buscador.value.trim().toLowerCase();
+      if (buscador && items.length > 0) {
+        buscador.addEventListener("input", () => {
+          const q = buscador.value.trim().toLowerCase();
 
-        items.forEach((card) => {
-          const title = card.dataset.title;
+          items.forEach((card) => {
+            const title = card.dataset.title || "";
 
-          if (title.includes(q)) {
-            card.style.display = "";
-          } else {
-            card.style.display = "none";
-          }
+            if (title.includes(q)) {
+              card.style.display = "";
+            } else {
+              card.style.display = "none";
+            }
+          });
         });
-      });
+      }
     </script>
 
   </body>
