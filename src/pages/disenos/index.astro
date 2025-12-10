@@ -19,7 +19,8 @@ const base = import.meta.env.BASE_URL
       <h1 class="text-3xl font-extrabold text-slate-900 mb-6">
         Galería de diseños por categoría
       </h1>
-<!-- 🔍 BUSCADOR -->
+
+      <!-- 🔍 BUSCADOR -->
       <input
         id="buscador-categorias"
         type="text"
@@ -31,7 +32,9 @@ const base = import.meta.env.BASE_URL
         {categorias.map((cat) => (
           <a
             href={`${base}disenos/${cat.slug}/`}
-            class="card-square group bg-white shadow-md overflow-hidden transition hover:-translate-y-1 hover:shadow-xl"
+            class="cat-item card-square group bg-white shadow-md overflow-hidden transition hover:-translate-y-1 hover:shadow-xl"
+            data-name={cat.nombre.toLowerCase()}
+            data-desc={cat.descripcion.toLowerCase()}
           >
             <div class="relative h-48 overflow-hidden card-square">
               <img
@@ -58,18 +61,21 @@ const base = import.meta.env.BASE_URL
   const input = document.getElementById("buscador-categorias");
   const items = document.querySelectorAll(".cat-item");
 
-  input.addEventListener("input", () => {
-    const q = input.value.trim().toLowerCase();
+  // Pequeña protección por si algo falla
+  if (input && items.length > 0) {
+    input.addEventListener("input", () => {
+      const q = input.value.trim().toLowerCase();
 
-    items.forEach((el) => {
-      const name = el.dataset.name;
-      const desc = el.dataset.desc;
+      items.forEach((el) => {
+        const name = el.dataset.name || "";
+        const desc = el.dataset.desc || "";
 
-      if (name.includes(q) || desc.includes(q)) {
-        el.style.display = "";
-      } else {
-        el.style.display = "none";
-      }
+        if (name.includes(q) || desc.includes(q)) {
+          el.style.display = "";
+        } else {
+          el.style.display = "none";
+        }
+      });
     });
-  });
+  }
 </script>
