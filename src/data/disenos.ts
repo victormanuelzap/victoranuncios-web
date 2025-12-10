@@ -49,7 +49,7 @@ export const disenos = [
   {
     id: 'vinilos-eer-01',
     titulo: 'Vinilo EER',
-    imagen: '/Diseños/categorias/vinilos/eer.png',
+    imagen: 'Diseños/categorias/vinilos/eer.png',
     categoria: 'vinilos',
   },
   {
