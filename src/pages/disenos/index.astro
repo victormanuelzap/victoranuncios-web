@@ -19,6 +19,13 @@ const base = import.meta.env.BASE_URL
       <h1 class="text-3xl font-extrabold text-slate-900 mb-6">
         Galería de diseños por categoría
       </h1>
+<!-- 🔍 BUSCADOR -->
+      <input
+        id="buscador-categorias"
+        type="text"
+        placeholder="Buscar categorías..."
+        class="w-full mb-6 px-4 py-3 border rounded-lg shadow-sm"
+      />
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {categorias.map((cat) => (
@@ -45,3 +52,24 @@ const base = import.meta.env.BASE_URL
     </section>
   </main>
 </Layout>
+
+<!-- 🔥 Script del Buscador -->
+<script is:inline>
+  const input = document.getElementById("buscador-categorias");
+  const items = document.querySelectorAll(".cat-item");
+
+  input.addEventListener("input", () => {
+    const q = input.value.trim().toLowerCase();
+
+    items.forEach((el) => {
+      const name = el.dataset.name;
+      const desc = el.dataset.desc;
+
+      if (name.includes(q) || desc.includes(q)) {
+        el.style.display = "";
+      } else {
+        el.style.display = "none";
+      }
+    });
+  });
+</script>
