@@ -36,6 +36,13 @@ export const categorias = [
     imagen: '/Diseños/categorias/colegios.webp', // cuando tengas una imagen propia
     tags: ['Colegios', 'Escuelas', 'Cetpros'],
   },
+  {
+    slug: 'Restaurantes',
+    nombre: 'Restaurantes',
+    descripcion: 'Carteles, menus, fondos.',
+    imagen: '/Diseños/categorias/restaurantes.webp', // cuando tengas una imagen propia
+    tags: ['sopas', 'comida', 'Cetpros'],
+  },
 ]
 
 export const disenos = [
