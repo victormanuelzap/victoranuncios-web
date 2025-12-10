@@ -42,14 +42,14 @@ const categorias = [
       </h1>
 
       <!-- GRID -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
         {categorias.map((cat) => (
           <a
             href={`/disenos/${cat.id}/`}
-            class="group bg-white shadow-md overflow-hidden transition hover:-translate-y-1 hover:shadow-xl"
+            class="group bg-white shadow-md overflow-hidden rounded-none transition hover:-translate-y-1 hover:shadow-xl"
           >
-            <div class="relative h-48 overflow-hidden">
+            <div class="relative h-48 overflow-hidden rounded-none">
               <img
                 src={cat.imagen}
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -66,6 +66,7 @@ const categorias = [
         ))}
 
       </div>
+
 
     </section>
   </main>
