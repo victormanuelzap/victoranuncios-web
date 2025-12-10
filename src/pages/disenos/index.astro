@@ -3,6 +3,14 @@ import Layout from '../../layouts/Layout.astro'
 import { categorias } from '../../data/disenos'
 const base = import.meta.env.BASE_URL
 ---
+<style is:global>
+  /* Forzar esquinas totalmente cuadradas */
+  .card-square,
+  .card-square div,
+  .card-square img {
+    border-radius: 0 !important;
+  }
+</style>
 
 <Layout title="Diseños Victor Anuncios">
   <main class="bg-[#E9EAEE] py-10">
@@ -16,17 +24,17 @@ const base = import.meta.env.BASE_URL
         {categorias.map((cat) => (
           <a
             href={`${base}disenos/${cat.slug}/`}
-            class="group bg-white shadow-md overflow-hidden rounded-none transition hover:-translate-y-1 hover:shadow-xl"
+            class="card-square group bg-white shadow-md overflow-hidden transition hover:-translate-y-1 hover:shadow-xl"
           >
-            <div class="relative h-48 overflow-hidden rounded-none">
+            <div class="relative h-48 overflow-hidden card-square">
               <img
                 src={cat.imagen}
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 card-square"
                 alt={cat.nombre}
               />
             </div>
 
-            <div class="p-5">
+            <div class="p-5 card-square">
               <h2 class="text-xl font-bold text-blue-800">{cat.nombre}</h2>
               <p class="text-gray-600 text-sm mt-1">{cat.descripcion}</p>
             </div>
