@@ -1,0 +1,72 @@
+---
+import Layout from '../../layouts/Layout.astro'
+
+const categorias = [
+  {
+    id: 'exterior-interior',
+    nombre: 'Exterior / Interior',
+    descripcion: 'Letreros luminosos, letras 3D y cajas de luz.',
+    imagen: '/Diseños/categorias/exterior-interior.webp',
+    tags: ['Letreros', 'Letras 3D', 'Cajas de luz'],
+  },
+  {
+    id: 'vinilos',
+    nombre: 'Vinilos y gráficos',
+    descripcion: 'Vinilos para vitrinas, autos y murales.',
+    imagen: '/Diseños/categorias/vinilos.webp',
+    tags: ['Autos', 'Vitrinas', 'Paredes'],
+  },
+  {
+    id: 'impresos',
+    nombre: 'Impresos',
+    descripcion: 'Tarjetas, volantes, proformas, calendarios.',
+    imagen: '/Diseños/categorias/impresos.webp',
+    tags: ['Tarjetas', 'Volantes', 'Proformas'],
+  },
+  {
+    id: 'rubros',
+    nombre: 'Por rubro',
+    descripcion: 'Restaurantes, barberías, colegios y más.',
+    imagen: '/Diseños/categorias/rubros.webp',
+    tags: ['Restaurantes', 'Barberías', 'Colegios'],
+  }
+]
+---
+
+<Layout title="Diseños Victor Anuncios">
+  <main class="bg-[#E9EAEE] py-10">
+    <section class="max-w-6xl mx-auto px-4">
+
+      <h1 class="text-3xl font-extrabold text-slate-900 mb-6">
+        Galería de diseños por categoría
+      </h1>
+
+      <!-- GRID -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        {categorias.map((cat) => (
+          <a
+            href={`/disenos/${cat.id}/`}
+            class="group bg-white shadow-md overflow-hidden transition hover:-translate-y-1 hover:shadow-xl"
+          >
+            <div class="relative h-48 overflow-hidden">
+              <img
+                src={cat.imagen}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                alt={cat.nombre}
+              />
+            </div>
+
+            <div class="p-5">
+              <h2 class="text-xl font-bold text-blue-800">{cat.nombre}</h2>
+              <p class="text-gray-600 text-sm mt-1">{cat.descripcion}</p>
+            </div>
+
+          </a>
+        ))}
+
+      </div>
+
+    </section>
+  </main>
+</Layout>
