@@ -1,7 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro'
 import { categorias } from '../../data/disenos'
-
 const base = import.meta.env.BASE_URL
 ---
 
@@ -10,12 +9,10 @@ const base = import.meta.env.BASE_URL
     <section class="max-w-6xl mx-auto px-4">
 
       <h1 class="text-3xl font-extrabold text-slate-900 mb-6">
-        Galería de diseños  Todas nuestras categorías
+        Galería de diseños por categoría
       </h1>
 
-      <!-- GRID -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
         {categorias.map((cat) => (
           <a
             href={`${base}disenos/${cat.slug}/`}
@@ -33,10 +30,8 @@ const base = import.meta.env.BASE_URL
               <h2 class="text-xl font-bold text-blue-800">{cat.nombre}</h2>
               <p class="text-gray-600 text-sm mt-1">{cat.descripcion}</p>
             </div>
-
           </a>
         ))}
-
       </div>
 
     </section>
