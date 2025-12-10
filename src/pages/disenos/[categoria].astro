@@ -44,7 +44,7 @@ const disenosFiltrados = disenos.filter((item) => item.categoria === categoria)
         {categoriaData.descripcion}
       </p>
 
-      <section class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <section class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {disenosFiltrados.length === 0 ? (
           <p class="text-slate-500 col-span-full">
             Aún no has cargado diseños para esta categoría.
@@ -52,9 +52,9 @@ const disenosFiltrados = disenos.filter((item) => item.categoria === categoria)
         ) : (
           disenosFiltrados.map((item) => (
             <article
-              class="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col"
+              class="bg-white shadow-md overflow-hidden rounded-none flex flex-col"
             >
-              <div class="aspect-[4/3] overflow-hidden">
+              <div class="aspect-[4/3] overflow-hidden rounded-none">
                 <img
                   src={`${base}${item.imagen}`}
                   alt={item.titulo}
@@ -66,21 +66,12 @@ const disenosFiltrados = disenos.filter((item) => item.categoria === categoria)
                 <h2 class="font-semibold text-slate-900">
                   {item.titulo}
                 </h2>
-                {item.descripcion && (
-                  <p class="mt-1 text-sm text-slate-600">
-                    {item.descripcion}
-                  </p>
-                )}
-                {item.rubro && (
-                  <p class="mt-2 text-xs uppercase tracking-wide text-slate-400">
-                    Rubro: {item.rubro}
-                  </p>
-                )}
               </div>
             </article>
           ))
         )}
       </section>
+
     </main>
   </body>
 </html>
