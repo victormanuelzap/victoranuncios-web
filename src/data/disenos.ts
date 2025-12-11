@@ -17,6 +17,13 @@ export const categorias = [
     tags: ['abarrotes', 'bodega', 'bazar', 'minimarket', 'mercado'],
   },
   {
+    slug: 'restaurantes-fundos',
+    nombre: 'Restaurantes y fondos',
+    descripcion: 'Restaurantes, picanterías, pollerías y chifas.',
+    imagen: '/Diseños/categorias/restaurantes-fundos.webp',
+    tags: ['restaurant', 'picanteria', 'polleria', 'chifa', 'cevicheria', 'parrillas', 'restobar', 'fundo'],
+  },
+  {
     slug: 'maderera-ferreteria',
     nombre: 'Madereras y ferreterías',
     descripcion: 'Ferreterías, madereras y tiendas de construcción.',
@@ -72,13 +79,7 @@ export const categorias = [
     imagen: '/Diseños/categorias/fiestas-eventos.webp',
     tags: ['fiesta', 'cumpleaños', 'quinceaños', 'matrimonio', 'decoraciones', 'payasito', 'caritas pintadas'],
   },
-  {
-    slug: 'restaurantes-fundos',
-    nombre: 'Restaurantes y fondos',
-    descripcion: 'Restaurantes, picanterías, pollerías y chifas.',
-    imagen: '/Diseños/categorias/restaurantes-fundos.webp',
-    tags: ['restaurant', 'picanteria', 'polleria', 'chifa', 'cevicheria', 'parrillas', 'restobar', 'fundo'],
-  },
+  
   {
     slug: 'multired-servicios',
     nombre: 'Agentes y pagos de servicios',
