@@ -468,6 +468,81 @@ export const disenos = [
   categoria: 'restaurantes-fundos',
   keywords: 'pizzeria pizza familiar combos queso horno restaurante delivery diseño banner',
 },
+// ===============================
+// 🛠️ Imágenes para categoría Ferreterías
+// ===============================
+
+{
+  id: 'ferreteria-karlos-03',
+  titulo: 'Ferretería Karlos – Herramientas y accesorios',
+  imagen: '/Diseños/categorias/ferreterias/ferr3.webp',
+  categoria: 'ferreterias',
+  keywords:
+    'ferreteria karlos herramientas tornillos pinturas electricidad hogar acero pvc construccion banner diseño',
+},
+
+{
+  id: 'ferreteria-el-constructor-04',
+  titulo: 'El Constructor – Mayorista de ferretería',
+  imagen: '/Diseños/categorias/ferreterias/ferr4.webp',
+  categoria: 'ferreterias',
+  keywords:
+    'ferreteria el constructor mayorista distribuidor materiales construccion herramientas banner diseño publicidad',
+},
+
+{
+  id: 'ferreteria-3m-accesorios-05',
+  titulo: 'Ferretería – Tubos y accesorios 3M',
+  imagen: '/Diseños/categorias/ferreterias/ferr5.webp',
+  categoria: 'ferreterias',
+  keywords:
+    'ferreteria 3m tubos accesorios herramientas yale sika pvc plomeria construccion banner diseño ofertas',
+},
+
+{
+  id: 'ferreteria-cruz-06',
+  titulo: 'Ferretería Cruz – Cemento y agregados',
+  imagen: '/Diseños/categorias/ferreterias/ferr6.webp',
+  categoria: 'ferreterias',
+  keywords:
+    'ferreteria cruz cementos agregados ladrillos fierros pintura pernos herramientas construcción servicios',
+},
+
+{
+  id: 'ferreteria-inox-servicios-03inx',
+  titulo: 'Fabricaciones & Servicios – Inox y acero',
+  imagen: '/Diseños/categorias/ferreterias/ferr3(inox).webp',
+  categoria: 'ferreterias',
+  keywords:
+    'inox acero inoxidable soldadura fabricación servicios metalmecánica estructuras metal banner diseño',
+},
+
+{
+  id: 'ferreteria-aluminios-accesorios',
+  titulo: 'Aluminios y accesorios – Venta mayor y menor',
+  imagen: '/Diseños/categorias/ferreterias/ferreteria.webp',
+  categoria: 'ferreterias',
+  keywords:
+    'aluminio accesorios mayor menor puertas ventanas perfilería construcción ferretería banner diseño',
+},
+
+{
+  id: 'ferreteria-maquinarias-01',
+  titulo: 'Construcciones y Maquinarias – Materiales y servicios',
+  imagen: '/Diseños/categorias/ferreterias/ferreteria1.webp',
+  categoria: 'ferreterias',
+  keywords:
+    'arena gruesa fina maquinaria construcción escombros alquiler materiales ferretería banner diseño',
+},
+
+{
+  id: 'ferreteria-general-02',
+  titulo: 'Ferretería – Herramientas y suministros',
+  imagen: '/Diseños/categorias/ferreterias/ferreteria2.png',
+  categoria: 'ferreterias',
+  keywords:
+    'ferreteria herramientas taladros tubos pvc electricidad iluminación tornillos accesorios construcción',
+},
 
 
  // =======================================
