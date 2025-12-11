@@ -289,6 +289,32 @@ export const categorias = [
 ]
 
 export const disenos = [
+  // =======================================
+// 🛒 Imágenes para categoría Abarrotes
+// =======================================
+  {
+  id: 'abarrotes-02',
+  titulo: 'Diseño para tienda de abarrotes 02',
+  imagen: '/Diseños/categorias/abarrotes/abarrotes2.webp',
+  categoria: 'abarrotes',
+},
+
+{
+  id: 'abarrotes-06',
+  titulo: 'Diseño para tienda de abarrotes 06',
+  imagen: '/Diseños/categorias/abarrotes/abarrotes6.webp',
+  categoria: 'abarrotes',
+},
+
+{
+  id: 'abarrotes-se-alquila',
+  titulo: 'Aviso Se Alquila – Tienda de abarrotes',
+  imagen: '/Diseños/categorias/abarrotes/sealquila.webp',
+  categoria: 'abarrotes',
+},
+ // =======================================
+// ejemplos falsos
+// =======================================
   {
     id: 'vinilos-eer-01',
     titulo: 'Vinilo EER',
