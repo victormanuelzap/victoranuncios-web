@@ -4,7 +4,7 @@
 import '../../css/base.css'
 import { categorias, disenos } from '../../data/disenos'
 
-// 🔹 1) Definimos qué rutas dinámicas se deben generar para /disenos/[categoria]
+// 🔹 1) Rutas dinámicas
 export function getStaticPaths() {
   return categorias.map((cat) => ({
     params: { categoria: cat.slug },
@@ -14,14 +14,14 @@ export function getStaticPaths() {
 const base = import.meta.env.BASE_URL
 const { categoria } = Astro.params
 
-// 🔹 2) Buscar la información de la categoría actual
+// 🔹 2) Datos de la categoría actual
 const categoriaData = categorias.find((cat) => cat.slug === categoria)
 
 if (!categoriaData) {
   throw new Error(`Categoría "${categoria}" no encontrada`)
 }
 
-// 🔹 3) Filtrar diseños solo de esta categoría
+// 🔹 3) Diseños filtrados por categoría
 const disenosFiltrados = disenos.filter((item) => item.categoria === categoria)
 ---
 
@@ -37,84 +37,122 @@ const disenosFiltrados = disenos.filter((item) => item.categoria === categoria)
     />
   </head>
 
-  <body class="bg-slate-100">
-    <main class="max-w-6xl mx-auto px-4 py-10">
-      <a href={`${base}disenos/`} class="text-sm text-sky-600 hover:underline">
-        ← Volver a galería de categorías
+  <!-- Fondo oscuro tipo galería / inspiración -->
+  <body class="bg-neutral-950 text-neutral-100 min-h-screen">
+    <main class="max-w-6xl mx-auto px-4 py-8 sm:py-10">
+      <!-- Enlace volver -->
+      <a
+        href={`${base}disenos/`}
+        class="inline-flex items-center gap-1 text-sm text-neutral-400 hover:text-neutral-100 transition-colors"
+      >
+        <span>←</span>
+        <span>Volver a galería de categorías</span>
       </a>
 
-      <h1 class="mt-4 text-3xl font-extrabold text-slate-900">
-        {categoriaData.nombre}
-      </h1>
-
-      <p class="mt-2 text-slate-600">
-        {categoriaData.descripcion}
-      </p>
-
-      <!-- 🔍 4) BUSCADOR PARA FILTRAR DISEÑOS EN ESTA CATEGORÍA -->
-      <input
-        id="buscador-disenos"
-        type="text"
-        placeholder="Buscar diseños dentro de esta categoría..."
-        class="w-full mt-6 mb-6 px-4 py-3 border rounded-lg shadow-sm"
-      />
-
-      <!-- 🔹 5) GRID DE DISEÑOS FILTRADOS POR CATEGORÍA -->
-      <section id="grid-disenos" class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {disenosFiltrados.length === 0 ? (
-          <p class="text-slate-500 col-span-full">
-            Aún no has cargado diseños para esta categoría.
+      <!-- Título de categoría (arriba, limpio) -->
+      <header class="mt-4 mb-6">
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-50">
+          {categoriaData.nombre}
+        </h1>
+        {categoriaData.descripcion && (
+          <p class="mt-2 text-sm sm:text-base text-neutral-400 max-w-2xl">
+            {categoriaData.descripcion}
           </p>
-        ) : (
-          disenosFiltrados.map((item) => (
-            <>
-              {/* 🔸6) Cada tarjeta tiene data-title para que el buscador la pueda filtrar */}
+        )}
+      </header>
+
+      <!-- 🔍 Buscador NUEVO: filtra por data-keywords, no por título visible -->
+      <section class="mb-6 sm:mb-8">
+        <label for="buscador-disenos" class="block text-xs font-medium text-neutral-400 mb-2">
+          Buscar diseños por palabra clave (ej. "pollería", "menú", "logo", "toldo"…)
+        </label>
+        <div class="relative">
+          <input
+            id="buscador-disenos"
+            type="text"
+            placeholder="Escribe para filtrar la galería…"
+            class="w-full px-4 py-3 rounded-full bg-neutral-900/80 border border-neutral-700 text-sm
+                   text-neutral-100 placeholder:text-neutral-500 shadow-sm
+                   focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+          />
+          <span
+            class="pointer-events-none absolute inset-y-0 right-4 flex items-center text-neutral-500 text-xs"
+          >
+            🔍
+          </span>
+        </div>
+      </section>
+
+      <!-- 🧱 Masonry layout tipo Pinterest (columns) -->
+      {disenosFiltrados.length === 0 ? (
+        <p class="text-neutral-500 mt-10">
+          Aún no has cargado diseños para esta categoría.
+        </p>
+      ) : (
+        <section
+          id="grid-disenos"
+          class="columns-1 sm:columns-2 lg:columns-3 gap-4 sm:gap-5"
+        >
+          {disenosFiltrados.map((item) => {
+            // keywords: si existe item.keywords, lo usamos; si no, usamos el título
+            const keywords =
+              (item.keywords && item.keywords.toLowerCase()) ||
+              item.titulo.toLowerCase()
+
+            return (
               <article
-                class="dis-item bg-white shadow-md overflow-hidden rounded-none flex flex-col"
-                data-title={item.titulo.toLowerCase()}
+                class="dis-item mb-4 break-inside-avoid rounded-2xl overflow-hidden
+                       bg-neutral-900/80 border border-neutral-800 shadow-lg
+                       hover:shadow-2xl hover:-translate-y-1 transition-transform duration-300"
+                data-keywords={keywords}
               >
-                <div class="aspect-[4/3] overflow-hidden rounded-none">
+                {/* Título solo para accesibilidad, NO visible */}
+                <h2 class="sr-only">
+                  {item.titulo}
+                </h2>
+
+                <div class="relative">
                   <img
                     src={item.imagen}
                     alt={item.titulo}
                     loading="lazy"
-                    class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    class="w-full h-auto block object-cover"
+                  />
+
+                  {/* Capa sutil de brillo al pasar el mouse */}
+                  <div
+                    class="pointer-events-none absolute inset-0 bg-gradient-to-t
+                           from-neutral-950/40 via-transparent to-neutral-900/10
+                           opacity-0 hover:opacity-100 transition-opacity duration-300"
                   />
                 </div>
-                <div class="p-4 flex-1 flex flex-col">
-                  <h2 class="font-semibold text-slate-900">
-                    {item.titulo}
-                  </h2>
-                </div>
               </article>
-            </>
-          ))
-        )}
-      </section>
-
+            )
+          })}
+        </section>
+      )}
     </main>
 
-    <!-- 🔥 7) SCRIPT DEL BUSCADOR: FILTRA LAS TARJETAS POR TÍTULO -->
+    <!-- 🔥 Script buscador por data-keywords -->
     <script is:inline>
-      const buscador = document.getElementById("buscador-disenos");
-      const items = document.querySelectorAll(".dis-item");
+      const buscador = document.getElementById('buscador-disenos');
+      const items = document.querySelectorAll('.dis-item');
 
       if (buscador && items.length > 0) {
-        buscador.addEventListener("input", () => {
+        buscador.addEventListener('input', () => {
           const q = buscador.value.trim().toLowerCase();
 
           items.forEach((card) => {
-            const title = card.dataset.title || "";
+            const keywords = card.dataset.keywords || '';
 
-            if (title.includes(q)) {
-              card.style.display = "";
+            if (!q || keywords.includes(q)) {
+              card.style.display = '';
             } else {
-              card.style.display = "none";
+              card.style.display = 'none';
             }
           });
         });
       }
     </script>
-
   </body>
 </html>
