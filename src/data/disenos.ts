@@ -293,11 +293,12 @@ export const disenos = [
   // =======================================
 // 🛒 Imágenes para categoría Abarrotes
 // =======================================
-  {
+{
   id: 'abarrotes-02',
   titulo: 'Diseño para tienda de abarrotes 02',
   imagen: '/Diseños/categorias/abarrotes/abarrotes2.webp',
   categoria: 'abarrotes',
+  keywords: "abarrotes bodega minimarket tienda ofertas productos víveres cartel banner diseño",
 },
 
 {
@@ -305,6 +306,7 @@ export const disenos = [
   titulo: 'Diseño para tienda de abarrotes 06',
   imagen: '/Diseños/categorias/abarrotes/abarrotes6.webp',
   categoria: 'abarrotes',
+  keywords: "bodega abarrotes letrero precios promociones minimarket diseño tienda barrio",
 },
 
 {
@@ -312,7 +314,9 @@ export const disenos = [
   titulo: 'Aviso Se Alquila – Tienda de abarrotes',
   imagen: '/Diseños/categorias/abarrotes/sealquila.webp',
   categoria: 'abarrotes',
+  keywords: "se alquila local tienda aviso abarrotes anuncio alquiler cartel",
 },
+
 
 // =======================================
 // 🍽️ Imágenes para categoría Restaurantes
@@ -322,113 +326,40 @@ export const disenos = [
   titulo: 'Diseño para restaurante 01',
   imagen: '/Diseños/categorias/restaurantes/res2.webp',
   categoria: 'restaurantes-fundos',
+  keywords: "restaurante menú almuerzo cena carta parrillas platos fondo diseño banner",
 },
 {
   id: 'restaurante-02',
   titulo: 'Diseño para restaurante 02',
   imagen: '/Diseños/categorias/restaurantes/res3.webp',
   categoria: 'restaurantes-fundos',
+  keywords: "restaurante comida criolla menú carta platos brasas diseño local",
 },
 {
   id: 'restaurante-03',
   titulo: 'Diseño para restaurante 03',
   imagen: '/Diseños/categorias/restaurantes/res4.webp',
   categoria: 'restaurantes-fundos',
+  keywords: "picantería restaurante almuerzo menú tradicional arequipeño diseño",
 },
 {
   id: 'restaurante-04',
   titulo: 'Diseño para restaurante 04',
   imagen: '/Diseños/categorias/restaurantes/res5.webp',
   categoria: 'restaurantes-fundos',
+  keywords: "chifa restaurante menú oriental comida asiática carta platos diseño",
 },
 {
   id: 'restaurante-05',
   titulo: 'Diseño para restaurante 05',
   imagen: '/Diseños/categorias/restaurantes/restaurante1.webp',
   categoria: 'restaurantes-fundos',
+  keywords: "pollería restaurante parrillas brasas menú carta diseño comida rápida",
 },
-
 
  // =======================================
 // ejemplos falsos
 // =======================================
-  {
-    id: 'vinilos-eer-01',
-    titulo: 'Vinilo EER',
-    imagen: 'Diseños/categorias/vinilos/eer.png',
-    categoria: 'vinilos',
-  },
-  {
-    id: 'vinilos-cevichop-01',
-    titulo: 'Vinilo Cevichop',
-    imagen: '/Diseños/categorias/vinilos/cevichop.webp',
-    categoria: 'vinilos',
-  },
-  {
-    id: 'vinilos-nuevo-amanecer',
-    titulo: 'Vinilo para Grifo Nuevo Amanecer',
-    imagen: '/Diseños/categorias/vinilos/grifo-nuevo.webp',
-    categoria: 'vinilos',
-  },
-  {
-  id: 'vinilos-repuestos-fredy',
-  titulo: 'Vinilo Repuestos Fredy',
-  imagen: '/Diseños/categorias/vinilos/repuestos-fredy.webp',
-  categoria: 'vinilos',
-},
-{
-  id: 'vinilos-grupo-automotriz',
-  titulo: 'Vinilo Grupo Automotriz',
-  imagen: '/Diseños/categorias/vinilos/grupo-automotriz.webp',
-  categoria: 'vinilos',
-},
-{
-  id: 'vinilos-perla-oriental',
-  titulo: 'Vinilo La Perla Oriental',
-  imagen: '/Diseños/categorias/vinilos/perla-oriental.webp',
-  categoria: 'vinilos',
-},
-{
-  id: 'vinilos-farmacia-yanet',
-  titulo: 'Vinilo Farmacia Yanet',
-  imagen: '/Diseños/categorias/vinilos/farmacia-yanet.webp',
-  categoria: 'vinilos',
-},
-{
-  id: 'vinilos-polleria-saborcito',
-  titulo: 'Vinilo Pollería El Saborcito',
-  imagen: '/Diseños/categorias/vinilos/saborcito.webp',
-  categoria: 'vinilos',
-},
-{
-  id: 'vinilos-bordados-yersq',
-  titulo: 'Vinilo Bordados Yers’Q',
-  imagen: '/Diseños/categorias/vinilos/yersq.webp',
-  categoria: 'vinilos',
-},
-{
-  id: 'vinilos-taller-mecanico',
-  titulo: 'Vinilo Taller Mecánico - Rotulación',
-  imagen: '/Diseños/categorias/vinilos/taller-mecanico.webp',
-  categoria: 'vinilos',
-},
-{
-  id: 'vinilos-grifo-nuevo-amanecer-grande',
-  titulo: 'Vinilo Grifo Nuevo Amanecer – Panel Principal',
-  imagen: '/Diseños/categorias/vinilos/amanecer-principal.webp',
-  categoria: 'vinilos',
-},
-{
-  id: 'vinilos-regalon',
-  titulo: 'Vinilo Tráiler Regalón – Ofertas',
-  imagen: '/Diseños/categorias/vinilos/regalon.webp',
-  categoria: 'vinilos',
-},
-{
-  id: 'vinilos-carniceria-local',
-  titulo: 'Vinilo Carnicería – Cortes y Precios',
-  imagen: '/Diseños/categorias/vinilos/carniceria.webp',
-  categoria: 'vinilos',
-},
+ 
 
 ]
