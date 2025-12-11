@@ -389,13 +389,6 @@ export const disenos = [
   keywords: 'cevicheria menu fotos platos marinos combinados chicharron de pescado bandejas diseño promocional',
 },
 
-{
-  id: 'rest-chicharroneria-sabor-puneno',
-  titulo: 'Chicharronería – El sabor puneño',
-  imagen: '/Diseños/categorias/restaurantes/res(chicharroneria)2.webp',
-  categoria: 'restaurantes-fundos',
-  keywords: 'chicharroneria el sabor puneño chicharron de cerdo restaurante menu almuerzo diseño banner',
-},
 
 {
   id: 'rest-chicharroneria-sumac-yanhil',
@@ -403,6 +396,13 @@ export const disenos = [
   imagen: '/Diseños/categorias/restaurantes/res(chicharroneria).webp',
   categoria: 'restaurantes-fundos',
   keywords: 'chicharroneria sumac yanhil restaurant chicharrones comida criolla arequipa diseño letrero',
+},
+{
+  id: 'rest-chicharroneria-sabor-puneno',
+  titulo: 'Chicharronería – El sabor puneño',
+  imagen: '/Diseños/categorias/restaurantes/res(chicharroneria)2.webp',
+  categoria: 'restaurantes-fundos',
+  keywords: 'chicharroneria el sabor puneño chicharron de cerdo restaurante menu almuerzo diseño banner',
 },
 
 {
