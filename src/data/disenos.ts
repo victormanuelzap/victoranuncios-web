@@ -430,9 +430,9 @@ export const disenos = [
 },
 
 {
-  id: 'rest-gaboteria-grills-logo',
+  id: 'rest-garrotera-grills-logo',
   titulo: 'Restaurante grill – logotipo circular',
-  imagen: '/Diseños/categorias/restaurantes/res(gaboteria)1.webp',
+  imagen: '/Diseños/categorias/restaurantes/res(parrilla_la_garrotera)1.webp',
   categoria: 'restaurantes-fundos',
   keywords: 'restaurante grills parrillas hamburguesas logo circular chef diseño identidad',
 },
