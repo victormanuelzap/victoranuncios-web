@@ -75,7 +75,7 @@ const disenosFiltrados = disenos.filter((item) => item.categoria === categoria)
               >
                 <div class="aspect-[4/3] overflow-hidden rounded-none">
                   <img
-                    src={`${base}${item.imagen}`}
+                    src={item.imagen}
                     alt={item.titulo}
                     loading="lazy"
                     class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
