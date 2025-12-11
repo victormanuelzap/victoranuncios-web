@@ -20,7 +20,7 @@ export const categorias = [
     slug: 'restaurantes-fundos',
     nombre: 'Restaurantes y fondos',
     descripcion: 'Restaurantes, picanterías, pollerías y chifas.',
-    imagen: '/Diseños/categorias/res(parrilla_la_garrotera)1.webp',
+    imagen: '/Diseños/categorias/restaurant.webp',
     tags: ['restaurant', 'picanteria', 'polleria', 'chifa', 'cevicheria', 'parrillas', 'restobar', 'fundo'],
   },
   {
