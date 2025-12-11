@@ -356,6 +356,119 @@ export const disenos = [
   categoria: 'restaurantes-fundos',
   keywords: "pollería restaurante parrillas brasas menú carta diseño comida rápida",
 },
+  // Imágenes para categoría restaurantes / fondos
+{
+  id: 'rest-cebicheria-yaku-mar-02',
+  titulo: 'Cebichería Yaku Mar – diseño 02',
+  imagen: '/Diseños/categorias/restaurantes/res(cebicheria)2.webp',
+  categoria: 'restaurantes-fundos',
+  keywords: 'cebicheria yaku mar mariscos pescados restaurante logo diseño banner',
+},
+
+{
+  id: 'rest-cevicheria-yaku-mar-logo',
+  titulo: 'Cevichería Yaku Mar – logo dorado',
+  imagen: '/Diseños/categorias/restaurantes/res(cevicheria).webp',
+  categoria: 'restaurantes-fundos',
+  keywords: 'cevicheria yaku mar mariscos pescados logo dorado restaurante diseño letrero',
+},
+
+{
+  id: 'rest-cevicheria-menu-pizarra',
+  titulo: 'Menú pizarra para cevichería',
+  imagen: '/Diseños/categorias/restaurantes/res(cevicheria)3menu.webp',
+  categoria: 'restaurantes-fundos',
+  keywords: 'cevicheria menu pizarra platos de pescado mariscos almuerzo cena promoción diseño carta',
+},
+
+{
+  id: 'rest-cevicheria-menu-fotos',
+  titulo: 'Menú con fotos para cevichería',
+  imagen: '/Diseños/categorias/restaurantes/res(cevicheria)4menu.webp',
+  categoria: 'restaurantes-fundos',
+  keywords: 'cevicheria menu fotos platos marinos combinados chicharron de pescado bandejas diseño promocional',
+},
+
+{
+  id: 'rest-chicharroneria-sabor-puneno',
+  titulo: 'Chicharronería – El sabor puneño',
+  imagen: '/Diseños/categorias/restaurantes/res(chicharroneria)2.webp',
+  categoria: 'restaurantes-fundos',
+  keywords: 'chicharroneria el sabor puneño chicharron de cerdo restaurante menu almuerzo diseño banner',
+},
+
+{
+  id: 'rest-chicharroneria-sumac-yanhil',
+  titulo: 'Chicharronería Sumac Yanhil Restaurant',
+  imagen: '/Diseños/categorias/restaurantes/res(chicharroneria).webp',
+  categoria: 'restaurantes-fundos',
+  keywords: 'chicharroneria sumac yanhil restaurant chicharrones comida criolla arequipa diseño letrero',
+},
+
+{
+  id: 'rest-chicharroneria-silvia',
+  titulo: 'Chicharronería La Silvia – chancho y carne',
+  imagen: '/Diseños/categorias/restaurantes/res(chicharroneria)3.webp',
+  categoria: 'restaurantes-fundos',
+  keywords: 'chicharroneria silvia chicharrones chancho carne restaurante comida criolla diseño panel',
+},
+
+{
+  id: 'rest-chifa-banner-horizontal',
+  titulo: 'Chifa – banner horizontal',
+  imagen: '/Diseños/categorias/restaurantes/res(chifa)1.webp',
+  categoria: 'restaurantes-fundos',
+  keywords: 'chifa comida china menu platos chaufa tallarin wantan restaurante diseño banner',
+},
+
+{
+  id: 'rest-chifa-menu-economico',
+  titulo: 'Chifa – menú económico vertical',
+  imagen: '/Diseños/categorias/restaurantes/res(chifa)2menu.webp',
+  categoria: 'restaurantes-fundos',
+  keywords: 'chifa menu economico lista de platos combo restaurante oriental diseño carta mural',
+},
+
+{
+  id: 'rest-gaboteria-grills-logo',
+  titulo: 'Restaurante grill – logotipo circular',
+  imagen: '/Diseños/categorias/restaurantes/res(gaboteria)1.webp',
+  categoria: 'restaurantes-fundos',
+  keywords: 'restaurante grills parrillas hamburguesas logo circular chef diseño identidad',
+},
+
+{
+  id: 'rest-kankacho-carmen',
+  titulo: 'Kankacho Ayavireño Carmen',
+  imagen: '/Diseños/categorias/restaurantes/res(kankacho)1.webp',
+  categoria: 'restaurantes-fundos',
+  keywords: 'kankacho ayavireño carmen cordero horno leña restaurante comida tipica diseño panel',
+},
+
+{
+  id: 'rest-parrillas-logo',
+  titulo: 'Parrillas – logo principal',
+  imagen: '/Diseños/categorias/restaurantes/res(parrillas)1.webp',
+  categoria: 'restaurantes-fundos',
+  keywords: 'parrillas restaurante carnes a la brasa brasas delivery logo diseño letrero',
+},
+
+{
+  id: 'rest-parrillas-menu-familiar',
+  titulo: 'Parrillas – menú combos familiares',
+  imagen: '/Diseños/categorias/restaurantes/res(parrillas)2menu.webp',
+  categoria: 'restaurantes-fundos',
+  keywords: 'parrillas menu combos familiares precios carta restaurante carnes pollo diseño vertical',
+},
+
+{
+  id: 'rest-pizzeria-banner',
+  titulo: 'Pizzería – banner horizontal',
+  imagen: '/Diseños/categorias/restaurantes/res(pizza)1.webp',
+  categoria: 'restaurantes-fundos',
+  keywords: 'pizzeria pizza familiar combos queso horno restaurante delivery diseño banner',
+},
+
 
  // =======================================
 // ejemplos falsos
