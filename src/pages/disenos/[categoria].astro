@@ -130,6 +130,7 @@ const pageDescription = `Diseños de ${categoriaData.nombre} realizados por Vict
 
     <!-- 🔥 Script: buscador + lightbox -->
   <script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
     // ====== Buscador por data-keywords ======
     const buscador = document.getElementById('buscador-disenos');
     const items = document.querySelectorAll('.dis-item');
@@ -181,12 +182,15 @@ const pageDescription = `Diseños de ${categoriaData.nombre} realizados por Vict
         }
       });
     }
-  </script>
+  });
+</script>
+
+
 
 <!-- 🔍 Modal / Lightbox para imágenes -->
 <div
   id="lightbox"
-  class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden items-center justify-center z-50 p-4"
+  class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center z-50 p-4"
 >
   <img
     id="lightbox-img"
@@ -195,6 +199,7 @@ const pageDescription = `Diseños de ${categoriaData.nombre} realizados por Vict
     class="max-w-full max-h-[90vh] rounded-xl shadow-2xl"
   />
 </div>
+
 
 </Layout>
 
