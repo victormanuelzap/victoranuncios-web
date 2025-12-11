@@ -321,32 +321,33 @@ export const disenos = [
   id: 'restaurante-01',
   titulo: 'Diseño para restaurante 01',
   imagen: '/Diseños/categorias/restaurantes/res2.webp',
-  categoria: 'restaurantes',
+  categoria: 'restaurantes-fundos',
 },
 {
   id: 'restaurante-02',
   titulo: 'Diseño para restaurante 02',
   imagen: '/Diseños/categorias/restaurantes/res3.webp',
-  categoria: 'restaurantes',
+  categoria: 'restaurantes-fundos',
 },
 {
   id: 'restaurante-03',
   titulo: 'Diseño para restaurante 03',
   imagen: '/Diseños/categorias/restaurantes/res4.webp',
-  categoria: 'restaurantes',
+  categoria: 'restaurantes-fundos',
 },
 {
   id: 'restaurante-04',
   titulo: 'Diseño para restaurante 04',
   imagen: '/Diseños/categorias/restaurantes/res5.webp',
-  categoria: 'restaurantes',
+  categoria: 'restaurantes-fundos',
 },
 {
   id: 'restaurante-05',
   titulo: 'Diseño para restaurante 05',
   imagen: '/Diseños/categorias/restaurantes/restaurante1.webp',
-  categoria: 'restaurantes',
+  categoria: 'restaurantes-fundos',
 },
+
 
  // =======================================
 // ejemplos falsos
