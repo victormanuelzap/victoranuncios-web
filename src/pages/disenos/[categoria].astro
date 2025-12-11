@@ -111,7 +111,7 @@ const pageDescription = `Diseños de ${categoriaData.nombre} realizados por Vict
                     src={item.imagen}
                     alt={item.titulo}
                     loading="lazy"
-                    class="w-full h-auto block object-cover"
+                    class="w-full h-auto block object-cover cursor-pointer"
                   />
 
                   <div
@@ -128,8 +128,9 @@ const pageDescription = `Diseños de ${categoriaData.nombre} realizados por Vict
     </main>
   </div>
 
-  <!-- 🔥 Script buscador por data-keywords -->
+    <!-- 🔥 Script: buscador + lightbox -->
   <script is:inline>
+    // ====== Buscador por data-keywords ======
     const buscador = document.getElementById('buscador-disenos');
     const items = document.querySelectorAll('.dis-item');
 
@@ -148,7 +149,40 @@ const pageDescription = `Diseños de ${categoriaData.nombre} realizados por Vict
         });
       });
     }
+
+    // ====== Lightbox / Modal de imágenes ======
+    const modal = document.getElementById('lightbox');
+    const modalImg = document.getElementById('lightbox-img');
+    const imgs = document.querySelectorAll('.dis-item img');
+
+    if (modal && modalImg && imgs.length > 0) {
+      // Abrir imagen al hacer clic
+      imgs.forEach((img) => {
+        img.addEventListener('click', () => {
+          modalImg.src = img.src;
+          modal.classList.remove('hidden');
+          document.body.style.overflow = 'hidden'; // bloquear scroll detrás
+        });
+      });
+
+      // Cerrar al hacer clic en el fondo oscuro
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.add('hidden');
+          document.body.style.overflow = '';
+        }
+      });
+
+      // Cerrar con tecla ESC
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          modal.classList.add('hidden');
+          document.body.style.overflow = '';
+        }
+      });
+    }
   </script>
+
 <!-- 🔍 Modal / Lightbox para imágenes -->
 <div
   id="lightbox"
