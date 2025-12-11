@@ -27,7 +27,7 @@ export const categorias = [
     slug: 'ferreteria',
     nombre: 'Madereras y ferreterías',
     descripcion: 'Ferreterías, madereras y tiendas de construcción.',
-    imagen: '/Diseños/categorias/maderera-ferreteria.webp',
+    imagen: '/Diseños/categorias/ferreteria.webp',
     tags: ['ferreteria', 'aluminios', 'inox', 'bloquetas', 'carpinteria'],
   },
   {
