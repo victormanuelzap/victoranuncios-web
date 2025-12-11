@@ -24,8 +24,8 @@ export const categorias = [
     tags: ['restaurant', 'picanteria', 'polleria', 'chifa', 'cevicheria', 'parrillas', 'restobar', 'fundo'],
   },
   {
-    slug: 'ferreteria',
-    nombre: 'Madereras y ferreterías',
+    slug: 'ferreterias',
+    nombre: 'Ferreterías',
     descripcion: 'Ferreterías, madereras y tiendas de construcción.',
     imagen: '/Diseños/categorias/ferreteria.webp',
     tags: ['ferreteria', 'aluminios', 'inox', 'bloquetas', 'carpinteria'],
