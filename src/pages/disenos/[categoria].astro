@@ -1,3 +1,4 @@
+
 ---
 // src/pages/disenos/[categoria].astro
 import Layout from '../../layouts/Layout.astro'
@@ -23,22 +24,15 @@ if (!categoriaData) {
 
 // 🔹 3) Diseños filtrados por categoría
 const disenosFiltrados = disenos.filter((item) => item.categoria === categoria)
+
+// Título y descripción para el Layout
+const pageTitle = `${categoriaData.nombre} – Victor Anuncios`
+const pageDescription = `Diseños de ${categoriaData.nombre} realizados por Victor Anuncios en Arequipa.`
 ---
 
-<!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>{categoriaData.nombre} – Victor Anuncios</title>
-
-    <meta
-      name="description"
-      content={`Diseños de ${categoriaData.nombre} realizados por Victor Anuncios en Arequipa.`}
-    />
-  </head>
-
-  <!-- Fondo oscuro tipo galería / inspiración -->
-  <body class="bg-neutral-950 text-neutral-100 min-h-screen">
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Puedes controlar el fondo aquí -->
+  <div class="bg-neutral-950 text-neutral-100 min-h-screen">
     <main class="max-w-6xl mx-auto px-4 py-8 sm:py-10">
       <!-- Enlace volver -->
       <a
@@ -61,7 +55,7 @@ const disenosFiltrados = disenos.filter((item) => item.categoria === categoria)
         )}
       </header>
 
-      <!-- 🔍 Buscador NUEVO: filtra por data-keywords, no por título visible -->
+      <!-- 🔍 Buscador NUEVO: filtra por data-keywords -->
       <section class="mb-6 sm:mb-8">
         <label for="buscador-disenos" class="block text-xs font-medium text-neutral-400 mb-2">
           Buscar diseños por palabra clave (ej. "pollería", "menú", "logo", "toldo"…)
@@ -94,7 +88,6 @@ const disenosFiltrados = disenos.filter((item) => item.categoria === categoria)
           class="columns-1 sm:columns-2 lg:columns-3 gap-4 sm:gap-5"
         >
           {disenosFiltrados.map((item) => {
-            // keywords: si existe item.keywords, lo usamos; si no, usamos el título
             const keywords =
               (item.keywords && item.keywords.toLowerCase()) ||
               item.titulo.toLowerCase()
@@ -106,7 +99,6 @@ const disenosFiltrados = disenos.filter((item) => item.categoria === categoria)
                        hover:shadow-2xl hover:-translate-y-1 transition-transform duration-300"
                 data-keywords={keywords}
               >
-                {/* Título solo para accesibilidad, NO visible */}
                 <h2 class="sr-only">
                   {item.titulo}
                 </h2>
@@ -119,7 +111,6 @@ const disenosFiltrados = disenos.filter((item) => item.categoria === categoria)
                     class="w-full h-auto block object-cover"
                   />
 
-                  {/* Capa sutil de brillo al pasar el mouse */}
                   <div
                     class="pointer-events-none absolute inset-0 bg-gradient-to-t
                            from-neutral-950/40 via-transparent to-neutral-900/10
@@ -132,27 +123,28 @@ const disenosFiltrados = disenos.filter((item) => item.categoria === categoria)
         </section>
       )}
     </main>
+  </div>
 
-    <!-- 🔥 Script buscador por data-keywords -->
-    <script is:inline>
-      const buscador = document.getElementById('buscador-disenos');
-      const items = document.querySelectorAll('.dis-item');
+  <!-- 🔥 Script buscador por data-keywords -->
+  <script is:inline>
+    const buscador = document.getElementById('buscador-disenos');
+    const items = document.querySelectorAll('.dis-item');
 
-      if (buscador && items.length > 0) {
-        buscador.addEventListener('input', () => {
-          const q = buscador.value.trim().toLowerCase();
+    if (buscador && items.length > 0) {
+      buscador.addEventListener('input', () => {
+        const q = buscador.value.trim().toLowerCase();
 
-          items.forEach((card) => {
-            const keywords = card.dataset.keywords || '';
+        items.forEach((card) => {
+          const keywords = card.dataset.keywords || '';
 
-            if (!q || keywords.includes(q)) {
-              card.style.display = '';
-            } else {
-              card.style.display = 'none';
-            }
-          });
+          if (!q || keywords.includes(q)) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
         });
-      }
-    </script>
-  </body>
-</html>
+      });
+    }
+  </script>
+</Layout>
+
