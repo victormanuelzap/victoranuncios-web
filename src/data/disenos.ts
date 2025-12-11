@@ -1,13 +1,7 @@
 // src/data/disenos.ts
 
 export const categorias = [
-  {
-    slug: 'exterior-interior',
-    nombre: 'Exterior / Interior',
-    descripcion: 'Letreros luminosos, letras 3D y cajas de luz.',
-    imagen: '/Diseños/categorias/exterior-interior.webp',
-    tags: ['Letreros', 'Letras 3D', 'Cajas de luz'],
-  },
+  
   {
     slug: 'vinilos',
     nombre: 'Vinilos y gráficos',
@@ -284,6 +278,13 @@ export const categorias = [
   imagen: '/Diseños/categorias/fastfood.webp',
   tags: ['Pollerías', 'Hamburguesas', 'Menús'],
 },
+{
+    slug: 'exterior-interior',
+    nombre: 'Exterior / Interior',
+    descripcion: 'Letreros luminosos, letras 3D y cajas de luz.',
+    imagen: '/Diseños/categorias/exterior-interior.webp',
+    tags: ['Letreros', 'Letras 3D', 'Cajas de luz'],
+  },
 
 ]
 
