@@ -44,6 +44,14 @@ export const categorias = [
     tags: ['mecanica', 'electricidad', 'alineamiento', 'frenos', 'cochera', 'autos', 'motos'],
   },
   {
+    slug: 'contabilidad',
+    nombre: 'Estudios contables',
+    descripcion: 'Servicios de contabilidad y asesoría tributaria.',
+    imagen: '/Diseños/categorias/contabilidad.webp',
+    tags: ['contabilidad', 'estudio contable', 'asesoria tributaria'],
+  },
+  
+  {
     slug: 'cremoladas-helados',
     nombre: 'Cremoladas y heladerías',
     descripcion: 'Cremoladas, helados, marcianos y jugos fríos.',
@@ -123,13 +131,7 @@ export const categorias = [
     imagen: '/Diseños/categorias/celulares-tecnologia.webp',
     tags: ['celulares', 'internet', 'cabinas', 'accesorios', 'autoradio'],
   },
-  {
-    slug: 'contabilidad',
-    nombre: 'Estudios contables',
-    descripcion: 'Servicios de contabilidad y asesoría tributaria.',
-    imagen: '/Diseños/categorias/contabilidad.webp',
-    tags: ['contabilidad', 'estudio contable', 'asesoria tributaria'],
-  },
+  
   {
     slug: 'tapiceria',
     nombre: 'Tapicerías',
