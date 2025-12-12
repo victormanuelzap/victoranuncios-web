@@ -699,10 +699,6 @@ export const disenos = [
     keywords: 'dayees salon spa barberia belleza diseño banner',
   },
 
-]
-
-
-
  // =======================================
 // ejemplos falsos
 // =======================================
