@@ -530,7 +530,7 @@ export const disenos = [
 {
   id: 'ferreteria-general-02',
   titulo: 'Ferretería – Herramientas y suministros',
-  imagen: '/Diseños/categorias/ferreterias/ferreteria2.png',
+  imagen: '/Diseños/categorias/ferreterias/ferreteria2.webp',
   categoria: 'ferreterias',
   keywords:
     'ferreteria herramientas taladros tubos pvc electricidad iluminación tornillos accesorios construcción',
