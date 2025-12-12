@@ -1,14 +1,6 @@
 // src/data/disenos.ts
 
 export const categorias = [
-  
-  {
-    slug: 'vinilos',
-    nombre: 'Vinilos y gráficos',
-    descripcion: 'Vinilos para vitrinas, autos y murales.',
-    imagen: '/Diseños/categorias/vinilos.webp',
-    tags: ['Autos', 'Vitrinas', 'Paredes'],
-  },
   {
     slug: 'abarrotes',
     nombre: 'Abarrotes y bazares',
