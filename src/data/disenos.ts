@@ -694,6 +694,163 @@ export const disenos = [
  // =======================================
 // ejemplos falsos
 // =======================================
+// =======================================
+// 🎉 Imágenes para categoría Fiestas y eventos
+// Ruta: /public/Diseños/categorias/fiestas_y_eventos
+// =======================================
+
+{
+  id: 'fiestas-15anos-vestido-exterior',
+  titulo: 'Sesión 15 años – foto exterior',
+  imagen: '/Diseños/categorias/fiestas_y_eventos/15años.webp',
+  categoria: 'fiestas-eventos',
+  keywords: '15 años quinceaños sesión foto exterior vestido fiesta diseño',
+},
+
+{
+  id: 'fiestas-15anos-invitacion-01',
+  titulo: 'Invitación 15 años – diseño 01',
+  imagen: '/Diseños/categorias/fiestas_y_eventos/15años2.webp',
+  categoria: 'fiestas-eventos',
+  keywords: '15 años quinceaños invitación tarjeta evento fiesta diseño decoración',
+},
+
+{
+  id: 'fiestas-caritas-pintadas-01',
+  titulo: 'Caritas pintadas – maquillaje fantasía',
+  imagen: '/Diseños/categorias/fiestas_y_eventos/caraspintadas1.webp',
+  categoria: 'fiestas-eventos',
+  keywords: 'caritas pintadas maquillaje fantasia eventos infantiles payasito fiesta diseño',
+},
+
+{
+  id: 'cumpleanos-rodrigo-06',
+  titulo: 'Cumpleaños Rodrigo – diseño 6 años',
+  imagen: '/Diseños/categorias/fiestas_y_eventos/cumple1.webp',
+  categoria: 'fiestas-eventos',
+  keywords: 'feliz cumpleaños rodrigo 6 años fiesta infantil diseño afiche',
+},
+
+{
+  id: 'cumpleanos-guido-60',
+  titulo: 'Cumpleaños Guido – diseño 60 años',
+  imagen: '/Diseños/categorias/fiestas_y_eventos/cumple2(60años).webp',
+  categoria: 'fiestas-eventos',
+  keywords: 'feliz cumpleaños guido 60 años fiesta adulto diseño afiche recuerdos',
+},
+
+{
+  id: 'cumpleanos-valeria-01',
+  titulo: 'Cumpleaños Valeria – diseño temático',
+  imagen: '/Diseños/categorias/fiestas_y_eventos/cumple3.webp',
+  categoria: 'fiestas-eventos',
+  keywords: 'feliz cumpleaños valeria fiesta infantil temático diseño afiche',
+},
+
+{
+  id: 'cumpleanos-salvador-01',
+  titulo: 'Cumpleaños Salvador – diseño infantil',
+  imagen: '/Diseños/categorias/fiestas_y_eventos/cumple4.webp',
+  categoria: 'fiestas-eventos',
+  keywords: 'cumpleaños salvador fiesta infantil foto nombre diseño afiche',
+},
+
+{
+  id: 'eventos-casa-decoraciones-01',
+  titulo: 'Casa de Decoraciones – banner publicitario',
+  imagen: '/Diseños/categorias/fiestas_y_eventos/decoraciones1.webp',
+  categoria: 'fiestas-eventos',
+  keywords: 'casa de decoraciones cortinas decoracion hogar banner diseño publicidad',
+},
+
+{
+  id: 'eventos-decoraciones-tematicas-01',
+  titulo: 'Decoraciones temáticas – servicios para eventos',
+  imagen: '/Diseños/categorias/fiestas_y_eventos/event1.webp',
+  categoria: 'fiestas-eventos',
+  keywords: 'decoraciones tematicas eventos cumpleaños matrimonio alquiler mesa silla diseño',
+},
+
+{
+  id: 'eventos-very-cuss-01',
+  titulo: 'Very Cuss Eventos – decoración temática',
+  imagen: '/Diseños/categorias/fiestas_y_eventos/event2.webp',
+  categoria: 'fiestas-eventos',
+  keywords: 'very cuss eventos decoración temática globos mesas sillas fiesta diseño',
+},
+
+{
+  id: 'eventos-local-los-cristales-01',
+  titulo: 'Los Cristales – local de eventos',
+  imagen: '/Diseños/categorias/fiestas_y_eventos/event3.webp',
+  categoria: 'fiestas-eventos',
+  keywords: 'los cristales local de eventos alquiler salón fiesta cumpleaños diseño',
+},
+
+{
+  id: 'eventos-very-cuss-logo-01',
+  titulo: 'Very Cuss Eventos – logo y branding',
+  imagen: '/Diseños/categorias/fiestas_y_eventos/event4.webp',
+  categoria: 'fiestas-eventos',
+  keywords: 'very cuss eventos logo branding identidad fiesta diseño',
+},
+
+{
+  id: 'eventos-granja-infantil-animado',
+  titulo: 'Evento infantil – diseño animado granja',
+  imagen: '/Diseños/categorias/fiestas_y_eventos/event5(diseños_animados).webp',
+  categoria: 'fiestas-eventos',
+  keywords: 'evento infantil granja animado invitación cumpleaños niños diseño',
+},
+
+{
+  id: 'eventos-buffet-decoracion-vertical-01',
+  titulo: 'Buffet – banner vertical servicios y decoración',
+  imagen: '/Diseños/categorias/fiestas_y_eventos/event6.webp',
+  categoria: 'fiestas-eventos',
+  keywords: 'buffet decoración alquiler mesas sillas catering banner vertical diseño',
+},
+
+{
+  id: 'eventos-buffet-yovis-catering',
+  titulo: 'Buffet Yovis – catering & eventos (logo)',
+  imagen: '/Diseños/categorias/fiestas_y_eventos/event7(catering).webp',
+  categoria: 'fiestas-eventos',
+  keywords: 'buffet yovis catering eventos logo diseño identidad',
+},
+
+{
+  id: 'fiesta-venta-articulos-01',
+  titulo: 'Fiesta – venta de artículos para fiesta (banner)',
+  imagen: '/Diseños/categorias/fiestas_y_eventos/fies1.webp',
+  categoria: 'fiestas-eventos',
+  keywords: 'venta de articulos para fiesta globos piñatas decoraciones banner diseño',
+},
+
+{
+  id: 'fiesta-venta-articulos-vertical-02',
+  titulo: 'Artículos para fiesta – banner vertical',
+  imagen: '/Diseños/categorias/fiestas_y_eventos/fies2.webp',
+  categoria: 'fiestas-eventos',
+  keywords: 'articulos para fiesta banner vertical decoraciones globos alquiler diseño',
+},
+
+{
+  id: 'matrimonio-invitacion-01',
+  titulo: 'Matrimonio – invitación y anuncio',
+  imagen: '/Diseños/categorias/fiestas_y_eventos/matri1.webp',
+  categoria: 'fiestas-eventos',
+  keywords: 'matrimonio invitación boda evento fecha diseño tarjeta',
+},
+
+{
+  id: 'tarjeta-15anos-negra-dorada',
+  titulo: 'Tarjeta 15 años – marco dorado (fondo)',
+  imagen: '/Diseños/categorias/fiestas_y_eventos/tarjeta(15años).webp',
+  categoria: 'fiestas-eventos',
+  keywords: 'tarjeta 15 años fondo negro dorado marco flores brillo diseño',
+},
+
  
 
 ]
