@@ -38,6 +38,20 @@ export const categorias = [
     tags: ['barbershop', 'peluqueria', 'estetica', 'belleza','spa'],
   },
   {
+    slug: 'fiestas-eventos',
+    nombre: 'Fiestas y eventos',
+    descripcion: 'Decoración para cumpleaños, matrimonios y eventos infantiles.',
+    imagen: '/Diseños/categorias/fiestas-eventos.webp',
+    tags: ['fiesta', 'cumpleaños', 'quinceaños', 'matrimonio', 'decoraciones', 'payasito', 'caritas pintadas'],
+  },
+  {
+    slug: 'electricidad-automotriz',
+    nombre: 'Electricidad y mecánica automotriz',
+    descripcion: 'Talleres de mecánica, electricidad automotriz y frenos.',
+    imagen: '/Diseños/categorias/electricidad-automotriz.webp',
+    tags: ['mecanica', 'electricidad', 'alineamiento', 'frenos', 'cochera', 'autos', 'motos'],
+  },
+  {
     slug: 'cremoladas-helados',
     nombre: 'Cremoladas y heladerías',
     descripcion: 'Cremoladas, helados, marcianos y jugos fríos.',
@@ -51,13 +65,7 @@ export const categorias = [
     imagen: '/Diseños/categorias/mascotas.webp',
     tags: ['mascotas', 'veterinaria', 'alimento', 'compra y venta animales', 'gallos'],
   },
-  {
-    slug: 'electricidad-automotriz',
-    nombre: 'Electricidad y mecánica automotriz',
-    descripcion: 'Talleres de mecánica, electricidad automotriz y frenos.',
-    imagen: '/Diseños/categorias/electricidad-automotriz.webp',
-    tags: ['mecanica', 'electricidad', 'alineamiento', 'frenos', 'cochera', 'autos', 'motos'],
-  },
+  
   {
     slug: 'musica-academia',
     nombre: 'Academias de música y baile',
@@ -79,13 +87,7 @@ export const categorias = [
     imagen: '/Diseños/categorias/gaseosas-bebidas.webp',
     tags: ['jugos', 'gaseosa', 'cafeteria', 'emoliente', 'bebidas'],
   },
-  {
-    slug: 'fiestas-eventos',
-    nombre: 'Fiestas y eventos',
-    descripcion: 'Decoración para cumpleaños, matrimonios y eventos infantiles.',
-    imagen: '/Diseños/categorias/fiestas-eventos.webp',
-    tags: ['fiesta', 'cumpleaños', 'quinceaños', 'matrimonio', 'decoraciones', 'payasito', 'caritas pintadas'],
-  },
+  
   
   {
     slug: 'multired-servicios',
