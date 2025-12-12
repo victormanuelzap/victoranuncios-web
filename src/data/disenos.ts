@@ -969,7 +969,50 @@ export const disenos = [
   categoria: 'electricidad-automotriz',
   keywords: 'taller de motos doctor reparacion electrico repuestos accesorios diseño',
 },
+// =======================================
+// 📊 Imágenes para categoría Contabilidad
+// Ruta: /public/Diseños/categorias/contabilidad
+// =======================================
 
+{
+  id: 'contabilidad-estudio-contable-01',
+  titulo: 'Estudio Contable – tarjeta publicitaria (diseño 01)',
+  imagen: '/Diseños/categorias/contabilidad/conta1.webp',
+  categoria: 'contabilidad',
+  keywords: 'estudio contable contabilidad asesoria tributaria declaracion impuestos ruc sunat tarjeta publicitaria diseño',
+},
+
+{
+  id: 'contabilidad-estudio-contable-02',
+  titulo: 'Estudio Contable – banner horizontal (diseño 02)',
+  imagen: '/Diseños/categorias/contabilidad/conta2.webp',
+  categoria: 'contabilidad',
+  keywords: 'estudio contable contabilidad asesoria tributaria servicios contables declaraciones sunat ruc banner horizontal diseño',
+},
+
+{
+  id: 'contabilidad-estudio-contable-03',
+  titulo: 'Estudio Contable – flyer vertical (diseño 03)',
+  imagen: '/Diseños/categorias/contabilidad/conta3.webp',
+  categoria: 'contabilidad',
+  keywords: 'estudio contable contabilidad asesoria tributaria laboral planillas impuestos sunat ruc flyer vertical diseño',
+},
+
+{
+  id: 'contabilidad-estudio-contable-04',
+  titulo: 'Estudio Contable – carta de servicios (diseño 04)',
+  imagen: '/Diseños/categorias/contabilidad/conta4.webp',
+  categoria: 'contabilidad',
+  keywords: 'estudio contable contabilidad asesoria tributaria constitucion empresas eirl sac declaraciones mensuales anuales sunat carta de servicios diseño',
+},
+
+{
+  id: 'contabilidad-estudio-contable-05',
+  titulo: 'Estudio Contable – tarjeta / banner compacto (diseño 05)',
+  imagen: '/Diseños/categorias/contabilidad/conta5.webp',
+  categoria: 'contabilidad',
+  keywords: 'estudio contable contabilidad asesoria tributaria consultoria empresas sunat ruc tarjeta presentacion banner compacto diseño',
+},
 
  
 
