@@ -537,6 +537,171 @@ export const disenos = [
     'ferreteria herramientas taladros tubos pvc electricidad iluminación tornillos accesorios construcción',
 },
 
+export const disenos = [
+
+  {
+    id: 'barberia-the-house-banner',
+    titulo: 'Barbería The House – banner publicitario',
+    imagen: '/Diseños/categorias/barberia-peluqueria/bar2.webp',
+    categoria: 'barberia-peluqueria-salon-spa',
+    keywords: 'barberia the house banner barber shop cortes clasicos modernos degradados diseño',
+  },
+
+  {
+    id: 'barberia-vertical-negro',
+    titulo: 'Barber Shop – banner vertical negro',
+    imagen: '/Diseños/categorias/barberia-peluqueria/bar3.webp',
+    categoria: 'barberia-peluqueria-salon-spa',
+    keywords: 'barber shop banner vertical barberia negro letras blancas diseño',
+  },
+
+  {
+    id: 'barberia-barberia-clasica',
+    titulo: 'Barbería clásica – diseño vertical',
+    imagen: '/Diseños/categorias/barberia-peluqueria/bar4.webp',
+    categoria: 'barberia-peluqueria-salon-spa',
+    keywords: 'barberia clasica banner vertical barber shop diseño tradicional',
+  },
+
+  {
+    id: 'barberia-ethan-servicios',
+    titulo: 'Barbería Ethan – carta de servicios',
+    imagen: '/Diseños/categorias/barberia-peluqueria/bar5.webp',
+    categoria: 'barberia-peluqueria-salon-spa',
+    keywords: 'barberia ethan servicios cortes barba degradados afeitado diseño',
+  },
+
+  {
+    id: 'barberia-cortes-modernas',
+    titulo: 'Barbería – estilos de cortes modernos',
+    imagen: '/Diseños/categorias/barberia-peluqueria/bar6.webp',
+    categoria: 'barberia-peluqueria-salon-spa',
+    keywords: 'barberia cortes modernos degradados estilos masculinos diseño',
+  },
+
+  {
+    id: 'barberia-ethan-horizontal',
+    titulo: 'Barbería Ethan – banner horizontal',
+    imagen: '/Diseños/categorias/barberia-peluqueria/bar1.webp',
+    categoria: 'barberia-peluqueria-salon-spa',
+    keywords: 'barberia ethan banner horizontal barber shop diseño',
+  },
+
+  {
+    id: 'peluqueria-texto-vertical',
+    titulo: 'Peluquería – banner vertical tipográfico',
+    imagen: '/Diseños/categorias/barberia-peluqueria/pelu1.webp',
+    categoria: 'barberia-peluqueria-salon-spa',
+    keywords: 'peluqueria banner vertical salon belleza tipografia diseño',
+  },
+
+  {
+    id: 'peluqueria-bland-estilos',
+    titulo: 'Peluquería Bland – estilos y cortes',
+    imagen: '/Diseños/categorias/barberia-peluqueria/pelu2.webp',
+    categoria: 'barberia-peluqueria-salon-spa',
+    keywords: 'peluqueria bland cortes peinados salon belleza diseño',
+  },
+
+  {
+    id: 'peluqueria-alicia-servicios',
+    titulo: 'Peluquería Alicia – lista de servicios',
+    imagen: '/Diseños/categorias/barberia-peluqueria/pelu3.webp',
+    categoria: 'barberia-peluqueria-salon-spa',
+    keywords: 'peluqueria alicia servicios peinados tintes alisado belleza diseño',
+  },
+
+  {
+    id: 'salon-spa-nuevo-estilo',
+    titulo: 'Salón & Spa Nuevo Estilo – banner',
+    imagen: '/Diseños/categorias/barberia-peluqueria/pelu4.webp',
+    categoria: 'barberia-peluqueria-salon-spa',
+    keywords: 'salon spa nuevo estilo belleza estetica diseño banner',
+  },
+
+  {
+    id: 'peluqueria-mayeri-servicios',
+    titulo: 'Peluquería Mayeri – servicios de belleza',
+    imagen: '/Diseños/categorias/barberia-peluqueria/pelu5.webp',
+    categoria: 'barberia-peluqueria-salon-spa',
+    keywords: 'peluqueria mayeri belleza cejas maquillaje peinados diseño',
+  },
+
+  {
+    id: 'peluqueria-colorista-spa',
+    titulo: 'Peluquería Spa Colorista – carta de servicios',
+    imagen: '/Diseños/categorias/barberia-peluqueria/pelu6.webp',
+    categoria: 'barberia-peluqueria-salon-spa',
+    keywords: 'peluqueria spa colorista tintes balayage belleza diseño',
+  },
+
+  {
+    id: 'salon-milus-logo',
+    titulo: 'Salón Milus – logo y branding',
+    imagen: '/Diseños/categorias/barberia-peluqueria/pelu7.webp',
+    categoria: 'barberia-peluqueria-salon-spa',
+    keywords: 'salon milus logo branding belleza diseño grafico',
+  },
+
+  {
+    id: 'salon-spa-caballeros-damas',
+    titulo: 'Salón & Spa – servicios para damas y caballeros',
+    imagen: '/Diseños/categorias/barberia-peluqueria/pelu8.webp',
+    categoria: 'barberia-peluqueria-salon-spa',
+    keywords: 'salon spa damas caballeros belleza estetica diseño',
+  },
+
+  {
+    id: 'peluqueria-unisex-peinado',
+    titulo: 'Peluquería Unisex – peinado y maquillaje',
+    imagen: '/Diseños/categorias/barberia-peluqueria/pelu9.webp',
+    categoria: 'barberia-peluqueria-salon-spa',
+    keywords: 'peluqueria unisex peinado maquillaje belleza diseño',
+  },
+
+  {
+    id: 'salon-belleza-luna',
+    titulo: 'Salón de Belleza Luna – banner publicitario',
+    imagen: '/Diseños/categorias/barberia-peluqueria/pelu10.webp',
+    categoria: 'barberia-peluqueria-salon-spa',
+    keywords: 'salon de belleza luna peinados maquillaje estetica diseño',
+  },
+
+  {
+    id: 'spa-peinados-eventos',
+    titulo: 'Spa & Belleza – peinados para eventos',
+    imagen: '/Diseños/categorias/barberia-peluqueria/pelu11.webp',
+    categoria: 'barberia-peluqueria-salon-spa',
+    keywords: 'spa belleza peinados eventos maquillaje diseño',
+  },
+
+  {
+    id: 'peluqueria-servicios-monocromo',
+    titulo: 'Peluquería – carta de servicios monocromo',
+    imagen: '/Diseños/categorias/barberia-peluqueria/pelu12.webp',
+    categoria: 'barberia-peluqueria-salon-spa',
+    keywords: 'peluqueria servicios carta monocromo diseño',
+  },
+
+  {
+    id: 'salon-spa-manicura',
+    titulo: 'Salón & Spa – manicure y belleza',
+    imagen: '/Diseños/categorias/barberia-peluqueria/pelu13.webp',
+    categoria: 'barberia-peluqueria-salon-spa',
+    keywords: 'salon spa manicure belleza uñas diseño',
+  },
+
+  {
+    id: 'salon-spa-dayees',
+    titulo: 'Dayees Salón Spa & Barbería – banner',
+    imagen: '/Diseños/categorias/barberia-peluqueria/pelubar4.webp',
+    categoria: 'barberia-peluqueria-salon-spa',
+    keywords: 'dayees salon spa barberia belleza diseño banner',
+  },
+
+]
+
+
 
  // =======================================
 // ejemplos falsos
