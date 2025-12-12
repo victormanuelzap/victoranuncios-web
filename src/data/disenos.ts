@@ -1014,6 +1014,52 @@ export const disenos = [
   keywords: 'estudio contable contabilidad asesoria tributaria consultoria empresas sunat ruc tarjeta presentacion banner compacto diseño',
 },
 
+// =======================================
+// 👓 Imágenes para categoría Óptica
+// Ruta: /public/Diseños/categorias/optica
+// =======================================
+
+{
+  id: 'optica-medicion-computarizada',
+  titulo: 'Óptica – medición optométrica computarizada',
+  imagen: '/Diseños/categorias/optica/optica1.webp',
+  categoria: 'optica',
+  keywords: 'optica medicion optometrica computarizada examen visual lentes vista diseño banner vertical',
+},
+
+{
+  id: 'optica-campana-informativa',
+  titulo: 'Óptica – campaña informativa visual',
+  imagen: '/Diseños/categorias/optica/optica2.webp',
+  categoria: 'optica',
+  keywords: 'optica campaña informativa salud visual regla 20-20-20 examen visual lentes flyer diseño',
+},
+
+{
+  id: 'optica-servicios-vertical',
+  titulo: 'Óptica – carta de servicios (banner vertical)',
+  imagen: '/Diseños/categorias/optica/optica3.webp',
+  categoria: 'optica',
+  keywords: 'optica servicios lentes de contacto bifocales progresivos monofocales banner vertical diseño',
+},
+
+{
+  id: 'optica-promocion-lentes',
+  titulo: 'Óptica – promoción de lentes',
+  imagen: '/Diseños/categorias/optica/optica4.webp',
+  categoria: 'optica',
+  keywords: 'optica promocion lentes ofertas bifocales progresivos banner vertical publicidad diseño',
+},
+
+{
+  id: 'optica-multifocales-publicidad',
+  titulo: 'Óptica – publicidad de lentes multifocales',
+  imagen: '/Diseños/categorias/optica/optica5.webp',
+  categoria: 'optica',
+  keywords: 'optica lentes multifocales policarbonato blue block examen visual publicidad diseño',
+},
+
+
  
 
 ]
