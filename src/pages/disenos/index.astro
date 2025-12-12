@@ -3,55 +3,75 @@ import Layout from '../../layouts/Layout.astro'
 import { categorias } from '../../data/disenos'
 const base = import.meta.env.BASE_URL
 ---
+
 <style is:global>
   /* Forzar esquinas totalmente cuadradas */
   .card-square,
   .card-square div,
-  .card-square img {
+  .card-square img,
+  .card-square input {
     border-radius: 0 !important;
   }
 </style>
 
 <Layout title="Diseños Victor Anuncios">
-  <main class="bg-[#E9EAEE] py-10">
-    <section class="max-w-6xl mx-auto px-4">
-
-      <h1 class="text-3xl font-extrabold text-slate-900 mb-6">
+  <main class="bg-[#E9EAEE]">
+    <section class="max-w-[1450px] mx-auto px-4 py-8 sm:py-10">
+      <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
         Galería de diseños por categoría
       </h1>
 
-      <!-- 🔍 BUSCADOR -->
-      <input
-        id="buscador-categorias"
-        type="text"
-        placeholder="Buscar categorías..."
-        class="w-full mb-6 px-4 py-3 border rounded-lg shadow-sm"
-      />
+      <p class="text-slate-600 mt-2 max-w-3xl">
+        Explora categorías y filtra rápidamente para encontrar ejemplos de diseño.
+      </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- 🔍 BUSCADOR -->
+      <div class="mt-6">
+        <input
+          id="buscador-categorias"
+          type="text"
+          placeholder="Buscar categorías..."
+          class="w-full px-4 py-3 border border-slate-300 bg-white shadow-sm outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+
+      <div
+        class="mt-8 grid gap-6
+               grid-cols-1
+               sm:grid-cols-2
+               md:grid-cols-3
+               lg:grid-cols-4
+               xl:grid-cols-5"
+      >
         {categorias.map((cat) => (
           <a
             href={`${base}disenos/${cat.slug}/`}
-            class="cat-item card-square group bg-white shadow-md overflow-hidden transition hover:-translate-y-1 hover:shadow-xl"
+            class="cat-item card-square group bg-white shadow-md overflow-hidden transition
+                   hover:-translate-y-1 hover:shadow-xl"
             data-name={cat.nombre.toLowerCase()}
             data-desc={cat.descripcion.toLowerCase()}
           >
-            <div class="relative h-48 overflow-hidden card-square">
+            <div class="relative h-44 overflow-hidden card-square">
               <img
                 src={cat.imagen}
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 card-square"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 card-square"
                 alt={cat.nombre}
+                loading="lazy"
+                decoding="async"
               />
             </div>
 
-            <div class="p-5 card-square">
-              <h2 class="text-xl font-bold text-blue-800">{cat.nombre}</h2>
-              <p class="text-gray-600 text-sm mt-1">{cat.descripcion}</p>
+            <div class="p-4 card-square">
+              <h2 class="text-lg font-bold text-blue-800 leading-snug">
+                {cat.nombre}
+              </h2>
+              <p class="text-slate-600 text-sm mt-1 leading-snug">
+                {cat.descripcion}
+              </p>
             </div>
           </a>
         ))}
       </div>
-
     </section>
   </main>
 </Layout>
@@ -61,7 +81,6 @@ const base = import.meta.env.BASE_URL
   const input = document.getElementById("buscador-categorias");
   const items = document.querySelectorAll(".cat-item");
 
-  // Pequeña protección por si algo falla
   if (input && items.length > 0) {
     input.addEventListener("input", () => {
       const q = input.value.trim().toLowerCase();
@@ -70,11 +89,7 @@ const base = import.meta.env.BASE_URL
         const name = el.dataset.name || "";
         const desc = el.dataset.desc || "";
 
-        if (name.includes(q) || desc.includes(q)) {
-          el.style.display = "";
-        } else {
-          el.style.display = "none";
-        }
+        el.style.display = (name.includes(q) || desc.includes(q)) ? "" : "none";
       });
     });
   }
