@@ -50,7 +50,13 @@ export const categorias = [
     imagen: '/Diseños/categorias/contabilidad.webp',
     tags: ['contabilidad', 'estudio contable', 'asesoria tributaria'],
   },
-  
+  {
+    slug: 'optica',
+    nombre: 'Ópticas y lentes',
+    descripcion: 'Ópticas, oftalmología y venta de lentes.',
+    imagen: '/Diseños/categorias/optica.webp',
+    tags: ['optica', 'lentes', 'monturas', 'examen visual'],
+  },
   {
     slug: 'cremoladas-helados',
     nombre: 'Cremoladas y heladerías',
@@ -73,13 +79,7 @@ export const categorias = [
     imagen: '/Diseños/categorias/musica-academia.webp',
     tags: ['musica', 'academia', 'baile', 'hip hop', 'free dance'],
   },
-  {
-    slug: 'optica',
-    nombre: 'Ópticas y lentes',
-    descripcion: 'Ópticas, oftalmología y venta de lentes.',
-    imagen: '/Diseños/categorias/optica.webp',
-    tags: ['optica', 'lentes', 'monturas', 'examen visual'],
-  },
+  
   {
     slug: 'gaseosas-bebidas',
     nombre: 'Juguerías y bebidas',
