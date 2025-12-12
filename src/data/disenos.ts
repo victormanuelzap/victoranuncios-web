@@ -692,7 +692,7 @@ export const disenos = [
   {
     id: 'salon-spa-dayees',
     titulo: 'Dayees Salón Spa & Barbería – banner',
-    imagen: '/Diseños/categorias/barberia-peluqueria/pelubar4.webp',
+    imagen: '/Diseños/categorias/barberia-peluqueria/peluybar4.webp',
     categoria: 'barberia-peluqueria-salon-spa',
     keywords: 'dayees salon spa barberia belleza diseño banner',
   },
