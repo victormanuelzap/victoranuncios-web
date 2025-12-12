@@ -580,7 +580,7 @@ export const disenos = [
   {
     id: 'barberia-ethan-horizontal',
     titulo: 'Barbería Ethan – banner horizontal',
-    imagen: '/Diseños/categorias/barberia-peluqueria/bar1.webp',
+    imagen: '/Diseños/categorias/barberia-peluqueria/barr1.webp',
     categoria: 'barberia-peluqueria-salon-spa',
     keywords: 'barberia ethan banner horizontal barber shop diseño',
   },
