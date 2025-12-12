@@ -537,9 +537,7 @@ export const disenos = [
     'ferreteria herramientas taladros tubos pvc electricidad iluminación tornillos accesorios construcción',
 },
 
-export const disenos = [
-
-  {
+{
     id: 'barberia-the-house-banner',
     titulo: 'Barbería The House – banner publicitario',
     imagen: '/Diseños/categorias/barberia-peluqueria/bar2.webp',
