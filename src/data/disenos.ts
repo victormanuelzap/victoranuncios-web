@@ -220,27 +220,13 @@ export const categorias = [
   },
   
 {
-  slug: 'letreros-luminosos',
-  nombre: 'Letreros Luminosos',
-  descripcion: 'Cajas de luz, acrílico, LED y estructuras metálicas.',
-  imagen: '/Diseños/categorias/luminosos.webp',
-  tags: ['LED', 'Acrílico', 'Estructuras'],
-},
-
-{
   slug: 'autos',
   nombre: 'Vinilos para Autos',
   descripcion: 'Rotulación vehicular, franjas, números y logos.',
   imagen: '/Diseños/categorias/autos.webp',
   tags: ['Autos', 'Rotulación', 'Gráficos'],
 },
-{
-  slug: 'banners',
-  nombre: 'Banners & Roll Screens',
-  descripcion: 'Diseños publicitarios impresos y portátiles.',
-  imagen: '/Diseños/categorias/banners.webp',
-  tags: ['Banner', 'Roll Screen', 'Publicidad'],
-},
+
 {
   slug: 'gigantografias',
   nombre: 'Gigantografías',
