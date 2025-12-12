@@ -851,6 +851,124 @@ export const disenos = [
   keywords: 'tarjeta 15 años fondo negro dorado marco flores brillo diseño',
 },
 
+// =======================================
+// 🚗 Imágenes para categoría Electricidad y Mecánica Automotriz
+// Ruta: /public/Diseños/categorias/automotriz
+// =======================================
+
+{
+  id: 'automotriz-jhancarva-electricidad',
+  titulo: 'Jhancarva – Electricidad automotriz',
+  imagen: '/Diseños/categorias/automotriz/autoelec1.webp',
+  categoria: 'electricidad-automotriz',
+  keywords: 'electricidad automotriz jhancarva mantenimiento luces arranque alternador cableado diseño banner',
+},
+
+{
+  id: 'automotriz-electromotriz-vertical',
+  titulo: 'Electromotriz – banner vertical',
+  imagen: '/Diseños/categorias/automotriz/autoelec2.webp',
+  categoria: 'electricidad-automotriz',
+  keywords: 'electromotriz electricidad automotriz banner vertical autos motores diseño',
+},
+
+{
+  id: 'automotriz-mobil-mantenimiento',
+  titulo: 'Mantenimiento automotriz – Mobil',
+  imagen: '/Diseños/categorias/automotriz/automeca1.webp',
+  categoria: 'electricidad-automotriz',
+  keywords: 'mantenimiento automotriz cambio aceite frenos embrague mobil taller diseño',
+},
+
+{
+  id: 'automotriz-carlitos-eirl',
+  titulo: 'Automotriz Carlitos EIRL – taller mecánico',
+  imagen: '/Diseños/categorias/automotriz/automeca3.webp',
+  categoria: 'electricidad-automotriz',
+  keywords: 'automotriz carlitos taller mecanico direccion frenos suspension diseño letrero',
+},
+
+{
+  id: 'automotriz-mecanica-general',
+  titulo: 'Mecánica en general – servicios automotrices',
+  imagen: '/Diseños/categorias/automotriz/automeca4.webp',
+  categoria: 'electricidad-automotriz',
+  keywords: 'mecanica en general escaner suspension alineamiento balanceo frenos llantas diseño',
+},
+
+{
+  id: 'automotriz-mecanica-completa',
+  titulo: 'Mecánica automotriz – servicios completos',
+  imagen: '/Diseños/categorias/automotriz/automeca5.webp',
+  categoria: 'electricidad-automotriz',
+  keywords: 'mecanica automotriz reparacion motor caja frenos afinamiento diseño banner',
+},
+
+{
+  id: 'automotriz-potencia-tu-negocio',
+  titulo: 'Potencia tu negocio – maquinaria y transporte',
+  imagen: '/Diseños/categorias/automotriz/automo1.webp',
+  categoria: 'electricidad-automotriz',
+  keywords: 'maquinaria pesada transporte potencia tu negocio diseño publicidad',
+},
+
+{
+  id: 'automotriz-maquinaria-banner',
+  titulo: 'Servicios de maquinaria pesada – banner',
+  imagen: '/Diseños/categorias/automotriz/automo2.webp',
+  categoria: 'electricidad-automotriz',
+  keywords: 'maquinaria pesada alquiler excavadora cargador frontal diseño banner',
+},
+
+{
+  id: 'automotriz-taller-hantera',
+  titulo: 'Taller Automotriz Hantera – auxilio',
+  imagen: '/Diseños/categorias/automotriz/automo3.webp',
+  categoria: 'electricidad-automotriz',
+  keywords: 'taller automotriz hantera auxilio mecanico autos camionetas diseño',
+},
+
+{
+  id: 'automotriz-jcb-maquinaria',
+  titulo: 'JCB – maquinaria pesada',
+  imagen: '/Diseños/categorias/automotriz/automo4.webp',
+  categoria: 'electricidad-automotriz',
+  keywords: 'jcb maquinaria pesada retroexcavadora construccion diseño publicidad',
+},
+
+{
+  id: 'automotriz-cochera-24-horas',
+  titulo: 'Cochera 24 horas – banner publicitario',
+  imagen: '/Diseños/categorias/automotriz/cochera1.webp',
+  categoria: 'electricidad-automotriz',
+  keywords: 'cochera 24 horas estacionamiento autos seguridad banner diseño',
+},
+
+{
+  id: 'automotriz-servicio-frenos-vertical',
+  titulo: 'Servicio de frenos – banner vertical',
+  imagen: '/Diseños/categorias/automotriz/frenos1.webp',
+  categoria: 'electricidad-automotriz',
+  keywords: 'servicio de frenos pastillas discos automotriz banner vertical diseño',
+},
+
+{
+  id: 'automotriz-taller-motos-01',
+  titulo: 'Taller de motos – servicios y repuestos',
+  imagen: '/Diseños/categorias/automotriz/motos1.webp',
+  categoria: 'electricidad-automotriz',
+  keywords: 'taller de motos mantenimiento reparacion motul yamaha honda diseño',
+},
+
+{
+  id: 'automotriz-doctor-motos',
+  titulo: 'The Doctor – taller de motos',
+  imagen: '/Diseños/categorias/automotriz/motos2.webp',
+  categoria: 'electricidad-automotriz',
+  keywords: 'taller de motos doctor reparacion electrico repuestos accesorios diseño',
+},
+
+
  
 
 ]
