@@ -517,14 +517,6 @@ export const disenos = [
     'inox acero inoxidable soldadura fabricación servicios metalmecánica estructuras metal banner diseño',
 },
 
-{
-  id: 'ferreteria-aluminios-accesorios',
-  titulo: 'Aluminios y accesorios – Venta mayor y menor',
-  imagen: '/Diseños/categorias/ferreterias/ferreteria.webp',
-  categoria: 'ferreterias',
-  keywords:
-    'aluminio accesorios mayor menor puertas ventanas perfilería construcción ferretería banner diseño',
-},
 
 {
   id: 'ferreteria-maquinarias-01',
