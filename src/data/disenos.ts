@@ -31,6 +31,13 @@ export const categorias = [
     tags: ['ferreteria', 'aluminios', 'inox', 'bloquetas', 'carpinteria'],
   },
   {
+    slug: 'barberia-peluqueria-salon-spa',
+    nombre: 'Barber shops y Salon de belleza ',
+    descripcion: 'Cortes de cabello, barberías y estética.',
+    imagen: '/Diseños/categorias/barberia-peluqueria.webp',
+    tags: ['barbershop', 'peluqueria', 'estetica', 'belleza','spa'],
+  },
+  {
     slug: 'cremoladas-helados',
     nombre: 'Cremoladas y heladerías',
     descripcion: 'Cremoladas, helados, marcianos y jugos fríos.',
@@ -171,13 +178,7 @@ export const categorias = [
     imagen: '/Diseños/categorias/deportes.webp',
     tags: ['futbol', 'voley', 'campeonato', 'olimpiadas', 'deporte extremo'],
   },
-  {
-    slug: 'barberia-peluqueria',
-    nombre: 'Peluquerías y barber shops',
-    descripcion: 'Cortes de cabello, barberías y estética.',
-    imagen: '/Diseños/categorias/barberia-peluqueria.webp',
-    tags: ['barbershop', 'peluqueria', 'estetica', 'belleza'],
-  },
+  
   {
     slug: 'panaderia-pasteleria',
     nombre: 'Panaderías y pastelerías',
