@@ -47,7 +47,7 @@ export const categorias = [
   slug: 'ventasyalquiler_terreno',
   nombre: 'Ventas y alquiler de inmuebles',
   descripcion: 'Avisos de venta y alquiler de terrenos, casas, departamentos y locales comerciales.',
-  imagen: '/Diseños/categorias/venta_alquiler_terrenos_ect/venta1.webp',
+  imagen: '/Diseños/categorias/venta_alquiler.webp',
   tags: [
     'venta',
     'alquiler',
@@ -310,13 +310,7 @@ export const disenos = [
   keywords: "bodega abarrotes letrero precios promociones minimarket diseño tienda barrio",
 },
 
-{
-  id: 'abarrotes-se-alquila',
-  titulo: 'Aviso Se Alquila – Tienda de abarrotes',
-  imagen: '/Diseños/categorias/abarrotes/sealquila.webp',
-  categoria: 'abarrotes',
-  keywords: "se alquila local tienda aviso abarrotes anuncio alquiler cartel",
-},
+
 
 
 // =======================================
@@ -1114,6 +1108,14 @@ export const disenos = [
   imagen: '/Diseños/categorias/venta_alquiler_terrenos_ect/venta16.webp',
   categoria: 'ventasyalquiler_terreno',
   keywords: 'se alquila local comercial negocio inmueble cartel diseño',
+},
+
+{
+  id: 'abarrotes-se-alquila',
+  titulo: 'Aviso Se Alquila – Tienda de abarrotes',
+  imagen: '/Diseños/categorias/abarrotes/sealquila.webp',
+  categoria: 'ventasyalquiler_terreno',
+  keywords: "se alquila local tienda aviso abarrotes anuncio alquiler cartel",
 },
 
 
