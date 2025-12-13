@@ -1119,6 +1119,110 @@ export const disenos = [
   categoria: 'ventasyalquiler_terreno',
   keywords: "se alquila local tienda aviso abarrotes anuncio alquiler cartel",
 },
+// =======================================
+// 🏫 Imágenes para categoría Colegios
+// Ruta: /public/Diseños/categorias/colegios
+// =======================================
+
+{
+  id: 'colegios-olimpiadas-roosevelt-2023',
+  titulo: 'Olimpiadas Rooseveltinas 2023 – afiche deportivo',
+  imagen: '/Diseños/categorias/colegios/cole1.webp',
+  categoria: 'colegios',
+  keywords: 'olimpiadas rooseveltinas 2023 colegio roosevelt deporte afiche evento escolar diseño',
+},
+
+{
+  id: 'colegios-promocion-1994-presente',
+  titulo: 'Promoción 1994 – Boda de Oro (presente)',
+  imagen: '/Diseños/categorias/colegios/cole2.webp',
+  categoria: 'colegios',
+  keywords: 'promocion 1994 bodas de oro colegio reencuentro presente diseño afiche',
+},
+
+{
+  id: 'colegios-plano-colegio-miraflores',
+  titulo: 'Plano escolar – I.E. N° 56435 Miraflores',
+  imagen: '/Diseños/categorias/colegios/cole3.webp',
+  categoria: 'colegios',
+  keywords: 'plano colegio miraflores mapa ubicacion ie 56435 señalizacion diseño',
+},
+
+{
+  id: 'colegios-olimpiadas-roosevelt-2023-collage',
+  titulo: 'Olimpiadas Rooseveltinas 2023 – collage fotográfico',
+  imagen: '/Diseños/categorias/colegios/cole4.webp',
+  categoria: 'colegios',
+  keywords: 'olimpiadas rooseveltinas 2023 collage fotos evento escolar deporte diseño',
+},
+
+{
+  id: 'colegios-olimpiadas-roosevelt-2023-collage-casi',
+  titulo: 'Olimpiadas Rooseveltinas 2023 – collage (versión)',
+  imagen: '/Diseños/categorias/colegios/cole4casi.jpg',
+  categoria: 'colegios',
+  keywords: 'olimpiadas rooseveltinas 2023 collage fotos version afiche escolar diseño',
+},
+
+{
+  id: 'colegios-aniversario-colegio-01',
+  titulo: 'Aniversario escolar – banner con fotos (diseño 01)',
+  imagen: '/Diseños/categorias/colegios/cole5.webp',
+  categoria: 'colegios',
+  keywords: 'aniversario colegio banner fotos promocion actividad escolar diseño',
+},
+
+{
+  id: 'colegios-actividades-ajedrez-basket',
+  titulo: 'Actividades escolares – ajedrez y basketball',
+  imagen: '/Diseños/categorias/colegios/cole6.webp',
+  categoria: 'colegios',
+  keywords: 'colegio actividades escolares ajedrez basketball deporte afiche diseño',
+},
+
+{
+  id: 'colegios-matriculas-abiertas-2024',
+  titulo: 'Matrículas Abiertas 2024 – afiche institucional',
+  imagen: '/Diseños/categorias/colegios/cole7.webp',
+  categoria: 'colegios',
+  keywords: 'matriculas abiertas 2024 colegio inicial primaria secundaria afiche diseño',
+},
+
+{
+  id: 'colegios-san-mateo-secundaria',
+  titulo: 'San Mateo Anglican School – 3ro de secundaria',
+  imagen: '/Diseños/categorias/colegios/cole8.webp',
+  categoria: 'colegios',
+  keywords: 'san mateo anglican school secundaria 3ro promocion escolar diseño',
+},
+
+{
+  id: 'colegios-ingresantes-promocion-2023',
+  titulo: 'Ingresantes – promoción 2023 (collage)',
+  imagen: '/Diseños/categorias/colegios/cole9.webp',
+  categoria: 'colegios',
+  keywords: 'ingresantes promocion 2023 collage estudiantes colegio diseño',
+},
+
+{
+  id: 'colegios-ingresantes-promocion-2023-casi',
+  titulo: 'Ingresantes – promoción 2023 (versión)',
+  imagen: '/Diseños/categorias/colegios/cole9casi.jpg',
+  categoria: 'colegios',
+  keywords: 'ingresantes promocion 2023 collage version estudiantes colegio diseño',
+},
+
+{
+  id: 'colegios-juegos-olimpicos-escolares-2024',
+  titulo: 'Juegos Olímpicos Escolares 2024 – 2do A secundaria',
+  imagen: '/Diseños/categorias/colegios/cole10.webp',
+  categoria: 'colegios',
+  keywords: 'juegos olimpicos escolares 2024 secundaria deporte equipo afiche diseño',
+},
+
+{
+  id: 'colegios-divino-cristo-obrero',
+  titulo: 'I.E.P Divino Crist
 
 // =======================================
 // 🎵 Imágenes para categoría Música y Baile
