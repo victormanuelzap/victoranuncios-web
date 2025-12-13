@@ -1112,6 +1112,58 @@ export const disenos = [
   keywords: "se alquila local tienda aviso abarrotes anuncio alquiler cartel",
 },
 
+// =======================================
+// 🎵 Imágenes para categoría Música y Baile
+// Ruta: /public/Diseños/categorias/musica
+// =======================================
+
+{
+  id: 'musica-banda-joseph-porras',
+  titulo: 'Banda Joseph Porras – logo musical',
+  imagen: '/Diseños/categorias/musica/banda1.webp',
+  categoria: 'musica',
+  keywords: 'banda musical joseph porras grupo musica eventos logo diseño',
+},
+
+{
+  id: 'musica-banda-instrumental-arequipa',
+  titulo: 'Banda Instrumental Arequipa – logo circular',
+  imagen: '/Diseños/categorias/musica/banda2.webp',
+  categoria: 'musica',
+  keywords: 'banda instrumental arequipa musica en vivo eventos logo circular diseño',
+},
+
+{
+  id: 'musica-free-dance-academia',
+  titulo: 'Free Dance – academia de baile',
+  imagen: '/Diseños/categorias/musica/dance1.webp',
+  categoria: 'musica',
+  keywords: 'free dance academia baile danza clases coreografia flyer diseño',
+},
+
+{
+  id: 'musica-hip-hop-academia',
+  titulo: 'Hip Hop – academia y cultura urbana',
+  imagen: '/Diseños/categorias/musica/hip_hop1.webp',
+  categoria: 'musica',
+  keywords: 'hip hop academia baile urbano danza clases logo diseño',
+},
+
+{
+  id: 'musica-banda-rock-01',
+  titulo: 'Banda de Rock – grupo musical',
+  imagen: '/Diseños/categorias/musica/rock1.webp',
+  categoria: 'musica',
+  keywords: 'banda rock grupo musical conciertos eventos flyer diseño',
+},
+
+{
+  id: 'musica-banda-rock-02',
+  titulo: 'Banda Rock – banner promocional',
+  imagen: '/Diseños/categorias/musica/rock2.webp',
+  categoria: 'musica',
+  keywords: 'banda rock musica en vivo promocion banner diseño',
+},
 
   
 // =======================================
