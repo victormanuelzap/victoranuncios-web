@@ -48,17 +48,17 @@ export const categorias = [
   nombre: 'Ventas y alquiler de inmuebles',
   descripcion: 'Avisos de venta y alquiler de terrenos, casas, departamentos y locales comerciales.',
   imagen: '/Diseños/categorias/venta_alquiler.webp',
-  tags: [
-    'venta',
-    'alquiler',
-    'terrenos',
-    'casas',
-    'departamentos',
-    'local comercial',
-    'inmobiliaria',
-    'bienes raices',
+  tags: ['venta', 'alquiler', 'terrenos', 'casas', 'departamentos', 'local comercial','inmobiliaria','bienes raices',
   ],
 },
+
+ {
+    slug: 'musica',
+    nombre: 'Música y Baile',
+    descripcion: 'Clases y servicio de música, danza, hip hop y free dance.',
+    imagen: '/Diseños/categorias/musica-academia.webp',
+    tags: ['musica', 'academia', 'baile', 'hip hop', 'free dance'],
+  },
 
   {
     slug: 'contabilidad',
@@ -90,13 +90,7 @@ export const categorias = [
     tags: ['mascotas', 'veterinaria', 'alimento', 'compra y venta animales', 'gallos'],
   },
   
-  {
-    slug: 'musica-academia',
-    nombre: 'Academias de música y baile',
-    descripcion: 'Clases de música, danza, hip hop y free dance.',
-    imagen: '/Diseños/categorias/musica-academia.webp',
-    tags: ['musica', 'academia', 'baile', 'hip hop', 'free dance'],
-  },
+  
   
   {
     slug: 'gaseosas-bebidas',
