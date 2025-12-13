@@ -44,6 +44,23 @@ export const categorias = [
     tags: ['mecanica', 'electricidad', 'alineamiento', 'frenos', 'cochera', 'autos', 'motos'],
   },
   {
+  slug: 'ventasyalquiler_terreno',
+  nombre: 'Ventas y alquiler de inmuebles',
+  descripcion: 'Avisos de venta y alquiler de terrenos, casas, departamentos y locales comerciales.',
+  imagen: '/Diseños/categorias/venta_alquiler_terrenos_ect/venta1.webp',
+  tags: [
+    'venta',
+    'alquiler',
+    'terrenos',
+    'casas',
+    'departamentos',
+    'local comercial',
+    'inmobiliaria',
+    'bienes raices',
+  ],
+},
+
+  {
     slug: 'contabilidad',
     nombre: 'Estudios contables',
     descripcion: 'Servicios de contabilidad y asesoría tributaria.',
@@ -57,6 +74,7 @@ export const categorias = [
     imagen: '/Diseños/categorias/optica.webp',
     tags: ['optica', 'lentes', 'monturas', 'examen visual'],
   },
+  
   {
     slug: 'cremoladas-helados',
     nombre: 'Cremoladas y heladerías',
@@ -955,6 +973,151 @@ export const disenos = [
   categoria: 'electricidad-automotriz',
   keywords: 'taller de motos doctor reparacion electrico repuestos accesorios diseño',
 },
+
+
+// =======================================
+// 🏠 Ventas y Alquiler de Inmuebles
+// Ruta: /public/Diseños/categorias/venta_alquiler_terrenos_ect
+// =======================================
+
+{
+  id: 'inmobiliaria-alquiler-departamento',
+  titulo: 'Se alquila departamento – aviso publicitario',
+  imagen: '/Diseños/categorias/venta_alquiler_terrenos_ect/alqui1.webp',
+  categoria: 'ventasyalquiler_terreno',
+  keywords: 'se alquila departamento alquiler inmueble aviso cartel banner inmobiliario',
+},
+
+{
+  id: 'inmobiliaria-oferta-terreno-150m',
+  titulo: 'Oferta de terrenos – 150 m2',
+  imagen: '/Diseños/categorias/venta_alquiler_terrenos_ect/venta1.webp',
+  categoria: 'ventasyalquiler_terreno',
+  keywords: 'venta terreno 150 m2 oferta lote inmobiliaria cartel diseño',
+},
+
+{
+  id: 'inmobiliaria-en-venta-contactos',
+  titulo: 'En venta – aviso con contactos',
+  imagen: '/Diseños/categorias/venta_alquiler_terrenos_ect/venta2.webp',
+  categoria: 'ventasyalquiler_terreno',
+  keywords: 'en venta inmueble casa terreno contacto aviso inmobiliario',
+},
+
+{
+  id: 'inmobiliaria-en-venta-inmocon',
+  titulo: 'En venta – inmobiliaria',
+  imagen: '/Diseños/categorias/venta_alquiler_terrenos_ect/venta3.webp',
+  categoria: 'ventasyalquiler_terreno',
+  keywords: 'en venta inmobiliaria casa departamento terreno cartel diseño',
+},
+
+{
+  id: 'inmobiliaria-venta-tienda-dos-pisos',
+  titulo: 'En venta – tienda de 2 pisos',
+  imagen: '/Diseños/categorias/venta_alquiler_terrenos_ect/venta4.webp',
+  categoria: 'ventasyalquiler_terreno',
+  keywords: 'venta tienda 2 pisos local comercial inmueble cartel diseño',
+},
+
+{
+  id: 'inmobiliaria-casa-en-venta',
+  titulo: 'Casa en venta – aviso publicitario',
+  imagen: '/Diseños/categorias/venta_alquiler_terrenos_ect/venta5.webp',
+  categoria: 'ventasyalquiler_terreno',
+  keywords: 'casa en venta inmueble vivienda aviso cartel inmobiliario',
+},
+
+{
+  id: 'inmobiliaria-terreno-850-mts',
+  titulo: 'Terreno en venta – 850 mts',
+  imagen: '/Diseños/categorias/venta_alquiler_terrenos_ect/venta6.webp',
+  categoria: 'ventasyalquiler_terreno',
+  keywords: 'terreno en venta 850 metros lote inmobiliaria aviso diseño',
+},
+
+{
+  id: 'inmobiliaria-oferta-venta-terrenos',
+  titulo: 'Venta de terrenos – oferta',
+  imagen: '/Diseños/categorias/venta_alquiler_terrenos_ect/venta7.webp',
+  categoria: 'ventasyalquiler_terreno',
+  keywords: 'venta terrenos oferta inmobiliaria lote cartel promocional',
+},
+
+{
+  id: 'inmobiliaria-en-venta-simple',
+  titulo: 'En venta – aviso simple',
+  imagen: '/Diseños/categorias/venta_alquiler_terrenos_ect/venta8.webp',
+  categoria: 'ventasyalquiler_terreno',
+  keywords: 'en venta aviso simple inmueble terreno casa diseño',
+},
+
+{
+  id: 'inmobiliaria-en-venta-telefono',
+  titulo: 'En venta – trato directo',
+  imagen: '/Diseños/categorias/venta_alquiler_terrenos_ect/venta9.webp',
+  categoria: 'ventasyalquiler_terreno',
+  keywords: 'en venta trato directo telefono inmueble cartel diseño',
+},
+
+{
+  id: 'inmobiliaria-se-vende-lotes',
+  titulo: 'Se vende lotes – por ocasión',
+  imagen: '/Diseños/categorias/venta_alquiler_terrenos_ect/venta10.webp',
+  categoria: 'ventasyalquiler_terreno',
+  keywords: 'se vende lotes terrenos ocasion documentos al dia diseño',
+},
+
+{
+  id: 'inmobiliaria-remax-cumbres',
+  titulo: 'REMAX Cumbres – se vende',
+  imagen: '/Diseños/categorias/venta_alquiler_terrenos_ect/venta11.webp',
+  categoria: 'ventasyalquiler_terreno',
+  keywords: 'remax inmobiliaria se vende casa terreno asesor inmobiliario',
+},
+
+{
+  id: 'inmobiliaria-inversion-venta',
+  titulo: 'En venta – inversión inmobiliaria',
+  imagen: '/Diseños/categorias/venta_alquiler_terrenos_ect/venta12.webp',
+  categoria: 'ventasyalquiler_terreno',
+  keywords: 'en venta inversion inmobiliaria terreno casa diseño',
+},
+
+{
+  id: 'inmobiliaria-venta-alquiler',
+  titulo: 'Se vende o se alquila – aviso',
+  imagen: '/Diseños/categorias/venta_alquiler_terrenos_ect/venta13yalquiler.webp',
+  categoria: 'ventasyalquiler_terreno',
+  keywords: 'se vende se alquila inmueble casa terreno aviso diseño',
+},
+
+{
+  id: 'inmobiliaria-se-vende-directo',
+  titulo: 'Se vende – trato directo',
+  imagen: '/Diseños/categorias/venta_alquiler_terrenos_ect/venta14.webp',
+  categoria: 'ventasyalquiler_terreno',
+  keywords: 'se vende trato directo inmueble telefono aviso cartel',
+},
+
+{
+  id: 'inmobiliaria-venta-departamento',
+  titulo: 'Departamento en venta – 2do piso',
+  imagen: '/Diseños/categorias/venta_alquiler_terrenos_ect/venta15.webp',
+  categoria: 'ventasyalquiler_terreno',
+  keywords: 'departamento en venta segundo piso inmueble diseño aviso',
+},
+
+{
+  id: 'inmobiliaria-alquiler-local',
+  titulo: 'Se alquila local comercial',
+  imagen: '/Diseños/categorias/venta_alquiler_terrenos_ect/venta16.webp',
+  categoria: 'ventasyalquiler_terreno',
+  keywords: 'se alquila local comercial negocio inmueble cartel diseño',
+},
+
+
+  
 // =======================================
 // 📊 Imágenes para categoría Contabilidad
 // Ruta: /public/Diseños/categorias/contabilidad
