@@ -51,6 +51,13 @@ export const categorias = [
   tags: ['venta', 'alquiler', 'terrenos', 'casas', 'departamentos', 'local comercial','inmobiliaria','bienes raices',
   ],
 },
+{
+    slug: 'colegios',
+    nombre: 'Colegios, escuelas y màs',
+    descripcion: 'instituciones educativas, promociones, olimpiadas, torneos',
+    imagen: '/Diseños/categorias/colegio.webp',
+    tags: ['colegio', 'escuela', 'niños', 'adolecentes', 'promociones', 'olimpiadas', 'torneo'],
+  },
 
  {
     slug: 'musica',
@@ -74,6 +81,7 @@ export const categorias = [
     imagen: '/Diseños/categorias/optica.webp',
     tags: ['optica', 'lentes', 'monturas', 'examen visual'],
   },
+  
   
   {
     slug: 'cremoladas-helados',
