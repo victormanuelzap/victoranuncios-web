@@ -1219,10 +1219,94 @@ export const disenos = [
   categoria: 'colegios',
   keywords: 'juegos olimpicos escolares 2024 secundaria deporte equipo afiche diseño',
 },
-
 {
   id: 'colegios-divino-cristo-obrero',
-  titulo: 'I.E.P Divino Crist
+  titulo: 'I.E.P Divino Cristo Obrero – afiche institucional',
+  imagen: '/Diseños/categorias/colegios/cole11.webp',
+  categoria: 'colegios',
+  keywords: 'iep divino cristo obrero catholic school inicial primaria secundaria afiche institucional diseño',
+},
+
+{
+  id: 'colegios-frase-motivacional',
+  titulo: 'Frase motivacional – diseño educativo',
+  imagen: '/Diseños/categorias/colegios/cole12.webp',
+  categoria: 'colegios',
+  keywords: 'frase motivacional educacion valores naturaleza reflexion diseño grafico',
+},
+
+{
+  id: 'colegios-olimpiadas-nino-magistral-2023',
+  titulo: 'Olimpiadas 2023 – I.E. Niño Magistral',
+  imagen: '/Diseños/categorias/colegios/cole13.webp',
+  categoria: 'colegios',
+  keywords: 'olimpiadas 2023 ie niño magistral inicial niños evento escolar afiche diseño',
+},
+
+{
+  id: 'colegios-promocion-primaria-2023',
+  titulo: 'Promoción primaria 2023 – foto grupal',
+  imagen: '/Diseños/categorias/colegios/cole14.webp',
+  categoria: 'colegios',
+  keywords: 'promocion primaria 2023 foto grupal aula colegio diseño',
+},
+
+{
+  id: 'colegios-circa-arequipa',
+  titulo: 'CIRCA – afiche institucional',
+  imagen: '/Diseños/categorias/colegios/cole15.webp',
+  categoria: 'colegios',
+  keywords: 'circa arequipa institucion catolica afiche educativo diseño',
+},
+
+{
+  id: 'colegios-aniversario-18-mendel',
+  titulo: 'Aniversario 18 – I.E. Mendel (evento)',
+  imagen: '/Diseños/categorias/colegios/cole16.webp',
+  categoria: 'colegios',
+  keywords: 'feliz aniversario 18 colegio mendel evento escolar danza afiche diseño',
+},
+
+{
+  id: 'colegios-infografia-escolar',
+  titulo: 'Infografía escolar – material educativo',
+  imagen: '/Diseños/categorias/colegios/cole17.webp',
+  categoria: 'colegios',
+  keywords: 'infografia escolar material educativo aprendizaje afiche diseño',
+},
+
+{
+  id: 'colegios-aniversario-promocion-2023',
+  titulo: 'Aniversario – promoción 2023 (evento)',
+  imagen: '/Diseños/categorias/colegios/cole18.webp',
+  categoria: 'colegios',
+  keywords: 'aniversario promocion 2023 colegio evento escolar afiche diseño',
+},
+
+{
+  id: 'colegios-casimiro-cuadros-cayma',
+  titulo: 'I.E.I. Casimiro Cuadros Cayma – aniversario',
+  imagen: '/Diseños/categorias/colegios/cole19.webp',
+  categoria: 'colegios',
+  keywords: 'iei casimiro cuadros cayma aniversario 4 años inicial foto grupal diseño',
+},
+
+{
+  id: 'colegios-divino-cristo-obrero-aniversario-18',
+  titulo: 'Divino Cristo Obrero – aniversario 18 (primaria)',
+  imagen: '/Diseños/categorias/colegios/cole20.webp',
+  categoria: 'colegios',
+  keywords: 'divino cristo obrero aniversario 18 primaria foto grupal evento diseño',
+},
+
+{
+  id: 'colegios-torneo-voley-afiche',
+  titulo: 'Campeonato / Torneo de Vóley – afiche',
+  imagen: '/Diseños/categorias/colegios/torneo1.webp',
+  categoria: 'colegios',
+  keywords: 'torneo voley campeonato escolar deporte afiche diseño',
+},
+
 
 // =======================================
 // 🎵 Imágenes para categoría Música y Baile
