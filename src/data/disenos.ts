@@ -74,6 +74,14 @@ export const categorias = [
     imagen: '/Diseños/categorias/contabilidad.webp',
     tags: ['contabilidad', 'estudio contable', 'asesoria tributaria'],
   },
+
+  {
+    slug: 'deportes',
+    nombre: 'Deportes',
+    descripcion: 'futbol, voley y academias.',
+    imagen: '/Diseños/categorias/deportes.webp',
+    tags: ['futbol', 'basquet', 'voley', 'academias'],
+  },
   {
     slug: 'optica',
     nombre: 'Ópticas y lentes',
@@ -1406,6 +1414,132 @@ export const disenos = [
   categoria: 'contabilidad',
   keywords: 'estudio contable contabilidad asesoria tributaria consultoria empresas sunat ruc tarjeta presentacion banner compacto diseño',
 },
+
+// =======================================
+// 🏅 Imágenes para categoría Deportes
+// Ruta: /public/Diseños/categorias/deportes
+// =======================================
+
+{
+  id: 'deportes-futbol-promocion-2005-lista',
+  titulo: 'Fútbol – promoción / lista de jugadores (diseño)',
+  imagen: '/Diseños/categorias/deportes/fut1.webp',
+  categoria: 'deportes',
+  keywords: 'futbol promocion 2005 lista jugadores plantilla equipo diseño banner afiche deportivo',
+},
+
+{
+  id: 'deportes-escuela-futbol-ciclo-anual-2024',
+  titulo: 'Escuela de fútbol – ciclo anual 2024 (afiche)',
+  imagen: '/Diseños/categorias/deportes/fut2.webp',
+  categoria: 'deportes',
+  keywords: 'escuela de futbol ciclo anual 2024 inscripciones cayma arequipa afiche banner entrenamiento niños',
+},
+
+{
+  id: 'deportes-juvenil-andino-andino-corazon',
+  titulo: 'Club Juvenil Andino – “Andino Corazón” (banner)',
+  imagen: '/Diseños/categorias/deportes/fut3.webp',
+  categoria: 'deportes',
+  keywords: 'club juvenil andino equipo futbol foto grupal andino corazon banner diseño deportivo',
+},
+
+{
+  id: 'deportes-real-girls-futbol-femenino-logo',
+  titulo: 'Real Girls – fútbol femenino (logo)',
+  imagen: '/Diseños/categorias/deportes/fut4.webp',
+  categoria: 'deportes',
+  keywords: 'futbol femenino real girls logo escudo identidad deportiva diseño',
+},
+
+{
+  id: 'deportes-real-barza-futbol-femenino-escuela',
+  titulo: 'Escuela de fútbol femenino Real Barza (banner)',
+  imagen: '/Diseños/categorias/deportes/fut5.webp',
+  categoria: 'deportes',
+  keywords: 'escuela de futbol femenino real barza banner afiche equipos escudos arequipa diseño',
+},
+
+{
+  id: 'deportes-deportivo-peru-temporada-barza',
+  titulo: 'Escuela de fútbol Deportivo Perú – temporada (afiche)',
+  imagen: '/Diseños/categorias/deportes/fut6.webp',
+  categoria: 'deportes',
+  keywords: 'escuela de futbol deportivo peru temporada afiche inscripciones categorias cupos limitados diseño',
+},
+
+{
+  id: 'deportes-racing-club-foto-equipo',
+  titulo: 'Racing Club – foto de equipo (banner)',
+  imagen: '/Diseños/categorias/deportes/fut7.webp',
+  categoria: 'deportes',
+  keywords: 'racing club futbol equipo foto grupal banner diseño deportivo',
+},
+
+{
+  id: 'deportes-racing-club-cayma-academia',
+  titulo: 'Academia de fútbol Racing Club Cayma (banner)',
+  imagen: '/Diseños/categorias/deportes/fut8.webp',
+  categoria: 'deportes',
+  keywords: 'academia de futbol racing club cayma banner afiche entrenamientos inscripciones arequipa diseño',
+},
+
+{
+  id: 'deportes-real-barza-cayma-collage',
+  titulo: 'Escuela de fútbol Real Barza Cayma – collage (banner)',
+  imagen: '/Diseños/categorias/deportes/fut9.webp',
+  categoria: 'deportes',
+  keywords: 'escuela de futbol real barza cayma collage fotos futbol femenino banner inscripciones diseño',
+},
+
+{
+  id: 'deportes-club-racing-arequipa-unidos',
+  titulo: 'Club Racing Arequipa – “Unidos por el deporte” (banner)',
+  imagen: '/Diseños/categorias/deportes/fut10.webp',
+  categoria: 'deportes',
+  keywords: 'club racing arequipa unidos por el deporte banner afiche collage fotos uniformes diseño',
+},
+
+{
+  id: 'deportes-club-deportivo-14-banner',
+  titulo: 'Club Deportivo 14 – banner promocional',
+  imagen: '/Diseños/categorias/deportes/fut11.webp',
+  categoria: 'deportes',
+  keywords: 'club deportivo 14 banner promocional torneo campeonato voley futbol diseño deportivo',
+},
+
+{
+  id: 'deportes-vacaciones-utiles-2024-escuela-futbol',
+  titulo: 'Vacaciones útiles 2024 – escuela de fútbol (afiche)',
+  imagen: '/Diseños/categorias/deportes/fut12.webp',
+  categoria: 'deportes',
+  keywords: 'vacaciones utiles 2024 escuela de futbol inscribete entrenamientos niños afiche vertical diseño',
+},
+
+{
+  id: 'deportes-real-madrid-logo',
+  titulo: 'Real Madrid – escudo / logo',
+  imagen: '/Diseños/categorias/deportes/realm.webp',
+  categoria: 'deportes',
+  keywords: 'real madrid escudo logo futbol club identidad deportiva diseño',
+},
+
+{
+  id: 'deportes-seleccion-voley-ilustracion',
+  titulo: 'Selección de vóley – ilustración deportiva',
+  imagen: '/Diseños/categorias/deportes/voley1.webp',
+  categoria: 'deportes',
+  keywords: 'seleccion de voley ilustracion deporte pelota salto afiche diseño deportivo',
+},
+
+{
+  id: 'deportes-academia-voleibol-real-cayma',
+  titulo: 'Academia deportiva de voleibol Real Cayma (banner)',
+  imagen: '/Diseños/categorias/deportes/voley2.webp',
+  categoria: 'deportes',
+  keywords: 'academia deportiva voleibol real cayma banner afiche afiliado federacion entrenamientos diseño',
+},
+
 
 // =======================================
 // 👓 Imágenes para categoría Óptica
