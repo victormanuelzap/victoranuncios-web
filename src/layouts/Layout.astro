@@ -125,15 +125,11 @@ const base = import.meta.env.BASE_URL
     </script>
 <!-- Google tag (GA4 + Google Ads) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1QNECESC07"></script>
-<script>
+<script is:raw>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  // Google Analytics
   gtag('config', 'G-1QNECESC07');
-
-  // Google Ads
   gtag('config', 'AW-17054169407');
 </script>
 
