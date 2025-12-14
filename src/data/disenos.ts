@@ -90,7 +90,14 @@ export const categorias = [
     tags: ['optica', 'lentes', 'monturas', 'examen visual'],
   },
   
-  
+  {
+  slug: 'boticas',
+  nombre: 'Boticas y Farmacias',
+  descripcion: 'Diseños para boticas, farmacias, recargas y servicios (banners y paneles).',
+  imagen: '/Diseños/categorias/boticas.webp',
+  tags: ['botica', 'farmacia', 'salud', 'recargas', 'panel', 'banner', 'bcp', 'agente'],
+},
+
   {
     slug: 'cremoladas-helados',
     nombre: 'Cremoladas y heladerías',
@@ -1584,6 +1591,75 @@ export const disenos = [
   imagen: '/Diseños/categorias/optica/optica5.webp',
   categoria: 'optica',
   keywords: 'optica lentes multifocales policarbonato blue block examen visual publicidad diseño',
+},
+
+// =======================================
+// 💊 Imágenes para categoría Boticas y Farmacias
+// Ruta: /public/Diseños/categorias/boticas
+// =======================================
+
+{
+  id: 'boticas-quality-farma-rotica',
+  titulo: 'Quality Farma – “Rótica” (banner)',
+  imagen: '/Diseños/categorias/boticas/borias.webp',
+  categoria: 'boticas',
+  keywords: 'botica farmacia quality farma rotica salud banner letrero panel publicidad diseño',
+},
+
+{
+  id: 'boticas-salud-universal-222x142',
+  titulo: 'Botica Salud Universal – banner vertical (222x142)',
+  imagen: '/Diseños/categorias/boticas/BOT222x142cm.webp',
+  categoria: 'boticas',
+  keywords: 'botica salud universal banner vertical letrero panel farmacia diseño',
+},
+
+{
+  id: 'boticas-recargas-132x62',
+  titulo: 'Botica – recargas (banner vertical 132x62)',
+  imagen: '/Diseños/categorias/boticas/BOTICAS132X62CM.webp',
+  categoria: 'boticas',
+  keywords: 'botica recargas recarga celular servicios banner vertical panel farmacia diseño',
+},
+
+{
+  id: 'boticas-buena-salud-252x73',
+  titulo: 'Buena Salud Botica – letrero horizontal (252x73)',
+  imagen: '/Diseños/categorias/boticas/BOTICAS252X73CM.webp',
+  categoria: 'boticas',
+  keywords: 'buena salud botica letrero horizontal panel fachada farmacia diseño',
+},
+
+{
+  id: 'boticas-buena-salud-150x232',
+  titulo: 'Buena Salud – banner vertical (150x232)',
+  imagen: '/Diseños/categorias/boticas/SFD150x232cm.webp',
+  categoria: 'boticas',
+  keywords: 'buena salud botica banner vertical panel farmacia letrero diseño',
+},
+
+{
+  id: 'boticas-farmasalud-vertical',
+  titulo: 'Farmasalud – banner vertical',
+  imagen: '/Diseños/categorias/boticas/TER.webp',
+  categoria: 'boticas',
+  keywords: 'farmasalud botica farmacia banner vertical salud panel letrero diseño',
+},
+
+{
+  id: 'boticas-botica-periferia-bcp-142x202',
+  titulo: 'Botica – panel vertical con BCP agente (142x202)',
+  imagen: '/Diseños/categorias/boticas/to142x202cm.webp',
+  categoria: 'boticas',
+  keywords: 'botica farmacia bcp agente banner vertical panel letrero periferia servicios diseño',
+},
+
+{
+  id: 'boticas-farmasalud-horizontal-294x72',
+  titulo: 'Farmasalud – letrero horizontal (294x72)',
+  imagen: '/Diseños/categorias/boticas/YT294x72cm.webp',
+  categoria: 'boticas',
+  keywords: 'farmasalud botica farmacia letrero horizontal panel banner fachada publicidad diseño',
 },
 
 
