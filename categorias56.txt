@@ -1,0 +1,110 @@
+ El volumen de la unidad C no tiene etiqueta.
+ El n£mero de serie del volumen es: 86F6-7AFB
+
+ Directorio de C:\Users\victor\Desktop\victoranuncios-web\public\Dise¤os\categorias
+
+15/12/2025  11:14    <DIR>          .
+15/12/2025  11:14    <DIR>          ..
+15/12/2025  11:14    <DIR>          abarrotes
+15/12/2025  11:14    <DIR>          automotriz
+15/12/2025  11:14    <DIR>          barberia-peluqueria
+15/12/2025  11:14    <DIR>          boticas
+15/12/2025  11:14    <DIR>          colegios
+15/12/2025  11:14    <DIR>          contabilidad
+15/12/2025  11:14    <DIR>          deportes
+15/12/2025  11:14    <DIR>          ferreterias
+15/12/2025  11:14    <DIR>          fiestas_y_eventos
+15/12/2025  11:14    <DIR>          musica
+15/12/2025  11:14    <DIR>          optica
+15/12/2025  11:14    <DIR>          restaurantes
+15/12/2025  11:14    <DIR>          venta_alquiler_terrenos_ect
+15/12/2025  11:14    <DIR>          vinilos
+               0 archivos              0 bytes
+
+ Directorio de C:\Users\victor\Desktop\victoranuncios-web\public\Dise¤os\categorias\abarrotes
+
+15/12/2025  11:14    <DIR>          .
+15/12/2025  11:14    <DIR>          ..
+               0 archivos              0 bytes
+
+ Directorio de C:\Users\victor\Desktop\victoranuncios-web\public\Dise¤os\categorias\automotriz
+
+15/12/2025  11:14    <DIR>          .
+15/12/2025  11:14    <DIR>          ..
+               0 archivos              0 bytes
+
+ Directorio de C:\Users\victor\Desktop\victoranuncios-web\public\Dise¤os\categorias\barberia-peluqueria
+
+15/12/2025  11:14    <DIR>          .
+15/12/2025  11:14    <DIR>          ..
+               0 archivos              0 bytes
+
+ Directorio de C:\Users\victor\Desktop\victoranuncios-web\public\Dise¤os\categorias\boticas
+
+15/12/2025  11:14    <DIR>          .
+15/12/2025  11:14    <DIR>          ..
+               0 archivos              0 bytes
+
+ Directorio de C:\Users\victor\Desktop\victoranuncios-web\public\Dise¤os\categorias\colegios
+
+15/12/2025  11:14    <DIR>          .
+15/12/2025  11:14    <DIR>          ..
+               0 archivos              0 bytes
+
+ Directorio de C:\Users\victor\Desktop\victoranuncios-web\public\Dise¤os\categorias\contabilidad
+
+15/12/2025  11:14    <DIR>          .
+15/12/2025  11:14    <DIR>          ..
+               0 archivos              0 bytes
+
+ Directorio de C:\Users\victor\Desktop\victoranuncios-web\public\Dise¤os\categorias\deportes
+
+15/12/2025  11:14    <DIR>          .
+15/12/2025  11:14    <DIR>          ..
+               0 archivos              0 bytes
+
+ Directorio de C:\Users\victor\Desktop\victoranuncios-web\public\Dise¤os\categorias\ferreterias
+
+15/12/2025  11:14    <DIR>          .
+15/12/2025  11:14    <DIR>          ..
+               0 archivos              0 bytes
+
+ Directorio de C:\Users\victor\Desktop\victoranuncios-web\public\Dise¤os\categorias\fiestas_y_eventos
+
+15/12/2025  11:14    <DIR>          .
+15/12/2025  11:14    <DIR>          ..
+               0 archivos              0 bytes
+
+ Directorio de C:\Users\victor\Desktop\victoranuncios-web\public\Dise¤os\categorias\musica
+
+15/12/2025  11:14    <DIR>          .
+15/12/2025  11:14    <DIR>          ..
+               0 archivos              0 bytes
+
+ Directorio de C:\Users\victor\Desktop\victoranuncios-web\public\Dise¤os\categorias\optica
+
+15/12/2025  11:14    <DIR>          .
+15/12/2025  11:14    <DIR>          ..
+               0 archivos              0 bytes
+
+ Directorio de C:\Users\victor\Desktop\victoranuncios-web\public\Dise¤os\categorias\restaurantes
+
+15/12/2025  11:14    <DIR>          .
+15/12/2025  11:14    <DIR>          ..
+               0 archivos              0 bytes
+
+ Directorio de C:\Users\victor\Desktop\victoranuncios-web\public\Dise¤os\categorias\venta_alquiler_terrenos_ect
+
+15/12/2025  11:14    <DIR>          .
+15/12/2025  11:14    <DIR>          ..
+               0 archivos              0 bytes
+
+ Directorio de C:\Users\victor\Desktop\victoranuncios-web\public\Dise¤os\categorias\vinilos
+
+15/12/2025  11:14    <DIR>          .
+15/12/2025  11:14    <DIR>          ..
+               0 archivos              0 bytes
+
+     Total de archivos en la lista:
+               0 archivos              0 bytes
+              44 dirs  82.612.932.608 bytes libres
