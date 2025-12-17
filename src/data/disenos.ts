@@ -89,6 +89,13 @@ export const categorias = [
     imagen: '/Diseños/categorias/optica.webp',
     tags: ['optica', 'lentes', 'monturas', 'examen visual'],
   },
+  {
+    slug: 'deportes',
+    nombre: 'Deportes y academias',
+    descripcion: 'Academias deportivas, campeonatos y clubes.',
+    imagen: '/Diseños/categorias/deportes.webp',
+    tags: ['futbol', 'voley', 'campeonato', 'olimpiadas', 'deporte extremo'],
+  },
   
   {
   slug: 'boticas',
@@ -228,13 +235,7 @@ export const categorias = [
     imagen: '/Diseños/categorias/radio.webp',
     tags: ['radio', 'emisora', 'programa radial'],
   },
-  {
-    slug: 'deportes',
-    nombre: 'Deportes y academias',
-    descripcion: 'Academias deportivas, campeonatos y clubes.',
-    imagen: '/Diseños/categorias/deportes.webp',
-    tags: ['futbol', 'voley', 'campeonato', 'olimpiadas', 'deporte extremo'],
-  },
+  
   
   {
     slug: 'panaderia-pasteleria',
@@ -2238,6 +2239,89 @@ export const disenos = [
   categoria: 'licorerias',
   keywords: 'tienda licoreria 24 horas panel doble abarrotes frutas verduras cervezas gaseosas diseño',
 },
+
+
+// =======================================
+// 🍧 Imágenes para categoría Cremoladas y heladerías
+// =======================================
+
+  {
+    id: 'cremoladas-punto-frio-vaso',
+    titulo: 'Cremoladas “Punto Frío” – Vaso / marca',
+    imagen: '/Diseños/categorias/helados/heladosA1.webp',
+    categoria: 'cremoladas-helados',
+    keywords: 'cremoladas punto frio vaso marca heladeria jugos frios',
+  },
+  {
+    id: 'cremoladas-punto-frio-afiche-frutas',
+    titulo: 'Cremoladas “Punto Frío” – Afiche de frutas',
+    imagen: '/Diseños/categorias/helados/heladosA2.webp',
+    categoria: 'cremoladas-helados',
+    keywords: 'cremoladas punto frio afiche frutas heladeria jugos',
+  },
+  {
+    id: 'cremoladas-de-fruta-vasos',
+    titulo: 'Cremoladas de fruta – Promoción vasos',
+    imagen: '/Diseños/categorias/helados/heladosA3.webp',
+    categoria: 'cremoladas-helados',
+    keywords: 'cremoladas de fruta promocion vasos helados jugos frios',
+  },
+  {
+    id: 'banner-cremoladas-punto-frio',
+    titulo: 'Banner “Cremoladas” – Punto Frío',
+    imagen: '/Diseños/categorias/helados/heladosA4.webp',
+    categoria: 'cremoladas-helados',
+    keywords: 'banner cremoladas punto frio heladeria letrero',
+  },
+  {
+    id: 'helado-cono-promocion',
+    titulo: 'Helado en cono – Promoción',
+    imagen: '/Diseños/categorias/helados/heladosA5.webp',
+    categoria: 'cremoladas-helados',
+    keywords: 'helado cono promocion heladeria cremoladas postres frios',
+  },
+  {
+    id: 'marcianos-arequipa-mejores',
+    titulo: 'Los mejores marcianos de Arequipa',
+    imagen: '/Diseños/categorias/helados/heladosA6.webp',
+    categoria: 'cremoladas-helados',
+    keywords: 'marcianos arequipa helados cremoladas sabores fresa chocolate mango',
+  },
+  {
+    id: 'lista-precios-helados-cremoladas',
+    titulo: 'Lista de precios – Helados y cremoladas',
+    imagen: '/Diseños/categorias/helados/heladosA7.webp',
+    categoria: 'cremoladas-helados',
+    keywords: 'lista precios helados cremoladas vaso litro sabores promocion',
+  },
+  {
+    id: 'helados-en-rollos',
+    titulo: 'Helados en rollos – Carta de sabores',
+    imagen: '/Diseños/categorias/helados/heladosA8.webp',
+    categoria: 'cremoladas-helados',
+    keywords: 'helados en rollos carta sabores combinados toppings cremoladas',
+  },
+  {
+    id: 'helados-ricos-san-antonio',
+    titulo: 'Helados ricos “San Antonio” – Afiche',
+    imagen: '/Diseños/categorias/helados/heladosA9.webp',
+    categoria: 'cremoladas-helados',
+    keywords: 'helados san antonio cremosos vainilla chocolate mixto afiche',
+  },
+  {
+    id: 'marcianos-fruta-sabores',
+    titulo: 'Marcianos de fruta – Sabores',
+    imagen: '/Diseños/categorias/helados/heladosA10.webp',
+    categoria: 'cremoladas-helados',
+    keywords: 'marcianos de fruta sabores chocolate fresa maracuya mango queso helado',
+  },
+  {
+    id: 'lista-precios-helados-cremoladas-vertical',
+    titulo: 'Helados y cremoladas – Precios vertical',
+    imagen: '/Diseños/categorias/helados/heladosA11.webp',
+    categoria: 'cremoladas-helados',
+    keywords: 'precios helados cremoladas vertical litro vaso promocion',
+  },
 
 
  

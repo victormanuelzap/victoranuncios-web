@@ -1,0 +1,504 @@
+---
+import Layout from '../../layouts/Layout.astro'
+
+// Base correcta para local / GitHub Pages
+const BASE = import.meta.env.BASE_URL
+
+// Carpeta sugerida para assets (tú la creas):
+// public/assets/services/paginas-web/
+const base =
+  BASE === '/'
+    ? '/assets/services/paginas-web'
+    : '/victoranuncios-web/assets/services/paginas-web'
+
+// Modelos / demos (reemplaza imágenes cuando tengas)
+const modelos = [
+  {
+    titulo: 'Landing Page (1 página)',
+    desc: 'Ideal para promocionar un servicio y captar clientes por WhatsApp.',
+    img: `${base}/modelo-1.webp`,
+    tags: ['Rápida', 'Enfocada en ventas', 'WhatsApp'],
+    waText: 'Hola%20Victor,%20quiero%20una%20Landing%20Page%20para%20mi%20negocio',
+    previewHref: `${BASE === '/' ? '/disenos/' : '/victoranuncios-web/disenos/'}`,
+  },
+  {
+    titulo: 'Web Corporativa (3–6 secciones)',
+    desc: 'Tu negocio con presencia profesional, servicios, galería y contacto.',
+    slides: [
+      `${base}/modelb1.webp`,
+      `${base}/modelb2.webp`,
+      `${base}/modelb3.webp`,
+      `${base}/modelb4.webp`,
+      `${base}/modelb5.webp`,
+      `${base}/modelb6.webp`,
+    ],
+    tags: ['Profesional', 'Google', 'Servicios'],
+    waText: 'Hola%20Victor,%20quiero%20una%20web%20corporativa%20para%20mi%20negocio',
+    previewHref: `${BASE === '/' ? '/disenos/' : '/victoranuncios-web/disenos/'}`,
+  },
+  {
+    titulo: 'Catálogo / Portafolio',
+    desc: 'Perfecto para mostrar trabajos, productos, precios y testimonios.',
+    img: `${base}/modelo-3.webp`,
+    tags: ['Portafolio', 'Catálogo', 'Fácil de actualizar'],
+    waText:
+      'Hola%20Victor,%20quiero%20una%20web%20tipo%20cat%C3%A1logo%20para%20mi%20negocio',
+    previewHref: `${BASE === '/' ? '/disenos/' : '/victoranuncios-web/disenos/'}`,
+  },
+]
+
+---
+
+<Layout
+  title="Páginas web en Arequipa – Diseño moderno y profesional | Victor Anuncios"
+  description="Creamos páginas web modernas en Arequipa: landing pages, webs corporativas y catálogos. Diseño premium, velocidad y enfoque en ventas."
+  keywords="paginas web Arequipa, diseño web Arequipa, desarrollo web Arequipa, landing page Arequipa, Victor Anuncios"
+  canonical="https://victoranuncios.com/servicios/paginas-web/"
+>
+  <!-- HERO FULL SCREEN (premium) -->
+  <section class="relative min-h-[92vh] overflow-hidden bg-[#050B18] text-white">
+    <!-- Fondo: gradientes + blobs -->
+    <div class="absolute inset-0">
+      <div class="absolute -top-40 -left-40 h-[520px] w-[520px] rounded-full blur-3xl opacity-40 bg-blue-600"></div>
+      <div class="absolute top-20 -right-40 h-[520px] w-[520px] rounded-full blur-3xl opacity-35 bg-purple-600"></div>
+      <div class="absolute bottom-[-180px] left-1/2 -translate-x-1/2 h-[520px] w-[720px] rounded-full blur-3xl opacity-30 bg-cyan-500"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/45 to-[#0B1A2D]"></div>
+      <div class="absolute inset-0 opacity-[0.06] bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:18px_18px]"></div>
+    </div>
+
+    <div class="relative max-w-[1250px] mx-auto px-6 pt-16 md:pt-20 pb-14">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <!-- Texto -->
+        <div class="reveal">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-sm">
+            ✅ Diseño moderno • ⚡ Rápido • 📲 Enfocado en ventas
+          </div>
+
+          <h1 class="mt-5 text-4xl md:text-6xl font-extrabold leading-tight">
+            Diseño de <span class="text-cyan-300">páginas web</span>
+            <br />
+            para negocios que quieren <span class="text-blue-300">vender más</span>.
+          </h1>
+
+          <p class="mt-5 text-white/80 text-base md:text-lg leading-relaxed max-w-xl">
+            Creamos webs premium: rápidas, claras y con estructura SEO para que tu negocio se vea profesional en Google y convierta visitas en clientes.
+          </p>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a
+              href="https://wa.me/51946182531?text=Hola%20Victor,%20quiero%20cotizar%20una%20p%C3%A1gina%20web"
+              target="_blank"
+              rel="noopener"
+              class="inline-flex justify-center items-center gap-2 bg-white text-[#0B1A2D] font-bold px-6 py-3 rounded-xl hover:opacity-90 transition"
+            >
+              Cotizar por WhatsApp
+              <span aria-hidden="true">→</span>
+            </a>
+
+            <a
+              href="#modelos"
+              class="inline-flex justify-center items-center gap-2 bg-white/10 border border-white/15 text-white font-bold px-6 py-3 rounded-xl hover:bg-white/15 transition"
+            >
+              Ver modelos
+              <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+
+          <div class="mt-8 flex flex-wrap gap-3 text-sm text-white/80">
+            <span class="px-3 py-2 rounded-xl bg-white/5 border border-white/10">📍 Arequipa (y todo Perú)</span>
+            <span class="px-3 py-2 rounded-xl bg-white/5 border border-white/10">🔎 SEO básico incluido</span>
+            <span class="px-3 py-2 rounded-xl bg-white/5 border border-white/10">🛠️ Soporte y mantenimiento</span>
+          </div>
+        </div>
+
+        <!-- “Mockup” (sin imagen obligatoria) -->
+        <div class="reveal">
+          <div class="relative rounded-3xl border border-white/10 bg-white/5 shadow-2xl overflow-hidden">
+            <div class="p-4 border-b border-white/10 flex items-center gap-2">
+              <span class="h-3 w-3 rounded-full bg-white/30"></span>
+              <span class="h-3 w-3 rounded-full bg-white/20"></span>
+              <span class="h-3 w-3 rounded-full bg-white/10"></span>
+              <span class="ml-3 text-xs text-white/70">www.victoranuncios.com</span>
+            </div>
+
+            <div class="p-6 md:p-7">
+              <div class="rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 p-6">
+                <p class="text-xs text-white/60">Sección destacada</p>
+                <h3 class="mt-2 text-2xl md:text-3xl font-extrabold">
+                  Web premium con animaciones suaves
+                </h3>
+                <p class="mt-3 text-white/75 text-sm md:text-base leading-relaxed">
+                  Efectos de entrada, scroll reveal, botones con transiciones y diseño limpio.
+                  Sin exagerar, pero se siente “caro”.
+                </p>
+
+                <div class="mt-5 grid grid-cols-3 gap-3">
+                  <div class="h-20 rounded-xl bg-white/5 border border-white/10"></div>
+                  <div class="h-20 rounded-xl bg-white/5 border border-white/10"></div>
+                  <div class="h-20 rounded-xl bg-white/5 border border-white/10"></div>
+                </div>
+              </div>
+
+              <div class="mt-5 grid grid-cols-2 gap-3">
+                <div class="h-12 rounded-xl bg-white/5 border border-white/10"></div>
+                <div class="h-12 rounded-xl bg-white/5 border border-white/10"></div>
+              </div>
+            </div>
+
+            <div class="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-cyan-400/25 blur-3xl"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Degradado a blanco (como tus otros servicios) -->
+    <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-b from-transparent to-white"></div>
+  </section>
+
+  <main class="bg-white">
+    <!-- Sección: Modelos -->
+    <section id="modelos" class="max-w-[1250px] mx-auto px-6 pt-14 pb-8">
+      <div class="reveal">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-neutral-900 text-center">
+          Modelos de página
+        </h2>
+        <p class="mt-3 text-center text-neutral-600 max-w-2xl mx-auto">
+          Elige el estilo que mejor encaje con tu negocio. Luego lo personalizamos con tus colores, fotos y contenido.
+        </p>
+      </div>
+
+      <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+        {modelos.map((m) => (
+          <article class="reveal rounded-3xl bg-white border border-gray-200 shadow-sm overflow-hidden hover:shadow-lg transition">
+            <div class="relative h-52 bg-gray-100 overflow-hidden">
+  {/* Si tiene slides => mini slider. Si no => imagen normal */}
+  {m.slides ? (
+    <img
+      src={m.slides[0]}
+      alt={`Modelo de página web: ${m.titulo}`}
+      class="modelo-media absolute inset-0 w-full h-full object-cover cursor-zoom-in"
+      loading="lazy"
+      decoding="async"
+      data-slider="true"
+      data-slides={JSON.stringify(m.slides)}
+      data-preview={m.previewHref}
+    />
+  ) : (
+    <img
+      src={m.img}
+      alt={`Modelo de página web: ${m.titulo}`}
+      class="modelo-media absolute inset-0 w-full h-full object-cover cursor-zoom-in"
+      loading="lazy"
+      decoding="async"
+      data-preview={m.previewHref}
+      onerror="this.style.display='none'"
+    />
+  )}
+
+  <div class="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent pointer-events-none"></div>
+
+  {/* Indicador “Auto” solo para el slider (opcional) */}
+  {m.slides && (
+    <div class="absolute bottom-3 left-3 text-[11px] px-2 py-1 rounded-full bg-black/50 text-white border border-white/15">
+      Auto
+    </div>
+  )}
+</div>
+
+
+            <div class="p-5">
+              <h3 class="text-xl font-extrabold text-neutral-900">{m.titulo}</h3>
+              <p class="mt-2 text-neutral-600 leading-relaxed">{m.desc}</p>
+
+              <div class="mt-4 flex flex-wrap gap-2">
+                {m.tags.map((t) => (
+                  <span class="text-xs font-semibold px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-100">
+                    {t}
+                  </span>
+                ))}
+              </div>
+
+              <a
+                href={`https://wa.me/51946182531?text=${m.waText}`}
+                target="_blank"
+                rel="noopener"
+                class="mt-5 inline-flex w-full justify-center items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-bold px-5 py-3 rounded-xl transition"
+              >
+                Pedir por WhatsApp
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- Sección: Proceso (premium) -->
+    <section class="max-w-[1250px] mx-auto px-6 pt-8 pb-16">
+      <div class="reveal rounded-3xl border border-gray-200 bg-gradient-to-br from-white to-blue-50 p-6 md:p-10">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-extrabold text-neutral-900">
+              Proceso de trabajo (claro y rápido)
+            </h2>
+            <p class="mt-2 text-neutral-600 max-w-2xl">
+              Para que avances sin estrés: tú envías información y nosotros hacemos el diseño, estructura y publicación.
+            </p>
+          </div>
+
+          <a
+            href="https://wa.me/51946182531?text=Hola%20Victor,%20quiero%20saber%20el%20proceso%20para%20hacer%20mi%20p%C3%A1gina%20web"
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center justify-center bg-white border border-gray-200 px-5 py-3 rounded-xl font-bold text-neutral-900 hover:bg-gray-50 transition"
+          >
+            Consultar
+          </a>
+        </div>
+
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-4 gap-4">
+          {[
+            ['1) Brief', 'Rubro, nombre, servicios, referencias, WhatsApp y redes.'],
+            ['2) Diseño', 'Propuesta visual premium + estructura enfocada en conversión.'],
+            ['3) Ajustes', 'Afinamos textos, secciones, fotos y llamados a la acción.'],
+            ['4) Publicación', 'Dominio, hosting, indexación básica y medición.'],
+          ].map(([t, d]) => (
+            <div class="reveal rounded-2xl bg-white border border-gray-200 p-5">
+              <h3 class="font-extrabold text-neutral-900">{t}</h3>
+              <p class="mt-2 text-neutral-600 text-sm leading-relaxed">{d}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <section class="max-w-[1250px] mx-auto px-6 pb-16">
+      <div class="reveal rounded-3xl bg-[#0B1A2D] text-white p-7 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-extrabold">
+            ¿Listo para una web que se vea “pro”?
+          </h2>
+          <p class="mt-2 text-white/80">
+            Envíame tu rubro, nombre del negocio y WhatsApp. Te digo el modelo ideal y el precio.
+          </p>
+        </div>
+
+        <a
+          href="https://wa.me/51946182531?text=Hola%20Victor,%20quiero%20mi%20p%C3%A1gina%20web%20profesional"
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center justify-center bg-white text-[#0B1A2D] font-extrabold px-6 py-3 rounded-xl hover:opacity-90 transition whitespace-nowrap"
+        >
+          Empezar por WhatsApp
+        </a>
+      </div>
+    </section>
+  </main>
+
+
+<!-- xd no se que es  -->
+
+{/* LIGHTBOX / MODAL */}
+<div id="img-modal" class="fixed inset-0 z-[999] hidden">
+  <div id="img-modal-backdrop" class="absolute inset-0 bg-black/75"></div>
+
+  <div class="relative w-full h-full flex items-center justify-center p-4">
+    <div class="relative max-w-5xl w-full">
+      {/* Botones esquina superior derecha */}
+      <div class="absolute -top-3 right-0 flex items-center gap-2">
+        <a
+          id="img-modal-link"
+          href="#"
+          class="icon-btn"
+          aria-label="Ver mejor"
+        >
+          Ver mejor
+        </a>
+
+        <button
+          id="img-modal-close"
+          type="button"
+          class="icon-btn"
+          aria-label="Cerrar"
+        >
+          ×
+        </button>
+      </div>
+
+      <img
+        id="img-modal-img"
+        src=""
+        alt="Vista ampliada"
+        class="w-full max-h-[82vh] object-contain rounded-2xl bg-black/20"
+      />
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Animaciones: reveal al hacer scroll -->
+  <script is:inline>
+    (function () {
+      const els = document.querySelectorAll('.reveal');
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add('is-visible');
+          });
+        },
+        { threshold: 0.12 }
+      );
+      els.forEach((el) => io.observe(el));
+    })();
+  </script>
+
+
+ <!-- Script completo: slider (tiempo editable) + modal click + cerrar aqui se  CONTROLA  -->
+    <script is:inline>
+  (function () {
+    // =========================
+    // CONFIGURACIÓN
+    // =========================
+    const SLIDER_INTERVAL_MS = 2000; // <-- Cambia aquí: 1500 (1.5s) o 2000 (2s)
+
+    // =========================
+    // MINI SLIDER (solo imágenes con data-slider="true")
+    // =========================
+    const sliderImgs = document.querySelectorAll('img[data-slider="true"]');
+
+    sliderImgs.forEach((img) => {
+      let slides = [];
+      try {
+        slides = JSON.parse(img.getAttribute('data-slides') || '[]');
+      } catch (e) {
+        slides = [];
+      }
+      if (!slides.length) return;
+
+      let i = 0;
+
+      // Preload (para que no parpadee)
+      slides.forEach((src) => {
+        const pre = new Image();
+        pre.src = src;
+      });
+
+      setInterval(() => {
+        i = (i + 1) % slides.length;
+        img.classList.add('fade-out');
+
+        setTimeout(() => {
+          img.src = slides[i];
+          img.classList.remove('fade-out');
+        }, 180);
+      }, SLIDER_INTERVAL_MS);
+    });
+
+    // =========================
+    // MODAL (lightbox)
+    // =========================
+    const modal = document.getElementById('img-modal');
+    const modalImg = document.getElementById('img-modal-img');
+    const modalClose = document.getElementById('img-modal-close');
+    const modalBackdrop = document.getElementById('img-modal-backdrop');
+    const modalLink = document.getElementById('img-modal-link');
+
+    function openModal(src, href) {
+      if (!modal || !modalImg || !modalLink) return;
+      modalImg.src = src;
+      modalLink.href = href || '#';
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      if (!modal || !modalImg) return;
+      modal.classList.add('hidden');
+      modalImg.src = '';
+      document.body.style.overflow = '';
+    }
+
+    // Click en cualquier imagen de los cards (incluye slider y normales)
+    document.querySelectorAll('.modelo-media').forEach((img) => {
+      img.addEventListener('click', () => {
+        const src = img.getAttribute('src');
+        const href = img.getAttribute('data-preview');
+        if (src) openModal(src, href);
+      });
+    });
+
+    // Cerrar: botón, backdrop, tecla ESC
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  })();
+</script>
+
+
+
+  <style is:global>
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 700ms ease, transform 700ms ease;
+      will-change: opacity, transform;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Fade suave del mini slider */
+img[data-slider="true"] {
+  transition: opacity 180ms ease;
+}
+img[data-slider="true"].fade-out {
+  opacity: 0.2;
+}
+
+/* Botones del modal: transparente, borde redondeado, solo se ve el “cuadro” y el texto/X */
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255,255,255,0.35);
+  background: rgba(0,0,0,0.25);
+  color: white;
+  font-weight: 700;
+  backdrop-filter: blur(8px);
+  text-decoration: none;
+}
+.icon-btn:hover {
+  background: rgba(0,0,0,0.4);
+  border-color: rgba(255,255,255,0.55);
+}
+
+/* Botón X más “icono” */
+#img-modal-close {
+  width: 44px;
+  padding: 0;
+  font-size: 26px;
+  line-height: 1;
+}
+
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal,
+      .reveal.is-visible {
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+
+      }
+    }
+  </style>
+</Layout>
