@@ -1,0 +1,290 @@
+---
+import Layout from '../../layouts/Layout.astro'
+
+// Base correcta para local / GitHub Pages
+const BASE = import.meta.env.BASE_URL
+
+// Carpeta de assets (tú la creas):
+// public/assets/services/mochilas-publicitarias/
+const base =
+  BASE === '/'
+    ? '/assets/services/mochilas-publicitarias'
+    : '/victoranuncios-web/assets/services/mochilas-publicitarias'
+
+// Modelos / demos (imágenes simples: mochila1.webp, mochila2.webp, mochila3.webp)
+const modelos = [
+  {
+    titulo: 'Mochila con estructura (alta visibilidad)',
+    desc: 'Ideal para activaciones en calle: se ve desde lejos, y tu marca destaca.',
+    img: `${base}/mochila1.webp`,
+    tags: ['Impactante', 'Activaciones', 'Marca visible'],
+    waText: 'Hola%20Victor,%20quiero%20cotizar%20una%20mochila%20publicitaria%20con%20estructura',
+  },
+  {
+    titulo: 'Mochila tipo delivery (práctica y resistente)',
+    desc: 'Buena para repartidores y promociones: cómoda, durable y con impresión nítida.',
+    img: `${base}/mochila2.webp`,
+    tags: ['Resistente', 'Cómoda', 'Uso diario'],
+    waText: 'Hola%20Victor,%20quiero%20cotizar%20una%20mochila%20publicitaria%20tipo%20delivery',
+  },
+  {
+    titulo: 'Mochila simple (económica)',
+    desc: 'Opción accesible para campañas rápidas, eventos o volanteo con marca.',
+    img: `${base}/mochila3.webp`,
+    tags: ['Económica', 'Rápida', 'Promociones'],
+    waText: 'Hola%20Victor,%20quiero%20cotizar%20una%20mochila%20publicitaria%20econ%C3%B3mica',
+  },
+]
+---
+
+<Layout
+  title="Mochilas publicitarias en Arequipa – Activaciones y marca visible | Victor Anuncios"
+  description="Mochilas publicitarias en Arequipa para activaciones, delivery y promociones. Diseño e impresión nítida para que tu marca destaque."
+  keywords="mochilas publicitarias Arequipa, mochila publicitaria, mochila para activaciones, publicidad exterior Arequipa, Victor Anuncios"
+  canonical="https://victoranuncios.com/servicios/mochilas-publicitarias/"
+>
+  <!-- HERO -->
+  <section class="relative min-h-[86vh] overflow-hidden bg-[#050B18] text-white">
+    <div class="absolute inset-0">
+      <div class="absolute -top-40 -left-40 h-[520px] w-[520px] rounded-full blur-3xl opacity-40 bg-blue-600"></div>
+      <div class="absolute top-24 -right-40 h-[520px] w-[520px] rounded-full blur-3xl opacity-35 bg-purple-600"></div>
+      <div class="absolute bottom-[-180px] left-1/2 -translate-x-1/2 h-[520px] w-[720px] rounded-full blur-3xl opacity-30 bg-cyan-500"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/45 to-[#0B1A2D]"></div>
+      <div class="absolute inset-0 opacity-[0.06] bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:18px_18px]"></div>
+    </div>
+
+    <div class="relative max-w-[1250px] mx-auto px-6 pt-16 md:pt-20 pb-14">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div class="reveal">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-sm">
+            ✅ Visibilidad • 🎯 Activaciones • 📲 Marca en movimiento
+          </div>
+
+          <h1 class="mt-5 text-4xl md:text-6xl font-extrabold leading-tight">
+            <span class="text-cyan-300">Mochilas publicitarias</span>
+            <br />
+            para que tu marca se vea en <span class="text-blue-300">la calle</span>.
+          </h1>
+
+          <p class="mt-5 text-white/80 text-base md:text-lg leading-relaxed max-w-xl">
+            Diseñamos mochilas publicitarias para activaciones, promociones y delivery.
+            Con impresión nítida y acabados limpios para que tu marca destaque.
+          </p>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a
+              href="https://wa.me/51946182531?text=Hola%20Victor,%20quiero%20cotizar%20mochilas%20publicitarias"
+              target="_blank"
+              rel="noopener"
+              class="inline-flex justify-center items-center gap-2 bg-white text-[#0B1A2D] font-bold px-6 py-3 rounded-xl hover:opacity-90 transition"
+            >
+              Cotizar por WhatsApp
+              <span aria-hidden="true">→</span>
+            </a>
+
+            <a
+              href="#modelos"
+              class="inline-flex justify-center items-center gap-2 bg-white/10 border border-white/15 text-white font-bold px-6 py-3 rounded-xl hover:bg-white/15 transition"
+            >
+              Ver modelos
+              <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+
+          <div class="mt-8 flex flex-wrap gap-3 text-sm text-white/80">
+            <span class="px-3 py-2 rounded-xl bg-white/5 border border-white/10">📍 Arequipa</span>
+            <span class="px-3 py-2 rounded-xl bg-white/5 border border-white/10">🖨️ Diseño + impresión</span>
+            <span class="px-3 py-2 rounded-xl bg-white/5 border border-white/10">⚡ Atención rápida</span>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="relative rounded-3xl border border-white/10 bg-white/5 shadow-2xl overflow-hidden">
+            <div class="p-4 border-b border-white/10 flex items-center gap-2">
+              <span class="h-3 w-3 rounded-full bg-white/30"></span>
+              <span class="h-3 w-3 rounded-full bg-white/20"></span>
+              <span class="h-3 w-3 rounded-full bg-white/10"></span>
+              <span class="ml-3 text-xs text-white/70">Victor Anuncios</span>
+            </div>
+
+            <div class="p-6 md:p-7">
+              <div class="rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 p-6">
+                <p class="text-xs text-white/60">Uso recomendado</p>
+                <h3 class="mt-2 text-2xl md:text-3xl font-extrabold">
+                  Activaciones + promoción
+                </h3>
+                <p class="mt-3 text-white/75 text-sm md:text-base leading-relaxed">
+                  Ideal para eventos, inauguraciones, campañas y volanteo: tu marca se mueve y se ve.
+                </p>
+
+                <div class="mt-5 grid grid-cols-3 gap-3">
+                  <div class="h-20 rounded-xl bg-white/5 border border-white/10"></div>
+                  <div class="h-20 rounded-xl bg-white/5 border border-white/10"></div>
+                  <div class="h-20 rounded-xl bg-white/5 border border-white/10"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-cyan-400/25 blur-3xl"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-b from-transparent to-white"></div>
+  </section>
+
+  <main class="bg-white">
+    <!-- Modelos -->
+    <section id="modelos" class="max-w-[1250px] mx-auto px-6 pt-14 pb-8">
+      <div class="reveal">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-neutral-900 text-center">
+          Modelos de mochilas
+        </h2>
+        <p class="mt-3 text-center text-neutral-600 max-w-2xl mx-auto">
+          Elige el estilo y lo adaptamos con tu logo, colores y medida.
+        </p>
+      </div>
+
+      <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+        {modelos.map((m) => (
+          <article class="reveal rounded-3xl bg-white border border-gray-200 shadow-sm overflow-hidden hover:shadow-lg transition">
+            <div class="relative h-52 bg-gray-100 overflow-hidden">
+              <img
+                src={m.img}
+                alt={`Mochila publicitaria: ${m.titulo}`}
+                class="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent pointer-events-none"></div>
+            </div>
+
+            <div class="p-5">
+              <h3 class="text-xl font-extrabold text-neutral-900">{m.titulo}</h3>
+              <p class="mt-2 text-neutral-600 leading-relaxed">{m.desc}</p>
+
+              <div class="mt-4 flex flex-wrap gap-2">
+                {m.tags.map((t) => (
+                  <span class="text-xs font-semibold px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-100">
+                    {t}
+                  </span>
+                ))}
+              </div>
+
+              <a
+                href={`https://wa.me/51946182531?text=${m.waText}`}
+                target="_blank"
+                rel="noopener"
+                class="mt-5 inline-flex w-full justify-center items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-bold px-5 py-3 rounded-xl transition"
+              >
+                Pedir por WhatsApp
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- Proceso -->
+    <section class="max-w-[1250px] mx-auto px-6 pt-8 pb-10">
+      <div class="reveal rounded-3xl border border-gray-200 bg-gradient-to-br from-white to-blue-50 p-6 md:p-10">
+        <h2 class="text-2xl md:text-3xl font-extrabold text-neutral-900">
+          Proceso de trabajo
+        </h2>
+        <p class="mt-2 text-neutral-600 max-w-2xl">
+          Para entregarte algo que se vea profesional y resista el uso diario.
+        </p>
+
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-4 gap-4">
+          {[
+            ['1) Datos', 'Me envías logo, medida y uso (activación, delivery, evento).'],
+            ['2) Diseño', 'Te propongo cómo quedará tu marca en la mochila.'],
+            ['3) Producción', 'Fabricación + impresión con buen acabado.'],
+            ['4) Entrega', 'Coordinamos recojo o envío (según zona).'],
+          ].map(([t, d]) => (
+            <div class="reveal rounded-2xl bg-white border border-gray-200 p-5">
+              <h3 class="font-extrabold text-neutral-900">{t}</h3>
+              <p class="mt-2 text-neutral-600 text-sm leading-relaxed">{d}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Descripción final -->
+    <section class="max-w-[1250px] mx-auto px-6 pb-16">
+      <div class="reveal rounded-3xl border border-gray-200 bg-white p-6 md:p-8">
+        <h2 class="text-xl md:text-2xl font-extrabold text-neutral-900">
+          Mochilas publicitarias en Arequipa
+        </h2>
+        <p class="mt-3 text-neutral-600 leading-relaxed">
+          Las mochilas publicitarias son una excelente opción para campañas en calle, activaciones, eventos y delivery.
+          Permiten que tu marca se muestre en movimiento y tenga más alcance. En Victor Anuncios te ayudamos con el
+          diseño, el armado y el acabado para que se vea nítido, resistente y profesional.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <section class="max-w-[1250px] mx-auto px-6 pb-16">
+      <div class="reveal rounded-3xl bg-[#0B1A2D] text-white p-7 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-extrabold">
+            ¿Quieres tu mochila con tu marca?
+          </h2>
+          <p class="mt-2 text-white/80">
+            Envíame tu logo, el modelo y el tamaño. Te cotizo por WhatsApp.
+          </p>
+        </div>
+
+        <a
+          href="https://wa.me/51946182531?text=Hola%20Victor,%20quiero%20cotizar%20mochilas%20publicitarias"
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center justify-center bg-white text-[#0B1A2D] font-extrabold px-6 py-3 rounded-xl hover:opacity-90 transition whitespace-nowrap"
+        >
+          Cotizar ahora
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Animaciones reveal -->
+  <script is:inline>
+    (function () {
+      const els = document.querySelectorAll('.reveal');
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add('is-visible');
+          });
+        },
+        { threshold: 0.12 }
+      );
+      els.forEach((el) => io.observe(el));
+    })();
+  </script>
+
+  <style is:global>
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 700ms ease, transform 700ms ease;
+      will-change: opacity, transform;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal,
+      .reveal.is-visible {
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+      }
+    }
+  </style>
+</Layout>
