@@ -14,22 +14,22 @@ const base =
 // Modelos / demos (imágenes simples: roll1.webp, roll2.webp, roll3.webp)
 const modelos = [
   {
-    titulo: 'Roll Screen Económico',
+    titulo: 'Roll Screen Completo',
     desc: 'Ideal para promociones rápidas, ferias y campañas. Buena presencia a bajo costo.',
     img: `${base}/roll1.webp`,
     tags: ['Económico', 'Rápido', 'Promociones'],
     waText: 'Hola%20Victor,%20quiero%20cotizar%20un%20roll%20screen%20econ%C3%B3mico',
   },
   {
-    titulo: 'Roll Screen Premium (base reforzada)',
-    desc: 'Mejor estabilidad y acabado. Recomendado para marcas que quieren verse “pro”.',
+    titulo: 'Reparación de Roll Screen',
+    desc: 'Mejor estabilidad y acabado, reparacion de roll screen que no giran.',
     img: `${base}/roll2.webp`,
     tags: ['Premium', 'Estable', 'Acabado pro'],
     waText: 'Hola%20Victor,%20quiero%20cotizar%20un%20roll%20screen%20premium',
   },
   {
-    titulo: 'Roll Screen Doble Cara',
-    desc: 'Se ve por ambos lados. Perfecto para pasillos, entradas o puntos de alto tránsito.',
+    titulo: 'Diseño, impreción y cambio de banner',
+    desc: 'Servicio veloz, atención instantanea, diseños vibrantes',
     img: `${base}/roll3.webp`,
     tags: ['Doble cara', 'Impacto', 'Alto tránsito'],
     waText: 'Hola%20Victor,%20quiero%20cotizar%20un%20roll%20screen%20doble%20cara',
@@ -139,7 +139,7 @@ const modelos = [
     <section id="modelos" class="max-w-[1250px] mx-auto px-6 pt-14 pb-8">
       <div class="reveal">
         <h2 class="text-3xl md:text-4xl font-extrabold text-neutral-900 text-center">
-          Modelos de Roll Screen
+          Servicios con Roll Screen
         </h2>
         <p class="mt-3 text-center text-neutral-600 max-w-2xl mx-auto">
           Elige el tipo según tu evento y presupuesto. Nosotros lo diseñamos con tu marca.
@@ -149,7 +149,7 @@ const modelos = [
       <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
         {modelos.map((m) => (
           <article class="reveal rounded-3xl bg-white border border-gray-200 shadow-sm overflow-hidden hover:shadow-lg transition">
-            <div class="relative h-52 bg-gray-100 overflow-hidden">
+            <div class="relative h-72 bg-gray-100 overflow-hidden">
               <img
                 src={m.img}
                 alt={`Roll Screen: ${m.titulo}`}
