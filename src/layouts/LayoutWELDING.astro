@@ -1,0 +1,493 @@
+---
+interface Props {
+  title: string
+  description?: string
+  keywords?: string
+  canonical?: string
+}
+
+const { title, description, keywords, canonical } = Astro.props
+import '../css/base.css'
+
+// BASE URL (local + github pages)
+const base = import.meta.env.BASE_URL
+
+// WhatsApp Metal Welding
+const WA_NUMBER = '51952489645'
+const waLink = (text: string) =>
+  `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`
+
+// Home de esta landing (ajusta si cambias ruta final)
+const HOME_HREF = `${base}Metal-Welding-SRL`
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta
+      name="description"
+      content={description || "METAL WELDING SRL: Estructuras metálicas, soldadura y montaje. Galería real de trabajos y cotización por WhatsApp."}
+    />
+    <meta
+      name="keywords"
+      content={keywords || "soldadura Arequipa, estructuras metálicas Arequipa, techos metálicos, Metal Welding SRL"}
+    />
+    <meta name="author" content="METAL WELDING SRL" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#0B1220" />
+
+    <!-- Favicons (puedes reemplazar luego por los del cliente) -->
+    <link rel="icon" type="image/x-icon" href={`${base}favicon.ico?v=2`} />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg?v=2`} />
+    <link rel="icon" type="image/png" sizes="32x32" href={`${base}favicon-32.png?v=2`} />
+    <link rel="apple-touch-icon" sizes="180x180" href={`${base}favicon.png?v=2`} />
+
+    <meta property="og:title" content={title} />
+    <meta
+      property="og:description"
+      content={description || "Estructuras metálicas y soldadura. Cotiza por WhatsApp."}
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_PE" />
+    <meta property="og:image" content={`${base}og-cover.jpg`} />
+
+    <link rel="canonical" href={canonical || Astro.url.href} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      />
+    </noscript>
+
+    <!-- Boxicons (si usas iconos en la página) -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <!-- GA (si quieres mantener medición) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1QNECESC07"></script>
+    <script is:raw>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1QNECESC07');
+      gtag('config', 'AW-17054169407');
+    </script>
+  </head>
+
+  <body class="overflow-x-hidden bg-[#0B0F16] text-white">
+    <!-- BARRA SUPERIOR: Diseñada y desplegada por -->
+    <div class="creditbar">
+      <div class="creditwrap">
+        <a href={`${base}`} class="creditbrand" aria-label="Victor Anuncios">
+          <img src={`${base}logo.png`} class="creditlogo" alt="Victor Anuncios" />
+          <span class="credittext">
+            Diseñada y desplegada por <strong>Victor Anuncios</strong>
+          </span>
+        </a>
+
+        <a
+          class="creditcta"
+          href="https://wa.me/51946182531?text=Hola%20Victor,%20quiero%20una%20p%C3%A1gina%20web%20como%20esta"
+          target="_blank"
+          rel="noopener"
+        >
+          Quiero una web →
+        </a>
+      </div>
+    </div>
+
+    <!-- HEADER METAL WELDING (ya aprobado) -->
+    <header class="mw-header">
+      <div class="mw-top">
+        <a class="mw-brand" href={HOME_HREF} aria-label="METAL WELDING SRL">
+          <img
+  class="mw-logo"
+  src={`${base}assets/welding_SAC/LOGO/LOGO_MW.webp`}
+  alt="Logo Metal Welding SRL"
+  loading="eager"
+  decoding="async"
+/>
+
+        </a>
+
+        <nav class="mw-nav" aria-label="Navegación">
+          <a href="#servicios" class="mw-link">Servicios</a>
+          <a href="#galeria" class="mw-link">Galería</a>
+          <a href="#contacto" class="mw-link">Contacto</a>
+
+          <a
+            class="mw-cta"
+            href={waLink("Hola, quiero cotizar un trabajo de soldadura / estructura metálica.")}
+            target="_blank"
+            rel="noopener"
+          >
+            Cotizar por WhatsApp →
+          </a>
+
+          <a
+            class="mw-cta2"
+            href={waLink("Hola, quiero cotizar.")}
+            target="_blank"
+            rel="noopener"
+          >
+            WhatsApp →
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- CONTENIDO -->
+    <main>
+      <slot />
+    </main>
+
+    <!-- FOOTER estilo “alojada por...” con look de la nueva página -->
+    <footer class="mw-footer">
+      <div class="mw-footwrap">
+        <div class="mw-footbrand">
+          <img src={`${base}logo.png`} class="mw-footlogo" alt="Victor Anuncios" />
+          <div class="mw-foottext">
+            <div class="mw-foottitle">Página alojada por <strong>Victor Anuncios</strong> — Arequipa</div>
+            <div class="mw-footsub">© 2026 Todos los derechos reservados</div>
+          </div>
+        </div>
+
+        <div class="mw-footlinks">
+          <a href={`${base}`} class="mw-footlink">Ir al sitio principal</a>
+          <a
+            href="https://wa.me/51946182531?text=Hola%20Victor,%20quiero%20una%20p%C3%A1gina%20web%20para%20mi%20negocio"
+            target="_blank"
+            rel="noopener"
+            class="mw-footbtn"
+          >
+            Cotizar mi web →
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Service Worker (opcional) -->
+    <script is:inline>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/sw.js").catch(() => {});
+        });
+      }
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  html { font-family: 'Poppins', sans-serif; }
+  html, body { overflow-x: hidden; scroll-behavior: smooth; }
+  img { max-width: 100%; height: auto; display: block; }
+
+  /* =========================
+     CREDIT BAR (arriba)
+  ========================= */
+ .creditbar{
+  background: rgba(8,12,18,.72);          /* MISMO fondo del header */
+  backdrop-filter: blur(14px);            /* mismo blur */
+  border-bottom: 1px solid rgba(148,163,184,.18);
+}
+  .creditwrap{
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 8px 16px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap: 12px;
+  }
+  .creditbrand{
+    display:flex;
+    align-items:center;
+    gap: 10px;
+    text-decoration:none;
+    color: rgba(255,255,255,.80);
+    min-width: 0;
+  }
+  .creditlogo{
+    width: 28px;
+    height: 28px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,.16);
+    background: rgba(0,0,0,.12);
+  }
+  .credittext{
+    font-size: 12px;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .creditcta{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    height: 32px;
+    padding: 0 12px;
+    border-radius: 999px;
+    text-decoration:none;
+    background: rgba(59,130,246,.14);
+    border: 1px solid rgba(59,130,246,.25);
+    color: white;
+    font-weight: 800;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .creditcta:hover{ background: rgba(59,130,246,.20); }
+
+  /* =========================
+     HEADER METAL WELDING
+  ========================= */
+  .mw-header{
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    background: rgba(8,12,18,.72);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(148,163,184,.18);
+  }
+  .mw-top{
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 10px 16px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap: 14px;
+  }
+  .mw-brand{
+    display:flex;
+    align-items:center;
+    gap: 12px;
+    text-decoration:none;
+    min-width: 0;
+  }
+  .mw-mark{
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    display:grid;
+    place-items:center;
+    font-weight: 900;
+    letter-spacing: .5px;
+    color: white;
+    background: linear-gradient(135deg, rgba(59,130,246,.28), rgba(148,163,184,.10));
+    border: 1px solid rgba(59,130,246,.35);
+    box-shadow: 0 14px 34px rgba(0,0,0,.45);
+    flex-shrink: 0;
+  }
+  .mw-text{display:flex; flex-direction:column; line-height:1.05; min-width: 0;}
+  .mw-name{
+    color:white;
+    font-weight: 900;
+    letter-spacing:.3px;
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .mw-tag{
+    color: rgba(255,255,255,.60);
+    font-size: 12px;
+    margin-top: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .mw-nav{display:flex; align-items:center; gap: 16px;}
+  .mw-link{
+    color: rgba(255,255,255,.70);
+    font-weight: 800;
+    text-decoration:none;
+    font-size: 14px;
+  }
+  .mw-link:hover{color:white;}
+
+  .mw-cta{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    height: 40px;
+    padding: 0 14px;
+    border-radius: 12px;
+    text-decoration:none;
+    background: rgba(59,130,246,.18);
+    border: 1px solid rgba(59,130,246,.30);
+    color:white;
+    font-weight: 900;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+  .mw-cta:hover{background: rgba(59,130,246,.24);}
+
+  /* CTA pequeño extra (solo móvil) */
+  .mw-cta2{
+    display:none;
+    align-items:center;
+    justify-content:center;
+    height: 40px;
+    padding: 0 14px;
+    border-radius: 12px;
+    text-decoration:none;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.12);
+    color:white;
+    font-weight: 900;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+  .mw-cta2:hover{background: rgba(255,255,255,.09);}
+
+  /* Mobile tweaks */
+  @media (max-width: 920px){
+    .mw-link{display:none;}
+    .mw-tag{display:none;}
+    .mw-cta{display:none;}
+    .mw-cta2{display:inline-flex;}
+  }
+
+  /* =========================
+     FOOTER
+  ========================= */
+  .mw-footer{
+    margin-top: 28px;
+    background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,.35));
+    border-top: 1px solid rgba(148,163,184,.14);
+  }
+  .mw-footwrap{
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 26px 16px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .mw-footbrand{
+    display:flex;
+    align-items:center;
+    gap: 12px;
+    min-width: 0;
+  }
+  .mw-footlogo{
+    width: 44px;
+    height: 44px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,.16);
+    background: rgba(0,0,0,.12);
+  }
+  .mw-foottitle{
+    font-weight: 900;
+    color: rgba(255,255,255,.90);
+  }
+  .mw-footsub{
+    margin-top: 4px;
+    color: rgba(255,255,255,.60);
+    font-size: 13px;
+  }
+
+  .mw-footlinks{
+    display:flex;
+    align-items:center;
+    gap: 12px;
+  }
+  .mw-footlink{
+    color: rgba(255,255,255,.70);
+    font-weight: 800;
+    text-decoration:none;
+  }
+  .mw-footlink:hover{color:white;}
+
+  .mw-footbtn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    height: 40px;
+    padding: 0 14px;
+    border-radius: 12px;
+    text-decoration:none;
+    background: rgba(59,130,246,.18);
+    border: 1px solid rgba(59,130,246,.30);
+    color:white;
+    font-weight: 900;
+    white-space: nowrap;
+  }
+  .mw-footbtn:hover{background: rgba(59,130,246,.24);}
+
+ /* LOGO METAL WELDING – HEADER (AJUSTE FINAL) */
+.mw-logo{
+  max-width: 110px;          /* PC */
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+
+  /* Fondo negro metálico */
+  background: linear-gradient(
+    145deg,
+    #0a0a0a,
+    #141414
+  );
+  padding: 8px;
+  border-radius: 14px;
+
+  /* Borde y profundidad sutil */
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.04),
+    0 10px 26px rgba(0,0,0,0.65);
+
+  display: block;
+}
+
+/* Escritorio grande */
+@media (min-width: 1024px){
+  .mw-logo{
+    max-width: 120px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1023px){
+  .mw-logo{
+    max-width: 100px;
+  }
+}
+
+/* Teléfono */
+@media (max-width: 640px){
+  .mw-logo{
+    max-width: 82px;
+    padding: 6px;
+    border-radius: 12px;
+  }
+}
+
+
+</style>
+1

@@ -1,0 +1,920 @@
+---
+import Layout from '../layouts/LayoutWELDING.astro'
+
+// Base correcta para local / GitHub Pages
+const BASE = import.meta.env.BASE_URL
+
+// Carpeta de assets
+// En tu PC: public/assets/welding_SAC/
+// En la web: /assets/welding_SAC/...
+const ASSETS =
+  BASE === '/'
+    ? '/assets/welding_SAC'
+    : '/victoranuncios-web/assets/welding_SAC'
+
+// =========================
+// CONFIG GALERÍA
+// =========================
+const TOTAL_IMGS = 54
+const prefix = 'soldaduraA' // <-- si tus fotos se llaman distinto, cambia esto
+const fotos = Array.from({ length: TOTAL_IMGS }, (_, i) => {
+  const n = i + 1
+  return {
+    id: n,
+    src: `${ASSETS}/${prefix}${n}.webp`,
+    alt: `Trabajo de soldadura y estructuras metálicas - ${n}`,
+  }
+})
+
+// WhatsApp
+const WA_NUMBER = '51952489645'
+const waBase = `https://wa.me/${WA_NUMBER}`
+const waText = (t: string | number | boolean) => `${waBase}?text=${encodeURIComponent(t)}`
+---
+
+<Layout
+  title="METAL WELDING SRL – Estructuras metálicas y soldadura en Arequipa"
+  description="METAL WELDING SRL: fabricación y montaje de estructuras metálicas, techos, coberturas y trabajos de soldadura. Galería de obras reales. Cotiza por WhatsApp."
+  keywords="soldadura Arequipa, estructuras metálicas Arequipa, techos metálicos, coberturas, metal welding srl"
+  canonical="https://victoranuncios.com/metal-welding-srl/"
+>
+
+ <section class="mwHero" id="inicio">
+  <div class="mwHeroBg">
+    <img
+      class="mwHeroImg"
+      src={`${ASSETS}/PORTADA/portada.webp`}
+      alt="Soldadura y estructuras metálicas en Arequipa"
+      loading="eager"
+      decoding="async"
+    />
+    <div class="mwHeroShade"></div>
+    <div class="mwHeroVignette"></div>
+  </div>
+
+  <div class="mwHeroInner">
+    <div class="mwHeroCenter reveal">
+     
+
+      <div class="mwHeroContent">
+ <div class="mwBadge">Calidad de soldadura • Trabajo garantizado</div>
+  <h2 class="mwH1center">
+    Siempre disponibles en <span class="mwAccent">Arequipa</span>
+  </h2>
+
+  <p class="mwPcenter">
+    Fabricación, refuerzo y montaje de estructuras metálicas,
+    techos, coberturas, cerchas y barandas.
+  </p>
+
+  <div class="mwHeroBtnsCenter">
+    <a class="mwBtnPrimary" href={waText('Hola, quiero cotizar un trabajo de soldadura / estructura metálica.')} target="_blank" rel="noopener">
+  Cotizar por WhatsApp →
+</a>
+
+   <a class="mwBtnGhost" href="#galeria">
+  Ver galería ↓
+</a>
+
+  </div>
+
+</div>
+
+    </div>
+  </div>
+
+  <div class="mwHeroFade"></div>
+</section>
+
+
+
+
+
+ 
+
+
+  <main class="bg-[#0B0F16] text-white">
+    <!-- SERVICIOS + OBRAS RECIENTES (PC: 2 columnas / Móvil: solo servicios) -->
+<section id="servicios" class="max-w-[1250px] mx-auto px-6 pt-14 pb-12">
+  <div class="mwServicesGrid">
+    <!-- IZQUIERDA: SERVICIOS -->
+    <div>
+      <div class="reveal">
+        <h2 class="text-3xl md:text-4xl font-extrabold">Servicios principales</h2>
+        <p class="mt-3 text-white/70 max-w-2xl">
+          Enfocado a lo que más piden: estructuras, techos, montajes y refuerzos. Si tu proyecto es distinto, igual lo revisamos.
+        </p>
+      </div>
+
+      <!-- 2x2 en PC / 2 cols en tablet / 1 col en móvil -->
+      <div class="mt-8 mwServicesCards">
+        {[
+          ['Estructuras metálicas', 'Cerchas, columnas, vigas, ampliaciones y refuerzos.'],
+          ['Techos y coberturas', 'Estructuras para patios, canchas, almacenes y más.'],
+          ['Barandas y soportes', 'Barandas, marcos, bases, soportes especiales.'],
+          ['Montaje en obra', 'Medición, fabricación y armado en el lugar.'],
+        ].map(([t, d]) => (
+          <article class="reveal serviceCard">
+            <div class="scTop">
+              <div class="scTitle">{t}</div>
+            </div>
+
+            <div class="scDesc">{d}</div>
+
+            <a
+              href={waText(`Hola, quiero cotizar: ${t}. ¿Me apoyas con el precio?`)}
+              target="_blank"
+              rel="noopener"
+              class="scBtn"
+            >
+              Cotizar →
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+
+    <!-- DERECHA: OBRAS RECIENTES (SOLO PC) -->
+    <aside class="mwAsidePc">
+      <div class="mwPanelSmall reveal">
+        <div class="mwPanelTop">
+          <span class="dot"></span>
+          <span class="mwPanelTitle">Obras recientes</span>
+        </div>
+
+        <div class="mwPanelBody">
+          <div class="mwPanelGrid">
+            <div class="mwPanelCard">
+              <strong>Estructuras y cerchas</strong>
+              <p>Armado, refuerzo y montaje.</p>
+            </div>
+
+            <div class="mwPanelCard">
+              <strong>Techos y coberturas</strong>
+              <p>Patios, canchas, almacenes.</p>
+            </div>
+
+            <div class="mwPanelCard">
+              <strong>Barandas y soportes</strong>
+              <p>Resistente y limpio.</p>
+            </div>
+
+            <div class="mwPanelCard">
+              <strong>Trabajo en campo</strong>
+              <p>Medidas y entrega.</p>
+            </div>
+          </div>
+
+          <a
+            href={waText('Hola, quiero cotizar un trabajo de soldadura / estructura metálica.')}
+            target="_blank"
+            rel="noopener"
+            class="mwPanelBtn"
+          >
+            Pedir cotización →
+          </a>
+
+          <p class="mwPanelNote">Envíanos medidas o una foto del lugar.</p>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+ <!-- OBRAS RECIENTES (MÓVIL: debajo de la portada) -->
+  <section class="mwMobilePanel max-w-[1250px] mx-auto px-6 pt-6">
+    <div class="reveal mwPanelMobile">
+      <div class="mwPanelTop">
+        <span class="dot"></span><span class="dot d2"></span><span class="dot d3"></span>
+        <div class="mwPanelTitle">Obras recientes</div>
+      </div>
+
+      <div class="mwPanelBody">
+        <div class="mwPanelGrid">
+          <div class="mwPanelCard">
+            <div class="pcTitle">Estructuras y cerchas</div>
+            <div class="pcText">Armado, refuerzo y montaje.</div>
+          </div>
+          <div class="mwPanelCard">
+            <div class="pcTitle">Techos y coberturas</div>
+            <div class="pcText">Patios, canchas, almacenes.</div>
+          </div>
+          <div class="mwPanelCard">
+            <div class="pcTitle">Barandas y soportes</div>
+            <div class="pcText">Resistente y limpio.</div>
+          </div>
+          <div class="mwPanelCard">
+            <div class="pcTitle">Trabajo en campo</div>
+            <div class="pcText">Medidas y entrega.</div>
+          </div>
+        </div>
+
+        <a
+          href={waText('Hola, quiero cotizar. ¿Qué datos necesitas para darme precio?')}
+          target="_blank"
+          rel="noopener"
+          class="mwPanelBtn"
+        >
+          Pedir cotización →
+        </a>
+
+        <div class="mwPanelNote">Envía medidas o una foto del lugar.</div>
+      </div>
+    </div>
+  </section>
+
+
+    <!-- GALERÍA (MASONRY + 54 imágenes) -->
+    <section id="galeria" class="max-w-[1250px] mx-auto px-6 pt-6 pb-14">
+      <div class="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-extrabold">Galería de trabajos</h2>
+          <p class="mt-3 text-white/70 max-w-2xl">
+            Más de {TOTAL_IMGS} fotos. Haz clic para ver en grande y pedir cotización por WhatsApp.
+          </p>
+        </div>
+
+        <a
+          href={waText('Hola, vi su galería y quiero cotizar un trabajo. ¿Me indicas qué datos enviar?')}
+          target="_blank"
+          rel="noopener"
+          class="btnGhost2"
+        >
+          Cotizar desde la galería →
+        </a>
+      </div>
+
+      <!-- Masonry -->
+      <div class="mt-8 masonry">
+        {fotos.map((f) => (
+          <button
+            type="button"
+            class="reveal shot"
+            data-src={f.src}
+            data-alt={f.alt}
+            data-id={f.id}
+            aria-label={`Abrir foto ${f.id}`}
+          >
+            <img
+              src={f.src}
+              alt={f.alt}
+              loading="lazy"
+              decoding="async"
+              class="shotImg"
+              onerror="this.style.display='none'"
+            />
+            <div class="shotOverlay">
+              <div class="shotTag">Foto {f.id}</div>
+              <div class="shotHint">Ver en grande</div>
+            </div>
+          </button>
+        ))}
+      </div>
+    </section>
+
+    <!-- CONTACTO / CTA FINAL -->
+    <section id="contacto" class="max-w-[1250px] mx-auto px-6 pb-16">
+      <div class="reveal finalCta">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-extrabold">
+            ¿Listo para cotizar tu estructura?
+          </h2>
+          <p class="mt-2 text-white/75 max-w-2xl">
+            Envíanos una foto del lugar y medidas aproximadas. Si ya tienes plano, mejor.
+          </p>
+
+          <div class="mt-5 flex flex-col sm:flex-row gap-3">
+            <a
+              href={waText('Hola, quiero cotizar. Tengo foto/medidas del proyecto.')}
+              target="_blank"
+              rel="noopener"
+              class="btnPrimary"
+            >
+              Escribir por WhatsApp →
+            </a>
+            <a
+              href="#galeria"
+              class="btnGhost"
+            >
+              Volver a la galería ↑
+            </a>
+          </div>
+
+          <div class="mt-6 text-sm text-white/60">
+            WhatsApp: <span class="text-white font-semibold">952 489 645</span>
+          </div>
+        </div>
+
+        <div class="finalSide">
+          <div class="fsTitle">Recomendado para cotizar rápido</div>
+          <ul class="fsList">
+            <li>Medidas (ancho, largo, alto)</li>
+            <li>Ubicación del trabajo</li>
+            <li>Foto o video del área</li>
+            <li>Tipo de cobertura (si aplica)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER (pocas partes, limpio) -->
+    <footer class="border-t border-white/10 bg-black/30">
+      <div class="max-w-[1250px] mx-auto px-6 py-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div>
+          <div class="text-white font-extrabold">METAL WELDING SRL</div>
+          <div class="text-white/60 text-sm mt-1">
+            Estructuras metálicas • Soldadura • Montaje en obra
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a
+            href={waText('Hola, quiero cotizar un trabajo de soldadura / estructura metálica.')}
+            target="_blank"
+            rel="noopener"
+            class="footerBtn"
+          >
+            WhatsApp: 952 489 645
+          </a>
+
+          <a href="#servicios" class="footerLink">Servicios</a>
+          <a href="#galeria" class="footerLink">Galería</a>
+          <a href="#contacto" class="footerLink">Contacto</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- MODAL / LIGHTBOX (simple y rápido) -->
+  <div id="mw-modal" class="fixed inset-0 z-[999] hidden">
+    <div id="mw-backdrop" class="absolute inset-0 bg-black/80"></div>
+
+    <div class="relative w-full h-full flex items-center justify-center p-4">
+      <div class="relative max-w-6xl w-full">
+        <div class="absolute -top-3 right-0 flex items-center gap-2">
+          <a
+            id="mw-wa"
+            href={waBase}
+            target="_blank"
+            rel="noopener"
+            class="mBtn"
+            aria-label="Cotizar por WhatsApp"
+          >
+            Cotizar
+          </a>
+
+          <button
+            id="mw-close"
+            type="button"
+            class="mBtn mX"
+            aria-label="Cerrar"
+          >
+            ×
+          </button>
+        </div>
+
+        <img
+          id="mw-img"
+          src=""
+          alt="Vista ampliada"
+          class="w-full max-h-[82vh] object-contain rounded-2xl bg-black/20 border border-white/10"
+        />
+
+        <div class="mt-3 flex items-center justify-between text-sm text-white/70">
+          <div id="mw-caption"></div>
+          <div class="hidden sm:block">Tip: ESC para cerrar</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reveal -->
+  <script is:inline>
+    (function () {
+      const els = document.querySelectorAll('.reveal');
+      const io = new IntersectionObserver(
+        (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add('is-visible')),
+        { threshold: 0.12 }
+      );
+      els.forEach((el) => io.observe(el));
+    })();
+  </script>
+
+  <!-- Modal -->
+  <script is:inline>
+    (function () {
+      const modal = document.getElementById('mw-modal');
+      const img = document.getElementById('mw-img');
+      const closeBtn = document.getElementById('mw-close');
+      const backdrop = document.getElementById('mw-backdrop');
+      const caption = document.getElementById('mw-caption');
+      const wa = document.getElementById('mw-wa');
+
+      function openModal(src, alt, id) {
+        if (!modal || !img) return;
+        img.src = src;
+        img.alt = alt || 'Vista ampliada';
+        if (caption) caption.textContent = (id ? `Foto ${id}` : '') + (alt ? ` • ${alt}` : '');
+
+        // WhatsApp con referencia de foto
+        if (wa) {
+          const text = `Hola, vi la Foto ${id || ''} en la galería y quiero cotizar un trabajo similar.`;
+          wa.href = `https://wa.me/51952489645?text=${encodeURIComponent(text)}`;
+        }
+
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        if (!modal || !img) return;
+        modal.classList.add('hidden');
+        img.src = '';
+        document.body.style.overflow = '';
+      }
+
+      document.querySelectorAll('.shot').forEach((b) => {
+        b.addEventListener('click', () => {
+          const src = b.getAttribute('data-src');
+          const alt = b.getAttribute('data-alt');
+          const id = b.getAttribute('data-id');
+          if (src) openModal(src, alt, id);
+        });
+      });
+
+      if (closeBtn) closeBtn.addEventListener('click', closeModal);
+      if (backdrop) backdrop.addEventListener('click', closeModal);
+      document.addEventListener('keydown', (e) => e.key === 'Escape' && closeModal());
+    })();
+  </script>
+
+  <style is:global>
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity 650ms ease, transform 650ms ease; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal, .reveal.is-visible { transition: none !important; transform: none !important; opacity: 1 !important; }
+    }
+
+    /* Header */
+    .logoMark{
+      width:44px;height:44px;border-radius:14px;
+      background: linear-gradient(135deg, rgba(56,189,248,.22), rgba(255,255,255,.06));
+      border:1px solid rgba(255,255,255,.14);
+      display:grid;place-items:center;
+      color:white;font-weight:900;letter-spacing:.5px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.35);
+    }
+    .logoMark span{font-size:14px;}
+    .navlink{color:rgba(255,255,255,.70); font-weight:700;}
+    .navlink:hover{color:white;}
+    .ctaTop{
+      display:inline-flex;align-items:center;justify-content:center;
+      height:40px;padding:0 14px;border-radius:12px;
+      background: rgba(56,189,248,.18);
+      border:1px solid rgba(56,189,248,.35);
+      color:white;font-weight:900;
+    }
+    .ctaTop:hover{background: rgba(56,189,248,.25);}
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   HERO CON PORTADA REAL
+========================= */
+
+.mwHeroBg{position:absolute; inset:0;}
+
+
+/*
+.mwHeroOverlay{
+  position:absolute; inset:0;
+  background:
+    linear-gradient(90deg, rgba(5,7,12,.92) 0%, rgba(5,7,12,.72) 52%, rgba(5,7,12,.55) 100%),
+    radial-gradient(circle at 70% 30%, rgba(56,189,248,.16), transparent 55%);
+}*/
+
+/* =========================
+   HERO CON PORTADA REAL (SIN OVERLAY AZUL)
+========================= */
+.mwHero{
+  position:relative;
+  overflow:hidden;
+  background:#05070C;
+  min-height: clamp(520px, 72vh, 760px);
+}
+
+.mwHeroBg{ position:absolute; inset:0; }
+
+.mwHeroImg{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover;
+  transform: scale(1.01);
+  filter: saturate(1.08) contrast(1.08);
+}
+
+/* NUEVO: oscurecido neutro (sin azul) */
+.mwHeroShade{
+  position:absolute; inset:0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5,7,12,.25) 0%,
+      rgba(5,7,12,.55) 45%,
+      rgba(5,7,12,.86) 100%
+    );
+}
+
+.mwHeroVignette{
+  position:absolute; inset:-2px;
+  background: radial-gradient(circle at 50% 35%, transparent 0%, rgba(0,0,0,.45) 70%, rgba(0,0,0,.78) 100%);
+  pointer-events:none;
+}
+
+/* Contenido alineado ABAJO (texto más abajo) */
+.mwHeroInner{
+  position:relative;
+  z-index:2;
+  min-height: clamp(520px, 72vh, 760px);
+  display:flex;
+  align-items:flex-end;     /* <- baja el contenido */
+  justify-content:center;
+  padding: 0 16px 24px;     /* <- separación inferior */
+}
+
+.mwHeroCenter{
+  width: min(980px, 100%);
+  text-align:center;
+}
+
+.mwH1center{
+  margin-top:14px;
+  font-size: clamp(30px, 4.2vw, 60px);
+  font-weight: 900;
+  line-height: 1.05;
+  color:white;
+}
+@media (max-width: 640px){
+  .mwH1center{
+    font-size: 20px;     /* antes se veía muy grande */
+    line-height: 1.15;
+  }
+}
+
+.mwPcenter{
+  margin: 14px auto 0;
+  color: rgba(255,255,255,.80);
+  max-width: 62ch;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.mwHeroBtnsCenter{
+  margin-top:18px;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+/* El fade que dijiste que está bien */
+.mwHeroFade{
+  position:absolute;
+  left:0; bottom:0;
+  width:100%;
+  height:120px;
+  background: linear-gradient(to bottom, transparent, #0B0F16);
+}
+
+
+
+.mwHeroFade{position:absolute; left:0; bottom:0; width:100%; height:120px; background: linear-gradient(to bottom, transparent, #0B0F16);}
+
+.mwHeroGrid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+  align-items: center;
+}
+@media (min-width: 1024px){
+  .mwHeroGrid{grid-template-columns: 1.1fr .9fr; gap: 28px;}
+}
+
+.mwBadge{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:10px 14px; border-radius:999px;
+  background: rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.14);
+  color: rgba(255,255,255,.90);
+  font-weight:900; font-size:13px;
+}
+.mwH1{
+  margin-top:14px;
+  font-size: clamp(34px, 4.5vw, 64px);
+  font-weight: 900;
+  line-height: 1.03;
+  color:white;
+}
+.mwAccent{color: rgb(125 211 252);} /* sky-300 */
+.mwP{
+  margin-top: 14px;
+  color: rgba(255,255,255,.78);
+  max-width: 56ch;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.mwHeroBtns{margin-top:18px; display:flex; flex-wrap:wrap; gap:10px;}
+.mwBtnPrimary{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:14px 18px; border-radius:14px;
+  background: linear-gradient(135deg, rgba(56,189,248,.38), rgba(59,130,246,.24));
+  border:1px solid rgba(56,189,248,.38);
+  color:white; font-weight:900;
+  box-shadow: 0 18px 46px rgba(0,0,0,.55);
+}
+.mwBtnPrimary:hover{opacity:.96;}
+.mwBtnGhost{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:14px 18px; border-radius:14px;
+  background: rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.14);
+  color:white; font-weight:900;
+}
+.mwBtnGhost:hover{background: rgba(255,255,255,.10);}
+
+.mwMiniRow{margin-top:18px; display:grid; grid-template-columns: 1fr; gap:10px;}
+@media (min-width: 640px){ .mwMiniRow{grid-template-columns: repeat(3, 1fr);} }
+.mwMini{
+  padding:12px 12px; border-radius:16px;
+  background: rgba(0,0,0,.28);
+  border:1px solid rgba(255,255,255,.12);
+}
+.mwMiniT{font-weight:900; color:white;}
+.mwMiniD{margin-top:2px; color:rgba(255,255,255,.65); font-size:12px;}
+
+/* =========================
+   PANEL OBRAS RECIENTES
+   - PC: pequeño en hero
+   - Móvil: se oculta y aparece abajo
+========================= */
+.mwHeroSide{display:none;}
+@media (min-width: 1024px){
+  .mwHeroSide{display:block;}
+}
+.mwPanelSmall{
+  width: min(520px, 100%);
+  margin-left:auto;
+  border-radius: 22px;
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(10,14,22,.55);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 22px 60px rgba(0,0,0,.55);
+  overflow:hidden;
+  transform: translateY(10px);
+}
+.mwPanelMobile{
+  border-radius: 22px;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.05);
+  padding: 14px;
+}
+.mwMobilePanel{display:block;}
+@media (min-width: 1024px){
+  .mwMobilePanel{display:none;}
+}
+
+/* Reusa tus clases del panel (dot, pcTitle, pcText) */
+.mwPanelTop{
+  display:flex; align-items:center; gap:8px;
+  padding: 14px 16px;
+  border-bottom:1px solid rgba(255,255,255,.10);
+}
+.mwPanelTitle{margin-left:10px;color:rgba(255,255,255,.75);font-size:12px;font-weight:900;}
+.mwPanelBody{padding:14px 16px;}
+.mwPanelGrid{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+.mwPanelCard{
+  border-radius:16px;
+  background: rgba(0,0,0,.22);
+  border:1px solid rgba(255,255,255,.10);
+  padding:12px;
+}
+.mwPanelBtn{
+  margin-top:12px;
+  display:flex; align-items:center; justify-content:center;
+  height:46px;
+  border-radius:14px;
+  background: rgba(56,189,248,.18);
+  border:1px solid rgba(56,189,248,.28);
+  color:white;
+  font-weight:900;
+}
+.mwPanelBtn:hover{background: rgba(56,189,248,.24);}
+.mwPanelNote{margin-top:8px; color:rgba(255,255,255,.60); font-size:12px;}
+
+
+
+
+
+
+
+
+
+
+
+    /* Servicios */
+    .serviceCard{
+      border-radius:22px;
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+      padding:16px;
+    }
+    .scTop{display:flex;align-items:center;gap:12px;}
+    .scIcon{
+      width:38px;height:38px;border-radius:14px;
+      background: rgba(56,189,248,.16);
+      border:1px solid rgba(56,189,248,.22);
+    }
+    .scTitle{font-weight:900;}
+    .scDesc{margin-top:10px;color:rgba(255,255,255,.68);font-size:13px;line-height:1.45;}
+    .scBtn{
+      margin-top:14px;
+      display:inline-flex;align-items:center;justify-content:center;
+      height:44px;width:100%;
+      border-radius:14px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      color:white;font-weight:900;
+    }
+    .scBtn:hover{background: rgba(255,255,255,.09);}
+
+    /* Botón ghost alterno */
+    .btnGhost2{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:12px 16px;border-radius:14px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      color:white;font-weight:900;
+    }
+    .btnGhost2:hover{background: rgba(255,255,255,.09);}
+
+    /* Galería Masonry */
+    .masonry{
+      column-count: 1;
+      column-gap: 14px;
+    }
+    @media (min-width: 640px){ .masonry{ column-count: 2; } }
+    @media (min-width: 1024px){ .masonry{ column-count: 3; } }
+    @media (min-width: 1280px){ .masonry{ column-count: 4; } }
+
+    .shot{
+      width:100%;
+      break-inside: avoid;
+      margin: 0 0 14px 0;
+      border-radius: 18px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      position:relative;
+      cursor:pointer;
+      text-align:left;
+    }
+    .shotImg{width:100%;height:auto;display:block;}
+    .shotOverlay{
+      position:absolute; inset:0;
+      background: linear-gradient(to top, rgba(0,0,0,.72), transparent 55%);
+      opacity: 0;
+      transition: opacity 220ms ease;
+      display:flex;flex-direction:column;justify-content:flex-end;
+      padding: 14px;
+      pointer-events:none;
+    }
+    .shot:hover .shotOverlay{opacity:1;}
+    .shotTag{
+      display:inline-flex;
+      width:max-content;
+      padding:6px 10px;border-radius:999px;
+      background: rgba(56,189,248,.18);
+      border:1px solid rgba(56,189,248,.25);
+      color:white;font-weight:900;font-size:12px;
+    }
+    .shotHint{margin-top:8px;color:rgba(255,255,255,.85);font-weight:900;}
+
+    /* CTA Final */
+    .finalCta{
+      border-radius: 26px;
+      border:1px solid rgba(255,255,255,.12);
+      background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(56,189,248,.06));
+      padding: 18px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    @media (min-width: 900px){
+      .finalCta{grid-template-columns: 1.2fr .8fr; padding: 24px;}
+    }
+    .finalSide{
+      border-radius: 22px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.25);
+      padding: 16px;
+    }
+    .fsTitle{font-weight:900;}
+    .fsList{margin-top:10px; color: rgba(255,255,255,.72); font-size:13px; line-height:1.6; padding-left: 18px;}
+    .fsList li{margin:4px 0;}
+
+    /* Footer */
+    .footerBtn{
+      display:inline-flex;align-items:center;justify-content:center;
+      height:42px;padding:0 14px;border-radius:14px;
+      background: rgba(56,189,248,.16);
+      border:1px solid rgba(56,189,248,.22);
+      color:white;font-weight:900;
+      width:max-content;
+    }
+    .footerBtn:hover{background: rgba(56,189,248,.22);}
+    .footerLink{color: rgba(255,255,255,.65); font-weight:800; font-size:14px;}
+    .footerLink:hover{color:white;}
+
+    /* Modal */
+    .mBtn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      height:44px;
+      padding:0 14px;
+      border-radius:9999px;
+      border:1px solid rgba(255,255,255,0.35);
+      background: rgba(0,0,0,0.25);
+      color: white;
+      font-weight: 900;
+      backdrop-filter: blur(8px);
+      text-decoration:none;
+    }
+    .mBtn:hover{background: rgba(0,0,0,0.4); border-color: rgba(255,255,255,0.55);}
+    .mX{width:44px;padding:0;font-size:26px;line-height:1;}
+
+/* GRID: Servicios (izq) + Obras recientes (der) */
+.mwServicesGrid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+/* PC: dos columnas */
+@media (min-width: 1024px){
+  .mwServicesGrid{
+    grid-template-columns: 1.1fr .9fr;
+    gap: 28px;
+  }
+}
+
+/* Aside solo PC */
+.mwAsidePc{ display: none; }
+@media (min-width: 1024px){
+  .mwAsidePc{ display: block; position: sticky; top: 96px; } /* se queda “bonito” al bajar */
+}
+
+/* Cards: 1 col móvil / 2 col tablet / 2x2 PC */
+.mwServicesCards{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media (min-width: 768px){
+  .mwServicesCards{ grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Panel en servicios: que no quede “volando” y se alinee */
+@media (min-width: 1024px){
+  .mwPanelSmall{
+    width: 100%;
+    margin-left: 0;
+    transform: none;
+  }
+}
+
+
+/* =========================
+   BAJAR CONTENIDO DEL HERO
+========================= */
+.mwHeroContent{
+  margin-top: 80px; /* PC */
+}
+
+@media (max-width: 640px){
+  .mwHeroContent{
+    margin-top: 120px; /* Móvil: más imagen visible */
+  }
+}
+
+  </style>
+</Layout>

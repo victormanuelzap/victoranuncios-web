@@ -333,12 +333,12 @@ const BASE_URL = import.meta.env.BASE_URL;
 
 
 
+<!-- CONTENEDOR DE SECCIÓN -->
+<section class="py-8 md:py-10">
+  <div class="mx-auto max-w-6xl px-4 md:px-6">
 
 
-<!-- CONTENEDOR (para respetar distancias como en la segunda imagen) -->
-<div class="mx-auto max-w-6xl px-4 md:px-6">
-
-  <!-- FRASE # Brilla, destaca, vende más. -->
+    <!-- FRASE # Brilla, destaca, vende más. -->
   <div class="bg-white border-t border-b border-gray-200 py-3 md:py-4 mb-6 rounded-md">
     <div class="flex flex-wrap justify-center items-center gap-x-2 gap-y-1 text-center">
       <span class="text-blue-700 font-bold text-lg md:text-xl">#</span>
@@ -352,60 +352,56 @@ const BASE_URL = import.meta.env.BASE_URL;
     </div>
   </div>
 
-  <!-- FILA: Servicios nuevos (3 y centrados) -->
-  <div class="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 justify-items-center">
+  
 
-    <!-- Mochilas publicitarias -->
-    <a
-      href={`${BASE_URL}servicios/mochilas_publicitarias`}
-      class="block w-full max-w-sm group transition hover:-translate-y-1 hover:shadow-xl"
-    >
-      <div class="relative overflow-hidden rounded-2xl shadow-md bg-white">
+    <!-- GRID DE 3 IMÁGENES -->
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 justify-items-center">
+
+      <!-- Mochilas publicitarias -->
+      <a
+        href={`${BASE_URL}servicios/mochilas_publicitarias`}
+        class="w-full max-w-sm group"
+      >
         <img
           src={`${BASE_URL}assets/botones/mochilas-publicitarias.webp`}
           alt="Mochilas publicitarias"
           loading="lazy"
-          class="w-full h-64 object-contain p-4 transition-transform duration-300 group-hover:scale-105"
+          class="w-full h-auto rounded-2xl shadow-md transition
+                 group-hover:-translate-y-1 group-hover:shadow-xl"
         />
-      </div>
-    </a>
+      </a>
 
-    <!-- Cintas y luces de neón -->
-    <a
-      href={`${BASE_URL}servicios/cinta_neon`}
-      class="block w-full max-w-sm group transition hover:-translate-y-1 hover:shadow-xl"
-    >
-      <div class="relative overflow-hidden rounded-2xl shadow-md bg-white">
+      <!-- Cintas y luces de neón -->
+      <a
+        href={`${BASE_URL}servicios/cinta_neon`}
+        class="w-full max-w-sm group"
+      >
         <img
           src={`${BASE_URL}assets/botones/cintas-neon.webp`}
           alt="Cintas y luces de neón"
           loading="lazy"
-          class="w-full h-64 object-contain p-4 transition-transform duration-300 group-hover:scale-105"
+          class="w-full h-auto rounded-2xl shadow-md transition
+                 group-hover:-translate-y-1 group-hover:shadow-xl"
         />
-      </div>
-    </a>
+      </a>
 
-    <!-- Roll Screens (en móvil baja y queda centrado: triángulo) -->
-    <a
-      href={`${BASE_URL}servicios/rollscreens`}
-      class="block w-full max-w-sm group transition hover:-translate-y-1 hover:shadow-xl col-span-2 md:col-span-1 justify-self-center"
-    >
-      <div class="relative overflow-hidden rounded-2xl shadow-md bg-white">
+      <!-- Rollscreens (triángulo en móvil) -->
+      <a
+        href={`${BASE_URL}servicios/rollscreens`}
+        class="w-full max-w-sm group col-span-2 md:col-span-1 justify-self-center"
+      >
         <img
           src={`${BASE_URL}assets/botones/rollscreens.webp`}
-          alt="Roll screens publicitarios"
+          alt="Rollscreens publicitarios"
           loading="lazy"
-          class="w-full h-64 object-contain p-4 transition-transform duration-300 group-hover:scale-105"
+          class="w-full h-auto rounded-2xl shadow-md transition
+                 group-hover:-translate-y-1 group-hover:shadow-xl"
         />
-      </div>
-    </a>
+      </a>
 
+    </div>
   </div>
-</div>
-
-
-
-
+</section>
 
 
 
