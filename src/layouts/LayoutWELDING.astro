@@ -441,29 +441,37 @@ const HOME_HREF = `${base}Metal-Welding-SRL`
   .mw-footbtn:hover{background: rgba(59,130,246,.24);}
 
  /* LOGO METAL WELDING – HEADER (AJUSTE FINAL) */
+/* LOGO METAL WELDING – HEADER (TRANSPARENTE) */
 .mw-logo{
-  max-width: 110px;          /* PC */
-  width: 100%;
+  max-width: 110px;   /* PC */
+  width: auto;
   height: auto;
   object-fit: contain;
 
-  /* Fondo negro metálico */
-  background: linear-gradient(
-    145deg,
-    #0a0a0a,
-    #141414
-  );
-  padding: 8px;
-  border-radius: 14px;
-
-  /* Borde y profundidad sutil */
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.04),
-    0 10px 26px rgba(0,0,0,0.65);
+  background: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
 
   display: block;
 }
+
+/* Escritorio grande */
+@media (min-width: 1024px){
+  .mw-logo{ max-width: 120px; }
+}
+
+/* Tablet */
+@media (max-width: 1023px){
+  .mw-logo{ max-width: 100px; }
+}
+
+/* Teléfono */
+@media (max-width: 640px){
+  .mw-logo{ max-width: 82px; }
+}
+
 
 /* Escritorio grande */
 @media (min-width: 1024px){
@@ -490,4 +498,3 @@ const HOME_HREF = `${base}Metal-Welding-SRL`
 
 
 </style>
-1
