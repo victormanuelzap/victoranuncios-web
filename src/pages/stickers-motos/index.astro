@@ -1,1 +1,31 @@
 
+---
+import SiteLayout from "../../layouts/SiteLayout.astro"; // cambia el path/nombre si tu layout se llama distinto
+import HeroMoto from "../../components/motos/HeroMoto.astro";
+import HowItWorks from "../../components/motos/HowItWorks.astro";
+import GalleryMoto from "../../components/motos/GalleryMoto.astro";
+import Transformations from "../../components/motos/Transformations.astro";
+import DeliverySection from "../../components/motos/DeliverySection.astro";
+import VideosSection from "../../components/motos/VideosSection.astro";
+import CustomIdeaCTA from "../../components/motos/CustomIdeaCTA.astro";
+import FooterMoto from "../../components/motos/FooterMoto.astro";
+---
+
+<SiteLayout
+  title="Stickers para motos en Arequipa | Victor Anuncios"
+  description="Diseños de stickers para motos en Arequipa. Kits racing, marcas y personalizados. Instalación profesional y delivery de carcasas."
+>
+  <main class="min-h-screen bg-slate-950 text-white">
+    <HeroMoto />
+    <section class="mx-auto w-full max-w-6xl px-4 pb-10">
+      <HowItWorks />
+      <GalleryMoto />
+      <Transformations />
+      <DeliverySection />
+      <VideosSection />
+      <CustomIdeaCTA />
+    </section>
+
+    <FooterMoto />
+  </main>
+</SiteLayout>
