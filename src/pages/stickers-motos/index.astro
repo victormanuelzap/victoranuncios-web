@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 
 const base = import.meta.env.BASE_URL;
 const whatsapp = "946182531";
+const waBase = "https://wa.me/51" + whatsapp;
 
 const CATEGORIES = [
   { key: "all", label: "Todos" },
@@ -15,195 +16,98 @@ const CATEGORIES = [
 
 const DESIGNS = [
   {
-    title: "Kit Completo de Marcas",
-    category: "brands",
-    desc: "Kits completos de stickers de marcas reconocidas: Honda, Yamaha, Monster Energy y Kawasaki.",
-    img: "motos/designs/marcas.jpg",
-    tags: ["Rojo", "Verde", "Negro", "Blanco", "Amarillo"],
-  },
-  {
     title: "Kit Fox Racing Honda",
     category: "racing",
-    desc: "Kit completo Fox Racing para Honda. Diseño agresivo en rojo, negro y blanco.",
+    desc: "Diseño agresivo en rojo, negro y blanco.",
     img: "motos/designs/fox-honda.jpg",
     tags: ["Rojo", "Negro", "Blanco"],
   },
   {
-    title: "Kit Red Bull Racing #01",
-    category: "redbull",
-    desc: "Kit completo Red Bull Racing para Honda. Diseño profesional con patrocinadores.",
-    img: "motos/designs/redbull-01.jpg",
-    tags: ["Rojo", "Azul", "Blanco"],
-  },
-  {
     title: "Kit Rockstar Energy #16",
     category: "rockstar",
-    desc: "Kit Rockstar Energy con número 16. Ideal para motos deportivas.",
+    desc: "Ideal para motos deportivas.",
     img: "motos/designs/rockstar-16.jpg",
-    tags: ["Rojo", "Blanco", "Azul", "Amarillo"],
+    tags: ["Rojo", "Blanco", "Azul"],
   },
   {
-    title: "Kit Racing Banderas Azul",
-    category: "racing",
-    desc: "Diseño tipo banderas (checkered) en azul, blanco y negro.",
-    img: "motos/designs/banderas-azul.jpg",
-    tags: ["Azul", "Negro", "Blanco"],
-  },
-  {
-    title: "Kit Degradado Multicolor",
-    category: "custom",
-    desc: "Kit exclusivo con degradado vibrante: rojo, morado, naranja y amarillo.",
-    img: "motos/designs/multicolor.jpg",
-    tags: ["Rojo", "Morado", "Naranja", "Amarillo"],
-  },
-  {
-    title: "Kit Rust-eze Racing #95",
-    category: "custom",
-    desc: "Inspirado en carreras con colores rojo, amarillo y negro.",
-    img: "motos/designs/rust-eze-95.jpg",
-    tags: ["Rojo", "Amarillo", "Negro"],
-  },
-  {
-    title: "Kit RS-Z210 Racing #25",
-    category: "racing",
-    desc: "Diseño geométrico moderno en rojo, negro y blanco con líneas dinámicas.",
-    img: "motos/designs/rs-z210-25.jpg",
-    tags: ["Rojo", "Negro", "Blanco"],
+    title: "Kit Red Bull Racing",
+    category: "redbull",
+    desc: "Diseño profesional con patrocinadores.",
+    img: "motos/designs/redbull-01.jpg",
+    tags: ["Azul", "Rojo", "Blanco"],
   },
 ];
-
-const waBase = "https://wa.me/51" + whatsapp;
 ---
 
 <Layout
   title="Stickers para motos en Arequipa | Victor Anuncios"
-  description="Diseños de stickers para motos en Arequipa. Kits racing, marcas y personalizados. Instalación profesional y delivery de carcasas."
-  keywords="stickers motos Arequipa, calcomanías para moto Arequipa, vinil para moto Arequipa, diseños moto, Victor Anuncios"
+  description="Diseños de stickers para motos en Arequipa. Kits racing, marcas y personalizados."
   canonical="https://www.victoranuncios.com/stickers-motos/"
 >
   <main class="min-h-screen bg-slate-950 text-white">
+
     <!-- HERO -->
     <section class="relative">
       <div class="absolute inset-0">
         <img
           src={base + "motos/hero-moto.jpg"}
-          alt="Stickers para motos en Arequipa"
           class="h-[420px] w-full object-cover md:h-[520px]"
-          loading="eager"
+          alt="Stickers para motos"
         />
         <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/60 to-slate-950/20"></div>
       </div>
 
-      <div class="relative mx-auto w-full max-w-6xl px-4 py-16 md:py-24">
-        <div class="flex items-start gap-4">
-          <div class="grid h-16 w-16 place-items-center rounded-full bg-white">
-            <img src={base + "logo.png"} alt="Victor Anuncios" class="h-10 w-10" />
-          </div>
+      <div class="relative mx-auto max-w-6xl px-4 py-20">
+        <h1 class="text-4xl md:text-6xl font-extrabold">
+          Stickers para Motos en Arequipa
+        </h1>
 
-          <div>
-            <h1 class="text-4xl font-extrabold tracking-tight md:text-6xl">Stickers para Motos</h1>
-            <p class="mt-2 text-lg text-slate-200 md:text-xl">
-              Diseños en Arequipa — Kits Racing, Marcas y Personalizados
-            </p>
-          </div>
-        </div>
-
-        <p class="mt-8 max-w-2xl text-lg text-slate-200 md:text-xl">
-          Mira nuestros diseños y trae tu moto para personalizarla. También hacemos delivery de carcasas.
+        <p class="mt-4 text-lg text-slate-200 max-w-2xl">
+          Personaliza tu moto con kits racing, marcas y diseños exclusivos.
         </p>
 
-        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <div class="mt-8">
           <a
-            class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-slate-900 shadow-lg shadow-black/20"
-            href={waBase + "?text=Hola%20Victor%2C%20quiero%20stickers%20para%20mi%20moto"}
+            href={waBase + "?text=Hola quiero stickers para mi moto"}
+            class="bg-white text-slate-900 px-6 py-3 rounded-xl font-bold"
             target="_blank"
-            rel="noreferrer"
           >
-            🟢 WhatsApp: {whatsapp}
-          </a>
-
-          <a
-            class="inline-flex items-center justify-center rounded-xl border border-white/25 bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur"
-            href="#galeria"
-          >
-            Ver diseños
+            🟢 WhatsApp
           </a>
         </div>
       </div>
     </section>
 
-    <section class="mx-auto w-full max-w-6xl px-4 pb-10">
+    <!-- CONTENIDO -->
+    <section class="mx-auto max-w-6xl px-4 pb-16">
+
       <!-- COMO FUNCIONA -->
-      <section class="mt-10 rounded-3xl border border-white/10 bg-slate-900/40 p-6 md:p-10">
+      <section class="mt-12 bg-slate-900/40 p-8 rounded-3xl border border-white/10">
         <h2 class="text-3xl font-bold">¿Cómo funciona?</h2>
-        <ol class="mt-6 space-y-3 text-lg text-slate-200">
-          <li>1. Explora la galería de diseños</li>
-          <li>2. Elige un kit o pide uno personalizado</li>
-          <li>3. Escríbenos para agendar</li>
-          <li>4. Trae tu moto o envíanos las carcasas</li>
-          <li>5. Adaptamos el diseño al modelo y color de tu moto</li>
+        <ol class="mt-6 space-y-2 text-slate-200">
+          <li>1. Elige tu diseño</li>
+          <li>2. Escríbenos por WhatsApp</li>
+          <li>3. Agenda tu instalación</li>
+          <li>4. Personalizamos tu moto</li>
         </ol>
       </section>
 
       <!-- GALERIA -->
-      <section id="galeria" class="mt-10">
-        <div class="rounded-3xl border border-white/10 bg-slate-900/30 p-4 md:p-6">
-          <div class="flex items-center gap-3 rounded-2xl border border-white/10 bg-slate-950/40 px-4 py-3">
-            <span class="opacity-70">🔎</span>
-            <input
-              id="search"
-              type="text"
-              placeholder="Buscar diseños..."
-              class="w-full bg-transparent text-white outline-none placeholder:text-slate-400"
-            />
-          </div>
+      <section id="galeria" class="mt-14">
+        <h2 class="text-3xl font-bold mb-6">Galería de Diseños</h2>
 
-          <div class="mt-4 flex flex-wrap gap-2">
-            {CATEGORIES.map((c) => (
-              <button
-                class={`filter-btn rounded-xl border px-4 py-2 text-sm font-semibold ${
-                  c.key === "all"
-                    ? "border-blue-500 bg-blue-600 text-white"
-                    : "border-white/15 bg-white/5 text-slate-200 hover:bg-white/10"
-                }`}
-                data-filter={c.key}
-                type="button"
-              >
-                {c.label}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div class="mt-8 grid gap-6 md:grid-cols-3">
+        <div class="grid md:grid-cols-3 gap-6">
           {DESIGNS.map((d) => (
-            <article
-              class="design-card overflow-hidden rounded-3xl border border-white/10 bg-white text-slate-900 shadow-xl shadow-black/20"
-              data-category={d.category}
-              data-search={`${d.title} ${d.desc}`.toLowerCase()}
-            >
-              <div class="relative">
-                <img src={base + d.img} alt={d.title} class="h-64 w-full object-cover" loading="lazy" />
-                <span class="absolute right-4 top-4 rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">
-                  {d.category}
-                </span>
-              </div>
-
+            <article class="bg-white text-slate-900 rounded-3xl overflow-hidden shadow-xl">
+              <img src={base + d.img} class="h-64 w-full object-cover" />
               <div class="p-5">
-                <h3 class="text-xl font-extrabold">{d.title}</h3>
-                <p class="mt-2 line-clamp-2 text-slate-600">{d.desc}</p>
-
-                <div class="mt-4 flex flex-wrap gap-2">
-                  {d.tags.map((t) => (
-                    <span class="rounded-lg bg-blue-600 px-3 py-1 text-xs font-bold text-white">{t}</span>
-                  ))}
-                </div>
+                <h3 class="text-xl font-bold">{d.title}</h3>
+                <p class="mt-2 text-sm text-slate-600">{d.desc}</p>
 
                 <a
-                  class="mt-4 inline-flex w-full items-center justify-center rounded-xl bg-slate-900 px-4 py-2 text-sm font-bold text-white hover:bg-slate-800"
-                  href={waBase + "?text=" + encodeURIComponent("Hola Victor, quiero este diseño: " + d.title)}
+                  href={waBase + "?text=" + encodeURIComponent("Hola quiero este diseño: " + d.title)}
                   target="_blank"
-                  rel="noreferrer"
+                  class="mt-4 inline-block bg-slate-900 text-white px-4 py-2 rounded-xl text-sm font-bold"
                 >
                   Pedir por WhatsApp
                 </a>
@@ -211,56 +115,76 @@ const waBase = "https://wa.me/51" + whatsapp;
             </article>
           ))}
         </div>
+      </section>
 
-        <p id="count" class="mt-6 text-slate-300">Mostrando {DESIGNS.length} diseños</p>
+      <!-- TRANSFORMACIONES -->
+      <section class="mt-16 bg-slate-900/30 p-8 rounded-3xl border border-white/10">
+        <div class="text-center">
+          <h2 class="text-4xl font-extrabold">Transformaciones Reales</h2>
+          <p class="mt-2 text-slate-300">
+            Arrastra el divisor para ver el antes y después
+          </p>
+        </div>
+
+        <div class="mt-8 relative h-[400px] rounded-3xl overflow-hidden">
+          <img src={base + "motos/before.jpg"} class="absolute inset-0 w-full h-full object-cover" />
+          <div id="afterWrap" class="absolute inset-0 w-1/2 overflow-hidden">
+            <img src={base + "motos/after.jpg"} class="w-full h-full object-cover" />
+          </div>
+
+          <input id="range" type="range" min="0" max="100" value="50"
+            class="absolute bottom-4 left-1/2 -translate-x-1/2 w-[80%]" />
+        </div>
 
         <script is:inline>
-          const search = document.getElementById("search");
-          const buttons = document.querySelectorAll(".filter-btn");
-          const cards = document.querySelectorAll(".design-card");
-          const count = document.getElementById("count");
+          const range = document.getElementById("range");
+          const afterWrap = document.getElementById("afterWrap");
 
-          let activeFilter = "all";
-
-          function update() {
-            const q = (search.value || "").toLowerCase().trim();
-            let visible = 0;
-
-            cards.forEach((card) => {
-              const cat = card.getAttribute("data-category");
-              const hay = card.getAttribute("data-search") || "";
-              const matchFilter = activeFilter === "all" ? true : cat === activeFilter;
-              const matchText = !q ? true : hay.includes(q);
-
-              const show = matchFilter && matchText;
-              card.style.display = show ? "" : "none";
-              if (show) visible++;
-            });
-
-            count.textContent = `Mostrando ${visible} diseños`;
+          function sync() {
+            afterWrap.style.width = range.value + "%";
           }
 
-          buttons.forEach((b) => {
-            b.addEventListener("click", () => {
-              buttons.forEach((x) =>
-                x.classList.remove("border-blue-500", "bg-blue-600", "text-white")
-              );
-              buttons.forEach((x) =>
-                x.classList.add("border-white/15", "bg-white/5", "text-slate-200")
-              );
-
-              b.classList.remove("border-white/15", "bg-white/5", "text-slate-200");
-              b.classList.add("border-blue-500", "bg-blue-600", "text-white");
-
-              activeFilter = b.dataset.filter || "all";
-              update();
-            });
-          });
-
-          search.addEventListener("input", update);
-          update();
+          range.addEventListener("input", sync);
+          sync();
         </script>
       </section>
+
+      <!-- DELIVERY -->
+      <section class="mt-16 bg-gradient-to-r from-purple-800/40 to-indigo-900/40 p-8 rounded-3xl border border-white/10 text-center">
+        <h2 class="text-3xl font-bold">¿No puedes traer tu moto?</h2>
+        <p class="mt-4 text-slate-200">
+          Envíanos las carcasas y te las devolvemos con delivery.
+        </p>
+
+        <div class="mt-6">
+          <a
+            href={waBase + "?text=Hola quiero delivery para stickers"}
+            target="_blank"
+            class="bg-white text-slate-900 px-6 py-3 rounded-xl font-bold"
+          >
+            Solicitar Delivery
+          </a>
+        </div>
+      </section>
+
+      <!-- CTA FINAL -->
+      <section class="mt-16 bg-gradient-to-r from-purple-800/30 to-indigo-900/30 p-10 rounded-3xl border border-white/10 text-center">
+        <h2 class="text-4xl font-extrabold">¿Tienes una idea personalizada?</h2>
+        <p class="mt-4 text-slate-200">
+          Cuéntanos tu idea y la hacemos realidad.
+        </p>
+
+        <div class="mt-6">
+          <a
+            href={waBase + "?text=Hola quiero un diseño personalizado"}
+            target="_blank"
+            class="bg-purple-600 text-white px-8 py-4 rounded-2xl font-extrabold"
+          >
+            Solicitar Diseño Personalizado
+          </a>
+        </div>
+      </section>
+
     </section>
   </main>
 </Layout>
