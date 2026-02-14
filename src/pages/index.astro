@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Card from '../components/Card.astro'
+import "../css/css-animacion-diseñamos.css";
+
 
 // Base para que funcione igual en local y en GitHub Pages
 const BASE_URL = import.meta.env.BASE_URL;
@@ -108,6 +110,76 @@ const BASE_URL = import.meta.env.BASE_URL;
     </div>
   </section>
 
+
+
+
+<section class="hero-copy">
+  <h1 class="hero-title" aria-label="Victor Anuncios">
+    <span class="hero-rotator" aria-live="polite">
+      <!-- Frase visible (JS la cambia) -->
+      <span id="heroPhrase" class="hero-phrase hero-gradient">Fabricamos tu letrero</span>
+
+      <!-- “máscara” para el wipe -->
+      <span class="hero-wipe" aria-hidden="true"></span>
+    </span>
+
+    <span class="hero-sub hero-gradient">con estilo profesional</span>
+  </h1>
+</section><script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const PHRASES = [
+      "Fabricamos tu letrero",
+      "Instalamos tu marca",
+      "Diseñamos tu publicidad",
+      "Fabricamos tu letrero",
+      "Imprimimos tus ideas",
+    ];
+
+    // ✅ asegúrate que existan
+    const phraseEl = document.getElementById("heroPhrase");
+    const wipeEl = document.querySelector(".hero-wipe");
+
+    if (!phraseEl || !wipeEl) {
+      console.warn("No se encontró #heroPhrase o .hero-wipe");
+      return;
+    }
+
+    let index = 0;
+
+    const CHANGE_EVERY = 3500; // ⏱️ cambia aquí (ms)
+    const WIPE_MS = 1750;       // ⚡ velocidad wipe (ms)
+
+    function nextPhrase() {
+      // 1) tapa
+      wipeEl.style.transition = `clip-path ${WIPE_MS}ms cubic-bezier(.2,.9,.2,1)`;
+      wipeEl.style.clipPath = "inset(0 0 0 0)";
+
+      // 2) cambia texto cuando está tapado
+      setTimeout(() => {
+        index = (index + 1) % PHRASES.length;
+        phraseEl.textContent = PHRASES[index];
+
+        // 3) destapa desde la derecha
+        wipeEl.style.transition = `clip-path ${WIPE_MS}ms cubic-bezier(.2,.9,.2,1)`;
+        wipeEl.style.clipPath = "inset(0 0 0 100%)";
+      }, WIPE_MS);
+    }
+
+    // estado inicial: destapado
+    wipeEl.style.clipPath = "inset(0 0 0 100%)";
+
+    setInterval(nextPhrase, CHANGE_EVERY);
+  });
+</script>
+
+
+
+
+
+
+
+
+
   <div class="bg-white border-t border-b border-gray-200 py-3 md:py-4">
     <div class="flex flex-col sm:flex-row justify-center items-center gap-y-1 sm:gap-y-0 sm:gap-x-2 text-center sm:text-left">
 
@@ -119,6 +191,13 @@ const BASE_URL = import.meta.env.BASE_URL;
       <span class="text-blue-700 font-bold text-lg md:text-xl">Trabajos</span>
     </div>
   </div>
+
+
+
+
+
+
+
   <!-- BOTONES PRINCIPALES -->
   <section class="bg-[#E9EAEE] py-10">
     <div

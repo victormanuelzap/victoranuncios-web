@@ -1,0 +1,68 @@
+.hero-copy{
+  padding: 64px 16px 24px;
+  text-align: center;
+}
+
+.hero-title{
+  margin: 0;
+  font-weight: 900;
+  line-height: 1.05;
+}
+
+/* ✅ AQUÍ AJUSTAS EL TAMAÑO (desktop/móvil) */
+.hero-rotator,
+.hero-sub{
+  font-size: clamp(2.4rem, 5.2vw, 4.4rem); /* <-- cambia estos números si quieres más grande */
+}
+
+/* Contenedor de la frase animada */
+.hero-rotator{
+  position: relative;
+  display: inline-block;
+  padding: .05em .02em;
+  /* Permite que en móvil una frase larga baje a otra línea SIN achicar la letra */
+  max-width: min(920px, 96vw);
+}
+
+/* Texto que cambia */
+.hero-phrase{
+  position: relative;
+  display: inline;
+  white-space: normal;           /* permite salto de línea */
+  overflow-wrap: anywhere;       /* evita desbordes feos */
+}
+
+/* Texto estático de abajo */
+.hero-sub{
+  display: block;
+  margin-top: .14em;
+}
+
+/* Gradiente tipo tu imagen (azul → morado → rojo) */
+.hero-gradient{
+  background: linear-gradient(90deg,
+    #1f5cff 0%,
+    #3f6cff 25%,
+    #7b5bd6 55%,
+    #ff2a2a 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* La “máscara” que hace el wipe desde la derecha */
+.hero-wipe{
+  position: absolute;
+  inset: -0.08em -0.02em -0.08em -0.02em; /* cubre bien el texto */
+  background: #ffffff;                    /* color del fondo del hero */
+  transform: translateX(0%);
+  pointer-events: none;
+  /* En reposo no tapa */
+  clip-path: inset(0 0 0 100%);
+}
+
+/* Respeto accesibilidad */
+@media (prefers-reduced-motion: reduce){
+  .hero-wipe{ display:none; }
+}
