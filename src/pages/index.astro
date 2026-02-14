@@ -11,7 +11,8 @@ const BASE_URL = import.meta.env.BASE_URL;
 <Layout title='Letreros luminosos, letras 3D, gigantografías y vinilos en Arequipa.'>
   <main id="main-content"> 
   <!-- DESKTOP -->
-  <section class="splide hidden lg:block" aria-labelledby="carousel-heading">
+ <section class="splide splide-desktop hidden lg:block" aria-labelledby="carousel-heading">
+
     <div class="splide__slider">
       <div class="splide__track">
         <ul class="splide__list">
@@ -62,7 +63,8 @@ const BASE_URL = import.meta.env.BASE_URL;
   <div class="h-6 lg:h-8 bg-white"></div>
 
   <!-- MÓVIL -->
-  <section class="splide splide2 block lg:hidden" aria-labelledby="carousel-heading">
+  <section class="splide splide-mobile block lg:hidden" aria-labelledby="carousel-heading">
+
     <div class="splide__slider">
       <div class="splide__track">
         <ul class="splide__list">
@@ -112,20 +114,25 @@ const BASE_URL = import.meta.env.BASE_URL;
 
 
 
-
 <section class="hero-copy">
-  <h1 class="hero-title" aria-label="Victor Anuncios">
-    <span class="hero-rotator" aria-live="polite">
-      <!-- Frase visible (JS la cambia) -->
-      <span id="heroPhrase" class="hero-phrase hero-gradient">Fabricamos tu letrero</span>
+ <h2 class="hero-title" aria-label="Victor Anuncios">
 
-      <!-- “máscara” para el wipe -->
+    <span class="hero-rotator" aria-live="polite">
+      <span id="heroPhrase" class="hero-phrase hero-gradient">
+        Fabricamos tu letrero
+      </span>
       <span class="hero-wipe" aria-hidden="true"></span>
     </span>
 
-    <span class="hero-sub hero-gradient">con estilo profesional</span>
-  </h1>
-</section><script is:inline>
+    <span class="hero-sub hero-gradient">
+      con estilo profesional
+    </span>
+  </h2>
+</section>
+
+
+
+<script is:inline>
   document.addEventListener("DOMContentLoaded", () => {
     const PHRASES = [
       "Fabricamos tu letrero",
@@ -655,12 +662,16 @@ const BASE_URL = import.meta.env.BASE_URL;
   ></script>
 
   <script is:raw>
-    document.addEventListener('DOMContentLoaded', () => {
-      const slide1 = new Splide('.splide', { type: 'loop', autoplay: true, rewind: true });
-      const slide2 = new Splide('.splide2', { type: 'loop', autoplay: true, rewind: true });
-      slide1.mount();
-      slide2.mount();
-    });
-  </script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof Splide === 'undefined') return;
+
+    const slide1 = new Splide('.splide-desktop', { type: 'loop', autoplay: true, rewind: true });
+    const slide2 = new Splide('.splide-mobile', { type: 'loop', autoplay: true, rewind: true });
+
+    slide1.mount();
+    slide2.mount();
+  });
+</script>
+
 
 </Layout>
