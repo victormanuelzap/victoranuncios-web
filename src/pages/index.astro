@@ -255,59 +255,154 @@ const BASE_URL = import.meta.env.BASE_URL;
 
 
 
-  <div class="bg-white border-t border-b border-gray-200 py-3 md:py-4">
-    <div class="flex flex-col sm:flex-row justify-center items-center gap-y-1 sm:gap-y-0 sm:gap-x-2 text-center sm:text-left">
-
-      <span class="text-blue-700 font-bold text-lg md:text-xl">#</span>
-      <span class="text-neutral-800 font-semibold text-lg md:text-xl">Mira nuestros</span>
-      <span class="text-neutral-500 text-sm md:text-base font-normal tracking-wide">
-        últimos
-      </span>
-      <span class="text-blue-700 font-bold text-lg md:text-xl">Trabajos</span>
-    </div>
+  <section class="servicios-banner">
+  <div class="servicios-container">
+    <span class="servicios-subtitulo">NUESTROS SERVICIOS</span>
+    <h2 class="servicios-titulo">
+      ¿Qué podemos hacer por tu marca?
+    </h2>
   </div>
+</section>
 
 
 
 
 
 
+<!-- GRID 6 SERVICIOS (cards) -->
+<section class="svc-wrap">
+  <div class="svc-grid">
 
-  <!-- BOTONES PRINCIPALES -->
-  <section class="bg-[#E9EAEE] py-10">
-    <div
-      class="mx-auto w-full
-             max-w-[1200px] md:max-w-[1280px] xl:max-w-[1400px] 2xl:max-w-[1600px]
-             px-4 md:px-6 lg:px-10 xl:px-16">
-
-      <!-- FILA 1: mobile 1 col, md+ 2 col -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 mb-8">
-        <!-- Letreros luminosos -->
-        <a href={`${BASE_URL}servicios/letrero-luminoso`} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
-          <div class="relative aspect-[16/10] overflow-hidden rounded-2xl shadow-md">
-            <img
-              src={`${BASE_URL}assets/botones/letreros-luminosos.webp`}
-              alt="Letreros luminosos"
-              decoding="async"
-              fetchpriority="high"
-              class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-            />
-          </div>
-        </a>
-
-        <!-- Letreros 3D -->
-        <a href={`${BASE_URL}servicios/3d`} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
-          <div class="relative aspect-[16/10] overflow-hidden rounded-2xl shadow-md">
-            <img
-              src={`${BASE_URL}assets/botones/letreros-3d.webp`}
-              alt="Letreros 3D"
-              decoding="async"
-              fetchpriority="high"
-              class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-            />
-          </div>
-        </a>
+    <!-- 1 Azul -->
+    <a href={`${BASE_URL}servicios/letrero-luminoso`} class="svc-card is-blue">
+      <div class="svc-media">
+        <img src={`${BASE_URL}assets/botones2026/letreros-luminosos.webp`} alt="Letreros luminosos" loading="lazy" />
       </div>
+      <div class="svc-body">
+        <div class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M13 3L4 14h7l-1 7 10-12h-7l0-6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="svc-title">Letreros Luminosos</h3>
+        <p class="svc-desc">Letreros LED en Arequipa para fachadas y marquesinas que iluminan tu marca día y noche.</p>
+        <span class="svc-more">Ver más <span class="svc-arrow" aria-hidden="true">→</span></span>
+      </div>
+    </a>
+
+    <!-- 2 Rojo -->
+    <a href={`${BASE_URL}servicios/3d`} class="svc-card is-red">
+      <div class="svc-media">
+        <img src={`${BASE_URL}assets/botones2026/letras-3d.webp`} alt="Letras 3D" loading="lazy" />
+      </div>
+      <div class="svc-body">
+        <div class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 3c5 0 9 4 9 9s-4 9-9 9-9-4-9-9 4-9 9-9Z" stroke="currentColor" stroke-width="2"/>
+            <path d="M8 13c1.2 1.2 2.5 1.8 4 1.8 2.2 0 4-1.3 4-3.3 0-2.1-1.8-3.3-4-3.3-1.5 0-2.8.6-4 1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="svc-title">Letras 3D</h3>
+        <p class="svc-desc">Letras en acrílico, PVC, MDF o metal con acabados personalizados y modernos.</p>
+        <span class="svc-more">Ver más <span class="svc-arrow" aria-hidden="true">→</span></span>
+      </div>
+    </a>
+
+    <!-- 3 Azul -->
+    <a href={`${BASE_URL}servicios/gigantografias/`} class="svc-card is-blue">
+      <div class="svc-media">
+        <img src={`${BASE_URL}assets/botones2026/gigantografias.webp`} alt="Gigantografías" loading="lazy" />
+      </div>
+      <div class="svc-body">
+        <div class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M4 5h16v14H4V5Z" stroke="currentColor" stroke-width="2"/>
+            <path d="M7 15l3-3 3 3 4-5 3 5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="svc-title">Gigantografías</h3>
+        <p class="svc-desc">Impresión de gran formato para interiores, exteriores y eventos especiales.</p>
+        <span class="svc-more">Ver más <span class="svc-arrow" aria-hidden="true">→</span></span>
+      </div>
+    </a>
+
+    <!-- 4 Rojo -->
+    <a href={`${BASE_URL}servicios/vinilos/`} class="svc-card is-red">
+      <div class="svc-media">
+        <img src={`${BASE_URL}assets/botones2026/vinilos.webp`} alt="Vinilos Adhesivos" loading="lazy" />
+      </div>
+      <div class="svc-body">
+        <div class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M7 3h10v18H7V3Z" stroke="currentColor" stroke-width="2"/>
+            <path d="M9 7h6M9 11h6M9 15h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="svc-title">Vinilos Adhesivos</h3>
+        <p class="svc-desc">Vinilos para vitrinas, vehículos y muros con alta durabilidad.</p>
+        <span class="svc-more">Ver más <span class="svc-arrow" aria-hidden="true">→</span></span>
+      </div>
+    </a>
+
+    <!-- 5 Azul -->
+<a href={`${BASE_URL}servicios/cinta_neon`} class="svc-card is-blue">
+  <div class="svc-media">
+    <img src={`${BASE_URL}assets/botones2026/neon.webp`} alt="Letreros en Neón" loading="lazy" />
+  </div>
+  <div class="svc-body">
+    <div class="svc-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M12 3l2.2 5.6L20 9l-4 3.7.9 5.8L12 16.8 7.1 18.5 8 12.7 4 9l5.8-.4L12 3Z"
+          stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h3 class="svc-title">Letreros en Neón</h3>
+    <p class="svc-desc">Neón LED personalizado con colores vibrantes para tu negocio.</p>
+    <span class="svc-more">Ver más <span class="svc-arrow" aria-hidden="true">→</span></span>
+  </div>
+</a>
+
+<!-- 6 Rojo -->
+<a href={`${BASE_URL}servicios/toldos-enrollables`} class="svc-card is-red">
+  <div class="svc-media">
+    <img src={`${BASE_URL}assets/botones2026/toldos.webp`} alt="Toldos Publicitarios" loading="lazy" />
+  </div>
+  <div class="svc-body">
+    <div class="svc-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M4 9h16l-1 12H5L4 9Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M6 9l2-6h8l2 6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h3 class="svc-title">Toldos Publicitarios</h3>
+    <p class="svc-desc">Toldos fijos y enrollables personalizados para negocios y comercios.</p>
+    <span class="svc-more">Ver más <span class="svc-arrow" aria-hidden="true">→</span></span>
+  </div>
+</a>
+
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       <!-- FRASE # Imprime más, vende más. -->
       <div class="bg-white border-t border-b border-gray-200 py-3 md:py-4 mb-6">
@@ -320,6 +415,8 @@ const BASE_URL = import.meta.env.BASE_URL;
           <span class="text-blue-700 font-bold text-lg md:text-xl">vende más.</span>
         </div>
       </div>
+
+
 
       <!-- FILAS SIGUIENTES: TODOS LOS DEMÁS -->
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
@@ -370,54 +467,8 @@ const BASE_URL = import.meta.env.BASE_URL;
     </div>
   </section>
 
-  <!-- FRASE # Que tu marca se vea donde importa. (fuera del section gris) -->
-  <div class="bg-white border-t border-b border-gray-200 py-3 md:py-4">
-    <div class="flex justify-center items-center space-x-2">
-      <span class="text-blue-700 font-bold text-lg md:text-xl">#</span>
-      <span class="text-neutral-800 font-semibold text-lg md:text-xl">Que tu marca</span>
-      <span class="text-neutral-500 text-sm md:text-base font-normal tracking-wide">
-        se vea
-      </span>
-      <span class="text-blue-700 font-bold text-lg md:text-xl">donde Importa.</span>
-    </div>
-  </div>
+  
 
-
-<!-- BOTONES PRINCIPALES 2 -->
-  <section class="bg-[#E9EAEE] py-10">
-    <div
-      class="mx-auto w-full
-             max-w-[1200px] md:max-w-[1280px] xl:max-w-[1400px] 2xl:max-w-[1600px]
-             px-4 md:px-6 lg:px-10 xl:px-16">
-
-      <!-- FILA 1: mobile 1 col, md+ 2 col -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 mb-8">
-        <!-- Letreros luminosos -->
-        <a href={`${BASE_URL}servicios/gigantografias/`} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
-          <div class="relative aspect-[16/10] overflow-hidden  shadow-md">
-            <img
-              src={`${BASE_URL}assets/botones/gigantografias.webp`}
-              alt="Gigantografías publicitarias"
-              decoding="async"
-              fetchpriority="high"
-              class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-            />
-          </div>
-        </a>
-
-        <!-- vinilos-->
-        <a href={`${BASE_URL}servicios/vinilos/`} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
-          <div class="relative aspect-[16/10] overflow-hidden  shadow-md">
-            <img
-              src={`${BASE_URL}assets/botones/vinilos.webp`}
-              alt="vinilos adhesivos"
-              decoding="async"
-              fetchpriority="high"
-              class="relative aspect-[16/10] overflow-hidden  shadow-md"
-            />
-          </div>
-        </a>
-      </div>
 
 
 <!-- nuevos toldos y hornos FAÑTAN -->

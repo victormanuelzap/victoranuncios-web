@@ -20,3 +20,269 @@ html, body {
   margin: 0;
   padding: 0;
 }
+.servicios-banner {
+  width: 100%;
+  padding: 60px 20px;
+  background: linear-gradient(90deg, #1e40af, #2563eb);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.servicios-container {
+  max-width: 900px;
+  width: 100%;
+}
+
+.servicios-subtitulo {
+  display: block;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.servicios-titulo {
+  font-size: 36px;
+  color: #ffffff;
+  font-weight: 800;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .servicios-titulo {
+    font-size: 26px;
+  }
+}
+
+
+
+
+
+
+
+/* ====== GRID CARDS SERVICIOS ====== */
+.svc-wrap{
+  background:#fff;
+
+  /* ✅ AQUÍ CONTROLAS EL ESPACIO LATERAL (mientras más pequeño, menos vacío) */
+  padding: 40px 6px 70px;
+
+  /* Opciones:
+     padding: 40px 6px 70px;   (casi full)
+     padding: 40px 16px 70px;  (normal)
+  */
+}
+
+
+
+
+.svc-grid{
+  /* ✅ AQUÍ CONTROLAS EL ANCHO TOTAL DEL BLOQUE */
+  /* Opción A (recomendada): ocupa casi toda la pantalla pero con márgenes */
+  max-width: 1600px;
+
+  /* Opción B (más ancho todavía, para pantallas grandes) */
+  /* max-width: 1800px; */
+
+  /* Opción C (FULL ancho total) */
+  /* max-width: 100%; */
+
+  margin: 0 auto;
+  display: grid;
+  /* ✅ AQUÍ CONTROLAS EL “aire” a los lados */
+  /* Si max-width es grande, baja el padding para que no se vea vacío */
+  gap: 28px;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+
+/* ✅ MÓVIL: efecto al tocar */
+@media (hover: none) {
+  .svc-card:active{
+    background: var(--accent);
+    transform: translateY(-4px) scale(1.01);
+    border-color: rgba(255,255,255,.22);
+    box-shadow: 0 18px 45px rgba(2, 6, 23, .18);
+  }
+
+  .svc-card:active .svc-media img{ transform: scale(1.05); }
+  .svc-card:active .svc-title,
+  .svc-card:active .svc-desc,
+  .svc-card:active .svc-more{ color:#fff; }
+
+  .svc-card:active .svc-icon{
+    background: rgba(255,255,255,.12);
+    color:#fff;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 768px){
+  .svc-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1024px){
+  .svc-grid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* Card base */
+.svc-card{
+  --accent: #2563eb; /* default azul */
+  --accent-soft: rgba(37, 99, 235, .10);
+  --text: #0b1220;
+
+  display: block;
+  background: #fff;
+  border: 1px solid rgba(15, 23, 42, .15);
+  border-bottom: 6px solid transparent;
+  border-radius: 0; /* en tus capturas se ve más “recto” */
+  overflow: hidden;
+
+  text-decoration: none;
+  color: var(--text);
+
+  transform: translateZ(0);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease, background-color .22s ease;
+}
+
+/* Intercalado azul/rojo */
+.svc-card.is-blue{
+  --accent: #2563eb;
+  --accent-soft: rgba(37, 99, 235, .10);
+}
+.svc-card.is-red{
+  --accent: #ef4444;
+  --accent-soft: rgba(239, 68, 68, .10);
+}
+
+/* borde inferior “grueso” con degradado suave */
+.svc-card{
+  position: relative;
+}
+.svc-card::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:0;
+  height: 10px;
+  background: linear-gradient(90deg, rgba(255,255,255,0), var(--accent), rgba(255,255,255,0));
+  opacity: .22;
+  pointer-events:none;
+}
+
+/* imagen */
+.svc-media{
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+.svc-media img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform .28s ease;
+}
+
+/* contenido */
+.svc-body{
+  padding: 26px 26px 24px;
+}
+
+.svc-icon{
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  margin-bottom: 16px;
+  transition: background-color .22s ease, color .22s ease;
+}
+.svc-icon svg{
+  width: 22px;
+  height: 22px;
+}
+
+.svc-title{
+  font-size: 26px;
+  line-height: 1.15;
+  font-weight: 800;
+  margin: 0 0 12px;
+}
+
+.svc-desc{
+  margin: 0 0 18px;
+  color: rgba(15, 23, 42, .70);
+  line-height: 1.6;
+  font-size: 15.5px;
+  transition: color .22s ease;
+}
+
+.svc-more{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: var(--accent);
+  transition: color .22s ease;
+}
+.svc-arrow{
+  display: inline-block;
+  transform: translateX(0);
+  transition: transform .22s ease;
+}
+
+/* Hover (relleno + escala) */
+.svc-card:hover{
+  background: var(--accent);
+  border-color: rgba(255,255,255,.22);
+  box-shadow: 0 18px 45px rgba(2, 6, 23, .18);
+  transform: translateY(-6px) scale(1.02);
+}
+
+.svc-card:hover .svc-media img{
+  transform: scale(1.06);
+}
+
+.svc-card:hover .svc-title,
+.svc-card:hover .svc-desc,
+.svc-card:hover .svc-more{
+  color: #fff;
+}
+
+.svc-card:hover .svc-icon{
+  background: rgba(255,255,255,.12);
+  color: #fff;
+}
+
+.svc-card:hover .svc-arrow{
+  transform: translateX(6px);
+}
+
+/* Focus accesible */
+.svc-card:focus-visible{
+  outline: 3px solid rgba(37, 99, 235, .35);
+  outline-offset: 4px;
+}
