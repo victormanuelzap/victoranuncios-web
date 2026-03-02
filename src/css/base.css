@@ -153,7 +153,7 @@ html, body {
 
   display: block;
   background: #fff;
-  border: 1px solid rgba(15, 23, 42, .15);
+  border: 2px solid rgba(15, 23, 42, .15);
   border-bottom: 6px solid transparent;
   border-radius: 0; /* en tus capturas se ve más “recto” */
   overflow: hidden;
@@ -285,4 +285,448 @@ html, body {
 .svc-card:focus-visible{
   outline: 3px solid rgba(37, 99, 235, .35);
   outline-offset: 4px;
+}
+
+
+/* ==============================
+   MATERIAL IMPRESO & PAPELERÍA
+============================== */
+
+.material-section {
+  background: linear-gradient(90deg, #1f4ed8, #2563eb);
+  color: #ffffff;
+  text-align: center;
+  padding: 25px 15px;
+}
+
+.material-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.material-title i {
+  font-size: 18px;
+}
+
+.material-subtitle {
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 0.95;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .material-title {
+    font-size: 15px;
+  }
+
+  .material-subtitle {
+    font-size: 14px;
+  }
+}
+
+
+
+
+
+/* =========================================
+   FIX: Evitar “sobreposición” del banner azul
+   (por si en algún lado hay z-index/position raro)
+========================================= */
+.material-section{
+  position: relative;
+  z-index: 0;
+  margin: 0; /* si quieres separación, usa margin-bottom */
+}
+
+/* =========================================
+   GRID: MATERIAL IMPRESO (4 CARDS)
+   - Controla el ancho total con max-width
+   - Controla el espacio lateral con padding
+   - Intercalado azul/rojo con is-blue / is-red
+========================================= */
+
+.print-wrap{
+  background:#fff;
+
+  /* ✅ ESPACIO lateral de la sección (reduce para que no se vea vacío) */
+  padding: 34px 10px 70px;
+
+  /* ✅ Separación real con el banner de “MATERIAL IMPRESO...” */
+  margin-top: 0;
+}
+
+.print-grid{
+  /* ✅ ANCHO máximo del bloque (ajústalo) */
+  max-width: 1600px; /* prueba 1400px / 1200px si lo quieres más “compacto” */
+  margin: 0 auto;
+
+  display: grid;
+  gap: 28px;
+
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media (min-width: 768px){
+  .print-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1024px){
+  .print-grid{ grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+/* ===== Card base (mismo feeling que svc-card) ===== */
+.print-card{
+  --accent: #2563eb; /* default azul */
+  --accent-soft: rgba(37, 99, 235, .10);
+  --text: #0b1220;
+
+  display: block;
+  background: #fff;
+
+  /* ✅ Grosor del borde general */
+  border: 2px solid rgba(15, 23, 42, .15);
+
+  /* ✅ Grosor del “borde inferior” (como barra) */
+  border-bottom: 8px solid transparent;
+
+  /* ✅ Si quieres esquinas redondeadas cambia a 16px */
+  border-radius: 0;
+
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text);
+
+  transform: translateZ(0);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease, background-color .22s ease;
+}
+
+/* Intercalado azul/rojo */
+.print-card.is-blue{
+  --accent: #2563eb;
+  --accent-soft: rgba(37, 99, 235, .10);
+}
+.print-card.is-red{
+  --accent: #ef4444;
+  --accent-soft: rgba(239, 68, 68, .10);
+}
+
+/* Barra inferior con degradado suave (igual idea que svc-card) */
+.print-card{ position: relative; }
+.print-card::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:0;
+  height: 10px; /* ✅ aquí cambias el alto de esa barra suave */
+  background: linear-gradient(90deg, rgba(255,255,255,0), var(--accent), rgba(255,255,255,0));
+  opacity: .22;
+  pointer-events:none;
+}
+
+/* imagen */
+.print-media{
+  width: 100%;
+  aspect-ratio: 16 / 14; /* ✅ cambia si quieres más alto/corto */
+  overflow: hidden;
+  background: #f1f5f9;
+}
+.print-media img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform .28s ease;
+}
+
+/* contenido */
+.print-body{
+  padding: 26px 26px 24px;
+}
+
+.print-icon{
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  margin-bottom: 16px;
+  transition: background-color .22s ease, color .22s ease;
+}
+
+.print-title{
+  font-size: 24px; /* ✅ tamaño título */
+  line-height: 1.15;
+  font-weight: 800;
+  margin: 0 0 12px;
+}
+
+.print-desc{
+  margin: 0 0 18px;
+  color: rgba(15, 23, 42, .70);
+  line-height: 1.6;
+  font-size: 15.5px;
+  transition: color .22s ease;
+}
+
+.print-more{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: var(--accent);
+  transition: color .22s ease;
+}
+.print-arrow{
+  display: inline-block;
+  transform: translateX(0);
+  transition: transform .22s ease;
+}
+
+/* Hover */
+.print-card:hover{
+  background: var(--accent);
+  border-color: rgba(255,255,255,.22);
+  box-shadow: 0 18px 45px rgba(2, 6, 23, .18);
+  transform: translateY(-6px) scale(1.02);
+}
+.print-card:hover .print-media img{ transform: scale(1.06); }
+
+.print-card:hover .print-title,
+.print-card:hover .print-desc,
+.print-card:hover .print-more{
+  color: #fff;
+}
+
+.print-card:hover .print-icon{
+  background: rgba(255,255,255,.12);
+  color: #fff;
+}
+
+.print-card:hover .print-arrow{
+  transform: translateX(6px);
+}
+
+/* MÓVIL: efecto al tocar */
+@media (hover: none) {
+  .print-card:active{
+    background: var(--accent);
+    transform: translateY(-4px) scale(1.01);
+    border-color: rgba(255,255,255,.22);
+    box-shadow: 0 18px 45px rgba(2, 6, 23, .18);
+  }
+  .print-card:active .print-media img{ transform: scale(1.05); }
+  .print-card:active .print-title,
+  .print-card:active .print-desc,
+  .print-card:active .print-more{ color:#fff; }
+  .print-card:active .print-icon{
+    background: rgba(255,255,255,.12);
+    color:#fff;
+  }
+}
+
+/* Focus accesible */
+.print-card:focus-visible{
+  outline: 3px solid rgba(37, 99, 235, .35);
+  outline-offset: 4px;
+}
+
+
+
+/* =========================================
+   BANNER: INSTALACIÓN EN ALTURA (FULL WIDTH)
+   - Full ancho de pantalla
+   - Contenido alineado a un max-width (ordenado)
+   - Overlay azul ajustable con --blue_alpha
+========================================= */
+
+/* Sección: full width, sin márgenes laterales */
+.altura-wrap{
+  background: #fff;
+  width: 100%;
+  padding: 30px 0; /* ✅ espacio arriba/abajo (ajústalo) */
+}
+
+/* Card: ahora sí ocupa todo el ancho */
+.altura-card{
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+
+  position: relative;
+  display: block;
+  overflow: hidden;
+
+  border-radius: 0; /* ✅ full width sin redondeo */
+  box-shadow: none; /* ✅ si quieres sombra, cámbialo abajo */
+
+  text-decoration: none;
+  color: #fff;
+
+  transform: translateZ(0);
+  transition: transform .22s ease, box-shadow .22s ease;
+
+  /* ✅ Overlay controlable */
+  --blue_alpha: 0.78; /* 🔥 baja a 0.65 para ver más la foto */
+  --blue_top: rgba(12, 35, 120, var(--blue_alpha));
+  --blue_mid: rgba(22, 77, 210, calc(var(--blue_alpha) - 0.15));
+  --blue_bottom: rgba(18, 55, 160, calc(var(--blue_alpha) - 0.05));
+}
+
+/* Hover suave */
+.altura-card:hover{
+  transform: translateY(-2px);
+  /* Si quieres sombra en hover, activa esto: */
+  /* box-shadow: 0 22px 55px rgba(2, 6, 23, .18); */
+}
+
+/* ===== Imagen de fondo ===== */
+.altura-media{
+  display: block;
+  width: 100%;
+}
+
+.altura-media img{
+  width: 100%;
+  height: 320px;     /* ✅ alto desktop */
+  object-fit: cover; /* ✅ no se deforma */
+  display: block;
+}
+
+/* Móvil más alto */
+@media (max-width: 640px){
+  .altura-media img{ height: 360px; }
+}
+
+/* ===== Overlay azul ===== */
+.altura-overlay{
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background: linear-gradient(
+    90deg,
+    var(--blue_top) 0%,
+    var(--blue_mid) 45%,
+    var(--blue_bottom) 100%
+  );
+}
+
+/* ===== Contenido encima (alineado, ordenado) ===== */
+.altura-content{
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  /* ✅ Mantiene el orden: contenido centrado pero NO estira */
+  max-width: 1200px;
+  margin: 0 auto;
+
+  /* ✅ padding interno del texto */
+  padding: 34px 36px;
+}
+
+/* Título */
+.altura-title{
+  margin: 0;
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+  font-size: clamp(28px, 4vw, 56px);
+}
+
+.altura-title span{
+  color: #ff5b5b;
+  display: inline-block;
+  margin-top: 6px;
+}
+
+/* Descripción */
+.altura-desc{
+  margin: 16px 0 0;
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(255,255,255,.92);
+  max-width: 560px;
+}
+
+/* Botón */
+.altura-btn{
+  margin-top: 22px;
+
+  display: inline-flex;   /* 🔥 IMPORTANTE: no block */
+  align-items: center;
+  gap: 12px;
+
+  background: #e11d48;
+  color: #fff;
+
+  padding: 14px 24px;     /* 🔥 controla tamaño */
+  border-radius: 10px;
+  font-weight: 800;
+
+  width: fit-content;     /* 🔥 evita que se estire */
+  max-width: max-content; /* 🔥 seguridad extra */
+
+  box-shadow: 0 12px 25px rgba(0,0,0,.18);
+  transition: transform .2s ease, filter .2s ease;
+}
+
+.altura-card:hover .altura-btn{
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.altura-arrow{
+  display: inline-block;
+  transform: translateX(0);
+  transition: transform .22s ease;
+}
+
+.altura-card:hover .altura-arrow{
+  transform: translateX(6px);
+}
+
+/* Panel decorativo derecha (opcional) */
+.altura-panel{
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+
+  width: 360px;
+  height: 240px;
+  border-radius: 18px;
+
+  background: linear-gradient(180deg, rgba(10, 30, 90, .85), rgba(10, 30, 90, .55));
+  border: 1px solid rgba(255,255,255,.15);
+  box-shadow: 0 22px 55px rgba(2, 6, 23, .18);
+}
+
+/* Móvil: ocultar panel y ajustar padding */
+@media (max-width: 640px){
+  .altura-content{
+    padding: 26px 18px;
+    max-width: 100%;
+  }
+
+  .altura-desc{
+    font-size: 16px;
+  }
+
+  .altura-panel{
+    display: none;
+  }
 }

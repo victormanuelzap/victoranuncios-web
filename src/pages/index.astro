@@ -404,69 +404,139 @@ const BASE_URL = import.meta.env.BASE_URL;
 
 
 
-      <!-- FRASE # Imprime más, vende más. -->
-      <div class="bg-white border-t border-b border-gray-200 py-3 md:py-4 mb-6">
-        <div class="flex justify-center items-center space-x-2">
-          <span class="text-blue-700 font-bold text-lg md:text-xl">#</span>
-          <span class="text-neutral-800 font-semibold text-lg md:text-xl">Imprime</span>
-          <span class="text-neutral-500 text-sm md:text-base font-normal tracking-wide">
-            más,
-          </span>
-          <span class="text-blue-700 font-bold text-lg md:text-xl">vende más.</span>
-        </div>
-      </div>
+    <div class="material-section">
+  <div class="material-title">
+    <i class="fa-solid fa-print"></i>
+    MATERIAL IMPRESO & PAPELERÍA
+    <i class="fa-solid fa-print"></i>
+  </div>
+  <div class="material-subtitle">
+    Impresión de alta calidad para promocionar y profesionalizar tu negocio
+  </div>
+</div>
+
+
 
 
 
       <!-- FILAS SIGUIENTES: TODOS LOS DEMÁS -->
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
-        <a href={`${BASE_URL}tarjetas`} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
-          <div class="relative overflow-hidden rounded-2xl shadow-md">
-            <img
-              src={`${BASE_URL}assets/botones/tarjetas.webp`}
-              alt="Tarjetas personales"
-              loading="lazy"
-              class="w-full h-auto transition-transform duration-300 group-hover:scale-105"
-            />
-          </div>
-        </a>
+     <!-- =========================
+  GRID: MATERIAL IMPRESO (4 CARDS)
+  Reutiliza enlaces e imágenes que YA tienes:
+  - /tarjetas  -> assets/botones/tarjetas.webp
+  - /volantes  -> assets/botones/volantes.webp
+  - /formateria -> assets/botones/proformas.webp
+  - /calendarios -> assets/botones/calendarios.webp
+========================= -->
+<section class="print-wrap">
+  <div class="print-grid">
 
-        <a href={`${BASE_URL}volantes`} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
-          <div class="relative overflow-hidden rounded-2xl shadow-md">
-            <img
-              src={`${BASE_URL}assets/botones/volantes.webp`}
-              alt="Volantes publicitarios"
-              loading="lazy"
-              class="w-full h-auto transition-transform duration-300 group-hover:scale-105"
-            />
-          </div>
-        </a>
-
-        <a href={`${BASE_URL}formateria`} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
-          <div class="relative overflow-hidden rounded-2xl shadow-md">
-            <img
-              src={`${BASE_URL}assets/botones/proformas.webp`}
-              alt="Proformas y notas de pedido"
-              loading="lazy"
-              class="w-full h-auto transition-transform duration-300 group-hover:scale-105"
-            />
-          </div>
-        </a>
-
-        <a href={`${BASE_URL}calendarios`} class="block w-full group transition hover:-translate-y-1 hover:shadow-xl">
-          <div class="relative overflow-hidden rounded-2xl shadow-md">
-            <img
-              src={`${BASE_URL}assets/botones/calendarios.webp`}
-              alt="Calendarios y almanaques"
-              loading="lazy"
-              class="w-full h-auto transition-transform duration-300 group-hover:scale-105"
-            />
-          </div>
-        </a>
+    <!-- 1 Azul -->
+    <a href={`${BASE_URL}tarjetas`} class="print-card is-blue">
+      <div class="print-media">
+        <img
+          src={`${BASE_URL}assets/botones/tarjetas.webp`}
+          alt="Tarjetas Personales"
+          loading="lazy"
+        />
       </div>
-    </div>
-  </section>
 
+      <div class="print-body">
+        <div class="print-icon" aria-hidden="true">
+          <i class="fa-solid fa-print"></i>
+        </div>
+
+        <h3 class="print-title">Tarjetas Personales</h3>
+        <p class="print-desc">
+          Tarjetas de presentación en Arequipa con diseños profesionales e impresión de alta calidad.
+        </p>
+
+        <span class="print-more">
+          Ver más <span class="print-arrow" aria-hidden="true">→</span>
+        </span>
+      </div>
+    </a>
+
+    <!-- 2 Rojo -->
+    <a href={`${BASE_URL}volantes`} class="print-card is-red">
+      <div class="print-media">
+        <img
+          src={`${BASE_URL}assets/botones/volantes.webp`}
+          alt="Volantes Publicitarios"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="print-body">
+        <div class="print-icon" aria-hidden="true">
+          <i class="fa-solid fa-print"></i>
+        </div>
+
+        <h3 class="print-title">Volantes Publicitarios</h3>
+        <p class="print-desc">
+          Flyers y volantes impresos para promocionar tus productos y servicios.
+        </p>
+
+        <span class="print-more">
+          Ver más <span class="print-arrow" aria-hidden="true">→</span>
+        </span>
+      </div>
+    </a>
+
+    <!-- 3 Azul -->
+    <a href={`${BASE_URL}formateria`} class="print-card is-blue">
+      <div class="print-media">
+        <img
+          src={`${BASE_URL}assets/botones/proformas.webp`}
+          alt="Formatería y Notas"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="print-body">
+        <div class="print-icon" aria-hidden="true">
+          <i class="fa-solid fa-print"></i>
+        </div>
+
+        <h3 class="print-title">Formatería y Notas</h3>
+        <p class="print-desc">
+          Proformas, facturas y notas de pedido personalizadas para tu negocio.
+        </p>
+
+        <span class="print-more">
+          Ver más <span class="print-arrow" aria-hidden="true">→</span>
+        </span>
+      </div>
+    </a>
+
+    <!-- 4 Rojo -->
+    <a href={`${BASE_URL}calendarios`} class="print-card is-red">
+      <div class="print-media">
+        <img
+          src={`${BASE_URL}assets/botones/calendarios.webp`}
+          alt="Calendarios"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="print-body">
+        <div class="print-icon" aria-hidden="true">
+          <i class="fa-solid fa-print"></i>
+        </div>
+
+        <h3 class="print-title">Calendarios</h3>
+        <p class="print-desc">
+          Calendarios personalizados en Arequipa de escritorio y pared con tu marca.
+        </p>
+
+        <span class="print-more">
+          Ver más <span class="print-arrow" aria-hidden="true">→</span>
+        </span>
+      </div>
+    </a>
+
+  </div>
+</section>
   
 
 
@@ -649,37 +719,43 @@ const BASE_URL = import.meta.env.BASE_URL;
 
 
 
+<section class="altura-wrap">
+  <a href={`${BASE_URL}servicios/instalacion`} class="altura-card">
 
+    <picture class="altura-media">
+      <source media="(max-width: 640px)" srcset={`${BASE_URL}assets/banners/banner-instalacion-letreros-movil.webp`} />
+      <img src={`${BASE_URL}assets/banners/instalacion-altura.webp`} alt="Instalación en altura" loading="lazy" />
+    </picture>
 
-  <!-- Debajo de los botones -->
- <div class="mt-8 px-4 lg:px-0"> 
-  <a href={`${BASE_URL}servicios/instalacion`} class="block group">
-    <div class="relative overflow-hidden shadow-lg rounded-none lg:rounded-2xl">
-      <picture>
-        <!-- Imagen MÓVIL (con márgenes laterales y bordes rectos) -->
-        <source
-          media="(max-width: 640px)"
-          srcset={`${BASE_URL}assets/banners/banner-instalacion-letreros-movil.webp`}
-        />
+    <div class="altura-overlay" aria-hidden="true"></div>
 
-        <!-- Imagen ESCRITORIO (como estaba, sin recorte) -->
-        <img
-          src={`${BASE_URL}assets/banners/instalacion-altura.webp`}
-          alt="Instalación de letreros en altura - Victor Anuncios"
-          loading="lazy"
-          class="w-full h-auto transition-transform duration-300 group-hover:scale-[1.01]"
-        />
-      </picture>
+    <div class="altura-content">
+      <h2 class="altura-title">
+        Instalación en Altura <br />
+        <span>Segura y Profesional</span>
+      </h2>
 
-      <span class="absolute bottom-3 left-3 px-4 py-2 rounded-xl text-white font-extrabold bg-red-600/90 shadow">
-        VER MAS
+      <p class="altura-desc">
+        Contamos con equipos especializados y personal certificado para instalar tus letreros en cualquier altura con total seguridad.
+      </p>
+
+      <span class="altura-btn">
+        Solicitar Cotización <span class="altura-arrow">→</span>
       </span>
     </div>
+
+    
+
   </a>
-</div>
+</section>
 
 
-  </section>
+
+
+
+
+
+
 
 
 <section class="max-w-5xl mx-auto px-4 sm:px-0 lg:grid lg:grid-cols-2 lg:gap-12 items-start pt-12 pb-16 lg:py-20">
