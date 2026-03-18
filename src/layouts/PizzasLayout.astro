@@ -1,0 +1,223 @@
+---
+interface Props {
+  title: string
+  description?: string
+  keywords?: string
+  canonical?: string
+}
+
+const { title, description, keywords, canonical } = Astro.props
+import '../css/base.css'
+import '../css/pizzas.css'
+
+const base = import.meta.env.BASE_URL
+
+// WhatsApp del cliente
+const WA_NUMBER = '51952461991'
+const waLink = (text: string) =>
+  `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`
+
+// Home de esta landing
+const HOME_HREF = `${base}Pizzas`
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta
+      name="description"
+      content={description || 'Pizzas Arequipa en La Estación. Pizzas familiares, frappes con boba, helados fritos y té con leche. Pide por WhatsApp en Arequipa.'}
+    />
+    <meta
+      name="keywords"
+      content={keywords || 'Pizzas Arequipa, pizzas en Arequipa, pizza familiar Arequipa, frappe con boba Arequipa, helados fritos Arequipa, La Estación Arequipa'}
+    />
+    <meta name="author" content="La Estación" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#7a140f" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href={`${base}favicon.ico?v=2`} />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg?v=2`} />
+    <link rel="icon" type="image/png" sizes="32x32" href={`${base}favicon-32.png?v=2`} />
+    <link rel="apple-touch-icon" sizes="180x180" href={`${base}favicon.png?v=2`} />
+
+    <meta property="og:title" content={title} />
+    <meta
+      property="og:description"
+      content={description || 'Pizzas en Arequipa, combos familiares y bebidas especiales. Cotiza y pide por WhatsApp.'}
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_PE" />
+    <meta property="og:image" content={`${base}assets/pizzas_arequipa/og-cover.jpg`} />
+
+    <link rel="canonical" href={canonical || Astro.url.href} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap"
+      />
+    </noscript>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <!-- GA -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1QNECESC07"></script>
+    <script is:raw>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1QNECESC07');
+      gtag('config', 'AW-17054169407');
+    </script>
+  </head>
+
+  <body class="pizzas-body">
+    <!-- BARRA SUPERIOR: ligera mención a Victor Anuncios -->
+    <div class="pz-creditbar">
+      <div class="pz-container pz-creditwrap">
+        <a href={`${base}`} class="pz-creditbrand" aria-label="Victor Anuncios">
+          <img src={`${base}logo.png`} class="pz-creditlogo" alt="Victor Anuncios" />
+          <span class="pz-credittext">
+            Diseñada y desplegada por <strong>Victor Anuncios</strong>
+          </span>
+        </a>
+
+        <a
+          class="pz-creditcta"
+          href="https://wa.me/51946182531?text=Hola%20Victor,%20quiero%20una%20landing%20page%20para%20mi%20negocio"
+          target="_blank"
+          rel="noopener"
+        >
+          Quiero una web →
+        </a>
+      </div>
+    </div>
+
+    <!-- HEADER PROPIO -->
+    <header class="pz-header">
+      <div class="pz-container pz-topbar">
+        <a class="pz-brand" href={HOME_HREF} aria-label="La Estación - Pizzas Arequipa">
+          <img
+            class="pz-logo"
+            src={`${base}assets/pizzas_arequipa/logo.webp`}
+            alt="Logo La Estación"
+            loading="eager"
+            decoding="async"
+          />
+          <div class="pz-brandtext">
+            <span class="pz-brandname">La Estación</span>
+            <span class="pz-brandtag">Pizzas en Arequipa</span>
+          </div>
+        </a>
+
+        <nav class="pz-nav" aria-label="Navegación principal">
+          <a href="#inicio" class="pz-link">Inicio</a>
+          <a href="#menu" class="pz-link">Menú</a>
+          <a href="#tambien-ofrecemos" class="pz-link">Más productos</a>
+          <a href="#contacto" class="pz-link">Contacto</a>
+
+          <a
+            class="pz-cta"
+            href={waLink('Hola, quiero pedir pizzas en Arequipa.')}
+            target="_blank"
+            rel="noopener"
+          >
+            Pedir por WhatsApp →
+          </a>
+
+          <a
+            class="pz-cta-mobile"
+            href={waLink('Hola, quiero pedir pizzas en Arequipa.')}
+            target="_blank"
+            rel="noopener"
+            aria-label="Pedir por WhatsApp"
+          >
+            WhatsApp →
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="pz-footer" id="contacto">
+  <div class="pz-container pz-footerbox">
+    <div class="pz-footer-left">
+      <a href={`${base}`} class="pz-footer-brand" aria-label="Victor Anuncios">
+        <img src={`${base}logo.png`} class="pz-footer-victor-logo" alt="Victor Anuncios" />
+        <div>
+          <div class="pz-footer-madeby">Página alojada por <strong>Victor Anuncios – Arequipa</strong></div>
+          <div class="pz-footer-copy">© 2026 Todos los derechos reservados</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="pz-footer-right">
+      <a href={`${base}`} class="pz-footer-link">
+        Ir al sitio principal
+      </a>
+
+      <a
+        href="https://wa.me/51946182531?text=Hola%20Victor,%20quiero%20una%20web%20para%20mi%20negocio"
+        target="_blank"
+        rel="noopener"
+        class="pz-footer-cta"
+      >
+        Cotizar mi web →
+      </a>
+    </div>
+  </div>
+</footer>
+
+    <!-- Animaciones al hacer scroll -->
+    <script is:inline>
+      const revealEls = document.querySelectorAll('.reveal');
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.14 });
+
+      revealEls.forEach((el) => io.observe(el));
+    </script>
+
+    <!-- Service Worker -->
+    <script is:inline>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(() => {});
+        });
+      }
+    </script>
+  </body>
+</html>

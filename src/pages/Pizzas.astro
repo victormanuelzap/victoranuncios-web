@@ -1,0 +1,248 @@
+---
+import PizzasLayout from '../layouts/PizzasLayout.astro'
+
+const base = import.meta.env.BASE_URL
+const WA_NUMBER = '51952461991'
+const waLink = (text: string) =>
+  `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`
+---
+
+<PizzasLayout
+  title="Pizzas Arequipa | La Estación | Pizzas en Arequipa"
+  description="Pizzas Arequipa en La Estación. Disfruta pizzas familiares, combos, helados fritos, frappe con boba y té con leche en Arequipa. Pide por WhatsApp."
+  keywords="Pizzas Arequipa, pizzas en Arequipa, pizza familiar Arequipa, combos de pizza Arequipa, helados fritos Arequipa, frappe con boba Arequipa, té con leche Arequipa"
+>
+  <!-- HERO -->
+  <section class="pz-hero" id="inicio">
+    <div class="pz-hero-bg">
+      <img
+        src={`${base}assets/pizzas_arequipa/hero-principal.webp`}
+        alt="Pizzas en Arequipa - La Estación"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </div>
+
+    <div class="pz-hero-overlay"></div>
+    <div class="pz-hero-fade"></div>
+
+    <div class="pz-container pz-hero-content reveal">
+      <span class="pz-badge">
+        <i class="fa-solid fa-fire-flame-curved"></i>
+        Sabor casero, promos y antojo al instante
+      </span>
+
+      <h1>Pizzas Arequipa con sabor que se comparte y se vuelve a pedir</h1>
+      <p>
+        En <strong>La Estación</strong> encuentras <strong>pizzas en Arequipa</strong>,
+        combos familiares, <strong>helados fritos</strong>, <strong>frappe con boba</strong>
+        y bebidas especiales para disfrutar el verano, una salida con amigos o una noche de antojo.
+      </p>
+
+      <div class="pz-actions">
+        <a
+          class="pz-btn pz-btn-primary"
+          href={waLink('Hola, quiero pedir pizzas en Arequipa. ¿Me comparten su carta?')}
+          target="_blank"
+          rel="noopener"
+        >
+          <i class="fa-brands fa-whatsapp"></i>
+          Pedir por WhatsApp
+        </a>
+
+        <a class="pz-btn pz-btn-secondary" href="#menu">
+          <i class="fa-solid fa-pizza-slice"></i>
+          Ver menú
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO SEO -->
+  <section class="pz-intro reveal">
+    <div class="pz-container pz-intro-grid">
+      <div>
+        <span class="pz-section-mini">PIZZAS EN AREQUIPA</span>
+        <h2>Tu lugar ideal para pedir pizzas, postres y bebidas que sí provocan</h2>
+      </div>
+
+      <div>
+        <p>
+          Si buscas <strong>pizzas Arequipa</strong> o <strong>pizzas en Arequipa</strong>,
+          en La Estación encontrarás una experiencia pensada para disfrutar y compartir:
+          pizzas familiares, promos irresistibles, bebidas heladas y postres que convierten cualquier momento en un plan más rico.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCION PRINCIPAL: PIZZAS -->
+  <section class="pz-section" id="menu">
+    <div class="pz-container">
+      <div class="pz-heading reveal">
+        <span class="pz-section-mini pz-section-mini--hot">NUESTRO FAVORITO</span>
+        <h2>Pizzas y combos para compartir de verdad</h2>
+        <p>
+          Crujientes por fuera, sabrosas por dentro y perfectas para una tarde de verano, una reunión o un antojo que merece algo grande.
+        </p>
+      </div>
+
+      <div class="pz-feature-grid">
+        <article class="pz-feature-card reveal">
+          <div class="pz-feature-media">
+            <img src={`${base}assets/pizzas_arequipa/pizza-combo-familiar.webp`} alt="Combo familiar de pizzas en Arequipa" loading="lazy" decoding="async" />
+          </div>
+          <div class="pz-feature-body">
+            <h3>Combo familiar</h3>
+            <p>La mejor elección para compartir más sabor por un mejor precio. Ideal para casa, oficina, reuniones y esos días en los que todos quieren pizza.</p>
+            <ul>
+              <li><i class="fa-solid fa-check"></i> Perfecto para compartir sin quedarte corto</li>
+              <li><i class="fa-solid fa-check"></i> Sabor, tamaño y textura que sí antojan</li>
+              <li><i class="fa-solid fa-check"></i> Pídelo fácil y rápido por WhatsApp</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="pz-feature-card reveal">
+          <div class="pz-feature-media">
+            <img src={`${base}assets/pizzas_arequipa/pizza-combo-2x1.webp`} alt="Promoción pizza 2x1 en Arequipa" loading="lazy" decoding="async" />
+          </div>
+          <div class="pz-feature-body">
+            <h3>Promo 2x1 y combos grandes</h3>
+            <p>Promociones que entran por los ojos y se piden al instante. Ideales para compartir más, subir historias y disfrutar el doble en cada pedido.</p>
+            <ul>
+              <li><i class="fa-solid fa-check"></i> Promos claras que invitan a comprar ya</li>
+              <li><i class="fa-solid fa-check"></i> Perfectas para reuniones, salidas y redes</li>
+              <li><i class="fa-solid fa-check"></i> Más pizza, más ahorro y más disfrute</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+<section class="pz-highlights reveal">
+  <div class="pz-container">
+    <div class="pz-highlights-grid">
+      <article class="pz-highlight-card">
+        <div class="pz-highlight-icon">
+          <i class="fa-solid fa-pizza-slice"></i>
+        </div>
+        <h3>Recetas únicas</h3>
+        <p>Combinaciones con sabor casero, textura irresistible y ese toque especial que hace volver por más.</p>
+      </article>
+
+      <article class="pz-highlight-card">
+        <div class="pz-highlight-icon">
+          <i class="fa-solid fa-cheese"></i>
+        </div>
+        <h3>Ingredientes de alta calidad</h3>
+        <p>Seleccionamos ingredientes frescos y sabrosos para lograr pizzas en Arequipa con mejor aroma, color y sabor.</p>
+      </article>
+
+      <article class="pz-highlight-card">
+        <div class="pz-highlight-icon">
+          <i class="fa-solid fa-fire-flame-curved"></i>
+        </div>
+        <h3>Sabor que provoca</h3>
+        <p>Pizzas doradas, porciones generosas y combinaciones perfectas para compartir en familia o con amigos.</p>
+      </article>
+
+      <article class="pz-highlight-card">
+        <div class="pz-highlight-icon">
+          <i class="fa-solid fa-bolt"></i>
+        </div>
+        <h3>Ideal para tu antojo</h3>
+        <p>Combos familiares, bebidas frías y postres pensados para pedir fácil, disfrutar rápido y compartir mejor.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+  <!-- TAMBIEN OFRECEMOS -->
+  <section class="pz-section pz-section-alt" id="tambien-ofrecemos">
+    <div class="pz-container">
+      <div class="pz-heading reveal">
+        <span class="pz-section-mini pz-section-mini--gold">TAMBIÉN OFRECEMOS</span>
+        <h2>Más antojos para acompañar tu pizza</h2>
+        <p>Combina tu pedido con opciones frías, dulces y visualmente irresistibles para disfrutar más y compartir mejor.</p>
+      </div>
+
+      <div class="pz-cards-3">
+        <article class="pz-mini-card reveal">
+          <div class="pz-mini-icon"><i class="fa-solid fa-ice-cream"></i></div>
+          <div class="pz-mini-image">
+            <img src={`${base}assets/pizzas_arequipa/helados-fritos.webp`} alt="Helados fritos en Arequipa" loading="lazy" decoding="async" />
+          </div>
+          <h3>Helados fritos</h3>
+          <p>El toque dulce que sorprende en cada pedido. Cremosos, llamativos y perfectos para cerrar con algo diferente y memorable.</p>
+        </article>
+
+        <article class="pz-mini-card reveal">
+          <div class="pz-mini-icon"><i class="fa-solid fa-glass-water"></i></div>
+          <div class="pz-mini-image">
+            <img src={`${base}assets/pizzas_arequipa/frappe-boba.webp`} alt="Frappe con boba en Arequipa" loading="lazy" decoding="async" />
+          </div>
+          <h3>Frappe con boba</h3>
+          <p>Fríos, refrescantes y con una presentación que destaca en fotos, reels e historias. El complemento ideal para días calurosos y momentos divertidos.</p>
+        </article>
+
+        <article class="pz-mini-card reveal">
+          <div class="pz-mini-icon"><i class="fa-solid fa-mug-hot"></i></div>
+          <div class="pz-mini-image">
+            <img src={`${base}assets/pizzas_arequipa/te-con-leche.webp`} alt="Té con leche en Arequipa" loading="lazy" decoding="async" />
+          </div>
+          <h3>Té con leche</h3>
+          <p>Una opción moderna, deliciosa y diferente para acompañar tu comida con un sabor suave, fresco y cada vez más pedido.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE DE CONFIANZA / CTA -->
+  <section class="pz-cta-band reveal">
+    <div class="pz-container pz-cta-band-wrap">
+      <div>
+        <span class="pz-section-mini pz-section-mini--hot">PIDE HOY</span>
+        <h2>¿Buscas pizzas en Arequipa para disfrutar hoy mismo?</h2>
+        <p>
+          Escríbenos por WhatsApp y pide tus pizzas, combos familiares, frappes,
+          helados fritos y más. Ideal para una tarde de verano, una reunión improvisada o un antojo que no puede esperar.
+        </p>
+      </div>
+
+      <div class="pz-cta-side">
+        <a
+          class="pz-btn pz-btn-primary"
+          href={waLink('Hola, quiero pedir pizzas en Arequipa.')}
+          target="_blank"
+          rel="noopener"
+        >
+          <i class="fa-brands fa-whatsapp"></i>
+          952 461 991
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO TEXTO EXTRA -->
+  <section class="pz-seo-copy reveal">
+    <div class="pz-container">
+      <h2>La Estación: pizzas en Arequipa, combos familiares y bebidas para disfrutar más</h2>
+      <p>
+        Si quieres pedir <strong>Pizzas Arequipa</strong> con una propuesta que combine sabor,
+        buena presentación y opciones para compartir, en La Estación encontrarás
+        <strong>pizzas en Arequipa</strong>, combos familiares, promociones 2x1,
+        <strong>helados fritos</strong>, <strong>frappe con boba</strong> y <strong>té con leche</strong>.
+        Todo pensado para quienes buscan una experiencia rica, visual y perfecta para disfrutar en familia, con amigos o compartir en redes.
+      </p>
+    </div>
+  </section>
+</PizzasLayout>
