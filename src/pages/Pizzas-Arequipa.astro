@@ -165,7 +165,6 @@ const waLink = (text: string) =>
 
 
 
-
   <!-- TAMBIEN OFRECEMOS -->
   <section class="pz-section pz-section-alt" id="tambien-ofrecemos">
     <div class="pz-container">
@@ -176,36 +175,56 @@ const waLink = (text: string) =>
       </div>
 
       <div class="pz-cards-3">
-        <article class="pz-mini-card reveal">
+        <a
+          class="pz-mini-card pz-mini-card-link reveal"
+          href={waLink('Hola, quiero pedir helados fritos en La Estación.')}
+          target="_blank"
+          rel="noopener"
+          aria-label="Pedir helados fritos por WhatsApp"
+        >
           <div class="pz-mini-icon"><i class="fa-solid fa-ice-cream"></i></div>
           <div class="pz-mini-image">
             <img src={`${base}assets/pizzas_arequipa/helados-fritos.webp`} alt="Helados fritos en Arequipa" loading="lazy" decoding="async" />
           </div>
           <h3>Helados fritos</h3>
           <p>El toque dulce que sorprende en cada pedido. Cremosos, llamativos y perfectos para cerrar con algo diferente y memorable.</p>
-        </article>
+        </a>
 
-        <article class="pz-mini-card reveal">
+        <a
+          class="pz-mini-card pz-mini-card-link reveal"
+          href={waLink('Hola, quiero pedir frappe con boba en La Estación.')}
+          target="_blank"
+          rel="noopener"
+          aria-label="Pedir frappe con boba por WhatsApp"
+        >
           <div class="pz-mini-icon"><i class="fa-solid fa-glass-water"></i></div>
           <div class="pz-mini-image">
             <img src={`${base}assets/pizzas_arequipa/frappe-boba.webp`} alt="Frappe con boba en Arequipa" loading="lazy" decoding="async" />
           </div>
           <h3>Frappe con boba</h3>
           <p>Fríos, refrescantes y con una presentación que destaca en fotos, reels e historias. El complemento ideal para días calurosos y momentos divertidos.</p>
-        </article>
+        </a>
 
-        <article class="pz-mini-card reveal">
+        <a
+          class="pz-mini-card pz-mini-card-link reveal"
+          href={waLink('Hola, quiero pedir té con leche en La Estación.')}
+          target="_blank"
+          rel="noopener"
+          aria-label="Pedir té con leche por WhatsApp"
+        >
           <div class="pz-mini-icon"><i class="fa-solid fa-mug-hot"></i></div>
           <div class="pz-mini-image">
             <img src={`${base}assets/pizzas_arequipa/te-con-leche.webp`} alt="Té con leche en Arequipa" loading="lazy" decoding="async" />
           </div>
           <h3>Té con leche</h3>
           <p>Una opción moderna, deliciosa y diferente para acompañar tu comida con un sabor suave, fresco y cada vez más pedido.</p>
-        </article>
+        </a>
       </div>
     </div>
   </section>
 
+
+  
   <!-- BLOQUE DE CONFIANZA / CTA -->
   <section class="pz-cta-band reveal">
     <div class="pz-container pz-cta-band-wrap">
