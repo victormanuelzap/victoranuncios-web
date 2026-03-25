@@ -878,7 +878,39 @@ a{ color:inherit; }
 }
 
 
+/* =========================
+   NUESTROS LOCALES
+========================= */
+.pz-locales-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:1.25rem;
+}
 
+.pz-map-frame{
+  width:100%;
+  overflow:hidden;
+  border-radius:22px;
+  margin:.9rem 0 1rem;
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:0 18px 40px rgba(0,0,0,.22);
+}
+
+.pz-map-frame iframe{
+  display:block;
+  width:100%;
+  height:320px;
+}
+
+@media (max-width: 860px){
+  .pz-locales-grid{
+    grid-template-columns:1fr;
+  }
+
+  .pz-map-frame iframe{
+    height:280px;
+  }
+}
 
 
 /* =========================
