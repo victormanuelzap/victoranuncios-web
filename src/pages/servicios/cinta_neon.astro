@@ -1,284 +1,412 @@
 ---
 import Layout from '../../layouts/Layout.astro'
 
-// Base correcta para local / GitHub Pages
 const BASE = import.meta.env.BASE_URL
 
-// Carpeta de assets (tú la creas):
-// public/assets/services/cinta-neon/
 const base =
   BASE === '/'
     ? '/assets/services/cinta-neon'
     : '/victoranuncios-web/assets/services/cinta-neon'
 
-// Modelos / demos (imágenes simples: neon1.webp, neon2.webp, neon3.webp)
-const modelos = [
+const trabajos = [
   {
-    titulo: 'Cinta Neón para contornos (decoración)',
-    desc: 'Ideal para bordes, techos, vitrinas y detalles que se vean modernos y llamativos.',
+    titulo: 'Diseño Artístico con Marco',
+    desc: 'Ilustración personalizada con marco acrílico transparente y neón LED rojo intenso. Ideal para decoración de interiores, oficinas creativas o espacios modernos.',
     img: `${base}/neon1.webp`,
-    tags: ['Decoración', 'Moderno', 'Vitrinas'],
-    waText: 'Hola%20Victor,%20quiero%20cotizar%20cinta%20ne%C3%B3n%20para%20decoraci%C3%B3n',
+    tags: ['Marco Acrílico', 'Neón LED Rojo', 'Arte Premium', 'Diseño Personalizado'],
   },
   {
-    titulo: 'Cinta Neón para letras / formas',
-    desc: 'Perfecta para crear figuras, logos simples y rótulos decorativos con efecto neón.',
+    titulo: 'Letrero Comercial Multicolor',
+    desc: 'Diseño vibrante para negocio de comida con ilustración de personaje y texto en neón LED multicolor. Combina rosa, azul y tonos cálidos para máximo impacto visual.',
     img: `${base}/neon2.webp`,
-    tags: ['Letras', 'Formas', 'Efecto neón'],
-    waText: 'Hola%20Victor,%20quiero%20cotizar%20cinta%20ne%C3%B3n%20para%20letras%20o%20formas',
+    tags: ['Multicolor', 'Rosa + Azul + Amarillo', 'Negocios', 'Alto Impacto'],
+  },
+]
+
+const beneficios = [
+  {
+    icono: '⚡',
+    titulo: 'Bajo Consumo',
+    desc: 'Ahorra energía frente a sistemas tradicionales.',
   },
   {
-    titulo: 'Cinta Neón para señalización (alta visibilidad)',
-    desc: 'Para guiar, marcar zonas o resaltar puntos clave en negocios y eventos.',
-    img: `${base}/neon3.webp`,
-    tags: ['Señalización', 'Visible', 'Impacto'],
-    waText: 'Hola%20Victor,%20quiero%20cotizar%20cinta%20ne%C3%B3n%20para%20se%C3%B1alizaci%C3%B3n',
+    icono: '🛡️',
+    titulo: 'Más Seguro',
+    desc: 'No usa gases ni vidrio frágil.',
+  },
+  {
+    icono: '⭐',
+    titulo: 'Duradero',
+    desc: 'Hasta 50,000 horas de vida útil.',
+  },
+  {
+    icono: '💡',
+    titulo: 'Sin Calor',
+    desc: 'Permanece frío al tacto.',
+  },
+]
+
+const colores = [
+  'Rojo',
+  'Azul',
+  'Verde',
+  'Amarillo',
+  'Rosa',
+  'Naranja',
+  'Morado',
+  'Blanco',
+  'Multicolor',
+]
+
+const idealPara = [
+  'Bares y restaurantes',
+  'Tiendas y boutiques',
+  'Salones de belleza',
+  'Cafeterías y heladerías',
+  'Discotecas y eventos',
+  'Oficinas modernas',
+  'Estudios y agencias',
+  'Decoración de interiores',
+]
+
+const tecnicas = [
+  {
+    titulo: 'Tecnología LED',
+    items: [
+      'Luces LED de alta calidad',
+      'Vida útil: 50,000 horas',
+      'Consumo: 12V bajo voltaje',
+      'Brillo ajustable disponible',
+    ],
+  },
+  {
+    titulo: 'Fabricación',
+    items: [
+      'Base acrílica transparente o sólida',
+      'Tubo flexible LED neón',
+      'Diseño 100% personalizado',
+      'Garantía 1 año',
+    ],
+  },
+  {
+    titulo: 'Instalación',
+    items: [
+      'Incluye transformador',
+      'Montaje en pared o colgante',
+      'Instalación profesional',
+      'Cable de alimentación',
+    ],
   },
 ]
 ---
 
 <Layout
-  title="Cinta neón en Arequipa – Neón flexible LED para decoración | Victor Anuncios"
-  description="Cinta neón (neón flexible LED) en Arequipa para vitrinas, decoración, letras y señalización. Acabado moderno, luz uniforme y estilo premium."
-  keywords="cinta neón Arequipa, neon flexible Arequipa, neon LED, decoración con neón, letras neón, Victor Anuncios"
+  title="Letreros en neón LED en Arequipa | Victor Anuncios"
+  description="Letreros en neón LED personalizados en Arequipa. Diseño, fabricación e instalación para negocios, restaurantes, bares, tiendas y decoración."
+  keywords="letreros neon Arequipa, neon led Arequipa, cinta neon, letreros led, Victor Anuncios"
   canonical="https://victoranuncios.com/servicios/cinta-neon/"
 >
   <!-- HERO -->
-  <section class="relative min-h-[86vh] overflow-hidden bg-[#050B18] text-white">
+  <section class="relative min-h-[86vh] overflow-hidden text-white bg-[#13051f]">
     <div class="absolute inset-0">
-      <div class="absolute -top-40 -left-40 h-[520px] w-[520px] rounded-full blur-3xl opacity-40 bg-blue-600"></div>
-      <div class="absolute top-24 -right-40 h-[520px] w-[520px] rounded-full blur-3xl opacity-35 bg-purple-600"></div>
-      <div class="absolute bottom-[-180px] left-1/2 -translate-x-1/2 h-[520px] w-[720px] rounded-full blur-3xl opacity-30 bg-cyan-500"></div>
-      <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/45 to-[#0B1A2D]"></div>
-      <div class="absolute inset-0 opacity-[0.06] bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:18px_18px]"></div>
+      <img
+        src={`${base}/hero-neon.webp`}
+        alt="Letreros en neón LED Victor Anuncios"
+        class="h-full w-full object-cover opacity-35"
+      />
+      <div class="absolute inset-0 bg-gradient-to-br from-pink-700/85 via-purple-800/85 to-blue-900/90"></div>
+      <div class="absolute inset-0 bg-black/20"></div>
     </div>
 
-    <div class="relative max-w-[1250px] mx-auto px-6 pt-16 md:pt-20 pb-14">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        <div class="reveal">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-sm">
-            ✅ Luz uniforme • ✨ Estilo moderno • 🧩 Ideal vitrinas
-          </div>
+    <div class="relative max-w-[1180px] mx-auto px-6 pt-24 pb-20 text-center">
+      <div class="inline-flex items-center gap-2 px-5 py-2 bg-white/10 border border-white/20 text-white/90 text-xs font-bold uppercase tracking-wide">
+        ✨ Iluminación LED
+      </div>
 
-          <h1 class="mt-5 text-4xl md:text-6xl font-extrabold leading-tight">
-            <span class="text-cyan-300">Cinta Neón</span>
-            <br />
-            para que tu negocio se vea <span class="text-blue-300">más pro</span>.
-          </h1>
+      <h1 class="mt-8 text-5xl md:text-7xl font-black leading-tight uppercase">
+        Letreros en <br />
+        <span class="text-pink-200">Neón LED</span>
+      </h1>
 
-          <p class="mt-5 text-white/80 text-base md:text-lg leading-relaxed max-w-xl">
-            El neón flexible LED es perfecto para decoración, contornos, letras simples y señalización.
-            Se ve moderno, ilumina parejo y llama la atención sin exagerar.
-          </p>
+      <p class="mt-7 max-w-2xl mx-auto text-lg md:text-xl text-white/90 leading-relaxed">
+        Neón LED moderno y vibrante para tu negocio. Bajo consumo, larga duración
+        y colores espectaculares. Diseño personalizado + instalación incluida.
+      </p>
 
-          <div class="mt-8 flex flex-col sm:flex-row gap-3">
-            <a
-              href="https://wa.me/51946182531?text=Hola%20Victor,%20quiero%20cotizar%20cinta%20ne%C3%B3n"
-              target="_blank"
-              rel="noopener"
-              class="inline-flex justify-center items-center gap-2 bg-white text-[#0B1A2D] font-bold px-6 py-3 rounded-xl hover:opacity-90 transition"
-            >
-              Cotizar por WhatsApp
-              <span aria-hidden="true">→</span>
-            </a>
+      <div class="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="https://wa.me/51946182531?text=Hola%20Victor,%20quiero%20cotizar%20un%20letrero%20en%20neon%20LED"
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center justify-center gap-2 bg-white text-pink-600 font-black px-7 py-4 rounded-xl shadow-xl hover:scale-[1.03] transition"
+        >
+          ☎ Cotizar - 946 182 531
+        </a>
 
-            <a
-              href="#modelos"
-              class="inline-flex justify-center items-center gap-2 bg-white/10 border border-white/15 text-white font-bold px-6 py-3 rounded-xl hover:bg-white/15 transition"
-            >
-              Ver usos
-              <span aria-hidden="true">↓</span>
-            </a>
-          </div>
+        <a
+          href="#trabajos"
+          class="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/40 text-white font-black px-7 py-4 rounded-xl hover:bg-white/20 transition"
+        >
+          Ver Galería →
+        </a>
+      </div>
 
-          <div class="mt-8 flex flex-wrap gap-3 text-sm text-white/80">
-            <span class="px-3 py-2 rounded-xl bg-white/5 border border-white/10">📍 Arequipa</span>
-            <span class="px-3 py-2 rounded-xl bg-white/5 border border-white/10">🎨 Diseño + instalación (según proyecto)</span>
-            <span class="px-3 py-2 rounded-xl bg-white/5 border border-white/10">⚡ Atención rápida</span>
-          </div>
+      <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+        <div class="bg-white/10 border border-white/20 px-5 py-4 text-left">
+          <p class="font-black">⚡ Bajo Consumo</p>
+          <p class="text-sm text-white/75">Ahorra energía</p>
         </div>
-
-        <div class="reveal">
-          <div class="relative rounded-3xl border border-white/10 bg-white/5 shadow-2xl overflow-hidden">
-            <div class="p-4 border-b border-white/10 flex items-center gap-2">
-              <span class="h-3 w-3 rounded-full bg-white/30"></span>
-              <span class="h-3 w-3 rounded-full bg-white/20"></span>
-              <span class="h-3 w-3 rounded-full bg-white/10"></span>
-              <span class="ml-3 text-xs text-white/70">Victor Anuncios</span>
-            </div>
-
-            <div class="p-6 md:p-7">
-              <div class="rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 p-6">
-                <p class="text-xs text-white/60">Efecto visual</p>
-                <h3 class="mt-2 text-2xl md:text-3xl font-extrabold">
-                  Neón moderno sin tubos frágiles
-                </h3>
-                <p class="mt-3 text-white/75 text-sm md:text-base leading-relaxed">
-                  Luz continua y uniforme, ideal para vitrinas, barras, paredes, stands y decoración.
-                </p>
-
-                <div class="mt-5 grid grid-cols-3 gap-3">
-                  <div class="h-20 rounded-xl bg-white/5 border border-white/10"></div>
-                  <div class="h-20 rounded-xl bg-white/5 border border-white/10"></div>
-                  <div class="h-20 rounded-xl bg-white/5 border border-white/10"></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-cyan-400/25 blur-3xl"></div>
-          </div>
+        <div class="bg-white/10 border border-white/20 px-5 py-4 text-left">
+          <p class="font-black">⭐ Larga Duración</p>
+          <p class="text-sm text-white/75">Hasta 50,000 hrs</p>
+        </div>
+        <div class="bg-white/10 border border-white/20 px-5 py-4 text-left">
+          <p class="font-black">✨ Colores Vibrantes</p>
+          <p class="text-sm text-white/75">9 colores disponibles</p>
         </div>
       </div>
     </div>
-
-    <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-b from-transparent to-white"></div>
   </section>
 
   <main class="bg-white">
-    <!-- Modelos -->
-    <section id="modelos" class="max-w-[1250px] mx-auto px-6 pt-14 pb-8">
-      <div class="reveal">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-neutral-900 text-center">
-          Usos de la cinta neón
+    <!-- BENEFICIOS -->
+    <section class="max-w-[1180px] mx-auto px-6 py-20">
+      <div class="text-center">
+        <span class="inline-block bg-pink-100 text-pink-600 px-5 py-2 text-xs font-black uppercase">
+          Neón LED moderno
+        </span>
+
+        <h2 class="mt-5 text-4xl md:text-5xl font-black text-slate-900">
+          ¿Por Qué Elegir Neón LED?
         </h2>
-        <p class="mt-3 text-center text-neutral-600 max-w-2xl mx-auto">
-          Te recomendamos el tipo de aplicación según tu espacio y el efecto que quieres lograr.
+
+        <p class="mt-4 text-lg text-slate-600">
+          Tecnología LED que supera al neón tradicional
         </p>
       </div>
 
-      <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-        {modelos.map((m) => (
-          <article class="reveal rounded-3xl bg-white border border-gray-200 shadow-sm overflow-hidden hover:shadow-lg transition">
-            <div class="relative h-52 bg-gray-100 overflow-hidden">
-              <img
-                src={m.img}
-                alt={`Cinta neón: ${m.titulo}`}
-                class="absolute inset-0 w-full h-full object-cover"
-                loading="lazy"
-                decoding="async"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent pointer-events-none"></div>
+      <div class="mt-14 grid grid-cols-1 md:grid-cols-4 gap-6">
+        {beneficios.map((b) => (
+          <article class="reveal bg-white border-t-4 border-pink-500 shadow-xl p-8 hover:-translate-y-1 transition">
+            <div class="h-14 w-14 flex items-center justify-center text-2xl bg-gradient-to-br from-pink-600 to-purple-700 text-white">
+              {b.icono}
             </div>
-
-            <div class="p-5">
-              <h3 class="text-xl font-extrabold text-neutral-900">{m.titulo}</h3>
-              <p class="mt-2 text-neutral-600 leading-relaxed">{m.desc}</p>
-
-              <div class="mt-4 flex flex-wrap gap-2">
-                {m.tags.map((t) => (
-                  <span class="text-xs font-semibold px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-100">
-                    {t}
-                  </span>
-                ))}
-              </div>
-
-              <a
-                href={`https://wa.me/51946182531?text=${m.waText}`}
-                target="_blank"
-                rel="noopener"
-                class="mt-5 inline-flex w-full justify-center items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-bold px-5 py-3 rounded-xl transition"
-              >
-                Pedir por WhatsApp
-                <span aria-hidden="true">→</span>
-              </a>
-            </div>
+            <h3 class="mt-7 text-xl font-black text-slate-900">{b.titulo}</h3>
+            <p class="mt-3 text-slate-600 leading-relaxed">{b.desc}</p>
           </article>
         ))}
       </div>
     </section>
 
-    <!-- Proceso -->
-    <section class="max-w-[1250px] mx-auto px-6 pt-8 pb-10">
-      <div class="reveal rounded-3xl border border-gray-200 bg-gradient-to-br from-white to-blue-50 p-6 md:p-10">
-        <h2 class="text-2xl md:text-3xl font-extrabold text-neutral-900">
-          Proceso de trabajo
+    <!-- TRABAJOS -->
+    <section id="trabajos" class="max-w-[1180px] mx-auto px-6 py-16">
+      <div class="text-center">
+        <span class="inline-block bg-pink-100 text-pink-600 px-5 py-2 text-xs font-black uppercase">
+          Nuestro portafolio
+        </span>
+
+        <h2 class="mt-5 text-4xl md:text-5xl font-black text-slate-900">
+          Trabajos en Neón LED
         </h2>
-        <p class="mt-2 text-neutral-600 max-w-2xl">
-          Para que la instalación quede limpia, segura y con un acabado visual premium.
+
+        <p class="mt-4 text-lg text-slate-600">
+          Diseños personalizados en neón LED de alta calidad
+        </p>
+      </div>
+
+      <div class="mt-14 space-y-14">
+        {trabajos.map((t, index) => (
+          <article class="reveal max-w-[920px] mx-auto overflow-hidden shadow-2xl bg-white">
+            <div class={index === 1 ? 'bg-gradient-to-br from-purple-700 to-pink-700 p-8' : 'bg-slate-950 p-8'}>
+              <img
+                src={t.img}
+                alt={t.titulo}
+                class="w-full max-h-[760px] object-cover mx-auto"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+
+            <div class="bg-pink-50 border-l-4 border-pink-500 p-8">
+              <h3 class="text-2xl font-black text-slate-900">{t.titulo}</h3>
+              <p class="mt-4 text-slate-700 text-lg leading-relaxed">{t.desc}</p>
+
+              <div class="mt-6 flex flex-wrap gap-3">
+                {t.tags.map((tag) => (
+                  <span class="border border-pink-200 bg-pink-50 text-pink-600 px-4 py-2 text-sm font-black">
+                    ✓ {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div class="reveal mt-16 max-w-[820px] mx-auto text-center border-t-4 border-pink-500 bg-gradient-to-br from-pink-50 to-blue-50 p-10">
+        <h3 class="text-2xl font-black text-slate-900">
+          Diseños Únicos en Neón LED
+        </h3>
+
+        <p class="mt-5 text-lg text-slate-700 leading-relaxed">
+          Desde diseños artísticos hasta letreros comerciales vibrantes. Creamos
+          neón LED personalizado para tu negocio, bar, restaurante o decoración.
+          Colores únicos, brillantes y duraderos.
+        </p>
+      </div>
+
+      <div class="mt-10 text-center">
+        <p class="text-xl font-black text-slate-900">
+          ¿Tienes una idea para tu letrero en neón?
         </p>
 
-        <div class="mt-8 grid grid-cols-1 md:grid-cols-4 gap-4">
-          {[
-            ['1) Idea', 'Me dices dónde lo quieres: vitrina, techo, pared, contorno o señalización.'],
-            ['2) Medida', 'Calculamos metros, color y fuente de energía según el lugar.'],
-            ['3) Instalación', 'Colocación ordenada para que no se vean cables ni cortes feos.'],
-            ['4) Entrega', 'Pruebas de encendido y recomendaciones de uso.'],
-          ].map(([t, d]) => (
-            <div class="reveal rounded-2xl bg-white border border-gray-200 p-5">
-              <h3 class="font-extrabold text-neutral-900">{t}</h3>
-              <p class="mt-2 text-neutral-600 text-sm leading-relaxed">{d}</p>
+        <a
+          href="https://wa.me/51946182531?text=Hola%20Victor,%20quiero%20solicitar%20un%20dise%C3%B1o%20personalizado%20en%20neon%20LED"
+          target="_blank"
+          rel="noopener"
+          class="mt-6 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-pink-600 to-purple-700 text-white font-black px-8 py-4 rounded-xl shadow-xl hover:scale-[1.03] transition"
+        >
+          ☎ Solicitar Diseño Personalizado
+        </a>
+      </div>
+    </section>
+
+    <!-- COLORES -->
+    <section class="bg-slate-50 py-20">
+      <div class="max-w-[1180px] mx-auto px-6 text-center">
+        <h2 class="text-4xl md:text-5xl font-black text-slate-900">
+          Colores Disponibles
+        </h2>
+
+        <p class="mt-4 text-lg text-slate-600">
+          Elige el color que mejor represente tu marca
+        </p>
+
+        <div class="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-9 gap-4">
+          {colores.map((color) => (
+            <div class="reveal bg-white shadow-lg p-5 hover:-translate-y-1 transition">
+              <div class="mx-auto h-14 w-14 rounded-full border-4 border-slate-200 flex items-center justify-center text-xl">
+                💡
+              </div>
+              <p class="mt-4 font-black text-slate-900 text-sm">{color}</p>
             </div>
+          ))}
+        </div>
+
+        <p class="mt-8 text-slate-700">
+          💡 <strong>¿Necesitas un color específico?</strong> Podemos conseguirlo
+        </p>
+      </div>
+    </section>
+
+    <!-- IDEAL PARA -->
+    <section class="max-w-[980px] mx-auto px-6 py-20">
+      <h2 class="text-center text-4xl md:text-5xl font-black text-slate-900">
+        Ideal Para
+      </h2>
+
+      <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-5">
+        {idealPara.map((item) => (
+          <div class="reveal bg-white shadow-lg border-l-4 border-pink-500 px-7 py-5 flex items-center gap-4">
+            <span class="text-pink-500 text-2xl">✣</span>
+            <p class="font-black text-slate-900">{item}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- CARACTERÍSTICAS -->
+    <section class="bg-slate-50 py-20">
+      <div class="max-w-[1100px] mx-auto px-6">
+        <h2 class="text-center text-4xl md:text-5xl font-black text-slate-900">
+          Características Técnicas
+        </h2>
+
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+          {tecnicas.map((card) => (
+            <article class="reveal bg-pink-50 border-t-4 border-pink-500 shadow-xl p-8">
+              <h3 class="text-2xl font-black text-slate-900">{card.titulo}</h3>
+
+              <ul class="mt-6 space-y-4">
+                {card.items.map((item) => (
+                  <li class="flex gap-3 text-slate-700">
+                    <span class="text-pink-600 font-black">✓</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
           ))}
         </div>
       </div>
     </section>
 
-    <!-- Descripción final -->
-    <section class="max-w-[1250px] mx-auto px-6 pb-16">
-      <div class="reveal rounded-3xl border border-gray-200 bg-white p-6 md:p-8">
-        <h2 class="text-xl md:text-2xl font-extrabold text-neutral-900">
-          Cinta neón (neón flexible LED) en Arequipa
+    <!-- CTA FINAL -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-slate-950 via-pink-900 to-purple-900 text-white py-24">
+      <div class="relative max-w-[900px] mx-auto px-6 text-center">
+        <div class="text-5xl text-pink-300">✦</div>
+
+        <h2 class="mt-8 text-4xl md:text-5xl font-black leading-tight">
+          Ilumina Tu Negocio <br />
+          Con Estilo Neón
         </h2>
-        <p class="mt-3 text-neutral-600 leading-relaxed">
-          La cinta neón es una opción moderna para decoración e iluminación de vitrinas, barras y paredes, porque crea
-          una línea de luz continua y uniforme. También se usa para señalizar zonas o resaltar detalles en un negocio.
-          En Victor Anuncios te ayudamos a elegir el color, calcular la medida y dejar una instalación limpia para que
-          tu espacio se vea más atractivo y profesional.
+
+        <p class="mt-7 text-xl text-white/90">
+          Cotiza tu letrero en neón LED personalizado hoy. <br />
+          <strong>Diseño e instalación incluidos.</strong>
         </p>
-      </div>
-    </section>
 
-    <!-- CTA final -->
-    <section class="max-w-[1250px] mx-auto px-6 pb-16">
-      <div class="reveal rounded-3xl bg-[#0B1A2D] text-white p-7 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
-        <div>
-          <h2 class="text-2xl md:text-3xl font-extrabold">
-            ¿Quieres darle un toque moderno a tu local?
-          </h2>
-          <p class="mt-2 text-white/80">
-            Envíame una foto del lugar y te recomiendo la mejor opción de cinta neón.
-          </p>
+        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="https://wa.me/51946182531?text=Hola%20Victor,%20quiero%20cotizar%20un%20letrero%20en%20neon%20LED"
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center justify-center gap-2 bg-white text-pink-600 font-black px-8 py-4 rounded-xl shadow-xl hover:scale-[1.03] transition"
+          >
+            ☎ WhatsApp: 946 182 531
+          </a>
+
+          <a
+            href="/servicios/"
+            class="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/40 text-white font-black px-8 py-4 rounded-xl hover:bg-white/20 transition"
+          >
+            Ver Todos los Servicios →
+          </a>
         </div>
-
-        <a
-          href="https://wa.me/51946182531?text=Hola%20Victor,%20quiero%20cotizar%20cinta%20ne%C3%B3n"
-          target="_blank"
-          rel="noopener"
-          class="inline-flex items-center justify-center bg-white text-[#0B1A2D] font-extrabold px-6 py-3 rounded-xl hover:opacity-90 transition whitespace-nowrap"
-        >
-          Cotizar ahora
-        </a>
       </div>
     </section>
   </main>
 
-  <!-- Animaciones reveal -->
   <script is:inline>
-    (function () {
-      const els = document.querySelectorAll('.reveal');
+    ;(() => {
+      const els = document.querySelectorAll('.reveal')
       const io = new IntersectionObserver(
         (entries) => {
           entries.forEach((e) => {
-            if (e.isIntersecting) e.target.classList.add('is-visible');
-          });
+            if (e.isIntersecting) e.target.classList.add('is-visible')
+          })
         },
         { threshold: 0.12 }
-      );
-      els.forEach((el) => io.observe(el));
-    })();
+      )
+      els.forEach((el) => io.observe(el))
+    })()
   </script>
 
   <style is:global>
     .reveal {
       opacity: 0;
-      transform: translateY(14px);
-      transition: opacity 700ms ease, transform 700ms ease;
+      transform: translateY(18px);
+      transition:
+        opacity 700ms ease,
+        transform 700ms ease;
       will-change: opacity, transform;
     }
+
     .reveal.is-visible {
       opacity: 1;
       transform: translateY(0);
     }
+
     @media (prefers-reduced-motion: reduce) {
       .reveal,
       .reveal.is-visible {
