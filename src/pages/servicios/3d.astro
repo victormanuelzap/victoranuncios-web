@@ -961,16 +961,36 @@ const negocios = [
     }
   }
 
+  /* CELULAR: TEXTO DEBAJO DE LA FOTO, NO ENCIMA */
   @media (max-width: 640px) {
+    .catalog-section {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
     .catalog-grid {
       columns: 1;
+      max-width: 100%;
     }
 
     .catalog-card {
       height: auto;
+      margin-bottom: 30px;
+      border: 6px solid #fff;
+      border-radius: 14px;
+      overflow: visible;
+      box-shadow: 0 14px 35px rgba(15, 23, 42, .18);
     }
 
     .catalog-card:hover {
+      transform: none;
+    }
+
+    .catalog-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
       transform: none;
     }
 
@@ -979,8 +999,30 @@ const negocios = [
     }
 
     .catalog-overlay {
+      position: static;
       opacity: 1;
       transform: none;
+      pointer-events: none;
+      margin-top: 10px;
+      padding: 12px 14px;
+      background: #111827;
+      color: #fff;
+      border-radius: 10px;
+      text-align: center;
+      backdrop-filter: none;
+    }
+
+    .catalog-overlay h3 {
+      font-size: 16px;
+      font-weight: 900;
+      margin: 0;
+    }
+
+    .catalog-overlay small {
+      display: block;
+      font-size: 12px;
+      margin-top: 4px;
+      opacity: .85;
     }
   }
 
