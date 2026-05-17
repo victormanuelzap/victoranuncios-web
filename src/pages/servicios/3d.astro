@@ -7,12 +7,30 @@ const base = `${BASE}assets/services/3d`
 const WHATSAPP = '51946182531'
 const waLink = (text: string) => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`
 
+// TODAS LAS IMÁGENES DEL CATÁLOGO
 const catalogo = [
-  { src: `${base}/polleria-torre.png`, title: 'Proyecto #1', class: 'tall' },
-  { src: `${base}/identa.png`, title: 'Proyecto #2' },
-  { src: `${base}/barba.png`, title: 'Proyecto #3' },
-  { src: `${base}/soluciones.png`, title: 'Proyecto #4' },
-  { src: `${base}/senorial.png`, title: 'Proyecto #5' },
+  { src: `${base}/img-1.png`, title: 'Proyecto #1', class: 'tall' },
+  { src: `${base}/img-2.png`, title: 'Proyecto #2' },
+  { src: `${base}/img-3.png`, title: 'Proyecto #3' },
+  { src: `${base}/img-4.png`, title: 'Proyecto #4' },
+  { src: `${base}/img-5.png`, title: 'Proyecto #5' },
+  { src: `${base}/img-6.png`, title: 'Proyecto #6' },
+  { src: `${base}/img-7.png`, title: 'Proyecto #7' },
+  { src: `${base}/img-8.png`, title: 'Proyecto #8' },
+  { src: `${base}/img-10.png`, title: 'Proyecto #9' },
+  { src: `${base}/img-11.png`, title: 'Proyecto #10' },
+  { src: `${base}/img-12.png`, title: 'Proyecto #11' },
+  { src: `${base}/img-13.png`, title: 'Proyecto #12' },
+  { src: `${base}/img-14.png`, title: 'Proyecto #13' },
+  { src: `${base}/img-15.png`, title: 'Proyecto #14' },
+  { src: `${base}/identa.png`, title: 'Proyecto #15' },
+  { src: `${base}/autodoc.png`, title: 'Proyecto #16' },
+  { src: `${base}/senorial.png`, title: 'Proyecto #17' },
+  { src: `${base}/soluciones.png`, title: 'Proyecto #18' },
+  { src: `${base}/bull12.png`, title: 'Proyecto #19' },
+  { src: `${base}/polleria-torre.png`, title: 'Proyecto #20' },
+  { src: `${base}/barba.png`, title: 'Proyecto #21' },
+  { src: `${base}/badanis.png`, title: 'Proyecto #22' },
 ]
 
 const materiales = [
@@ -29,12 +47,12 @@ const materiales = [
       'Ideal para interiores y exteriores',
       'Con o sin iluminación LED',
     ],
-    wa: 'Quiero cotizar letras 3D en acrílico',
+    wa: 'Quiero cotizar letreros 3D en acrílico en Arequipa',
   },
   {
     img: `${base}/polleria-torre.png`,
     icon: '⚡',
-    title: 'METAL (ACERO INOXIDABLE)',
+    title: 'METAL',
     text: 'Máxima durabilidad con acabado premium',
     items: [
       'Alta durabilidad y resistencia',
@@ -44,7 +62,7 @@ const materiales = [
       'Perfecto para imagen corporativa',
       'Gran impacto visual',
     ],
-    wa: 'Quiero cotizar letras 3D metálicas',
+    wa: 'Quiero cotizar letreros 3D metálicos en Arequipa',
   },
   {
     img: `${base}/barba.png`,
@@ -59,14 +77,14 @@ const materiales = [
       'Ligero pero resistente',
       'Ideal para presupuestos ajustados',
     ],
-    wa: 'Quiero cotizar letras 3D en PVC expandido',
+    wa: 'Quiero cotizar letreros 3D en PVC expandido en Arequipa',
   },
 ]
 
 const negocios = [
   'Recepciones corporativas',
-  'Tiendas de lujo y boutiques',
-  'Restaurantes y cafeterías premium',
+  'Tiendas y boutiques',
+  'Restaurantes y cafeterías',
   'Consultorios y clínicas',
   'Oficinas administrativas',
   'Showrooms y salas de exhibición',
@@ -76,9 +94,9 @@ const negocios = [
 ---
 
 <Layout
-  title="Letras 3D  en Arequipa | Victor Anuncios"
-  description="Fabricamos e instalamos letras 3D premium en acrílico, PVC y metal. Diseño, fabricación e instalación profesional en Arequipa."
-  keywords="letras 3D Arequipa, letreros 3D Arequipa, letras corpóreas, acrílico 3D, PVC 3D, letras metálicas"
+  title="Letreros 3D en Arequipa | Victor Anuncios"
+  description="Fabricamos e instalamos letreros 3D en Arequipa: acrílico, PVC y metal. Diseño, fabricación e instalación profesional."
+  keywords="letreros 3D en Arequipa, letreros 3D Arequipa, letras corpóreas Arequipa, acrílico 3D, PVC 3D, letras metálicas"
   canonical="https://victoranuncios.com/servicios/3d"
 >
 
@@ -87,24 +105,24 @@ const negocios = [
     <div class="hero-bg"></div>
 
     <div class="hero-content">
-      <span class="mini-badge">☆ ROTULADO PREMIUM</span>
+      <span class="mini-badge">☆ ROTULADO PROFESIONAL</span>
 
       <h1>
-        LETRAS <br />
-        <strong>3D PREMIUM</strong>
+        LETREROS 3D <br />
+        <strong>EN AREQUIPA</strong>
       </h1>
 
       <p>
-        Letras corpóreas de alta calidad con acabados profesionales. <br />
-        Diseño + Fabricación + Instalación en altura.
+        Fabricamos letreros 3D personalizados para negocios, tiendas, restaurantes,
+        clínicas y empresas. Diseño + Fabricación + Instalación.
       </p>
 
       <div class="hero-actions">
-        <a href={waLink('Quiero cotizar letras 3D premium')} target="_blank" rel="noopener" class="btn btn-white">
+        <a href={waLink('Quiero cotizar letreros 3D en Arequipa')} target="_blank" rel="noopener" class="btn btn-white">
           ☎ Cotizar Ahora - 946 182 531
         </a>
         <a href="#catalogo3d" class="btn btn-outline">
-          Ver Más Info →
+          Ver Trabajos →
         </a>
       </div>
 
@@ -113,21 +131,21 @@ const negocios = [
           <span>🛡</span>
           <section>
             <b>Garantía 1 Año</b>
-            <small>En toda la estructura</small>
+            <small>En estructura e instalación</small>
           </section>
         </div>
         <div>
           <span>✦</span>
           <section>
-            <b>Diseño Gratis</b>
-            <small>Personalización incluida</small>
+            <b>Diseño Incluido</b>
+            <small>Personalización para tu marca</small>
           </section>
         </div>
         <div>
           <span>▱</span>
           <section>
             <b>Efecto 3D Real</b>
-            <small>Profundidad garantizada</small>
+            <small>Mayor presencia visual</small>
           </section>
         </div>
       </div>
@@ -150,22 +168,22 @@ const negocios = [
 
     <div class="benefit-card">
       <span>✦</span>
-      <h3>Diseño Gratis</h3>
-      <p>Personalización incluida sin costo</p>
+      <h3>Diseño Incluido</h3>
+      <p>Personalización para tu negocio</p>
     </div>
 
     <div class="benefit-card">
       <span>🏅</span>
       <h3>Instalación Pro</h3>
-      <p>Montaje perfecto y nivelado</p>
+      <p>Montaje limpio, firme y nivelado</p>
     </div>
   </section>
 
   <!-- EXPERIENCIA -->
   <section class="section experience">
     <span class="section-label">NUESTRA EXPERIENCIA</span>
-    <h2>Expertos en Letras 3D</h2>
-    <p>Años de experiencia respaldan la calidad de nuestro trabajo</p>
+    <h2>Expertos en Letreros 3D en Arequipa</h2>
+    <p>Trabajos reales realizados para negocios y empresas</p>
 
     <div class="stats">
       <div>
@@ -182,7 +200,7 @@ const negocios = [
       </div>
       <div>
         <strong>100%</strong>
-        <span>Garantía de Calidad</span>
+        <span>Compromiso de Calidad</span>
       </div>
     </div>
   </section>
@@ -190,13 +208,13 @@ const negocios = [
   <!-- CATÁLOGO -->
   <section id="catalogo3d" class="section catalog-section">
     <span class="section-label">NUESTROS TRABAJOS</span>
-    <h2>Catálogo de Letras 3D</h2>
-    <p>Proyectos reales de letras corpóreas instalados en Arequipa</p>
+    <h2>Catálogo de Letreros 3D en Arequipa</h2>
+    <p>Proyectos reales de letreros 3D fabricados e instalados</p>
 
     <div class="catalog-grid">
       {catalogo.map((item) => (
         <article class={`catalog-card ${item.class || ''}`}>
-          <img src={item.src} alt={item.title} loading="lazy" />
+          <img src={item.src} alt={`${item.title} - Letreros 3D en Arequipa`} loading="lazy" />
           <div class="catalog-overlay">
             <h3>{item.title}</h3>
           </div>
@@ -216,7 +234,7 @@ const negocios = [
         {materiales.map((mat) => (
           <article class="material-card">
             <div class="material-img">
-              <img src={mat.img} alt={mat.title} loading="lazy" />
+              <img src={mat.img} alt={`${mat.title} para letreros 3D en Arequipa`} loading="lazy" />
               <span>{mat.icon}</span>
             </div>
 
@@ -244,37 +262,37 @@ const negocios = [
   <section class="section">
     <span class="section-label">PERSONALIZACIÓN</span>
     <h2>Opciones de Iluminación</h2>
-    <p>Elige la iluminación perfecta para tus letras 3D</p>
+    <p>Elige la iluminación perfecta para tus letreros 3D</p>
 
     <div class="lighting-grid">
       <article class="light-card">
         <span>⚡</span>
         <h3>Sin Iluminación</h3>
-        <p>Perfectas para interiores y espacios con buena iluminación natural. Acabado limpio y elegante.</p>
+        <p>Perfectos para interiores, recepciones y espacios con buena iluminación natural.</p>
         <ul>
-          <li>✓ Ideal para recepciones</li>
+          <li>✓ Ideal para oficinas y recepciones</li>
           <li>✓ Menor costo de instalación</li>
         </ul>
       </article>
 
       <article class="light-card active">
         <span>✦</span>
-        <small>MÁS POPULAR</small>
+        <small>MÁS SOLICITADO</small>
         <h3>LED Frontal</h3>
-        <p>Iluminación directa que resalta la forma y el color de las letras. Gran visibilidad nocturna.</p>
+        <p>Iluminación directa que resalta la forma y el color del letrero. Gran visibilidad nocturna.</p>
         <ul>
-          <li>✓ Máxima visibilidad 24/7</li>
+          <li>✓ Mayor visibilidad para fachadas</li>
           <li>✓ Bajo consumo energético</li>
         </ul>
       </article>
 
       <article class="light-card">
         <span>☆</span>
-        <h3>LED Posterior (Halo)</h3>
-        <p>Efecto halo elegante que crea un aura de luz alrededor de cada letra. Máximo impacto visual.</p>
+        <h3>LED Posterior</h3>
+        <p>Efecto halo elegante que crea una luz alrededor de cada letra.</p>
         <ul>
-          <li>✓ Efecto premium y sofisticado</li>
-          <li>✓ Perfecto para interiores</li>
+          <li>✓ Acabado elegante y moderno</li>
+          <li>✓ Perfecto para interiores premium</li>
         </ul>
       </article>
     </div>
@@ -284,16 +302,16 @@ const negocios = [
   <section class="red-band">
     <div class="cta-box">
       <div>
-        <h2>¿Listo para dar profundidad a tu marca?</h2>
-        <p>Diseño 3D + Fabricación + Instalación todo incluido</p>
+        <h2>¿Quieres un letrero 3D para tu negocio?</h2>
+        <p>Diseño + Fabricación + Instalación en Arequipa</p>
         <div class="checks">
           <span>✓ Asesoría personalizada</span>
-          <span>✓ Diseño gratis incluido</span>
-          <span>✓ Instalación perfecta</span>
+          <span>✓ Diseño incluido</span>
+          <span>✓ Instalación profesional</span>
         </div>
       </div>
 
-      <a href={waLink('Quiero cotizar letras 3D para mi negocio')} target="_blank" rel="noopener">
+      <a href={waLink('Quiero cotizar un letrero 3D en Arequipa')} target="_blank" rel="noopener">
         ☎ 946 182 531
       </a>
     </div>
@@ -302,7 +320,7 @@ const negocios = [
   <!-- IDEAL PARA -->
   <section class="section ideal">
     <h2>Ideal Para Tu Negocio</h2>
-    <p>Perfectas para cualquier tipo de empresa que busque elegancia</p>
+    <p>Letreros 3D para empresas que quieren verse más profesionales</p>
 
     <div class="business-grid">
       {negocios.map((n) => (
@@ -318,14 +336,14 @@ const negocios = [
   <section class="final-cta">
     <div>
       <span>✦</span>
-      <h2>Dale Profundidad a <br />tu Marca</h2>
+      <h2>Letreros 3D <br />en Arequipa</h2>
       <p>
-        Solicita tu cotización de letras 3D personalizadas. <br />
-        <strong>Diseño incluido sin costo adicional.</strong>
+        Solicita tu cotización para tu negocio. <br />
+        <strong>Diseño, fabricación e instalación profesional.</strong>
       </p>
 
       <div class="final-actions">
-        <a href={waLink('Hola, quiero cotizar letras 3D personalizadas')} target="_blank" rel="noopener" class="btn btn-white">
+        <a href={waLink('Hola, quiero cotizar letreros 3D en Arequipa')} target="_blank" rel="noopener" class="btn btn-white">
           ☎ WhatsApp: 946 182 531
         </a>
         <a href="/servicios" class="btn btn-outline">
@@ -384,7 +402,7 @@ const negocios = [
   }
 
   .hero-content h1 {
-    font-size: clamp(48px, 7vw, 82px);
+    font-size: clamp(46px, 7vw, 82px);
     line-height: .95;
     font-weight: 1000;
     letter-spacing: -2px;
@@ -525,7 +543,7 @@ const negocios = [
 
   .section h2 {
     color: #111827;
-    font-size: clamp(38px, 5vw, 58px);
+    font-size: clamp(36px, 5vw, 58px);
     line-height: 1;
     font-weight: 1000;
     letter-spacing: -1px;
@@ -557,17 +575,17 @@ const negocios = [
   }
 
   .catalog-grid {
-    max-width: 980px;
+    max-width: 1080px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.05fr 1fr;
-    gap: 28px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
     align-items: start;
   }
 
   .catalog-card {
     position: relative;
-    height: 330px;
+    height: 300px;
     overflow: hidden;
     border-radius: 8px;
     background: #fff;
@@ -577,7 +595,7 @@ const negocios = [
 
   .catalog-card.tall {
     grid-row: span 2;
-    height: 690px;
+    height: 624px;
   }
 
   .catalog-card img {
@@ -594,7 +612,7 @@ const negocios = [
   .catalog-overlay {
     position: absolute;
     inset: auto 0 0;
-    padding: 28px;
+    padding: 24px;
     color: #fff;
     text-align: left;
     background: linear-gradient(transparent, rgba(120, 0, 10, .75));
@@ -852,11 +870,20 @@ const negocios = [
     margin-bottom: 34px;
   }
 
+  @media (max-width: 1000px) {
+    .catalog-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .materials-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
   @media (max-width: 900px) {
     .hero-features,
     .benefits,
     .stats,
-    .materials-grid,
     .lighting-grid {
       grid-template-columns: 1fr;
     }
@@ -866,16 +893,6 @@ const negocios = [
       margin-bottom: 50px;
     }
 
-    .catalog-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .catalog-card,
-    .catalog-card.tall {
-      height: 340px;
-      grid-row: auto;
-    }
-
     .cta-box {
       flex-direction: column;
       text-align: center;
@@ -883,6 +900,18 @@ const negocios = [
 
     .business-grid {
       grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .catalog-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .catalog-card,
+    .catalog-card.tall {
+      height: 330px;
+      grid-row: auto;
     }
   }
 
