@@ -9,7 +9,7 @@ const waLink = (text: string) => `https://wa.me/${WHATSAPP}?text=${encodeURIComp
 
 // TODAS LAS IMÁGENES DEL CATÁLOGO
 const catalogo = [
-  { src: `${base}/img-1.png`, title: 'Proyecto #1', class: 'tall' },
+  { src: `${base}/img-1.png`, title: 'Proyecto #1' },
   { src: `${base}/img-2.png`, title: 'Proyecto #2' },
   { src: `${base}/img-3.png`, title: 'Proyecto #3' },
   { src: `${base}/img-4.png`, title: 'Proyecto #4' },
@@ -23,14 +23,16 @@ const catalogo = [
   { src: `${base}/img-13.png`, title: 'Proyecto #12' },
   { src: `${base}/img-14.png`, title: 'Proyecto #13' },
   { src: `${base}/img-15.png`, title: 'Proyecto #14' },
-  { src: `${base}/identa.png`, title: 'Proyecto #15' },
-  { src: `${base}/autodoc.png`, title: 'Proyecto #16' },
-  { src: `${base}/senorial.png`, title: 'Proyecto #17' },
-  { src: `${base}/soluciones.png`, title: 'Proyecto #18' },
-  { src: `${base}/bull12.png`, title: 'Proyecto #19' },
-  { src: `${base}/polleria-torre.png`, title: 'Proyecto #20' },
-  { src: `${base}/barba.png`, title: 'Proyecto #21' },
-  { src: `${base}/badanis.png`, title: 'Proyecto #22' },
+
+  // proyectos nuevos
+  { src: `${base}/identa.png`, title: 'IDENTÁ' },
+  { src: `${base}/autodoc.png`, title: 'AUTODOC SERVICE' },
+  { src: `${base}/senorial.png`, title: 'SEÑORÍAL' },
+  { src: `${base}/soluciones.png`, title: 'SOLUCIONES MÉDICAS' },
+  { src: `${base}/bull12.png`, title: 'BULL 12 ROCK & GRILL' },
+  { src: `${base}/polleria-torre.png`, title: 'POLLERÍA' },
+  { src: `${base}/barba.png`, title: 'BARBERÍA' },
+  { src: `${base}/badanis.png`, title: 'BADANIS' },
 ]
 
 const materiales = [
@@ -134,6 +136,7 @@ const negocios = [
             <small>En estructura e instalación</small>
           </section>
         </div>
+
         <div>
           <span>✦</span>
           <section>
@@ -141,6 +144,7 @@ const negocios = [
             <small>Personalización para tu marca</small>
           </section>
         </div>
+
         <div>
           <span>▱</span>
           <section>
@@ -190,14 +194,17 @@ const negocios = [
         <strong>300+</strong>
         <span>Proyectos en Arequipa</span>
       </div>
+
       <div>
         <strong>10+</strong>
         <span>Años de Experiencia</span>
       </div>
+
       <div>
         <strong>500+</strong>
         <span>Clientes Satisfechos</span>
       </div>
+
       <div>
         <strong>100%</strong>
         <span>Compromiso de Calidad</span>
@@ -213,8 +220,13 @@ const negocios = [
 
     <div class="catalog-grid">
       {catalogo.map((item) => (
-        <article class={`catalog-card ${item.class || ''}`}>
-          <img src={item.src} alt={`${item.title} - Letreros 3D en Arequipa`} loading="lazy" />
+        <article class="catalog-card">
+          <img
+            src={item.src}
+            alt={`${item.title} - Letreros 3D en Arequipa`}
+            loading="lazy"
+          />
+
           <div class="catalog-overlay">
             <h3>{item.title}</h3>
           </div>
@@ -304,6 +316,7 @@ const negocios = [
       <div>
         <h2>¿Quieres un letrero 3D para tu negocio?</h2>
         <p>Diseño + Fabricación + Instalación en Arequipa</p>
+
         <div class="checks">
           <span>✓ Asesoría personalizada</span>
           <span>✓ Diseño incluido</span>
@@ -336,7 +349,12 @@ const negocios = [
   <section class="final-cta">
     <div>
       <span>✦</span>
-      <h2>Letreros 3D <br />en Arequipa</h2>
+
+      <h2>
+        Letreros 3D <br />
+        en Arequipa
+      </h2>
+
       <p>
         Solicita tu cotización para tu negocio. <br />
         <strong>Diseño, fabricación e instalación profesional.</strong>
@@ -346,6 +364,7 @@ const negocios = [
         <a href={waLink('Hola, quiero cotizar letreros 3D en Arequipa')} target="_blank" rel="noopener" class="btn btn-white">
           ☎ WhatsApp: 946 182 531
         </a>
+
         <a href="/servicios" class="btn btn-outline">
           Ver Todos los Servicios →
         </a>
@@ -574,52 +593,68 @@ const negocios = [
     font-size: 17px;
   }
 
+  /* CATÁLOGO SIN CORTAR IMÁGENES */
   .catalog-grid {
-    max-width: 1080px;
+    max-width: 1120px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    align-items: start;
+    columns: 3 300px;
+    column-gap: 24px;
   }
 
   .catalog-card {
     position: relative;
-    height: 300px;
+    width: 100%;
+    display: inline-block;
+    margin: 0 0 24px;
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 10px;
     background: #fff;
     box-shadow: 0 14px 40px rgba(15, 23, 42, .15);
     border: 8px solid #fff;
-  }
-
-  .catalog-card.tall {
-    grid-row: span 2;
-    height: 624px;
+    break-inside: avoid;
   }
 
   .catalog-card img {
+    display: block;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     transition: .3s ease;
   }
 
   .catalog-card:hover img {
-    transform: scale(1.05);
+    transform: scale(1.02);
   }
 
   .catalog-overlay {
     position: absolute;
-    inset: auto 0 0;
+    inset: 0;
     padding: 24px;
     color: #fff;
     text-align: left;
-    background: linear-gradient(transparent, rgba(120, 0, 10, .75));
+    background: linear-gradient(
+      180deg,
+      rgba(224, 0, 8, .08),
+      rgba(120, 0, 10, .78)
+    );
+    display: flex;
+    align-items: flex-end;
+    opacity: 0;
+    transition: .25s ease;
+  }
+
+  .catalog-card:hover .catalog-overlay {
+    opacity: 1;
   }
 
   .catalog-overlay h3 {
     font-weight: 1000;
+    transform: translateY(12px);
+    transition: .25s ease;
+  }
+
+  .catalog-card:hover .catalog-overlay h3 {
+    transform: translateY(0);
   }
 
   .materials-wrap {
@@ -872,7 +907,7 @@ const negocios = [
 
   @media (max-width: 1000px) {
     .catalog-grid {
-      grid-template-columns: repeat(2, 1fr);
+      columns: 2 280px;
     }
 
     .materials-grid {
@@ -905,13 +940,11 @@ const negocios = [
 
   @media (max-width: 640px) {
     .catalog-grid {
-      grid-template-columns: 1fr;
+      columns: 1;
     }
 
-    .catalog-card,
-    .catalog-card.tall {
-      height: 330px;
-      grid-row: auto;
+    .catalog-card {
+      height: auto;
     }
   }
 
