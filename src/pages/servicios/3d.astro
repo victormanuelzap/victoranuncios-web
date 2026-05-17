@@ -217,11 +217,17 @@ const negocios = [
   <section id="catalogo3d" class="section catalog-section">
     <span class="section-label">NUESTROS TRABAJOS</span>
     <h2>Catálogo de Letreros 3D en Arequipa</h2>
-    <p>Proyectos reales de letreros 3D fabricados e instalados</p>
+    <p>Haz clic en cualquier imagen para verla más grande</p>
 
     <div class="catalog-grid">
       {catalogo.map((item) => (
-        <article class="catalog-card">
+        <a
+          class="catalog-card"
+          href={item.src}
+          target="_blank"
+          rel="noopener"
+          aria-label={`Ver imagen grande de ${item.title}`}
+        >
           <img
             src={item.src}
             alt={`${item.title} - Letreros 3D en Arequipa`}
@@ -230,8 +236,9 @@ const negocios = [
 
           <div class="catalog-overlay">
             <h3>{item.title}</h3>
+            <small>Ver imagen grande</small>
           </div>
-        </article>
+        </a>
       ))}
     </div>
   </section>
@@ -594,12 +601,13 @@ const negocios = [
     font-size: 17px;
   }
 
-  /* CATÁLOGO: IMÁGENES SIN CORTAR + ZOOM SUAVE */
+  /* CATÁLOGO: IMÁGENES SIN CORTAR + ZOOM + CLIC PARA VER GRANDE */
   .catalog-grid {
     max-width: 1120px;
     margin: 0 auto;
     columns: 3 300px;
     column-gap: 24px;
+    overflow: visible;
   }
 
   .catalog-card {
@@ -613,12 +621,15 @@ const negocios = [
     box-shadow: 0 14px 40px rgba(15, 23, 42, .15);
     border: 8px solid #fff;
     break-inside: avoid;
+    text-decoration: none;
+    cursor: zoom-in;
     transition: transform .25s ease, box-shadow .25s ease;
   }
 
   .catalog-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 22px 55px rgba(15, 23, 42, .25);
+    transform: scale(1.04);
+    z-index: 5;
+    box-shadow: 0 25px 65px rgba(15, 23, 42, .30);
   }
 
   .catalog-card img {
@@ -630,7 +641,7 @@ const negocios = [
   }
 
   .catalog-card:hover img {
-    transform: scale(1.06);
+    transform: scale(1.05);
   }
 
   .catalog-overlay {
@@ -647,6 +658,7 @@ const negocios = [
     opacity: 0;
     transform: translateY(10px);
     transition: .25s ease;
+    pointer-events: none;
   }
 
   .catalog-card:hover .catalog-overlay {
@@ -658,6 +670,14 @@ const negocios = [
     font-size: 15px;
     font-weight: 900;
     margin: 0;
+  }
+
+  .catalog-overlay small {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    opacity: .9;
+    margin-top: 4px;
   }
 
   .materials-wrap {
@@ -948,6 +968,19 @@ const negocios = [
 
     .catalog-card {
       height: auto;
+    }
+
+    .catalog-card:hover {
+      transform: none;
+    }
+
+    .catalog-card:hover img {
+      transform: none;
+    }
+
+    .catalog-overlay {
+      opacity: 1;
+      transform: none;
     }
   }
 
