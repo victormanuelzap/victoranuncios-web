@@ -4,220 +4,912 @@ import Layout from '../../layouts/Layout.astro'
 const BASE = import.meta.env.BASE_URL
 const base = `${BASE}assets/services/3d`
 
-// CATÁLOGO: todas las imágenes antiguas + las nuevas
-const images = [
-  'img-1.png','img-2.png','img-3.png','img-4.png','img-5.png',
-  'img-6.png','img-7.png','img-8.png','img-10.png',
-  'img-11.png','img-12.png','img-13.png','img-14.png','img-15.png',
+const WHATSAPP = '51946182531'
+const waLink = (text) => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`
 
-  // proyectos nuevos
-  'identa.png',
-  'autodoc.png',
-  'senorial.png',
-  'soluciones.png',
-  'bull12.png',
-  'polleria-torre.png',
-  'barba.png',
-  'badanis.png',
-  
+const catalogo = [
+  { src: `${base}/polleria-torre.png`, title: 'Proyecto #1', class: 'tall' },
+  { src: `${base}/identa.png`, title: 'Proyecto #2' },
+  { src: `${base}/barba.png`, title: 'Proyecto #3' },
+  { src: `${base}/soluciones.png`, title: 'Proyecto #4' },
+  { src: `${base}/senorial.png`, title: 'Proyecto #5' },
 ]
 
-// PROYECTOS DESTACADOS
-const featured = [
+const materiales = [
   {
-    src: `${base}/identa.png`,
-    alt: 'Letrero 3D Identa odontología en Arequipa',
-    title: 'LETRERO 3D PROYECTO – IDENTÁ',
-    bullets: [
-      'Material: PVC / Acrílico / Metal',
-      'Acabado: pintura automotriz y vinil de alta durabilidad',
-      'Iluminación: sin iluminación (relieve 3D)',
-      'Uso: interiores y fachadas',
-      'Detalle: logotipo dental en volumen y lettering en doble capa',
-      'Garantía: 1 año',
+    img: `${base}/identa.png`,
+    icon: '◆',
+    title: 'ACRÍLICO',
+    text: 'Material versátil, elegante y resistente',
+    items: [
+      'Diversos colores disponibles',
+      'Excelente acabado brillante o mate',
+      'Fácil mantenimiento y limpieza',
+      'Resistente a rayos UV',
+      'Ideal para interiores y exteriores',
+      'Con o sin iluminación LED',
     ],
-    wa: encodeURIComponent('Quiero cotizar un letrero 3D similar al proyecto IDENTÁ'),
+    wa: 'Quiero cotizar letras 3D en acrílico',
   },
   {
-    src: `${base}/autodoc.png`,
-    alt: 'Letrero 3D Autodoc Service taller automotriz',
-    title: 'LETRERO 3D PROYECTO – AUTODOC SERVICE',
-    bullets: [
-      'Material: PVC / Acrílico de alto espesor',
-      'Acabado: pintura automotriz profesional',
-      'Iluminación: sin iluminación (relieve 3D)',
-      'Uso: interiores y exteriores',
-      'Detalle: íconos mecánicos en volumen y tipografía combinada',
-      'Garantía: 1 año',
+    img: `${base}/polleria-torre.png`,
+    icon: '⚡',
+    title: 'METAL (ACERO INOXIDABLE)',
+    text: 'Máxima durabilidad con acabado premium',
+    items: [
+      'Alta durabilidad y resistencia',
+      'Acabado profesional y elegante',
+      'Resistente al clima y corrosión',
+      'Efecto espejo o cepillado',
+      'Perfecto para imagen corporativa',
+      'Gran impacto visual',
     ],
-    wa: encodeURIComponent('Quiero cotizar un letrero 3D similar al proyecto AUTODOC SERVICE'),
+    wa: 'Quiero cotizar letras 3D metálicas',
   },
   {
-    src: `${base}/senorial.png`,
-    alt: 'Letrero luminoso Señoríal con letras 3D',
-    title: 'LETRERO LUMINOSO PROYECTO – SEÑORÍAL',
-    bullets: [
-      'Material: estructura metálica / acrílico / PVC',
-      'Acabado: pintura automotriz + vinil',
-      'Iluminación: LED frontal de alta intensidad',
-      'Uso: fachadas comerciales y exteriores',
-      'Detalle: caja de luz con letras 3D iluminadas y slogan inferior',
-      'Garantía: 1 año',
+    img: `${base}/barba.png`,
+    icon: '🎯',
+    title: 'PVC EXPANDIDO',
+    text: 'Económico y liviano sin sacrificar calidad',
+    items: [
+      'Excelente relación precio-calidad',
+      'Instalación rápida y sencilla',
+      'Buena resistencia al clima',
+      'Acabado liso perfecto para pintura',
+      'Ligero pero resistente',
+      'Ideal para presupuestos ajustados',
     ],
-    wa: encodeURIComponent('Quiero cotizar un letrero luminoso similar al proyecto SEÑORÍAL'),
+    wa: 'Quiero cotizar letras 3D en PVC expandido',
   },
-  {
-    src: `${base}/soluciones.png`,
-    alt: 'Letrero luminoso Soluciones Médicas Policlínico',
-    title: 'LETRERO LUMINOSO PROYECTO – SOLUCIONES MÉDICAS',
-    bullets: [
-      'Material: estructura metálica / acrílico / PVC',
-      'Acabado: pintura automotriz y vinil de alta calidad',
-      'Iluminación: LED frontal para máxima visibilidad',
-      'Uso: fachadas de clínicas y policlínicos',
-      'Detalle: letras 3D rojas y negras en relieve con diseño moderno',
-      'Garantía: 1 año',
-    ],
-    wa: encodeURIComponent('Quiero cotizar un letrero luminoso similar al proyecto SOLUCIONES MÉDICAS'),
-  },
-  {
-    src: `${base}/bull12.png`,
-    alt: 'Fachada luminosa Bull 12 Rock & Grill',
-    title: 'LETRERO LUMINOSO PROYECTO – BULL 12 ROCK & GRILL',
-    bullets: [
-      'Material: estructura metálica / acrílico / PVC',
-      'Acabado: pintura automotriz en tonos personalizados y vinil',
-      'Iluminación: LED interno para iluminación nocturna del logotipo',
-      'Uso: fachadas comerciales y exteriores',
-      'Detalle: caja luminosa central con logotipo 3D y número telefónico',
-      'Garantía: 1 año',
-    ],
-    wa: encodeURIComponent('Quiero cotizar un letrero luminoso similar al proyecto BULL 12'),
-  },
-  {
-    src: `${base}/panesur.png`,
-    alt: 'Letras 3D Panesur sobre muro de listones de madera',
-    title: 'LETRERO 3D PROYECTO – PANESUR',
-    bullets: [
-      'Material: letras corpóreas en PVC 3D',
-      'Acabado: pintura automotriz blanca con detalles en vinil naranja',
-      'Iluminación: apoyo con luz decorativa RGB',
-      'Uso: interiores y muros de recepción',
-      'Detalle: letras 3D instaladas sobre panel de madera',
-      'Garantía: 1 año',
-    ],
-    wa: encodeURIComponent('Quiero cotizar un letrero 3D similar al proyecto PANESUR'),
-  },
+]
+
+const negocios = [
+  'Recepciones corporativas',
+  'Tiendas de lujo y boutiques',
+  'Restaurantes y cafeterías premium',
+  'Consultorios y clínicas',
+  'Oficinas administrativas',
+  'Showrooms y salas de exhibición',
+  'Centros comerciales',
+  'Hoteles y hostales',
 ]
 ---
 
 <Layout
-  title="Letreros 3D en Arequipa | Victor Anuncios"
-  description="Fabricamos e instalamos letreros 3D: acrílico, PVC y metálicos. Diseño, corte preciso e instalación con garantía en Arequipa."
-  keywords="letreros 3D Arequipa, letras corpóreas, acrílico 3D, PVC 3D, letras metálicas"
+  title="Letras 3D Premium en Arequipa | Victor Anuncios"
+  description="Fabricamos e instalamos letras 3D premium en acrílico, PVC y metal. Diseño, fabricación e instalación profesional en Arequipa."
+  keywords="letras 3D Arequipa, letreros 3D Arequipa, letras corpóreas, acrílico 3D, PVC 3D, letras metálicas"
   canonical="https://victoranuncios.com/servicios/3d"
 >
 
   <!-- HERO -->
-  <section class="relative">
-    <img
-      src={`${base}/hero-nuevo.png`}
-      alt="Letreros 3D Victor Anuncios"
-      class="h-80 md:h-[420px] w-full object-cover"
-      loading="eager"
-    />
-    <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
-      <h1 class="text-white text-4xl md:text-6xl font-bold uppercase text-center">
-        LETREROS 3D
+  <section class="hero-3d">
+    <div class="hero-bg"></div>
+
+    <div class="hero-content">
+      <span class="mini-badge">☆ ROTULADO PREMIUM</span>
+
+      <h1>
+        LETRAS <br />
+        <strong>3D PREMIUM</strong>
       </h1>
+
+      <p>
+        Letras corpóreas de alta calidad con acabados profesionales. <br />
+        Diseño + Fabricación + Instalación en altura.
+      </p>
+
+      <div class="hero-actions">
+        <a href={waLink('Quiero cotizar letras 3D premium')} target="_blank" class="btn btn-white">
+          ☎ Cotizar Ahora - 946 182 531
+        </a>
+        <a href="#catalogo3d" class="btn btn-outline">
+          Ver Más Info →
+        </a>
+      </div>
+
+      <div class="hero-features">
+        <div>
+          <span>🛡</span>
+          <b>Garantía 1 Año</b>
+          <small>En toda la estructura</small>
+        </div>
+        <div>
+          <span>✦</span>
+          <b>Diseño Gratis</b>
+          <small>Personalización incluida</small>
+        </div>
+        <div>
+          <span>▱</span>
+          <b>Efecto 3D Real</b>
+          <small>Profundidad garantizada</small>
+        </div>
+      </div>
     </div>
   </section>
 
-  <main class="container mx-auto px-4 pt-10 pb-16">
-
-    <!-- Badges -->
-    <div class="flex flex-wrap items-center justify-center gap-3 mb-10">
-      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm">✅ Corte preciso</span>
-      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm">✍️ Diseño + instalación</span>
-      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm">🛡️ Garantía 1 año</span>
+  <!-- BENEFICIOS -->
+  <section class="benefits">
+    <div class="benefit-card">
+      <span>▱</span>
+      <h3>Efecto 3D Premium</h3>
+      <p>Profundidad real que destaca tu marca</p>
     </div>
 
-    <!-- CATÁLOGO -->
-    <section aria-labelledby="catalogo3d" class="mt-2">
-      <h2 id="catalogo3d" class="text-2xl md:text-3xl font-bold text-center mb-8">
-        Catálogo
-      </h2>
+    <div class="benefit-card">
+      <span>🛡</span>
+      <h3>Garantía 1 Año</h3>
+      <p>Protección en materiales e instalación</p>
+    </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
-        {images.map((file, i) => (
-          <figure class="relative aspect-square overflow-hidden rounded-xl bg-gray-100">
-            <img
-              src={`${base}/${file}`}
-              alt={`Letrero 3D modelo ${i + 1} - Victor Anuncios Arequipa`}
-              loading={i < 4 ? 'eager' : 'lazy'}
-              class="w-full h-full object-cover transition-transform duration-200 hover:scale-105"
-            />
-          </figure>
-        ))}
+    <div class="benefit-card">
+      <span>✦</span>
+      <h3>Diseño Gratis</h3>
+      <p>Personalización incluida sin costo</p>
+    </div>
+
+    <div class="benefit-card">
+      <span>🏅</span>
+      <h3>Instalación Pro</h3>
+      <p>Montaje perfecto y nivelado</p>
+    </div>
+  </section>
+
+  <!-- EXPERIENCIA -->
+  <section class="section experience">
+    <span class="section-label">NUESTRA EXPERIENCIA</span>
+    <h2>Expertos en Letras 3D</h2>
+    <p>Años de experiencia respaldan la calidad de nuestro trabajo</p>
+
+    <div class="stats">
+      <div>
+        <strong>300+</strong>
+        <span>Proyectos en Arequipa</span>
       </div>
-    </section>
+      <div>
+        <strong>10+</strong>
+        <span>Años de Experiencia</span>
+      </div>
+      <div>
+        <strong>500+</strong>
+        <span>Clientes Satisfechos</span>
+      </div>
+      <div>
+        <strong>100%</strong>
+        <span>Garantía de Calidad</span>
+      </div>
+    </div>
+  </section>
 
-    <!-- PROYECTOS DESTACADOS -->
-    <section aria-labelledby="proyectos3d" class="mt-14">
-      <h2 id="proyectos3d" class="text-2xl md:text-3xl font-bold text-center mb-8">
-        Proyectos destacados
-      </h2>
+  <!-- CATÁLOGO -->
+  <section id="catalogo3d" class="section catalog-section">
+    <span class="section-label">NUESTROS TRABAJOS</span>
+    <h2>Catálogo de Letras 3D</h2>
+    <p>Proyectos reales de letras corpóreas instalados en Arequipa</p>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {featured.map((t) => (
-          <article class="text-center bg-white rounded-2xl shadow-md p-4 md:p-6">
-            <div class="relative w-full h-56 mb-4">
-              <img
-                src={t.src}
-                alt={t.alt}
-                loading="lazy"
-                class="absolute inset-0 w-full h-full object-cover rounded-xl shadow-sm"
-              />
+    <div class="catalog-grid">
+      {catalogo.map((item) => (
+        <article class={`catalog-card ${item.class || ''}`}>
+          <img src={item.src} alt={item.title} loading="lazy" />
+          <div class="catalog-overlay">
+            <h3>{item.title}</h3>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- MATERIALES -->
+  <section class="materials-wrap">
+    <div class="section">
+      <span class="section-label blue">MATERIALES DISPONIBLES</span>
+      <h2>Elige tu Material</h2>
+      <p>Cada material tiene características únicas para diferentes necesidades</p>
+
+      <div class="materials-grid">
+        {materiales.map((mat) => (
+          <article class="material-card">
+            <div class="material-img">
+              <img src={mat.img} alt={mat.title} loading="lazy" />
+              <span>{mat.icon}</span>
             </div>
 
-            <h3 class="text-xl font-extrabold text-black mb-2">
-              {t.title}
-            </h3>
+            <div class="material-body">
+              <h3>{mat.title}</h3>
+              <p>{mat.text}</p>
 
-            <ul class="text-left text-gray-700 space-y-1 mb-5">
-              {t.bullets.map((b) => <li>• {b}</li>)}
-            </ul>
+              <ul>
+                {mat.items.map((item) => (
+                  <li>✓ {item}</li>
+                ))}
+              </ul>
 
-            <!-- BOTÓN AZUL CORPORATIVO -->
-            <a
-              href={`https://wa.me/51946182531?text=${t.wa}`}
-              target="_blank"
-              rel="noopener"
-              class="inline-block bg-blue-600 hover:bg-blue-500 text-white font-bold px-6 py-2 rounded-lg transition"
-            >
-              Cotizar por WhatsApp
-            </a>
+              <a href={waLink(mat.wa)} target="_blank" class="material-btn">
+                ☎ Cotizar este Material
+              </a>
+            </div>
           </article>
         ))}
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- CTA FINAL -->
-    <section class="mt-12">
-      <div class="rounded-2xl bg-blue-600 text-white p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
-        <p class="text-lg md:text-xl font-semibold text-center md:text-left">
-          ¿Quieres un letrero 3D como estos? Diseño + fabricación + instalación.
-        </p>
+  <!-- ILUMINACIÓN -->
+  <section class="section">
+    <span class="section-label">PERSONALIZACIÓN</span>
+    <h2>Opciones de Iluminación</h2>
+    <p>Elige la iluminación perfecta para tus letras 3D</p>
 
-        <!-- BOTÓN BLANCO (correcto para fondo azul) -->
-        <a
-          href="https://wa.me/51946182531?text=Quiero%20un%20letrero%203D"
-          class="px-5 py-3 bg-white text-blue-700 rounded-lg font-bold hover:bg-gray-100 transition"
-        >
-          Pedir por WhatsApp
+    <div class="lighting-grid">
+      <article class="light-card">
+        <span>⚡</span>
+        <h3>Sin Iluminación</h3>
+        <p>Perfectas para interiores y espacios con buena iluminación natural. Acabado limpio y elegante.</p>
+        <ul>
+          <li>✓ Ideal para recepciones</li>
+          <li>✓ Menor costo de instalación</li>
+        </ul>
+      </article>
+
+      <article class="light-card active">
+        <span>✦</span>
+        <small>MÁS POPULAR</small>
+        <h3>LED Frontal</h3>
+        <p>Iluminación directa que resalta la forma y el color de las letras. Gran visibilidad nocturna.</p>
+        <ul>
+          <li>✓ Máxima visibilidad 24/7</li>
+          <li>✓ Bajo consumo energético</li>
+        </ul>
+      </article>
+
+      <article class="light-card">
+        <span>☆</span>
+        <h3>LED Posterior (Halo)</h3>
+        <p>Efecto halo elegante que crea un aura de luz alrededor de cada letra. Máximo impacto visual.</p>
+        <ul>
+          <li>✓ Efecto premium y sofisticado</li>
+          <li>✓ Perfecto para interiores</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- CTA ROJO -->
+  <section class="red-band">
+    <div class="cta-box">
+      <div>
+        <h2>¿Listo para dar profundidad a tu marca?</h2>
+        <p>Diseño 3D + Fabricación + Instalación todo incluido</p>
+        <div class="checks">
+          <span>✓ Asesoría personalizada</span>
+          <span>✓ Diseño gratis incluido</span>
+          <span>✓ Instalación perfecta</span>
+        </div>
+      </div>
+
+      <a href={waLink('Quiero cotizar letras 3D para mi negocio')} target="_blank">
+        ☎ 946 182 531
+      </a>
+    </div>
+  </section>
+
+  <!-- IDEAL PARA -->
+  <section class="section ideal">
+    <h2>Ideal Para Tu Negocio</h2>
+    <p>Perfectas para cualquier tipo de empresa que busque elegancia</p>
+
+    <div class="business-grid">
+      {negocios.map((n) => (
+        <div>
+          <span>⚡</span>
+          <b>{n}</b>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="final-cta">
+    <div>
+      <span>✦</span>
+      <h2>Dale Profundidad a <br />tu Marca</h2>
+      <p>
+        Solicita tu cotización de letras 3D personalizadas. <br />
+        <strong>Diseño incluido sin costo adicional.</strong>
+      </p>
+
+      <div class="final-actions">
+        <a href={waLink('Hola, quiero cotizar letras 3D personalizadas')} target="_blank" class="btn btn-white">
+          ☎ WhatsApp: 946 182 531
+        </a>
+        <a href="/servicios" class="btn btn-outline">
+          Ver Todos los Servicios →
         </a>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </main>
 </Layout>
+
+<style>
+  :global(body) {
+    background: #fff;
+  }
+
+  .hero-3d {
+    position: relative;
+    min-height: 560px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background: linear-gradient(120deg, #7c0b12 0%, #e00008 55%, #9b0008 100%);
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(rgba(190, 0, 10, .88), rgba(170, 0, 10, .88)),
+      url('/assets/services/3d/hero-nuevo.png') center/cover no-repeat;
+    opacity: .95;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 980px;
+    padding: 90px 20px 70px;
+    text-align: center;
+    color: #fff;
+  }
+
+  .mini-badge,
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 22px;
+    background: rgba(255, 255, 255, .18);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: .7px;
+    margin-bottom: 24px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(48px, 7vw, 82px);
+    line-height: .95;
+    font-weight: 1000;
+    letter-spacing: -2px;
+    margin: 0 0 28px;
+  }
+
+  .hero-content h1 strong {
+    color: #ffd4d4;
+  }
+
+  .hero-content p {
+    font-size: clamp(17px, 2vw, 22px);
+    line-height: 1.35;
+    margin-bottom: 30px;
+  }
+
+  .hero-actions,
+  .final-actions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 15px 24px;
+    border-radius: 8px;
+    font-weight: 900;
+    text-decoration: none;
+    transition: .2s ease;
+  }
+
+  .btn-white {
+    background: #fff;
+    color: #e00008;
+  }
+
+  .btn-outline {
+    border: 2px solid rgba(255, 255, 255, .9);
+    color: #fff;
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .hero-features {
+    margin-top: 42px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .hero-features div {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-align: left;
+    padding: 20px 24px;
+    background: rgba(255, 255, 255, .14);
+    border: 1px solid rgba(255, 255, 255, .08);
+  }
+
+  .hero-features span {
+    font-size: 26px;
+  }
+
+  .hero-features b,
+  .hero-features small {
+    display: block;
+  }
+
+  .hero-features small {
+    opacity: .9;
+  }
+
+  .benefits {
+    max-width: 980px;
+    margin: -42px auto 110px;
+    position: relative;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .benefit-card {
+    background: #fff;
+    padding: 30px 26px;
+    border-top: 4px solid #e00008;
+    box-shadow: 0 18px 38px rgba(15, 23, 42, .13);
+  }
+
+  .benefit-card span {
+    display: inline-grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    background: #e00008;
+    color: #fff;
+    font-size: 28px;
+    margin-bottom: 18px;
+  }
+
+  .benefit-card h3 {
+    font-size: 20px;
+    font-weight: 1000;
+    color: #0f172a;
+    margin-bottom: 8px;
+  }
+
+  .benefit-card p {
+    color: #4b5563;
+  }
+
+  .section {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    text-align: center;
+  }
+
+  .section-label {
+    background: #ffe1e1;
+    color: #e00008;
+    margin-bottom: 22px;
+  }
+
+  .section-label.blue {
+    background: #dbeafe;
+    color: #0066ff;
+  }
+
+  .section h2 {
+    color: #111827;
+    font-size: clamp(38px, 5vw, 58px);
+    line-height: 1;
+    font-weight: 1000;
+    letter-spacing: -1px;
+    margin: 0 0 18px;
+  }
+
+  .section > p {
+    color: #475569;
+    font-size: 19px;
+    margin-bottom: 58px;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+
+  .stats strong {
+    display: block;
+    color: #ff1f2d;
+    font-size: clamp(42px, 5vw, 62px);
+    font-weight: 300;
+  }
+
+  .stats span {
+    color: #475569;
+    font-size: 17px;
+  }
+
+  .catalog-grid {
+    max-width: 980px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+
+  .catalog-card {
+    position: relative;
+    height: 330px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 14px 40px rgba(15, 23, 42, .15);
+    border: 8px solid #fff;
+  }
+
+  .catalog-card.tall {
+    grid-row: span 2;
+    height: 690px;
+  }
+
+  .catalog-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .3s ease;
+  }
+
+  .catalog-card:hover img {
+    transform: scale(1.05);
+  }
+
+  .catalog-overlay {
+    position: absolute;
+    inset: auto 0 0;
+    padding: 28px;
+    color: #fff;
+    text-align: left;
+    background: linear-gradient(transparent, rgba(120, 0, 10, .75));
+  }
+
+  .catalog-overlay h3 {
+    font-weight: 1000;
+  }
+
+  .materials-wrap {
+    background: linear-gradient(180deg, #fff6f6, #fff);
+  }
+
+  .materials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 34px;
+    text-align: left;
+  }
+
+  .material-card {
+    background: #fff;
+    box-shadow: 0 22px 46px rgba(15, 23, 42, .15);
+  }
+
+  .material-img {
+    height: 260px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .material-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .material-img span {
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    width: 64px;
+    height: 54px;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, .35);
+    font-size: 28px;
+  }
+
+  .material-body {
+    padding: 34px;
+  }
+
+  .material-body h3 {
+    font-size: 30px;
+    line-height: 1;
+    color: #111827;
+    font-weight: 1000;
+    margin-bottom: 14px;
+  }
+
+  .material-body p {
+    color: #475569;
+    font-size: 17px;
+    margin-bottom: 22px;
+  }
+
+  .material-body ul,
+  .light-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 26px;
+  }
+
+  .material-body li,
+  .light-card li {
+    color: #475569;
+    margin-bottom: 13px;
+  }
+
+  .material-body li::first-letter,
+  .light-card li::first-letter {
+    color: #e00008;
+  }
+
+  .material-btn {
+    display: block;
+    text-align: center;
+    background: #e00008;
+    color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    font-weight: 1000;
+    text-decoration: none;
+    box-shadow: 0 12px 24px rgba(224, 0, 8, .25);
+  }
+
+  .lighting-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.18fr 1fr;
+    gap: 26px;
+    align-items: center;
+    text-align: left;
+  }
+
+  .light-card {
+    background: #fff;
+    padding: 42px 36px;
+    border-left: 4px solid #e00008;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, .11);
+  }
+
+  .light-card span {
+    display: grid;
+    place-items: center;
+    width: 58px;
+    height: 58px;
+    background: #ffe1e1;
+    color: #e00008;
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+
+  .light-card h3 {
+    font-size: 24px;
+    font-weight: 1000;
+    color: #111827;
+    margin-bottom: 18px;
+  }
+
+  .light-card p {
+    color: #475569;
+    line-height: 1.5;
+    margin-bottom: 22px;
+  }
+
+  .light-card.active {
+    background: #e00008;
+    color: #fff;
+    border-left: 0;
+    padding: 52px 40px;
+  }
+
+  .light-card.active span,
+  .light-card.active small {
+    background: rgba(255, 255, 255, .16);
+    color: #fff;
+  }
+
+  .light-card.active small {
+    display: inline-block;
+    padding: 9px 14px;
+    font-weight: 1000;
+    margin-bottom: 18px;
+  }
+
+  .light-card.active h3,
+  .light-card.active p,
+  .light-card.active li {
+    color: #fff;
+  }
+
+  .red-band {
+    background: linear-gradient(110deg, #e00008, #98000a);
+    padding: 72px 20px;
+  }
+
+  .cta-box {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 46px;
+    background: rgba(255, 255, 255, .12);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, .2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  .cta-box h2 {
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 1000;
+    margin-bottom: 10px;
+  }
+
+  .checks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin-top: 18px;
+  }
+
+  .cta-box a {
+    background: #fff;
+    color: #e00008;
+    padding: 18px 28px;
+    border-radius: 8px;
+    font-weight: 1000;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .business-grid {
+    max-width: 840px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    text-align: left;
+  }
+
+  .business-grid div {
+    background: #fff;
+    border-left: 4px solid #e00008;
+    box-shadow: 0 14px 30px rgba(15, 23, 42, .12);
+    padding: 22px 28px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .business-grid span {
+    color: #e00008;
+    font-size: 23px;
+  }
+
+  .business-grid b {
+    color: #111827;
+    font-size: 18px;
+  }
+
+  .final-cta {
+    min-height: 520px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 90px 20px;
+    background:
+      radial-gradient(circle at center, rgba(255,255,255,.12), transparent 34%),
+      linear-gradient(120deg, #111827, #e00008 70%, #98000a);
+  }
+
+  .final-cta span {
+    font-size: 70px;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .final-cta h2 {
+    font-size: clamp(44px, 6vw, 62px);
+    line-height: 1.05;
+    font-weight: 1000;
+    margin-bottom: 28px;
+  }
+
+  .final-cta p {
+    font-size: 22px;
+    margin-bottom: 34px;
+  }
+
+  @media (max-width: 900px) {
+    .hero-features,
+    .benefits,
+    .stats,
+    .materials-grid,
+    .lighting-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .benefits {
+      margin-top: 30px;
+      margin-bottom: 50px;
+    }
+
+    .catalog-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .catalog-card,
+    .catalog-card.tall {
+      height: 340px;
+      grid-row: auto;
+    }
+
+    .cta-box {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .business-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .hero-3d {
+      min-height: 620px;
+    }
+
+    .hero-content {
+      padding-top: 70px;
+    }
+
+    .hero-actions,
+    .final-actions {
+      flex-direction: column;
+    }
+
+    .btn,
+    .cta-box a {
+      width: 100%;
+    }
+
+    .section {
+      padding: 60px 16px;
+    }
+
+    .material-body {
+      padding: 26px;
+    }
+  }
+</style>
