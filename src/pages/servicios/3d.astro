@@ -5,7 +5,7 @@ const BASE = import.meta.env.BASE_URL
 const base = `${BASE}assets/services/3d`
 
 const WHATSAPP = '51946182531'
-const waLink = (text) => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`
+const waLink = (text: string) => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`
 
 const catalogo = [
   { src: `${base}/polleria-torre.png`, title: 'Proyecto #1', class: 'tall' },
@@ -100,7 +100,7 @@ const negocios = [
       </p>
 
       <div class="hero-actions">
-        <a href={waLink('Quiero cotizar letras 3D premium')} target="_blank" class="btn btn-white">
+        <a href={waLink('Quiero cotizar letras 3D premium')} target="_blank" rel="noopener" class="btn btn-white">
           ☎ Cotizar Ahora - 946 182 531
         </a>
         <a href="#catalogo3d" class="btn btn-outline">
@@ -111,18 +111,24 @@ const negocios = [
       <div class="hero-features">
         <div>
           <span>🛡</span>
-          <b>Garantía 1 Año</b>
-          <small>En toda la estructura</small>
+          <section>
+            <b>Garantía 1 Año</b>
+            <small>En toda la estructura</small>
+          </section>
         </div>
         <div>
           <span>✦</span>
-          <b>Diseño Gratis</b>
-          <small>Personalización incluida</small>
+          <section>
+            <b>Diseño Gratis</b>
+            <small>Personalización incluida</small>
+          </section>
         </div>
         <div>
           <span>▱</span>
-          <b>Efecto 3D Real</b>
-          <small>Profundidad garantizada</small>
+          <section>
+            <b>Efecto 3D Real</b>
+            <small>Profundidad garantizada</small>
+          </section>
         </div>
       </div>
     </div>
@@ -224,7 +230,7 @@ const negocios = [
                 ))}
               </ul>
 
-              <a href={waLink(mat.wa)} target="_blank" class="material-btn">
+              <a href={waLink(mat.wa)} target="_blank" rel="noopener" class="material-btn">
                 ☎ Cotizar este Material
               </a>
             </div>
@@ -287,7 +293,7 @@ const negocios = [
         </div>
       </div>
 
-      <a href={waLink('Quiero cotizar letras 3D para mi negocio')} target="_blank">
+      <a href={waLink('Quiero cotizar letras 3D para mi negocio')} target="_blank" rel="noopener">
         ☎ 946 182 531
       </a>
     </div>
@@ -319,7 +325,7 @@ const negocios = [
       </p>
 
       <div class="final-actions">
-        <a href={waLink('Hola, quiero cotizar letras 3D personalizadas')} target="_blank" class="btn btn-white">
+        <a href={waLink('Hola, quiero cotizar letras 3D personalizadas')} target="_blank" rel="noopener" class="btn btn-white">
           ☎ WhatsApp: 946 182 531
         </a>
         <a href="/servicios" class="btn btn-outline">
@@ -667,11 +673,6 @@ const negocios = [
   .light-card li {
     color: #475569;
     margin-bottom: 13px;
-  }
-
-  .material-body li::first-letter,
-  .light-card li::first-letter {
-    color: #e00008;
   }
 
   .material-btn {
