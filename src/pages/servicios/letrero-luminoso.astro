@@ -1,35 +1,33 @@
 ---
 import Layout from '../../layouts/Layout.astro'
 
-// Usar la base correcta para local y GitHub Pages
 const BASE = import.meta.env.BASE_URL
+const base = `${BASE}assets/services/letrero-luminoso`
 
-const base =
-  BASE === '/'
-    ? '/assets/services/letrero-luminoso'
-    : '/victoranuncios-web/assets/services/letrero-luminoso'
+const WHATSAPP = '51946182531'
+const waLink = (text: string) => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`
 
-// Imágenes del catálogo
-const images = [
-  'img-1.png',
-  'img-2.png',
-  'img-3.png',
-  'img-4.png',
-  'img-5.png',
-  'img-6.png',
-  'img-7.png',
-  'img-8.png',
-  'img-9.png',
-  'img-10.png',
+// CATÁLOGO DE IMÁGENES
+const catalogo = [
+  { src: `${base}/img-1.png`, title: 'Proyecto #1' },
+  { src: `${base}/img-2.png`, title: 'Proyecto #2' },
+  { src: `${base}/img-3.png`, title: 'Proyecto #3' },
+  { src: `${base}/img-4.png`, title: 'Proyecto #4' },
+  { src: `${base}/img-5.png`, title: 'Proyecto #5' },
+  { src: `${base}/img-6.png`, title: 'Proyecto #6' },
+  { src: `${base}/img-7.png`, title: 'Proyecto #7' },
+  { src: `${base}/img-8.png`, title: 'Proyecto #8' },
+  { src: `${base}/img-9.png`, title: 'Proyecto #9' },
+  { src: `${base}/img-10.png`, title: 'Proyecto #10' },
 ]
 
-// Tarjetas con descripción (3 proyectos reales)
+// TIPOS DE LETREROS
 const tipos = [
   {
-    slug: 'chifa-perla',
-    titulo: 'CHIFA LA PERLA ORIENTAL 🔆',
+    titulo: 'CHIFA LA PERLA ORIENTAL',
     img: `${base}/chifa-perla-oriental.png`,
     alt: 'Letrero luminoso Chifa La Perla Oriental en Arequipa',
+    icon: '🥢',
     bullets: [
       'Letrero luminoso rectangular de gran formato',
       'Estructura reforzada con tubo galvanizado',
@@ -38,14 +36,13 @@ const tipos = [
       'Instalación completa en fachada y columna',
       'Garantía: 1 año',
     ],
-    waText:
-      'Hola%20quiero%20cotizar%20un%20letrero%20luminoso%20como%20el%20de%20Chifa%20La%20Perla%20Oriental',
+    wa: 'Hola, quiero cotizar un letrero luminoso como el de Chifa La Perla Oriental',
   },
   {
-    slug: 'polleria-gomez',
-    titulo: 'POLLERÍA LOS GÓMEZ 🍗',
+    titulo: 'POLLERÍA LOS GÓMEZ',
     img: `${base}/polleria-los-gomez.png`,
     alt: 'Letrero luminoso Pollería Los Gómez en Arequipa',
+    icon: '🍗',
     bullets: [
       'Letrero luminoso frontal con luz LED interna',
       'Lona backlight full color con diseño profesional',
@@ -54,14 +51,13 @@ const tipos = [
       'Instalación a medida en fachada',
       'Garantía: 1 año',
     ],
-    waText:
-      'Hola%20quiero%20cotizar%20un%20letrero%20luminoso%20como%20el%20de%20Polleria%20Los%20Gomez',
+    wa: 'Hola, quiero cotizar un letrero luminoso como el de Pollería Los Gómez',
   },
   {
-    slug: 'doble-faz',
-    titulo: 'LETRERO LUMINOSO DOBLE FAZ 🔄',
+    titulo: 'LETRERO LUMINOSO DOBLE FAZ',
     img: `${base}/caja-azul.png`,
     alt: 'Letrero luminoso doble faz azul en Arequipa',
+    icon: '🔄',
     bullets: [
       'Letrero luminoso doble faz',
       'Estructura metálica reforzada',
@@ -70,184 +66,1107 @@ const tipos = [
       'Ideal para esquinas y exteriores',
       'Garantía: 1 año',
     ],
-    waText:
-      'Hola%20quiero%20cotizar%20un%20letrero%20luminoso%20doble%20faz%20como%20el%20azul',
+    wa: 'Hola, quiero cotizar un letrero luminoso doble faz',
   },
+]
+
+const negocios = [
+  'Bodegas y minimarkets',
+  'Farmacias y boticas',
+  'Restaurantes y pollerías',
+  'Ferreterías',
+  'Clínicas y consultorios',
+  'Barberías y salones',
+  'Tiendas comerciales',
+  'Negocios en esquina',
 ]
 ---
 
 <Layout
-  title="Letreros luminosos en Arequipa – Fabricación e instalación | Victor Anuncios"
-  description="Fabricamos e instalamos letreros luminosos y cajas de luz LED en Arequipa. Diseño profesional, estructuras reforzadas y entrega rápida."
-  keywords="letreros luminosos Arequipa, cajas de luz Arequipa, letreros LED Arequipa, publicidad exterior Arequipa"
+  title="Letreros Luminosos en Arequipa | Victor Anuncios"
+  description="Fabricamos e instalamos letreros luminosos LED en Arequipa. Cajas de luz, letreros doble faz, lona backlight, estructura metálica e instalación profesional."
+  keywords="letreros luminosos en Arequipa, cajas de luz Arequipa, letreros LED Arequipa, letreros backlight Arequipa, publicidad exterior Arequipa"
   canonical="https://victoranuncios.com/servicios/letrero-luminoso"
 >
-  <!-- HERO DE LETRERO LUMINOSO -->
-  <section class="relative">
-    <img
-      src={`${base}/hero-luminoso.jpg`}
-      alt="Letrero luminoso Victor Anuncios"
-      class="h-80 md:h-[420px] w-full object-cover"
-      loading="eager"
-    />
-    <!-- CAPA OSCURA -->
-    <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
-      <h1 class="text-white text-4xl md:text-6xl font-bold uppercase text-center">
-        LETRERO LUMINOSO
+
+  <!-- HERO -->
+  <section class="hero-luminoso">
+    <div class="hero-bg"></div>
+
+    <div class="hero-content">
+      <span class="mini-badge">☆ SERVICIO PREMIUM</span>
+
+      <h1>
+        LETREROS <br />
+        <strong>LUMINOSOS LED</strong>
       </h1>
+
+      <p>
+        Ilumina tu negocio con tecnología LED de última generación. <br />
+        Diseño + Fabricación + Instalación profesional en Arequipa.
+      </p>
+
+      <div class="hero-actions">
+        <a href={waLink('Quiero cotizar un letrero luminoso en Arequipa')} target="_blank" rel="noopener" class="btn btn-white">
+          ☎ Cotizar Ahora - 946 182 531
+        </a>
+
+        <a href="#catalogo-luminosos" class="btn btn-outline">
+          Ver Trabajos →
+        </a>
+      </div>
+
+      <div class="hero-features">
+        <div>
+          <span>🛡</span>
+          <section>
+            <b>Garantía 1 Año</b>
+            <small>En estructura e iluminación</small>
+          </section>
+        </div>
+
+        <div>
+          <span>⚡</span>
+          <section>
+            <b>Iluminación LED</b>
+            <small>Bajo consumo energético</small>
+          </section>
+        </div>
+
+        <div>
+          <span>🏅</span>
+          <section>
+            <b>Instalación Pro</b>
+            <small>Montaje seguro y nivelado</small>
+          </section>
+        </div>
+      </div>
     </div>
-    <!-- DEGRADADO HACIA BLANCO -->
-    <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-b from-transparent to-white"></div>
   </section>
 
-  <main class="container mx-auto px-4 pt-10 pb-16">
-    <!-- Badges -->
-    <div class="flex flex-wrap items-center justify-center gap-3 mb-10">
-      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm">
-        ✅ Garantía 1 año
-      </span>
-      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm">
-        ✍️ Diseño + instalación
-      </span>
-      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm">
-        ⚡ Entrega rápida
-      </span>
+  <!-- BENEFICIOS -->
+  <section class="benefits">
+    <div class="benefit-card">
+      <span>🛡</span>
+      <h3>Garantía 1 Año</h3>
+      <p>Protección total en estructura e iluminación</p>
     </div>
 
-    <!-- CATÁLOGO: SOLO FOTOS -->
-    <section aria-labelledby="catalogo-luminosos" class="mt-2">
-      <h2 id="catalogo-luminosos" class="text-2xl md:text-3xl font-bold text-center mb-8">
-        Catálogo
-      </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
-        {images.map((file, i) => (
-          <figure class="relative aspect-square overflow-hidden rounded-xl bg-gray-100">
-            <img
-              src={`${base}/${file}`}
-              alt={`Caja de luz / letrero luminoso modelo ${i + 1} - Victor Anuncios Arequipa`}
-              loading={i < 4 ? 'eager' : 'lazy'}
-              decoding="async"
-              class="w-full h-full object-cover transition-transform duration-200 hover:scale-105"
-            />
-          </figure>
-        ))}
+    <div class="benefit-card">
+      <span>⚡</span>
+      <h3>Ahorro Energético</h3>
+      <p>Consume menos que letreros tradicionales</p>
+    </div>
+
+    <div class="benefit-card">
+      <span>🏅</span>
+      <h3>Calidad Premium</h3>
+      <p>Materiales de primera y acabados profesionales</p>
+    </div>
+
+    <div class="benefit-card">
+      <span>📈</span>
+      <h3>Más Visibilidad</h3>
+      <p>Destaca de día y de noche frente a tu competencia</p>
+    </div>
+  </section>
+
+  <!-- EXPERIENCIA -->
+  <section class="section experience">
+    <span class="section-label blue">NUESTRA EXPERIENCIA</span>
+    <h2>Líderes en Letreros Luminosos</h2>
+    <p>Miles de negocios en Arequipa confían en nosotros</p>
+
+    <div class="stats">
+      <div>
+        <strong>500+</strong>
+        <span>Letreros instalados</span>
       </div>
-    </section>
 
-    <!-- TIPOS DE LETREROS (CON DESCRIPCIÓN) -->
-    <section class="mt-14">
-      <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">
-        Tipos de letreros luminosos
-      </h2>
+      <div>
+        <strong>15+</strong>
+        <span>Años de experiencia</span>
+      </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <strong>1000+</strong>
+        <span>Clientes felices</span>
+      </div>
+
+      <div>
+        <strong>100%</strong>
+        <span>Garantía incluida</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO -->
+  <section id="catalogo-luminosos" class="section catalog-section">
+    <span class="section-label blue">NUESTROS TRABAJOS</span>
+    <h2>Catálogo de Proyectos</h2>
+    <p>Haz clic en cualquier imagen para verla más grande</p>
+
+    <div class="catalog-grid">
+      {catalogo.map((item) => (
+        <button
+          type="button"
+          class="catalog-card js-open-lightbox"
+          data-img={item.src}
+          data-title={item.title}
+          aria-label={`Ampliar ${item.title}`}
+        >
+          <img
+            src={item.src}
+            alt={`${item.title} - Letrero luminoso en Arequipa`}
+            loading="lazy"
+            decoding="async"
+          />
+
+          <div class="catalog-overlay">
+            <h3>{item.title}</h3>
+            <small>Ver imagen grande</small>
+          </div>
+        </button>
+      ))}
+    </div>
+  </section>
+
+  <!-- TIPOS DE LETREROS -->
+  <section class="models-wrap">
+    <div class="section">
+      <span class="section-label red">MODELOS POPULARES</span>
+      <h2>Tipos de Letreros Luminosos</h2>
+      <p>Diseños personalizados según el rubro y necesidades de tu negocio</p>
+
+      <div class="models-grid">
         {tipos.map((t) => (
-          <article class="text-center bg-white rounded-2xl shadow-md p-4 md:p-6">
-            <div class="relative w-full h-56 mb-4">
-              <img
-                src={t.img}
-                alt={t.alt}
-                loading="lazy"
-                decoding="async"
-                class="absolute inset-0 w-full h-full object-cover rounded-xl shadow-sm"
-              />
+          <article class="model-card">
+            <div class="model-img">
+              <img src={t.img} alt={t.alt} loading="lazy" decoding="async" />
+              <span>{t.icon}</span>
             </div>
 
-            <h3 class="text-xl font-extrabold text-black leading-tight mb-2">
-              {t.titulo}
-            </h3>
+            <div class="model-body">
+              <h3>{t.titulo}</h3>
 
-            <ul class="text-left text-gray-700 space-y-1 mb-5">
-              {t.bullets.map((b) => (
-                <li>• {b}</li>
-              ))}
-            </ul>
+              <ul>
+                {t.bullets.map((b) => (
+                  <li>✓ {b}</li>
+                ))}
+              </ul>
 
-            <!-- BOTÓN DE TARJETA EN AZUL -->
-            <a
-              href={`https://wa.me/51946182531?text=${t.waText}`}
-              target="_blank"
-              rel="noopener"
-              class="inline-block bg-blue-600 hover:bg-blue-500 text-white font-bold px-6 py-2 rounded-lg transition"
-            >
-              Pedir por WhatsApp
-            </a>
+              <a href={waLink(t.wa)} target="_blank" rel="noopener" class="model-btn">
+                ☎ Pedir por WhatsApp
+              </a>
+            </div>
           </article>
         ))}
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- CTA -->
-    <section class="mt-12">
-      <div class="rounded-2xl bg-blue-600 text-white p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
-        <p class="text-lg md:text-xl font-semibold text-center md:text-left">
-          ¿Quieres un letrero como estos? Diseño + fabricación + instalación.
-        </p>
-        <!-- BOTÓN CTA FINAL (BLANCO PARA CONTRASTE) -->
-        <a
-          href="https://wa.me/51946182531?text=Quiero%20un%20letrero%20luminoso"
-          class="px-5 py-3 bg-white text-blue-700 rounded-lg font-bold whitespace-nowrap hover:bg-gray-100 transition"
-          rel="noopener"
-        >
-          Pedir por WhatsApp
-        </a>
+  <!-- CTA AZUL -->
+  <section class="blue-band">
+    <div class="cta-box">
+      <div>
+        <h2>¿Quieres un letrero como estos?</h2>
+        <p>Diseño + Fabricación + Instalación todo incluido</p>
+
+        <div class="checks">
+          <span>✓ Asesoría sin compromiso</span>
+          <span>✓ Cotización personalizada</span>
+          <span>✓ Respuesta en 24h</span>
+        </div>
       </div>
-    </section>
 
-    <!-- TEXTO SEO PARA LETRERO LUMINOSO -->
-    <section class="max-w-4xl mx-auto mb-10 text-gray-800 space-y-4">
-      <h2 class="text-2xl md:text-3xl font-bold text-center md:text-left">
-        Letreros luminosos para tu negocio en Arequipa
+      <a href={waLink('Quiero cotizar un letrero luminoso para mi negocio')} target="_blank" rel="noopener">
+        ☎ 946 182 531
+      </a>
+    </div>
+  </section>
+
+  <!-- IDEAL PARA -->
+  <section class="section ideal">
+    <h2>Ideal Para Tu Negocio</h2>
+    <p>Letreros luminosos para empresas que necesitan ser visibles de día y de noche</p>
+
+    <div class="business-grid">
+      {negocios.map((n) => (
+        <div>
+          <span>⚡</span>
+          <b>{n}</b>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- TEXTO SEO -->
+  <section class="seo-section">
+    <h2>Letreros luminosos para tu negocio en Arequipa</h2>
+
+    <p>
+      En <strong>Victor Anuncios</strong> fabricamos <strong>letreros luminosos y cajas de luz en Arequipa</strong>
+      ideales para bodegas, farmacias, restaurantes, pollerías, ferreterías y todo tipo de negocios que necesitan
+      ser visibles de día y de noche. Diseñamos cada letrero a medida según tu logo, colores y fachada.
+    </p>
+
+    <div class="seo-box">
+      Trabajamos con <strong>estructuras de fierro reforzado</strong> e <strong>iluminación LED</strong>
+      para lograr un letrero luminoso que consuma poca energía y que se vea profesional por muchos años.
+      También te asesoramos en el tamaño y ubicación para que tu negocio destaque desde lejos.
+    </div>
+
+    <h3>¿Por qué hacer tu letrero luminoso con Victor Anuncios?</h3>
+
+    <div class="seo-grid">
+      <div>
+        <span>✓</span>
+        <section>
+          <b>Diseño personalizado</b>
+          <small>Según tu rubro y tu marca</small>
+        </section>
+      </div>
+
+      <div>
+        <span>✓</span>
+        <section>
+          <b>Estructuras seguras</b>
+          <small>Con soportes para fachadas y esquinas</small>
+        </section>
+      </div>
+
+      <div>
+        <span>✓</span>
+        <section>
+          <b>Iluminación LED</b>
+          <small>Bajo consumo y alta luminosidad</small>
+        </section>
+      </div>
+
+      <div>
+        <span>✓</span>
+        <section>
+          <b>Garantía 1 año</b>
+          <small>En estructura e iluminación</small>
+        </section>
+      </div>
+    </div>
+
+    <h3>¿Cuánto cuesta un letrero luminoso en Arequipa?</h3>
+
+    <div class="seo-box">
+      El precio depende del tamaño, tipo de estructura y cantidad de iluminación LED que necesite.
+      Podemos fabricar desde letreros pequeños para interiores hasta cajas de luz grandes para fachadas principales.
+      <strong>Escríbenos por WhatsApp</strong> y te armamos una cotización según las medidas de tu local.
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="final-cta">
+    <div>
+      <span>✦</span>
+
+      <h2>
+        ¿Listo para iluminar <br />
+        tu negocio?
       </h2>
 
       <p>
-        En <strong>Victor Anuncios</strong> fabricamos <strong>letreros luminosos y cajas de luz en Arequipa</strong> ideales para
-        bodegas, farmacias, restaurantes, pollerías, ferreterías y todo tipo de negocios que necesitan ser visibles de día
-        y de noche. Diseñamos cada letrero a medida según tu logo, colores y fachada.
+        Cotiza tu letrero luminoso LED sin compromiso. <br />
+        <strong>Te respondemos en menos de 24 horas.</strong>
       </p>
 
-      <p>
-        Trabajamos con <strong>estructuras de fierro reforzado</strong> y <strong>iluminación LED</strong> para lograr un letrero
-        luminoso que consuma poca energía y que se vea profesional por muchos años. También te asesoramos en el tamaño y
-        ubicación para que tu negocio se vea desde lejos y destaque frente a la competencia.
-      </p>
+      <div class="final-actions">
+        <a href={waLink('Hola, quiero cotizar un letrero luminoso en Arequipa')} target="_blank" rel="noopener" class="btn btn-white">
+          ☎ WhatsApp: 946 182 531
+        </a>
 
-      <h3 class="text-xl md:text-2xl font-semibold mt-4">
-        ¿Por qué hacer tu letrero luminoso con Victor Anuncios?
-      </h3>
+        <a href="/servicios" class="btn btn-outline">
+          Ver Todos los Servicios →
+        </a>
+      </div>
+    </div>
+  </section>
 
-      <ul class="list-disc list-inside space-y-1">
-        <li>
-          <strong>Diseño personalizado</strong> según tu rubro y tu marca.
-        </li>
-        <li>
-          <strong>Estructuras seguras</strong>, con soportes y anclajes para fachadas y esquinas.
-        </li>
-        <li>
-          <strong>Iluminación LED</strong> de bajo consumo y alta luminosidad.
-        </li>
-        <li>
-          <strong>Fabricación e instalación en Arequipa</strong>, sin intermediarios.
-        </li>
-        <li>
-          <strong>Garantía de 1 año</strong> en la estructura e iluminación.
-        </li>
-      </ul>
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Cerrar imagen">×</button>
 
-      <h3 class="text-xl md:text-2xl font-semibold mt-4">
-        ¿Cuánto cuesta un letrero luminoso en Arequipa?
-      </h3>
+    <div class="lightbox-content">
+      <img id="lightboxImg" src="" alt="" />
+      <p id="lightboxTitle"></p>
+    </div>
+  </div>
 
-      <p>
-        El precio de un <strong>letrero luminoso</strong> depende del tamaño, el tipo de estructura y la cantidad de iluminación LED
-        que necesite. Podemos fabricar desde letreros pequeños para interiores hasta cajas de luz grandes para fachadas
-        principales. Escríbenos por WhatsApp y te armamos una cotización según las medidas de tu local.
-      </p>
-
-      <p class="font-semibold">
-        Envíanos una foto de tu fachada y las medidas aproximadas y te ayudamos a elegir el mejor tipo de letrero luminoso
-        para tu negocio en Arequipa.
-      </p>
-    </section>
-  </main>
 </Layout>
+
+<style>
+  :global(body) {
+    background: #fff;
+  }
+
+  .hero-luminoso {
+    position: relative;
+    min-height: 560px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background: linear-gradient(120deg, #0f172a 0%, #1d4ed8 55%, #2563eb 100%);
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(rgba(29, 78, 216, .88), rgba(37, 99, 235, .88)),
+      url('/assets/services/letrero-luminoso/hero-luminoso.jpg') center/cover no-repeat;
+    opacity: .95;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 980px;
+    padding: 90px 20px 70px;
+    text-align: center;
+    color: #fff;
+  }
+
+  .mini-badge,
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 22px;
+    background: rgba(255, 255, 255, .18);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: .7px;
+    margin-bottom: 24px;
+  }
+
+  .section-label.blue {
+    background: #dbeafe;
+    color: #2563eb;
+  }
+
+  .section-label.red {
+    background: #ffe1e1;
+    color: #e00008;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(46px, 7vw, 82px);
+    line-height: .95;
+    font-weight: 1000;
+    letter-spacing: -2px;
+    margin: 0 0 28px;
+  }
+
+  .hero-content h1 strong {
+    color: #dbeafe;
+  }
+
+  .hero-content p {
+    font-size: clamp(17px, 2vw, 22px);
+    line-height: 1.35;
+    margin-bottom: 30px;
+  }
+
+  .hero-actions,
+  .final-actions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 15px 24px;
+    border-radius: 8px;
+    font-weight: 900;
+    text-decoration: none;
+    transition: .2s ease;
+  }
+
+  .btn-white {
+    background: #fff;
+    color: #2563eb;
+  }
+
+  .btn-outline {
+    border: 2px solid rgba(255, 255, 255, .9);
+    color: #fff;
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .hero-features {
+    margin-top: 42px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .hero-features div {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-align: left;
+    padding: 20px 24px;
+    background: rgba(255, 255, 255, .14);
+    border: 1px solid rgba(255, 255, 255, .08);
+  }
+
+  .hero-features span {
+    font-size: 26px;
+  }
+
+  .hero-features b,
+  .hero-features small {
+    display: block;
+  }
+
+  .hero-features small {
+    opacity: .9;
+  }
+
+  .benefits {
+    max-width: 980px;
+    margin: -42px auto 110px;
+    position: relative;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .benefit-card {
+    background: #fff;
+    padding: 30px 26px;
+    border-top: 4px solid #2563eb;
+    box-shadow: 0 18px 38px rgba(15, 23, 42, .13);
+  }
+
+  .benefit-card span {
+    display: inline-grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    background: #2563eb;
+    color: #fff;
+    font-size: 26px;
+    margin-bottom: 18px;
+  }
+
+  .benefit-card h3 {
+    font-size: 20px;
+    font-weight: 1000;
+    color: #0f172a;
+    margin-bottom: 8px;
+  }
+
+  .benefit-card p {
+    color: #4b5563;
+  }
+
+  .section {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    text-align: center;
+  }
+
+  .section h2 {
+    color: #111827;
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1;
+    font-weight: 1000;
+    letter-spacing: -1px;
+    margin: 0 0 18px;
+  }
+
+  .section > p {
+    color: #475569;
+    font-size: 19px;
+    margin-bottom: 58px;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+
+  .stats strong {
+    display: block;
+    color: #2563eb;
+    font-size: clamp(42px, 5vw, 62px);
+    font-weight: 300;
+  }
+
+  .stats span {
+    color: #475569;
+    font-size: 17px;
+  }
+
+  /* CATÁLOGO SIN CORTAR + AMPLIAR IMAGEN */
+  .catalog-grid {
+    max-width: 1120px;
+    margin: 0 auto;
+    columns: 3 300px;
+    column-gap: 24px;
+    overflow: visible;
+  }
+
+  .catalog-card {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    margin: 0 0 24px;
+    overflow: hidden;
+    border: 8px solid #fff;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 14px 40px rgba(15, 23, 42, .15);
+    break-inside: avoid;
+    cursor: zoom-in;
+    padding: 0;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+
+  .catalog-card:hover {
+    transform: scale(1.04);
+    z-index: 5;
+    box-shadow: 0 25px 65px rgba(15, 23, 42, .30);
+  }
+
+  .catalog-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: transform .35s ease;
+  }
+
+  .catalog-card:hover img {
+    transform: scale(1.05);
+  }
+
+  .catalog-overlay {
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    padding: 12px 14px;
+    color: #fff;
+    text-align: left;
+    background: rgba(0, 0, 0, .55);
+    backdrop-filter: blur(4px);
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: .25s ease;
+    pointer-events: none;
+  }
+
+  .catalog-card:hover .catalog-overlay {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .catalog-overlay h3 {
+    font-size: 15px;
+    font-weight: 900;
+    margin: 0;
+  }
+
+  .catalog-overlay small {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    opacity: .9;
+    margin-top: 4px;
+  }
+
+  .models-wrap {
+    background: linear-gradient(180deg, #eff6ff, #fff);
+  }
+
+  .models-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 34px;
+    text-align: left;
+  }
+
+  .model-card {
+    background: #fff;
+    box-shadow: 0 22px 46px rgba(15, 23, 42, .15);
+  }
+
+  .model-img {
+    height: 270px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .model-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .model-img span {
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    width: 64px;
+    height: 54px;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, .45);
+    font-size: 28px;
+  }
+
+  .model-body {
+    padding: 34px;
+  }
+
+  .model-body h3 {
+    font-size: 27px;
+    line-height: 1.05;
+    color: #111827;
+    font-weight: 1000;
+    margin-bottom: 24px;
+  }
+
+  .model-body ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 26px;
+  }
+
+  .model-body li {
+    color: #475569;
+    margin-bottom: 14px;
+    line-height: 1.35;
+  }
+
+  .model-btn {
+    display: block;
+    text-align: center;
+    background: #2563eb;
+    color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    font-weight: 1000;
+    text-decoration: none;
+    box-shadow: 0 12px 24px rgba(37, 99, 235, .25);
+  }
+
+  .blue-band {
+    background: linear-gradient(110deg, #2563eb, #1e40af);
+    padding: 72px 20px;
+  }
+
+  .cta-box {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 46px;
+    background: rgba(255, 255, 255, .12);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, .2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  .cta-box h2 {
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 1000;
+    margin-bottom: 10px;
+  }
+
+  .checks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin-top: 18px;
+  }
+
+  .cta-box a {
+    background: #fff;
+    color: #2563eb;
+    padding: 18px 28px;
+    border-radius: 8px;
+    font-weight: 1000;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .business-grid {
+    max-width: 840px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    text-align: left;
+  }
+
+  .business-grid div {
+    background: #fff;
+    border-left: 4px solid #2563eb;
+    box-shadow: 0 14px 30px rgba(15, 23, 42, .12);
+    padding: 22px 28px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .business-grid span {
+    color: #2563eb;
+    font-size: 23px;
+  }
+
+  .business-grid b {
+    color: #111827;
+    font-size: 18px;
+  }
+
+  .seo-section {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    color: #111827;
+  }
+
+  .seo-section h2 {
+    font-size: clamp(34px, 4vw, 52px);
+    line-height: 1.05;
+    font-weight: 1000;
+    margin-bottom: 28px;
+  }
+
+  .seo-section h3 {
+    font-size: clamp(26px, 3vw, 34px);
+    line-height: 1.15;
+    font-weight: 1000;
+    margin: 46px 0 24px;
+  }
+
+  .seo-section p {
+    color: #334155;
+    font-size: 19px;
+    line-height: 1.7;
+  }
+
+  .seo-box {
+    margin-top: 30px;
+    padding: 28px 32px;
+    background: #eff6ff;
+    border-left: 5px solid #2563eb;
+    color: #334155;
+    font-size: 18px;
+    line-height: 1.65;
+  }
+
+  .seo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  .seo-grid div {
+    background: #fff;
+    border-left: 4px solid #2563eb;
+    box-shadow: 0 14px 30px rgba(15, 23, 42, .12);
+    padding: 22px;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+  }
+
+  .seo-grid span {
+    color: #2563eb;
+    font-weight: 900;
+  }
+
+  .seo-grid b,
+  .seo-grid small {
+    display: block;
+  }
+
+  .seo-grid small {
+    color: #475569;
+    margin-top: 6px;
+  }
+
+  .final-cta {
+    min-height: 520px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 90px 20px;
+    background:
+      radial-gradient(circle at center, rgba(255,255,255,.12), transparent 34%),
+      linear-gradient(120deg, #0f172a, #2563eb 70%, #1e40af);
+  }
+
+  .final-cta span {
+    font-size: 70px;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .final-cta h2 {
+    font-size: clamp(44px, 6vw, 62px);
+    line-height: 1.05;
+    font-weight: 1000;
+    margin-bottom: 28px;
+  }
+
+  .final-cta p {
+    font-size: 22px;
+    margin-bottom: 34px;
+  }
+
+  /* LIGHTBOX */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    background: rgba(2, 6, 23, .92);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+
+  .lightbox.is-open {
+    display: flex;
+  }
+
+  .lightbox-content {
+    max-width: min(1100px, 94vw);
+    max-height: 90vh;
+    text-align: center;
+  }
+
+  .lightbox-content img {
+    max-width: 100%;
+    max-height: 82vh;
+    object-fit: contain;
+    border-radius: 12px;
+    background: #fff;
+  }
+
+  .lightbox-content p {
+    color: #fff;
+    font-weight: 900;
+    margin-top: 14px;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    width: 48px;
+    height: 48px;
+    border-radius: 999px;
+    border: 0;
+    background: #fff;
+    color: #111827;
+    font-size: 34px;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  @media (max-width: 1000px) {
+    .catalog-grid {
+      columns: 2 280px;
+    }
+
+    .models-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .hero-features,
+    .benefits,
+    .stats,
+    .seo-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .benefits {
+      margin-top: 30px;
+      margin-bottom: 50px;
+    }
+
+    .cta-box {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .business-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .catalog-section {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .catalog-grid {
+      columns: 1;
+      max-width: 100%;
+    }
+
+    .catalog-card {
+      height: auto;
+      margin-bottom: 30px;
+      border: 6px solid #fff;
+      border-radius: 14px;
+      overflow: visible;
+      box-shadow: 0 14px 35px rgba(15, 23, 42, .18);
+    }
+
+    .catalog-card:hover {
+      transform: none;
+    }
+
+    .catalog-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      transform: none;
+    }
+
+    .catalog-card:hover img {
+      transform: none;
+    }
+
+    .catalog-overlay {
+      position: static;
+      opacity: 1;
+      transform: none;
+      pointer-events: none;
+      margin-top: 10px;
+      padding: 12px 14px;
+      background: #111827;
+      color: #fff;
+      border-radius: 10px;
+      text-align: center;
+      backdrop-filter: none;
+    }
+
+    .catalog-overlay h3 {
+      font-size: 16px;
+      font-weight: 900;
+      margin: 0;
+    }
+
+    .catalog-overlay small {
+      display: block;
+      font-size: 12px;
+      margin-top: 4px;
+      opacity: .85;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .hero-luminoso {
+      min-height: 620px;
+    }
+
+    .hero-content {
+      padding-top: 70px;
+    }
+
+    .hero-actions,
+    .final-actions {
+      flex-direction: column;
+    }
+
+    .btn,
+    .cta-box a {
+      width: 100%;
+    }
+
+    .section {
+      padding: 60px 16px;
+    }
+
+    .model-body {
+      padding: 26px;
+    }
+
+    .seo-section {
+      padding: 60px 18px;
+    }
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const lightbox = document.getElementById('lightbox')
+    const lightboxImg = document.getElementById('lightboxImg')
+    const lightboxTitle = document.getElementById('lightboxTitle')
+    const closeBtn = document.getElementById('lightboxClose')
+    const buttons = document.querySelectorAll('.js-open-lightbox')
+
+    if (!lightbox || !lightboxImg || !lightboxTitle || !closeBtn) return
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const img = button.getAttribute('data-img')
+        const title = button.getAttribute('data-title') || 'Proyecto'
+
+        if (!img) return
+
+        lightboxImg.setAttribute('src', img)
+        lightboxImg.setAttribute('alt', title)
+        lightboxTitle.textContent = title
+        lightbox.classList.add('is-open')
+        lightbox.setAttribute('aria-hidden', 'false')
+        document.body.style.overflow = 'hidden'
+      })
+    })
+
+    const closeLightbox = () => {
+      lightbox.classList.remove('is-open')
+      lightbox.setAttribute('aria-hidden', 'true')
+      lightboxImg.setAttribute('src', '')
+      document.body.style.overflow = ''
+    }
+
+    closeBtn.addEventListener('click', closeLightbox)
+
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) {
+        closeLightbox()
+      }
+    })
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && lightbox.classList.contains('is-open')) {
+        closeLightbox()
+      }
+    })
+  })
+</script>
