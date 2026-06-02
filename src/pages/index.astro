@@ -628,56 +628,68 @@ const BASE_URL = import.meta.env.BASE_URL;
   </div>
 
   
+<!-- GRID 3 SERVICIOS EXTRA (mismo estilo svc-card) -->
+<section class="svc-wrap">
+  <div class="svc-grid">
 
-    <!-- GRID DE 3 IMÁGENES -->
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 justify-items-center">
+    <!-- Mochilas publicitarias -->
+    <a href={`${BASE_URL}servicios/mochilas_publicitarias`} class="svc-card is-blue">
+      <div class="svc-media">
+        <img src={`${BASE_URL}assets/botones/mochilas-publicitarias.webp`} alt="Mochilas publicitarias" loading="lazy" />
+      </div>
+      <div class="svc-body">
+        <div class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M7 8V6a5 5 0 0 1 10 0v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M5 8h14l-1 13H6L5 8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M9 12h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="svc-title">Mochilas Publicitarias</h3>
+        <p class="svc-desc">Mochilas personalizadas para campañas, empresas, colegios y promociones.</p>
+        <span class="svc-more">Ver más <span class="svc-arrow" aria-hidden="true">→</span></span>
+      </div>
+    </a>
 
-      <!-- Mochilas publicitarias -->
-      <a
-        href={`${BASE_URL}servicios/mochilas_publicitarias`}
-        class="w-full max-w-sm group"
-      >
-        <img
-          src={`${BASE_URL}assets/botones/mochilas-publicitarias.webp`}
-          alt="Mochilas publicitarias"
-          loading="lazy"
-          class="w-full h-auto rounded-2xl shadow-md transition
-                 group-hover:-translate-y-1 group-hover:shadow-xl"
-        />
-      </a>
+    <!-- Cintas y luces de neón -->
+    <a href={`${BASE_URL}servicios/cinta_neon`} class="svc-card is-red">
+      <div class="svc-media">
+        <img src={`${BASE_URL}assets/botones/cintas-neon.webp`} alt="Cintas y luces de neón" loading="lazy" />
+      </div>
+      <div class="svc-body">
+        <div class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 3l2.2 5.6L20 9l-4 3.7.9 5.8L12 16.8 7.1 18.5 8 12.7 4 9l5.8-.4L12 3Z"
+              stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="svc-title">Cintas y Luces de Neón</h3>
+        <p class="svc-desc">Cintas LED y luces de neón para decorar, resaltar espacios y atraer miradas.</p>
+        <span class="svc-more">Ver más <span class="svc-arrow" aria-hidden="true">→</span></span>
+      </div>
+    </a>
 
-      <!-- Cintas y luces de neón -->
-      <a
-        href={`${BASE_URL}servicios/cinta_neon`}
-        class="w-full max-w-sm group"
-      >
-        <img
-          src={`${BASE_URL}assets/botones/cintas-neon.webp`}
-          alt="Cintas y luces de neón"
-          loading="lazy"
-          class="w-full h-auto rounded-2xl shadow-md transition
-                 group-hover:-translate-y-1 group-hover:shadow-xl"
-        />
-      </a>
+    <!-- Rollscreens -->
+    <a href={`${BASE_URL}servicios/rollscreens`} class="svc-card is-blue">
+      <div class="svc-media">
+        <img src={`${BASE_URL}assets/botones/rollscreens.webp`} alt="Rollscreens publicitarios" loading="lazy" />
+      </div>
+      <div class="svc-body">
+        <div class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M5 4h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M7 4v16h10V4" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M9 20h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="svc-title">Rollscreens</h3>
+        <p class="svc-desc">Rollscreens publicitarios prácticos y elegantes para ferias, eventos y puntos de venta.</p>
+        <span class="svc-more">Ver más <span class="svc-arrow" aria-hidden="true">→</span></span>
+      </div>
+    </a>
 
-      <!-- Rollscreens (triángulo en móvil) -->
-      <a
-        href={`${BASE_URL}servicios/rollscreens`}
-        class="w-full max-w-sm group col-span-2 md:col-span-1 justify-self-center"
-      >
-        <img
-          src={`${BASE_URL}assets/botones/rollscreens.webp`}
-          alt="Rollscreens publicitarios"
-          loading="lazy"
-          class="w-full h-auto rounded-2xl shadow-md transition
-                 group-hover:-translate-y-1 group-hover:shadow-xl"
-        />
-      </a>
-
-    </div>
   </div>
 </section>
-
 
 
 
