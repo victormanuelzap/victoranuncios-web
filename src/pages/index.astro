@@ -275,9 +275,15 @@ const BASE_URL = import.meta.env.BASE_URL;
 
     <!-- 1 Azul -->
     <a href={`${BASE_URL}servicios/letrero-luminoso`} class="svc-card is-blue">
-      <div class="svc-media">
-        <img src={`${BASE_URL}assets/botones2026/letreros-luminosos.webp`} alt="Letreros luminosos" loading="lazy" />
+      <div class="svc-media aspect-square">
+        <img
+          src={`${BASE_URL}assets/botones2026/letreros-luminosos.webp`}
+          alt="Letreros luminosos"
+          loading="lazy"
+          class="w-full h-full object-cover"
+        />
       </div>
+
       <div class="svc-body">
         <div class="svc-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none">
@@ -292,9 +298,15 @@ const BASE_URL = import.meta.env.BASE_URL;
 
     <!-- 2 Rojo -->
     <a href={`${BASE_URL}servicios/3d`} class="svc-card is-red">
-      <div class="svc-media">
-        <img src={`${BASE_URL}assets/botones2026/letras-3d.webp`} alt="Letras 3D" loading="lazy" />
+      <div class="svc-media aspect-square">
+        <img
+          src={`${BASE_URL}assets/botones2026/letras-3d.webp`}
+          alt="Letras 3D"
+          loading="lazy"
+          class="w-full h-full object-cover"
+        />
       </div>
+
       <div class="svc-body">
         <div class="svc-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none">
@@ -310,9 +322,15 @@ const BASE_URL = import.meta.env.BASE_URL;
 
     <!-- 3 Azul -->
     <a href={`${BASE_URL}servicios/gigantografias/`} class="svc-card is-blue">
-      <div class="svc-media">
-        <img src={`${BASE_URL}assets/botones2026/gigantografias.webp`} alt="Gigantografías" loading="lazy" />
+      <div class="svc-media aspect-square">
+        <img
+          src={`${BASE_URL}assets/botones2026/gigantografias.webp`}
+          alt="Gigantografías"
+          loading="lazy"
+          class="w-full h-full object-cover"
+        />
       </div>
+
       <div class="svc-body">
         <div class="svc-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none">
@@ -328,9 +346,15 @@ const BASE_URL = import.meta.env.BASE_URL;
 
     <!-- 4 Rojo -->
     <a href={`${BASE_URL}servicios/vinilos/`} class="svc-card is-red">
-      <div class="svc-media">
-        <img src={`${BASE_URL}assets/botones2026/vinilos.webp`} alt="Vinilos Adhesivos" loading="lazy" />
+      <div class="svc-media aspect-square">
+        <img
+          src={`${BASE_URL}assets/botones2026/vinilos.webp`}
+          alt="Vinilos Adhesivos"
+          loading="lazy"
+          class="w-full h-full object-cover"
+        />
       </div>
+
       <div class="svc-body">
         <div class="svc-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none">
@@ -345,41 +369,55 @@ const BASE_URL = import.meta.env.BASE_URL;
     </a>
 
     <!-- 5 Azul -->
-<a href={`${BASE_URL}servicios/cinta_neon`} class="svc-card is-blue">
-  <div class="svc-media">
-    <img src={`${BASE_URL}assets/botones2026/neon.webp`} alt="Letreros en Neón" loading="lazy" />
-  </div>
-  <div class="svc-body">
-    <div class="svc-icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none">
-        <path d="M12 3l2.2 5.6L20 9l-4 3.7.9 5.8L12 16.8 7.1 18.5 8 12.7 4 9l5.8-.4L12 3Z"
-          stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-      </svg>
-    </div>
-    <h3 class="svc-title">Letreros en Neón</h3>
-    <p class="svc-desc">Neón LED personalizado con colores vibrantes para tu negocio.</p>
-    <span class="svc-more">Ver más <span class="svc-arrow" aria-hidden="true">→</span></span>
-  </div>
-</a>
+    <a href={`${BASE_URL}servicios/cinta_neon`} class="svc-card is-blue">
+      <div class="svc-media aspect-square">
+        <img
+          src={`${BASE_URL}assets/botones2026/neon.webp`}
+          alt="Letreros en Neón"
+          loading="lazy"
+          class="w-full h-full object-cover"
+        />
+      </div>
 
-<!-- 6 Rojo -->
-<a href={`${BASE_URL}servicios/toldos-enrollables`} class="svc-card is-red">
-  <div class="svc-media">
-    <img src={`${BASE_URL}assets/botones2026/toldos.webp`} alt="Toldos Publicitarios" loading="lazy" />
-  </div>
-  <div class="svc-body">
-    <div class="svc-icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none">
-        <path d="M4 9h16l-1 12H5L4 9Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-        <path d="M6 9l2-6h8l2 6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-      </svg>
-    </div>
-    <h3 class="svc-title">Toldos Publicitarios</h3>
-    <p class="svc-desc">Toldos fijos y enrollables personalizados para negocios y comercios.</p>
-    <span class="svc-more">Ver más <span class="svc-arrow" aria-hidden="true">→</span></span>
-  </div>
-</a>
+      <div class="svc-body">
+        <div class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 3l2.2 5.6L20 9l-4 3.7.9 5.8L12 16.8 7.1 18.5 8 12.7 4 9l5.8-.4L12 3Z"
+              stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="svc-title">Letreros en Neón</h3>
+        <p class="svc-desc">Neón LED personalizado con colores vibrantes para tu negocio.</p>
+        <span class="svc-more">Ver más <span class="svc-arrow" aria-hidden="true">→</span></span>
+      </div>
+    </a>
 
+    <!-- 6 Rojo -->
+    <a href={`${BASE_URL}servicios/toldos-enrollables`} class="svc-card is-red">
+      <div class="svc-media aspect-square">
+        <img
+          src={`${BASE_URL}assets/botones2026/toldos.webp`}
+          alt="Toldos Publicitarios"
+          loading="lazy"
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <div class="svc-body">
+        <div class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M4 9h16l-1 12H5L4 9Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M6 9l2-6h8l2 6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="svc-title">Toldos Publicitarios</h3>
+        <p class="svc-desc">Toldos fijos y enrollables personalizados para negocios y comercios.</p>
+        <span class="svc-more">Ver más <span class="svc-arrow" aria-hidden="true">→</span></span>
+      </div>
+    </a>
+
+  </div>
+</section>
 
   </div>
 </section>
