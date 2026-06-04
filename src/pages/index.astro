@@ -646,12 +646,8 @@ const BASE_URL = import.meta.env.BASE_URL;
 
 
 
-<!-- CONTENEDOR DE SECCIÓN -->
-<section class="py-8 md:py-10">
-  <div class="mx-auto max-w-6xl px-4 md:px-6">
-
 <!-- TITULO MATERIAL PUBLICITARIO -->
-<div class="bg-red-500 py-8 text-center text-white mb-8 rounded-md">
+<section class="bg-red-500 py-8 text-center text-white">
   <h2 class="text-2xl md:text-3xl font-extrabold tracking-wide">
     <i class="fa-solid fa-bullhorn mr-3"></i>
     MATERIAL PUBLICITARIO & EXHIBIDORES
@@ -661,89 +657,96 @@ const BASE_URL = import.meta.env.BASE_URL;
   <p class="mt-3 text-base md:text-lg">
     Soluciones visuales para promocionar tu marca en eventos, ferias y puntos de venta
   </p>
-</div>
-  
-<!-- GRID 3 SERVICIOS EXTRA (mismo estilo que Volantes) -->
-<section class="print-wrap">
-  <div class="print-grid">
+</section>
 
-    <!-- Mochilas publicitarias -->
-    <a href={`${BASE_URL}servicios/mochilas_publicitarias`} class="print-card is-blue">
-      <div class="print-media">
-        <img
-          src={`${BASE_URL}assets/botones/mochilas-publicitarias.webp`}
-          alt="Mochilas Publicitarias"
-          loading="lazy"
-        />
+<!-- CONTENEDOR DE TARJETAS -->
+<section class="py-8 md:py-10">
+  <div class="mx-auto max-w-6xl px-4 md:px-6">
+
+    <!-- GRID 3 SERVICIOS EXTRA (mismo estilo que Volantes) -->
+    <section class="print-wrap">
+      <div class="print-grid">
+
+        <!-- Mochilas publicitarias -->
+        <a href={`${BASE_URL}servicios/mochilas_publicitarias`} class="print-card is-blue">
+          <div class="print-media">
+            <img
+              src={`${BASE_URL}assets/botones/mochilas-publicitarias.webp`}
+              alt="Mochilas Publicitarias"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="print-body">
+            <div class="print-icon" aria-hidden="true">
+              <i class="fa-solid fa-bag-shopping"></i>
+            </div>
+
+            <h3 class="print-title">Mochilas Publicitarias</h3>
+            <p class="print-desc">
+              Mochilas personalizadas para campañas, empresas, colegios y promociones.
+            </p>
+
+            <span class="print-more">
+              Ver más <span class="print-arrow" aria-hidden="true">→</span>
+            </span>
+          </div>
+        </a>
+
+        <!-- Rollscreens -->
+        <a href={`${BASE_URL}servicios/rollscreens`} class="print-card is-red">
+          <div class="print-media">
+            <img
+              src={`${BASE_URL}assets/botones/rollscreens.webp`}
+              alt="Rollscreens"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="print-body">
+            <div class="print-icon" aria-hidden="true">
+              <i class="fa-solid fa-scroll"></i>
+            </div>
+
+            <h3 class="print-title">Rollscreens</h3>
+            <p class="print-desc">
+              Rollscreens publicitarios prácticos y elegantes para ferias, eventos y puntos de venta.
+            </p>
+
+            <span class="print-more">
+              Ver más <span class="print-arrow" aria-hidden="true">→</span>
+            </span>
+          </div>
+        </a>
+
+        <!-- Módulos publicitarios -->
+        <a href={`${BASE_URL}servicios/modulos_publicitarios`} class="print-card is-blue">
+          <div class="print-media">
+            <img
+              src={`${BASE_URL}assets/botones/modulos-publicitarios.webp`}
+              alt="Módulos Publicitarios"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="print-body">
+            <div class="print-icon" aria-hidden="true">
+              <i class="fa-solid fa-store"></i>
+            </div>
+
+            <h3 class="print-title">Módulos Publicitarios</h3>
+            <p class="print-desc">
+              Módulos personalizados para activaciones, ventas, ferias y puntos de atención.
+            </p>
+
+            <span class="print-more">
+              Ver más <span class="print-arrow" aria-hidden="true">→</span>
+            </span>
+          </div>
+        </a>
+
       </div>
-
-      <div class="print-body">
-        <div class="print-icon" aria-hidden="true">
-          <i class="fa-solid fa-bag-shopping"></i>
-        </div>
-
-        <h3 class="print-title">Mochilas Publicitarias</h3>
-        <p class="print-desc">
-          Mochilas personalizadas para campañas, empresas, colegios y promociones.
-        </p>
-
-        <span class="print-more">
-          Ver más <span class="print-arrow" aria-hidden="true">→</span>
-        </span>
-      </div>
-    </a>
-
-    <!-- Rollscreens -->
-    <a href={`${BASE_URL}servicios/rollscreens`} class="print-card is-red">
-      <div class="print-media">
-        <img
-          src={`${BASE_URL}assets/botones/rollscreens.webp`}
-          alt="Rollscreens"
-          loading="lazy"
-        />
-      </div>
-
-      <div class="print-body">
-        <div class="print-icon" aria-hidden="true">
-          <i class="fa-solid fa-scroll"></i>
-        </div>
-
-        <h3 class="print-title">Rollscreens</h3>
-        <p class="print-desc">
-          Rollscreens publicitarios prácticos y elegantes para ferias, eventos y puntos de venta.
-        </p>
-
-        <span class="print-more">
-          Ver más <span class="print-arrow" aria-hidden="true">→</span>
-        </span>
-      </div>
-    </a>
-
-    <!-- Módulos publicitarios -->
-    <a href={`${BASE_URL}servicios/modulos_publicitarios`} class="print-card is-blue">
-      <div class="print-media">
-        <img
-          src={`${BASE_URL}assets/botones/modulos-publicitarios.webp`}
-          alt="Módulos Publicitarios"
-          loading="lazy"
-        />
-      </div>
-
-      <div class="print-body">
-        <div class="print-icon" aria-hidden="true">
-          <i class="fa-solid fa-store"></i>
-        </div>
-
-        <h3 class="print-title">Módulos Publicitarios</h3>
-        <p class="print-desc">
-          Módulos personalizados para activaciones, ventas, ferias y puntos de atención.
-        </p>
-
-        <span class="print-more">
-          Ver más <span class="print-arrow" aria-hidden="true">→</span>
-        </span>
-      </div>
-    </a>
+    </section>
 
   </div>
 </section>
