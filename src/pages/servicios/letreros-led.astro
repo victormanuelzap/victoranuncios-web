@@ -1,1 +1,136 @@
 
+---
+import Layout from '../../layouts/Layout.astro'
+
+const BASE = import.meta.env.BASE_URL
+const base = `${BASE}assets/services/led`
+const WHATSAPP = '51946182531'
+const waLink = (text: string) => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`
+
+const catalogo = [
+  { src: `${base}/panel-led-metso.png`, title: 'Panel LED programable METSO' },
+  { src: `${base}/panel-led-2.png`, title: 'Letrero LED para negocio' },
+  { src: `${base}/panel-led-3.png`, title: 'Panel LED personalizado' },
+]
+
+const modelos = [
+  {
+    icon: '▦',
+    title: 'PANEL LED MONOCOLOR',
+    text: 'Mensajes claros y brillantes con excelente visibilidad.',
+    items: ['Texto programable', 'Efectos y desplazamiento', 'Bajo consumo eléctrico', 'Medidas personalizadas'],
+    wa: 'Quiero cotizar un panel LED monocolor en Arequipa',
+  },
+  {
+    icon: '✦',
+    title: 'PANEL LED MULTICOLOR',
+    text: 'Mayor impacto visual para promociones y anuncios.',
+    items: ['Varios colores', 'Animaciones llamativas', 'Contenido personalizable', 'Ideal para vitrinas y fachadas'],
+    wa: 'Quiero cotizar un panel LED multicolor en Arequipa',
+  },
+  {
+    icon: '↻',
+    title: 'PROGRAMACIÓN E INSTALACIÓN',
+    text: 'Entregamos tu letrero configurado y listo para trabajar.',
+    items: ['Configuración de mensajes', 'Asesoría de uso', 'Instalación segura', 'Soporte técnico'],
+    wa: 'Quiero cotizar programación e instalación de un letrero LED',
+  },
+]
+
+const negocios = ['Farmacias y boticas', 'Restaurantes y pollerías', 'Tiendas y minimarkets', 'Ferreterías', 'Clínicas y consultorios', 'Locales comerciales', 'Agencias y oficinas', 'Eventos y promociones']
+
+const faq = [
+  { q: '¿Se puede cambiar el mensaje?', a: 'Sí. Los textos, promociones y efectos pueden actualizarse según el sistema de programación del panel.' },
+  { q: '¿Fabrican medidas personalizadas?', a: 'Sí. Cotizamos el panel según el largo, alto, color, ubicación y distancia desde la que debe leerse.' },
+  { q: '¿Incluye instalación?', a: 'Podemos incluir fabricación, programación e instalación en Arequipa. La instalación se cotiza según altura y ubicación.' },
+  { q: '¿Funciona de día y de noche?', a: 'Sí. Seleccionamos el tipo de LED y brillo apropiados para que el mensaje tenga buena visibilidad.' },
+]
+---
+
+<Layout
+  title="Letreros LED en Arequipa | Paneles programables"
+  description="Fabricamos letreros electrónicos LED programables en Arequipa. Paneles LED personalizados, programación e instalación para negocios."
+  keywords="letreros LED en Arequipa, panel LED programable Arequipa, letreros electrónicos Arequipa, panel publicitario LED, avisos LED"
+  canonical="https://victoranuncios.com/servicios/letreros-led"
+>
+  <section class="hero-led">
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <span class="mini-badge">● PUBLICIDAD ELECTRÓNICA</span>
+      <h1>LETREROS LED<br /><strong>EN AREQUIPA</strong></h1>
+      <p>Paneles electrónicos programables para mostrar textos, promociones y mensajes con gran visibilidad de día y de noche.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href={waLink('Quiero cotizar un letrero LED programable en Arequipa')} target="_blank" rel="noopener">☎ Cotizar ahora · 946 182 531</a>
+        <a class="btn btn-outline" href="#catalogo-led">Ver trabajos ↓</a>
+      </div>
+      <div class="hero-points">
+        <span>✓ Medidas personalizadas</span><span>✓ Mensajes programables</span><span>✓ Instalación profesional</span>
+      </div>
+    </div>
+    <div class="hero-panel" aria-label="Ejemplo de panel LED">
+      <div class="led-dots">METSO</div>
+      <small>MENSAJES • PROMOCIONES • ANUNCIOS</small>
+    </div>
+  </section>
+
+  <section class="benefits">
+    <article><span>☀</span><h3>Alta visibilidad</h3><p>Destaca durante el día y la noche.</p></article>
+    <article><span>↻</span><h3>Programable</h3><p>Cambia mensajes y promociones.</p></article>
+    <article><span>⚡</span><h3>Bajo consumo</h3><p>Tecnología LED eficiente y durable.</p></article>
+    <article><span>⌁</span><h3>A tu medida</h3><p>Fabricación según tu espacio.</p></article>
+  </section>
+
+  <section class="section intro">
+    <span class="section-label">PUBLICIDAD QUE SE MUEVE</span>
+    <h2>Paneles LED programables para tu negocio</h2>
+    <p>Comunica ofertas, horarios, precios y novedades en tiempo real. Diseñamos una solución acorde con tu fachada, presupuesto y distancia de lectura.</p>
+  </section>
+
+  <section id="catalogo-led" class="section catalog-section">
+    <span class="section-label">NUESTROS TRABAJOS</span>
+    <h2>Catálogo de letreros LED</h2>
+    <p>Reemplaza las imágenes de ejemplo con las fotografías de tus proyectos.</p>
+    <div class="catalog-grid">
+      {catalogo.map((item) => (
+        <a class="catalog-card" href={item.src} target="_blank" rel="noopener">
+          <img src={item.src} alt={`${item.title} en Arequipa`} loading="lazy" />
+          <div class="catalog-overlay"><h3>{item.title}</h3><small>Ver imagen grande</small></div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="dark-section">
+    <div class="section">
+      <span class="section-label">OPCIONES DISPONIBLES</span>
+      <h2>Elige el panel LED ideal</h2>
+      <div class="model-grid">
+        {modelos.map((modelo) => (
+          <article class="model-card">
+            <span class="model-icon">{modelo.icon}</span><h3>{modelo.title}</h3><p>{modelo.text}</p>
+            <ul>{modelo.items.map((item) => <li>✓ {item}</li>)}</ul>
+            <a href={waLink(modelo.wa)} target="_blank" rel="noopener">Cotizar este modelo →</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section uses">
+    <span class="section-label">IDEAL PARA</span><h2>Haz visible tu negocio</h2>
+    <div class="uses-grid">{negocios.map((negocio) => <div>✓ {negocio}</div>)}</div>
+  </section>
+
+  <section class="section process">
+    <span class="section-label">CÓMO TRABAJAMOS</span><h2>De la medida a la instalación</h2>
+    <div class="steps"><article><b>01</b><h3>Cotización</h3><p>Indícanos la medida y ubicación.</p></article><article><b>02</b><h3>Fabricación</h3><p>Armamos el panel y su estructura.</p></article><article><b>03</b><h3>Programación</h3><p>Configuramos tus primeros mensajes.</p></article><article><b>04</b><h3>Instalación</h3><p>Lo dejamos funcionando en tu local.</p></article></div>
+  </section>
+
+  <section class="section faq"><span class="section-label">PREGUNTAS FRECUENTES</span><h2>Todo lo que necesitas saber</h2><div class="faq-list">{faq.map((item) => <details><summary>{item.q}</summary><p>{item.a}</p></details>)}</div></section>
+
+  <section class="cta"><div><span>¿LISTO PARA DESTACAR?</span><h2>Cotiza tu letrero LED en Arequipa</h2><p>Envíanos la medida, una foto del lugar y el texto que deseas mostrar.</p></div><a class="btn btn-white" href={waLink('Hola, quiero cotizar un letrero LED. Tengo estas medidas:')} target="_blank" rel="noopener">WhatsApp: 946 182 531</a></section>
+</Layout>
+
+<style>
+  :global(body){background:#f5f7fb;color:#101828}.hero-led{min-height:650px;position:relative;overflow:hidden;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:55px;padding:90px max(6vw,24px);background:radial-gradient(circle at 75% 45%,#213d89 0,#101c43 25%,#070b18 62%);color:white}.hero-glow{position:absolute;width:500px;height:500px;border-radius:50%;background:#1570ef55;filter:blur(80px);right:5%;top:10%}.hero-content,.hero-panel{position:relative;z-index:1}.mini-badge,.section-label{display:inline-block;color:#53b1fd;font-weight:800;letter-spacing:2px;font-size:.78rem}.hero-content h1{font-size:clamp(3rem,7vw,6.2rem);line-height:.9;margin:22px 0}.hero-content h1 strong{color:#36d4ff;text-shadow:0 0 30px #168fff}.hero-content>p{max-width:650px;color:#d0d5dd;font-size:1.15rem;line-height:1.7}.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin:32px 0}.btn{display:inline-block;padding:16px 23px;border-radius:10px;text-decoration:none;font-weight:800}.btn-primary{background:#1570ef;color:#fff;box-shadow:0 10px 30px #1570ef66}.btn-outline{border:1px solid #ffffff66;color:#fff}.btn-white{background:white;color:#0b245b}.hero-points{display:flex;flex-wrap:wrap;gap:18px;color:#b9dfff;font-weight:700;font-size:.9rem}.hero-panel{background:#111;border:12px solid #252b36;padding:45px 25px;border-radius:12px;box-shadow:0 0 80px #1570ef55,0 25px 50px #0008;text-align:center;transform:perspective(900px) rotateY(-5deg)}.led-dots{font:900 clamp(3.5rem,8vw,7rem)/1 monospace;letter-spacing:5px;color:#ffd166;text-shadow:0 0 8px #ff9f1c,0 0 22px #ff6b00}.hero-panel small{display:block;margin-top:25px;color:#62d9ff;letter-spacing:3px}.benefits{max-width:1180px;margin:-42px auto 0;position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:15px;padding:0 20px}.benefits article{background:white;border-radius:15px;padding:26px;box-shadow:0 12px 40px #10182818}.benefits span{font-size:2rem;color:#1570ef}.benefits h3{margin:10px 0 5px}.benefits p{margin:0;color:#667085}.section{max-width:1180px;margin:auto;padding:90px 24px}.section>h2{font-size:clamp(2rem,4vw,3.3rem);margin:12px 0 15px}.section>p{color:#667085;font-size:1.1rem;line-height:1.7}.intro{text-align:center;max-width:850px}.catalog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:35px}.catalog-card{min-height:310px;position:relative;overflow:hidden;border-radius:16px;background:#0b1220;box-shadow:0 12px 35px #10182822}.catalog-card img{width:100%;height:100%;object-fit:cover;position:absolute}.catalog-overlay{position:absolute;inset:auto 0 0;padding:45px 22px 22px;color:white;background:linear-gradient(transparent,#000d)}.catalog-overlay h3{margin:0 0 5px}.dark-section{background:#080d1b;color:white}.model-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}.model-card{background:#101828;border:1px solid #344054;border-radius:16px;padding:30px}.model-icon{font-size:2.2rem;color:#36d4ff}.model-card p,.model-card li{color:#b9c2d0;line-height:1.7}.model-card ul{padding:0;list-style:none}.model-card a{color:#53b1fd;font-weight:800;text-decoration:none}.uses{text-align:center}.uses-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:35px}.uses-grid div{background:white;border:1px solid #e4e7ec;padding:20px;border-radius:10px;font-weight:700}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:35px}.steps article{border-left:4px solid #1570ef;background:white;padding:25px;box-shadow:0 8px 25px #10182810}.steps b{font-size:2rem;color:#84adff}.faq-list{display:grid;gap:12px;margin-top:30px}.faq details{background:white;border:1px solid #e4e7ec;border-radius:10px;padding:20px}.faq summary{font-weight:800;cursor:pointer}.faq details p{color:#667085;line-height:1.6}.cta{display:flex;justify-content:space-between;align-items:center;gap:30px;padding:70px max(6vw,24px);background:linear-gradient(120deg,#0b245b,#1570ef);color:white}.cta h2{font-size:clamp(2rem,4vw,3.3rem);margin:10px 0}.cta p{color:#dbeafe}@media(max-width:900px){.hero-led{grid-template-columns:1fr;padding-top:70px}.hero-panel{transform:none}.benefits,.catalog-grid,.model-grid,.steps{grid-template-columns:repeat(2,1fr)}.uses-grid{grid-template-columns:repeat(2,1fr)}.cta{align-items:flex-start;flex-direction:column}}@media(max-width:560px){.hero-led{min-height:auto;padding:65px 20px}.hero-content h1{font-size:3.15rem}.hero-panel{padding:35px 12px;border-width:8px}.led-dots{font-size:3.2rem}.benefits{grid-template-columns:1fr;margin-top:0;padding-top:20px}.catalog-grid,.model-grid,.steps,.uses-grid{grid-template-columns:1fr}.catalog-card{min-height:260px}.section{padding:65px 20px}}
+</style>
