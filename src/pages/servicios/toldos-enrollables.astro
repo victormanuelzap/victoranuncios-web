@@ -1,127 +1,89 @@
 ---
 import Layout from '../../layouts/Layout.astro'
 
-// BASE para las imágenes
 const BASE = import.meta.env.BASE_URL
 const base = `${BASE}assets/services/toldos`
-
-// SEO orientado a NEGOCIOS
-const title = 'Toldos Enrollables para Negocios en Arequipa | Victor Anuncios'
-const description =
-  'Fabricación e instalación de toldos enrollables para negocios en Arequipa. Ideales para tiendas, restaurantes y locales comerciales. Estructura metálica, lonas resistentes y servicio profesional con garantía.'
-const keywords =
-  'toldos para negocios Arequipa, toldos enrollables comerciales, toldos para tiendas Arequipa, toldos para restaurantes Arequipa, toldo enrollable para local comercial, fabricación de toldos Arequipa, instalación de toldos comerciales'
-const canonical = 'https://www.victoranuncios.com/servicios/toldos-enrollables'
-
-// WhatsApp
 const number = '51946182531'
-const whatsappText = 'Hola, quiero un toldo enrollable para mi negocio en Arequipa.'
-const whatsappUrl = `https://wa.me/${number}?text=${encodeURIComponent(whatsappText)}`
+const waLink = (text: string) => `https://wa.me/${number}?text=${encodeURIComponent(text)}`
 
-// Galería de imágenes (coloca estos archivos en public/assets/services/toldos)
-const images = ['toldo-1.webp', 'toldo-2.webp', 'toldo-3.webp']
+const images = [
+  { src: `${base}/toldo-1.webp`, title: 'Toldo enrollable comercial' },
+  { src: `${base}/toldo-2.webp`, title: 'Toldo personalizado para negocio' },
+  { src: `${base}/toldo-3.webp`, title: 'Toldo con estructura metálica' },
+]
 
-// JSON-LD para Google (negocios)
+const tipos = [
+  { icon: '▰', title: 'TOLDO PUBLICITARIO', text: 'Protección y publicidad para tu fachada.', items: ['Impresión personalizada', 'Colores de tu negocio', 'Lona resistente', 'Fabricación a medida'] },
+  { icon: '☀', title: 'TOLDO DE PROTECCIÓN', text: 'Reduce el impacto directo del sol y la lluvia.', items: ['Cobertura para vitrinas', 'Mayor comodidad', 'Sistema enrollable', 'Uso comercial'] },
+  { icon: '⚙', title: 'ESTRUCTURA REFORZADA', text: 'Fabricación firme para uso frecuente.', items: ['Estructura metálica', 'Sistema durable', 'Acabado profesional', 'Instalación segura'] },
+]
+
+const negocios = ['Tiendas y boutiques', 'Restaurantes y pollerías', 'Boticas y farmacias', 'Minimarkets', 'Bazares', 'Cafeterías', 'Peluquerías', 'Locales comerciales']
+const faq = [
+  { q: '¿Fabrican toldos a medida?', a: 'Sí. Fabricamos cada toldo según el ancho, la salida necesaria y las condiciones de la fachada.' },
+  { q: '¿Puedo colocar el nombre de mi negocio?', a: 'Sí. Podemos personalizar la lona con el nombre, logotipo, colores y datos de contacto.' },
+  { q: '¿El precio incluye instalación?', a: 'La cotización puede incluir medición, fabricación e instalación. El costo depende de la medida, altura y ubicación.' },
+  { q: '¿Qué información necesitan para cotizar?', a: 'Envíanos el ancho aproximado, la salida deseada y una fotografía completa de la fachada.' },
+]
+
 const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
+  '@context': 'https://schema.org', '@type': 'Service',
   name: 'Toldos Enrollables para Negocios en Arequipa',
-  description:
-    'Fabricación e instalación de toldos enrollables comerciales en Arequipa. Diseñados para tiendas, restaurantes, boticas y todo tipo de locales comerciales.',
-  serviceType: 'Toldos comerciales',
-  areaServed: 'Arequipa',
-  provider: {
-    '@type': 'LocalBusiness',
-    name: 'Victor Anuncios',
-    image: 'https://www.victoranuncios.com/logo.png',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Av. Ramón Castilla 1004',
-      addressLocality: 'Arequipa',
-      addressRegion: 'Arequipa',
-      addressCountry: 'PE',
-    },
-    telephone: '+51 946182531',
-    url: 'https://www.victoranuncios.com',
-  },
-  url: 'https://www.victoranuncios.com/servicios/toldos-enrollables',
+  description: 'Fabricación e instalación de toldos enrollables comerciales en Arequipa.',
+  serviceType: 'Fabricación e instalación de toldos enrollables', areaServed: 'Arequipa',
+  provider: { '@type': 'LocalBusiness', name: 'Victor Anuncios', telephone: '+51 946 182 531', url: 'https://victoranuncios.com', address: { '@type': 'PostalAddress', streetAddress: 'Av. Ramón Castilla 1004', addressLocality: 'Arequipa', addressCountry: 'PE' } },
+  url: 'https://victoranuncios.com/servicios/toldos-enrollables',
 }
-
-const jsonLD = JSON.stringify(schema)
 ---
 
-<Layout title={title} description={description} keywords={keywords} canonical={canonical}>
-  <section class="py-12 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <h1 class="text-3xl md:text-4xl font-bold mb-6 text-center text-gray-800">
-        Toldos Enrollables para Negocios en Arequipa
-      </h1>
-
-      <p class="text-base md:text-lg text-gray-700 max-w-3xl mx-auto text-center mb-10">
-        En <strong>Victor Anuncios</strong> fabricamos e instalamos
-        <strong> toldos enrollables para negocios en Arequipa</strong>, ideales
-        para tiendas, restaurantes, farmacias, minimarkets, bazares y todo tipo
-        de locales comerciales. Utilizamos
-        <strong> estructura metálica reforzada</strong>, lonas resistentes al
-        sol y sistemas de enrollado duraderos. Mejoramos la fachada de tu
-        negocio y protegemos a tus clientes y productos.
-      </p>
-
-      <div class="flex justify-center mb-10">
-        <a
-          href={whatsappUrl}
-          class="inline-flex items-center justify-center px-6 py-3 rounded-2xl text-white font-semibold bg-green-500 hover:bg-green-600 transition"
-        >
-          Cotizar toldo para mi negocio
-        </a>
+<Layout
+  title="Toldos Enrollables para Negocios en Arequipa | Victor Anuncios"
+  description="Fabricamos e instalamos toldos enrollables para negocios en Arequipa. Estructura metálica, lonas resistentes y diseño personalizado."
+  keywords="toldos enrollables Arequipa, toldos para negocios Arequipa, toldos comerciales, toldos para tiendas, fabricación de toldos Arequipa"
+  canonical="https://victoranuncios.com/servicios/toldos-enrollables"
+>
+  <section class="hero-toldos">
+    <div class="hero-copy">
+      <span class="badge">☀ PROTECCIÓN Y PUBLICIDAD</span>
+      <h1>TOLDOS ENROLLABLES<br /><strong>EN AREQUIPA</strong></h1>
+      <p>Fabricamos toldos personalizados para proteger tu negocio del sol y mejorar la presentación de tu fachada.</p>
+      <div class="actions">
+        <a class="btn primary" href={waLink('Hola, quiero cotizar un toldo enrollable para mi negocio en Arequipa.')} target="_blank" rel="noopener">☎ Cotizar ahora · 946 182 531</a>
+        <a class="btn outline" href="#catalogo-toldos">Ver trabajos ↓</a>
       </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-        {images.map((img) => (
-          <figure class="bg-white rounded-2xl shadow-md overflow-hidden">
-            <img
-              src={`${base}/${img}`}
-              alt="Toldo enrollable comercial instalado en Arequipa por Victor Anuncios"
-              class="w-full h-56 object-cover"
-              loading="lazy"
-            />
-          </figure>
-        ))}
-      </div>
-
-      <div class="max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-md mb-10">
-        <h2 class="text-2xl font-bold mb-4 text-gray-800">
-          Beneficios del toldo enrollable para tu negocio
-        </h2>
-        <ul class="space-y-3 text-gray-700">
-          <li>• Aumenta la visibilidad y presencia de tu tienda en la calle.</li>
-          <li>• Protege vitrinas, productos y clientes del sol intenso de Arequipa.</li>
-          <li>• Mejora la imagen profesional de tu local comercial.</li>
-          <li>• Ideal para restaurantes, boticas, minimarkets, bazares y comercios en general.</li>
-          <li>• Fabricación a medida según el ancho y altura de tu fachada.</li>
-          <li>• Instalación profesional y servicio con garantía.</li>
-        </ul>
-      </div>
-
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-xl md:text-2xl font-semibold mb-3 text-gray-800">
-          Haz que tu negocio se vea mejor y trabaje más cómodo
-        </h2>
-        <p class="text-gray-700 mb-6">
-          Un <strong>toldo enrollable comercial</strong> bien instalado protege,
-          decora y hace más agradable la atención a tus clientes. Nosotros nos
-          encargamos de la medición, fabricación e instalación completa para
-          que tú solo te enfoques en tu negocio.
-        </p>
-        <a
-          href={whatsappUrl}
-          class="inline-flex items-center justify-center px-6 py-3 rounded-2xl text-white font-semibold bg-green-500 hover:bg-green-600 transition"
-        >
-          Agendar una visita técnica
-        </a>
-      </div>
+      <div class="points"><span>✓ Fabricación a medida</span><span>✓ Diseño personalizado</span><span>✓ Instalación profesional</span></div>
     </div>
+    <div class="hero-visual"><img src={`${base}/toldo-1.webp`} alt="Toldo enrollable para negocio en Arequipa" /></div>
   </section>
 
-  <script type="application/ld+json" is:inline>{jsonLD}</script>
+  <section class="benefits">
+    <article><span>☀</span><h3>Protección solar</h3><p>Protege clientes, productos y vitrinas.</p></article>
+    <article><span>◈</span><h3>Imagen comercial</h3><p>Mejora la presencia de tu fachada.</p></article>
+    <article><span>▰</span><h3>A tu medida</h3><p>Fabricado según el espacio disponible.</p></article>
+    <article><span>⚙</span><h3>Instalación profesional</h3><p>Montaje firme, limpio y funcional.</p></article>
+  </section>
+
+  <section class="section intro"><span class="label">SOLUCIÓN PARA TU FACHADA</span><h2>Protección, comodidad y publicidad</h2><p>Utilizamos estructura metálica reforzada, lona resistente y sistemas de enrollado duraderos. Personalizamos el toldo con los colores y la identidad visual de tu negocio.</p></section>
+
+  <section id="catalogo-toldos" class="section">
+    <span class="label">NUESTROS TRABAJOS</span><h2>Catálogo de toldos enrollables</h2><p>Ejemplos de toldos comerciales fabricados e instalados para negocios.</p>
+    <div class="gallery">{images.map((item) => <a class="photo" href={item.src} target="_blank" rel="noopener"><img src={item.src} alt={`${item.title} en Arequipa`} loading="lazy" /><div><h3>{item.title}</h3><small>Ver imagen completa</small></div></a>)}</div>
+  </section>
+
+  <section class="dark"><div class="section"><span class="label">OPCIONES DISPONIBLES</span><h2>El toldo adecuado para tu negocio</h2><div class="types">{tipos.map((tipo) => <article><span>{tipo.icon}</span><h3>{tipo.title}</h3><p>{tipo.text}</p><ul>{tipo.items.map((item) => <li>✓ {item}</li>)}</ul><a href={waLink(`Quiero cotizar: ${tipo.title}`)} target="_blank" rel="noopener">Solicitar cotización →</a></article>)}</div></div></section>
+
+  <section class="section uses"><span class="label">IDEAL PARA</span><h2>Todo tipo de negocio</h2><div>{negocios.map((item) => <p>✓ {item}</p>)}</div></section>
+
+  <section class="section"><span class="label">CÓMO TRABAJAMOS</span><h2>De la medida a la instalación</h2><div class="steps"><article><b>01</b><h3>Medición</h3><p>Revisamos la fachada y las medidas.</p></article><article><b>02</b><h3>Diseño</h3><p>Preparamos la propuesta personalizada.</p></article><article><b>03</b><h3>Fabricación</h3><p>Construimos estructura, lona y sistema.</p></article><article><b>04</b><h3>Instalación</h3><p>Montamos y verificamos el funcionamiento.</p></article></div></section>
+
+  <section class="section"><span class="label">PREGUNTAS FRECUENTES</span><h2>Antes de solicitar tu toldo</h2><div class="faq">{faq.map((item) => <details><summary>{item.q}</summary><p>{item.a}</p></details>)}</div></section>
+
+  <section class="cta"><div><span>¿QUIERES PROTEGER TU NEGOCIO?</span><h2>Cotiza tu toldo enrollable</h2><p>Envíanos una fotografía de la fachada y sus medidas aproximadas.</p></div><a class="btn white" href={waLink('Hola, quiero cotizar un toldo enrollable. Estas son las medidas de mi fachada:')} target="_blank" rel="noopener">WhatsApp: 946 182 531</a></section>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
 </Layout>
+
+<style>
+  :global(body){background:#f6f7f9;color:#172033}.hero-toldos{min-height:640px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:55px;padding:85px max(6vw,24px);background:linear-gradient(120deg,#101828 0%,#1d2939 58%,#344054 100%);color:#fff;overflow:hidden}.badge,.label{display:inline-block;color:#fdb022;font-size:.78rem;font-weight:900;letter-spacing:2px}.hero-copy h1{font-size:clamp(3rem,6.4vw,6rem);line-height:.92;margin:22px 0}.hero-copy h1 strong{color:#fdb022}.hero-copy>p{max-width:650px;color:#d0d5dd;font-size:1.15rem;line-height:1.7}.actions{display:flex;flex-wrap:wrap;gap:14px;margin:30px 0}.btn{display:inline-block;padding:16px 23px;border-radius:10px;text-decoration:none;font-weight:900}.primary{background:#f79009;color:#fff;box-shadow:0 12px 28px #f7900944}.outline{border:1px solid #ffffff66;color:#fff}.white{background:#fff;color:#7a2e0e}.points{display:flex;flex-wrap:wrap;gap:17px;color:#fedf89;font-weight:700;font-size:.9rem}.hero-visual{position:relative;border:10px solid #ffffff18;border-radius:18px;overflow:hidden;box-shadow:0 25px 60px #0008;aspect-ratio:4/3}.hero-visual img{width:100%;height:100%;object-fit:cover}.benefits{max-width:1180px;margin:-42px auto 0;position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:15px;padding:0 20px}.benefits article{background:#fff;border-radius:15px;padding:26px;box-shadow:0 12px 40px #10182818}.benefits article>span{font-size:2rem;color:#f79009}.benefits h3{margin:10px 0 5px}.benefits p{margin:0;color:#667085}.section{max-width:1180px;margin:auto;padding:88px 24px}.section>h2{font-size:clamp(2rem,4vw,3.2rem);margin:12px 0 15px}.section>p{color:#667085;font-size:1.08rem;line-height:1.7}.intro{text-align:center;max-width:850px}.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:35px}.photo{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:16px;background:#182230;box-shadow:0 12px 35px #10182822}.photo img{width:100%;height:100%;object-fit:cover;display:block}.photo>div{position:absolute;inset:auto 0 0;padding:48px 22px 20px;color:#fff;background:linear-gradient(transparent,#000e)}.photo h3{margin:0 0 5px}.dark{background:#101828;color:#fff}.types{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:38px}.types article{background:#1d2939;border:1px solid #475467;border-radius:16px;padding:30px}.types article>span{font-size:2.2rem;color:#fdb022}.types p,.types li{color:#d0d5dd;line-height:1.7}.types ul{list-style:none;padding:0}.types a{color:#fdb022;font-weight:900;text-decoration:none}.uses{text-align:center}.uses>div{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}.uses p{margin:0;background:#fff;border:1px solid #e4e7ec;padding:20px;border-radius:10px;font-weight:750}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:35px}.steps article{background:#fff;border-left:4px solid #f79009;padding:25px;box-shadow:0 8px 25px #10182810}.steps b{font-size:2rem;color:#fdb022}.steps p{color:#667085}.faq{display:grid;gap:12px;margin-top:30px}.faq details{background:#fff;border:1px solid #e4e7ec;border-radius:10px;padding:20px}.faq summary{font-weight:850;cursor:pointer}.faq p{color:#667085;line-height:1.6}.cta{display:flex;justify-content:space-between;align-items:center;gap:30px;padding:70px max(6vw,24px);background:linear-gradient(120deg,#7a2e0e,#f79009);color:#fff}.cta h2{font-size:clamp(2rem,4vw,3.2rem);margin:10px 0}.cta p{color:#ffead5}
+  @media(max-width:900px){.hero-toldos{grid-template-columns:1fr;padding-top:70px}.benefits,.gallery,.types,.steps{grid-template-columns:repeat(2,1fr)}.uses>div{grid-template-columns:repeat(2,1fr)}.cta{align-items:flex-start;flex-direction:column}}
+  @media(max-width:560px){.hero-toldos{min-height:auto;padding:65px 20px}.hero-copy h1{font-size:3.05rem}.benefits{grid-template-columns:1fr;margin-top:0;padding-top:20px}.gallery,.types,.steps,.uses>div{grid-template-columns:1fr}.photo{aspect-ratio:4/3}.section{padding:64px 20px}}
+</style>
