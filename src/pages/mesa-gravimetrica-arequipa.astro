@@ -1,99 +1,51 @@
 ---
+import Layout from "../layouts/Layout.astro";
+
 const title = "Mesa gravimétrica en Arequipa | Venta y cotización";
 const description = "Cotiza una mesa gravimétrica en Arequipa para concentración de minerales. Mira fotos y video del equipo y consulta precio y disponibilidad por WhatsApp.";
 const canonical = "https://victoranuncios.com/mesa-gravimetrica-arequipa/";
-const media = "/mesa-gravimetrica-media";
+const media = `${import.meta.env.BASE_URL}mesa-gravimetrica-media`;
 const message = "Hola, quiero cotizar una mesa gravimétrica. Mi mineral es ____ y necesito procesar ____ kg/h. Estoy en ____.";
 const whatsappCotizaciones = "https://wa.me/51995047068?text=" + encodeURIComponent(message);
 const whatsappVictor = "https://wa.me/51946182531?text=" + encodeURIComponent(message);
 ---
-<!doctype html>
-<html lang="es-PE">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={new URL(media + "/estructura.webp", canonical).href} />
-  </head>
-  <body>
-    <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<Layout title={title} description={description} canonical={canonical}>
+  <div class="bg-slate-50 font-sans text-slate-700">
+    <svg class="absolute h-0 w-0" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <symbol id="whatsapp-icon" viewBox="0 0 24 24">
         <path fill="currentColor" d="M12 2a10 10 0 0 0-8.7 15L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 1.8a8.2 8.2 0 1 1-4.2 15.2l-.3-.2-3 .8.8-3-.2-.3A8.2 8.2 0 0 1 12 3.8Zm-3.5 3.7c-.3 0-.5.1-.7.3-.3.3-.9.8-.9 2 0 1.1.8 2.3 1 2.5.1.2 1.6 2.5 4 3.5.6.3 1.2.5 1.7.6.7.2 1.4.1 1.9 0 .6-.1 1.4-.8 1.6-1.3.2-.5.2-1 .1-1.1l-.5-.3-1.9-.9c-.3-.1-.4-.2-.6.1l-.9 1c-.1.2-.3.2-.5.1-1.4-.6-2.5-1.5-3.3-2.9-.1-.2 0-.4.1-.5l.5-.6c.1-.2.2-.4.1-.6l-.8-1.9c-.2-.4-.4-.4-.6-.4h-.3Z"/>
       </symbol>
     </svg>
-    <header class="top"><nav class="wrap" aria-label="Principal"><a href="/">Victor Anuncios</a><a href="#equipo">Fotos y video</a></nav></header>
-    <main class="wrap">
-      <section class="hero">
+    <div class="wrap pb-12">
+      <section class="grid items-center gap-8 py-10 md:grid-cols-2 md:py-14">
         <div>
-          <p class="label">Equipos para concentración de minerales</p>
-          <h1>Mesa gravimétrica en Arequipa</h1>
-          <p class="intro">Cotiza una mesa concentradora para separar partículas minerales por diferencia de densidad. Consulta el precio, la disponibilidad y qué incluye el equipo.</p>
-          <a class="button" href="#cotizar">Cotizar por WhatsApp</a>
+          <p class="mb-3 text-sm font-semibold text-blue-600">Equipos para concentración de minerales</p>
+          <h1 class="mb-4 text-3xl font-bold text-slate-900 md:text-4xl">Mesa gravimétrica en Arequipa</h1>
+          <p class="mb-5 text-slate-600">Cotiza una mesa concentradora para separar partículas minerales por diferencia de densidad. Consulta el precio, la disponibilidad y qué incluye el equipo.</p>
+          <a class="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-3 font-semibold text-white hover:bg-blue-700" href="#cotizar">Cotizar por WhatsApp</a>
         </div>
-        <img class="cover" src={media + "/estructura.webp"} width="1440" height="810" alt="Vista lateral de la estructura roja y el mecanismo de la mesa gravimétrica" fetchpriority="high" />
+        <img class="h-auto w-full rounded-3xl shadow-lg" src={media + "/estructura.webp"} width="1440" height="810" alt="Vista lateral de la estructura roja y el mecanismo de la mesa gravimétrica" fetchpriority="high" />
       </section>
-      <section id="equipo">
-        <h2>Fotos y video de la mesa gravimétrica</h2>
-        <div class="gallery">
-          <figure><img src={media + "/detalle.webp"} alt="Vista frontal de la estructura metálica de la mesa concentradora" width="720" height="961" loading="lazy" /><figcaption>Vista frontal de la estructura</figcaption></figure>
-          <figure><video controls playsinline preload="none" poster={media + "/video.webp"} aria-label="Video de la superficie de trabajo"><source src={media + "/mesa.mp4"} type="video/mp4" /></video><figcaption>Video de la superficie de trabajo</figcaption></figure>
+      <section id="equipo" class="scroll-mt-24 py-6">
+        <h2 class="mb-4 text-2xl font-bold text-slate-900 md:text-3xl">Fotos y video de la mesa gravimétrica</h2>
+        <div class="grid gap-5 md:grid-cols-2">
+          <figure class="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-lg"><img class="h-72 w-full bg-slate-100 object-contain md:h-96" src={media + "/detalle.webp"} alt="Vista frontal de la estructura metálica de la mesa concentradora" width="720" height="961" loading="lazy" /><figcaption class="px-5 py-3 text-sm text-slate-600">Vista frontal de la estructura</figcaption></figure>
+          <figure class="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-lg"><video class="h-72 w-full bg-slate-900 object-contain md:h-96" controls playsinline preload="none" poster={media + "/video.webp"} aria-label="Video de la superficie de trabajo"><source src={media + "/mesa.mp4"} type="video/mp4" /></video><figcaption class="px-5 py-3 text-sm text-slate-600">Video de la superficie de trabajo</figcaption></figure>
         </div>
       </section>
-      <section class="questions">
-        <h2>Antes de cotizar</h2>
-        <details><summary>¿Para qué sirve una mesa gravimétrica?</summary><p>En la concentración de minerales, una mesa gravimétrica usa el movimiento de la superficie y el flujo de agua para separar partículas de distinta densidad. El resultado depende de las características del material y de su granulometría.</p></details>
-        <details><summary>¿Qué incluye el equipo y cuánto cuesta?</summary><p>Consulta el precio, las dimensiones, la capacidad y los componentes incluidos por WhatsApp.</p></details>
+      <section class="py-10">
+        <h2 class="mb-4 text-2xl font-bold text-slate-900 md:text-3xl">Antes de cotizar</h2>
+        <details class="border-t border-slate-200 py-3"><summary class="cursor-pointer font-semibold text-slate-900">¿Para qué sirve una mesa gravimétrica?</summary><p>En la concentración de minerales, una mesa gravimétrica usa el movimiento de la superficie y el flujo de agua para separar partículas de distinta densidad. El resultado depende de las características del material y de su granulometría.</p></details>
+        <details class="border-t border-slate-200 py-3"><summary class="cursor-pointer font-semibold text-slate-900">¿Qué incluye el equipo y cuánto cuesta?</summary><p>Consulta el precio, las dimensiones, la capacidad y los componentes incluidos por WhatsApp.</p></details>
       </section>
-      <section class="quote" id="cotizar">
-        <h2>Solicita una cotización</h2>
+      <section class="scroll-mt-24 rounded-3xl border border-blue-100 bg-blue-50 p-6 md:p-10" id="cotizar">
+        <h2 class="mb-4 text-2xl font-bold text-slate-900 md:text-3xl">Solicita una cotización</h2>
         <p>Indica qué mineral quieres concentrar, cuántos kilos por hora necesitas procesar y en qué distrito o ciudad estás.</p>
-        <div class="contacts">
-          <a class="button" href={whatsappCotizaciones} aria-label="WhatsApp 995 047 068"><svg class="whatsapp-icon" aria-hidden="true"><use href="#whatsapp-icon" /></svg>995 047 068</a>
-          <a class="button secondary" href={whatsappVictor} aria-label="WhatsApp 946 182 531"><svg class="whatsapp-icon" aria-hidden="true"><use href="#whatsapp-icon" /></svg>946 182 531</a>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a class="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-3 font-semibold text-white hover:bg-blue-700" href={whatsappCotizaciones} aria-label="WhatsApp 995 047 068"><svg class="h-5 w-5 shrink-0" aria-hidden="true"><use href="#whatsapp-icon" /></svg>995 047 068</a>
+          <a class="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-3 font-semibold text-white hover:bg-blue-700" href={whatsappVictor} aria-label="WhatsApp 946 182 531"><svg class="h-5 w-5 shrink-0" aria-hidden="true"><use href="#whatsapp-icon" /></svg>946 182 531</a>
         </div>
       </section>
-    </main>
-    <footer class="wrap"><a href="/">Victor Anuncios</a> <span>Arequipa, Perú</span></footer>
-  </body>
-</html>
-
-<style>
-  :global(*) { box-sizing: border-box; }
-  :global(body) { margin: 0; background: #f5f3ef; color: #202624; font-family: system-ui, sans-serif; line-height: 1.55; }
-  :global(a) { color: inherit; }
-  .wrap { width: min(1120px, calc(100% - 36px)); margin-inline: auto; }
-  .top { background: #1d2622; color: white; }
-  nav, footer { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-block: 17px; }
-  nav a:first-child, footer a { font-weight: 800; text-decoration: none; }
-  .hero { display: grid; grid-template-columns: 1fr 1.2fr; align-items: center; gap: clamp(20px, 5vw, 60px); }
-  section { padding-block: clamp(24px, 5vw, 55px); }
-  .label { color: #795020; font-weight: 700; margin: 0 0 12px; }
-  h1, h2 { line-height: 1.08; margin: 0 0 18px; }
-  h1 { font-size: clamp(2.55rem, 6vw, 4.65rem); letter-spacing: -.055em; }
-  h2 { font-size: clamp(1.55rem, 4vw, 2.65rem); letter-spacing: -.035em; }
-  .intro { max-width: 43ch; }
-  .icon-definitions { position: absolute; width: 0; height: 0; }
-  .whatsapp-icon { width: 20px; height: 20px; flex: none; }
-  .button { display: inline-flex; align-items: center; gap: 8px; padding: 12px 19px; background: #245841; color: white; border-radius: 8px; font-weight: 750; text-decoration: none; }
-  .contacts { display: flex; flex-wrap: wrap; gap: 10px; }
-  .secondary { background: white; color: #245841; border: 1px solid #245841; }
-  .secondary:hover { color: white; }
-  .button:hover { background: #183c2c; }
-  a:focus-visible, summary:focus-visible, video:focus-visible { outline: 3px solid #ae6a27; outline-offset: 4px; }
-  .cover { width: 100%; height: auto; border-radius: 14px; }
-  .gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-  figure { margin: 0; border: 1px solid #d6d3ca; border-radius: 12px; overflow: hidden; background: white; }
-  figure img, figure video { display: block; width: 100%; height: clamp(250px, 42vw, 470px); object-fit: contain; background: #1d2622; }
-  figcaption { padding: 12px 16px; }
-  details { border-top: 1px solid #cbc8bf; padding: 15px 0; }
-  summary { font-weight: 700; cursor: pointer; }
-  .quote { background: #e6eee6; border-radius: 14px; padding: clamp(20px, 5vw, 50px); margin-bottom: 24px; }
-  footer { border-top: 1px solid #cbc8bf; }
-  @media (max-width: 680px) { .hero, .gallery { grid-template-columns: 1fr; } }
-</style>
+    </div>
+    </div>
+</Layout>
