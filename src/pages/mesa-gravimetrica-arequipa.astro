@@ -10,17 +10,22 @@ const whatsappCotizaciones = "https://wa.me/51995047068?text=" + encodeURICompon
 const whatsappVictor = "https://wa.me/51946182531?text=" + encodeURIComponent(message);
 ---
 <Layout title={title} description={description} canonical={canonical}>
-  <div class="bg-slate-50 font-sans text-slate-700">
+  <div class="mesa-page bg-slate-50 font-sans text-slate-700">
+    <section class="servicios-banner" aria-labelledby="mesa-title">
+      <div class="servicios-container">
+        <span class="servicios-subtitulo">Equipos para concentración de minerales</span>
+        <h1 class="servicios-titulo" id="mesa-title">Mesa gravimétrica en Arequipa</h1>
+      </div>
+    </section>
     <svg class="absolute h-0 w-0" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <symbol id="whatsapp-icon" viewBox="0 0 24 24">
         <path fill="currentColor" d="M12 2a10 10 0 0 0-8.7 15L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 1.8a8.2 8.2 0 1 1-4.2 15.2l-.3-.2-3 .8.8-3-.2-.3A8.2 8.2 0 0 1 12 3.8Zm-3.5 3.7c-.3 0-.5.1-.7.3-.3.3-.9.8-.9 2 0 1.1.8 2.3 1 2.5.1.2 1.6 2.5 4 3.5.6.3 1.2.5 1.7.6.7.2 1.4.1 1.9 0 .6-.1 1.4-.8 1.6-1.3.2-.5.2-1 .1-1.1l-.5-.3-1.9-.9c-.3-.1-.4-.2-.6.1l-.9 1c-.1.2-.3.2-.5.1-1.4-.6-2.5-1.5-3.3-2.9-.1-.2 0-.4.1-.5l.5-.6c.1-.2.2-.4.1-.6l-.8-1.9c-.2-.4-.4-.4-.6-.4h-.3Z"/>
       </symbol>
     </svg>
-    <div class="wrap pb-12">
-      <section class="grid items-center gap-8 py-10 md:grid-cols-2 md:py-14">
+    <div class="mesa-container">
+      <section class="mesa-grid mesa-intro">
         <div>
-          <p class="mb-3 text-sm font-semibold text-blue-600">Equipos para concentración de minerales</p>
-          <h1 class="mb-4 text-3xl font-bold text-slate-900 md:text-4xl">Mesa gravimétrica en Arequipa</h1>
+          <h2 class="mb-4 text-2xl font-bold text-slate-900 md:text-3xl">Mesa concentradora de minerales</h2>
           <p class="mb-5 text-slate-600">Cotiza una mesa concentradora para separar partículas minerales por diferencia de densidad. Consulta el precio, la disponibilidad y qué incluye el equipo.</p>
           <a class="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-3 font-semibold text-white hover:bg-blue-700" href="#cotizar">Cotizar por WhatsApp</a>
         </div>
@@ -28,9 +33,9 @@ const whatsappVictor = "https://wa.me/51946182531?text=" + encodeURIComponent(me
       </section>
       <section id="equipo" class="scroll-mt-24 py-6">
         <h2 class="mb-4 text-2xl font-bold text-slate-900 md:text-3xl">Fotos y video de la mesa gravimétrica</h2>
-        <div class="grid gap-5 md:grid-cols-2">
-          <figure class="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-lg"><img class="h-72 w-full bg-slate-100 object-contain md:h-96" src={media + "/detalle.webp"} alt="Vista frontal de la estructura metálica de la mesa concentradora" width="720" height="961" loading="lazy" /><figcaption class="px-5 py-3 text-sm text-slate-600">Vista frontal de la estructura</figcaption></figure>
-          <figure class="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-lg"><video class="h-72 w-full bg-slate-900 object-contain md:h-96" controls playsinline preload="none" poster={media + "/video.webp"} aria-label="Video de la superficie de trabajo"><source src={media + "/mesa.mp4"} type="video/mp4" /></video><figcaption class="px-5 py-3 text-sm text-slate-600">Video de la superficie de trabajo</figcaption></figure>
+        <div class="mesa-grid">
+          <figure class="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-lg"><img class="mesa-media bg-slate-100" src={media + "/detalle.webp"} alt="Vista frontal de la estructura metálica de la mesa concentradora" width="720" height="961" loading="lazy" /><figcaption class="px-5 py-3 text-sm text-slate-600">Vista frontal de la estructura</figcaption></figure>
+          <figure class="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-lg"><video class="mesa-media bg-slate-900" controls playsinline preload="none" poster={media + "/video.webp"} aria-label="Video de la superficie de trabajo"><source src={media + "/mesa.mp4"} type="video/mp4" /></video><figcaption class="px-5 py-3 text-sm text-slate-600">Video de la superficie de trabajo</figcaption></figure>
         </div>
       </section>
       <section class="py-10">
@@ -47,5 +52,35 @@ const whatsappVictor = "https://wa.me/51946182531?text=" + encodeURIComponent(me
         </div>
       </section>
     </div>
-    </div>
+  </div>
 </Layout>
+
+<style>
+  .mesa-container {
+    width: min(72rem, calc(100% - 2rem));
+    margin-inline: auto;
+    padding-bottom: 3rem;
+  }
+
+  .mesa-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1rem, 3vw, 2rem);
+  }
+
+  .mesa-intro {
+    align-items: center;
+    padding-block: clamp(2rem, 5vw, 3.5rem);
+  }
+
+  .mesa-media {
+    display: block;
+    width: 100%;
+    height: clamp(16rem, 35vw, 24rem);
+    object-fit: contain;
+  }
+
+  @media (max-width: 767px) {
+    .mesa-grid { grid-template-columns: minmax(0, 1fr); }
+  }
+</style>
